@@ -413,6 +413,9 @@ bool gt_Init03Units_Func (bool testConds, bool runActions) {
     unitgroup autoA8D6B796_g;
     int autoA8D6B796_u;
     unit autoA8D6B796_var;
+    unitgroup autoB28914AD_g;
+    int autoB28914AD_u;
+    unit autoB28914AD_var;
     unitgroup auto3C1A9524_g;
     int auto3C1A9524_u;
     unit auto3C1A9524_var;
@@ -538,6 +541,13 @@ bool gt_Init03Units_Func (bool testConds, bool runActions) {
         autoA8D6B796_var = UnitGroupUnitFromEnd(autoA8D6B796_g, autoA8D6B796_u);
         if (autoA8D6B796_var == null) { break; }
         UnitGroupAdd(gv_bansheeGroup, autoA8D6B796_var);
+    }
+    autoB28914AD_g = UnitGroup("AP_StukovInfestedBanshee", gv_pLAYER01_USER, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoB28914AD_u = UnitGroupCount(autoB28914AD_g, c_unitCountAll);
+    for (;; autoB28914AD_u -= 1) {
+        autoB28914AD_var = UnitGroupUnitFromEnd(autoB28914AD_g, autoB28914AD_u);
+        if (autoB28914AD_var == null) { break; }
+        UnitGroupAdd(gv_bansheeGroup, autoB28914AD_var);
     }
     auto3C1A9524_g = UnitGroup("AP_Viper", gv_pLAYER01_USER, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     auto3C1A9524_u = UnitGroupCount(auto3C1A9524_g, c_unitCountAll);
@@ -3703,12 +3713,13 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
             gv_banshee3 = libNtve_gf_LastReplacedUnit();
             libNtve_gf_ReplaceUnit(gv_banshee4, "AP_Viper", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
             gv_banshee4 = libNtve_gf_LastReplacedUnit();
-            autoE48F6FA0_g = UnitGroup("AP_Mutalisk", gv_pLAYER01_USER, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            autoE48F6FA0_g = UnitGroup("AP_StukovInfestedBanshee", gv_pLAYER01_USER, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
             autoE48F6FA0_u = UnitGroupCount(autoE48F6FA0_g, c_unitCountAll);
             for (;; autoE48F6FA0_u -= 1) {
                 autoE48F6FA0_var = UnitGroupUnitFromEnd(autoE48F6FA0_g, autoE48F6FA0_u);
                 if (autoE48F6FA0_var == null) { break; }
                 UnitGroupAdd(gv_bansheeGroup, autoE48F6FA0_var);
+                UnitSetPropertyFixed(autoE48F6FA0_var, c_unitPropEnergyPercent, 100.0);
             }
             autoBA967C10_g = UnitGroup("AP_Viper", gv_pLAYER01_USER, RegionPlayableMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
             autoBA967C10_u = UnitGroupCount(autoBA967C10_g, c_unitCountAll);
@@ -4634,6 +4645,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
         if (auto18AD018A_var == null) { break; }
         libNtve_gf_ShowHideUnit(auto18AD018A_var, true);
         UnitSetPosition(auto18AD018A_var, PointFromId(423), false);
+        UnitIssueOrder(auto18AD018A_var, Order(AbilityCommand("AP_BurrowStukovInfestedBansheeUp", 0)), c_orderQueueReplace);
         UnitSetPropertyFixed(auto18AD018A_var, c_unitPropEnergyPercent, 100.0);
     }
     UnitRemove(gv_midCineDropship);
