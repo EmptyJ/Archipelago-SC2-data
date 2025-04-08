@@ -9772,7 +9772,6 @@ void libABFE498B_gf_AP_Triggers_startNoBuild (int lp_player) {
     if ((libABFE498B_gf_AP_Triggers_checkSoA(lp_player, 1, true) == false)) {
     }
 
-    lib15EF4C78_gf_ShowSpearofAdunUI(false, c_transitionDurationImmediate);
 }
 
 void libABFE498B_gf_AP_Triggers_resetBase (int lp_player) {
