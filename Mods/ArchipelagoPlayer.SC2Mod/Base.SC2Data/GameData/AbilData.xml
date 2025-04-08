@@ -6400,15 +6400,11 @@
         <Cost>
             <Cooldown Link="AP_ImmortalShakurasShadowCannon" Location="Unit" TimeUse="45"/>
         </Cost>
-        <TargetFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters value="-;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="13"/>
         <Arc value="360"/>
         <PrepTime value="0.0625"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ImmortalShakurasShadowCannon" Requirements="AP_NotShowAnnihilatorAerialTracking"/>
-    </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_ImmortalShakurasShadowCannonAA" parent="AP_ImmortalShakurasShadowCannon">
-        <TargetFilters index="0" value="-;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ImmortalShakurasShadowCannon" Requirements="AP_ShowAnnihilatorAerialTracking"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ImmortalShakurasShadowCannon"/>
     </CAbilEffectTarget>
     <CAbilEffectInstant id="AP_ImmortalBarrierBase">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
