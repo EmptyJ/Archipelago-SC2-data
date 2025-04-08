@@ -3323,13 +3323,15 @@ void lib15EF4C78_gf_ReplaceGasStructure (unit lp_gasStructure, string lp_desired
         }
         else {
         }
+        Wait(0.1, c_timeGame);
         autoEA05D24C_g = UnitGroup(null, c_playerAny, RegionCircle(UnitGetPosition(lp_gasStructure), 1.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
         autoEA05D24C_u = UnitGroupCount(autoEA05D24C_g, c_unitCountAll);
         for (;; autoEA05D24C_u -= 1) {
             autoEA05D24C_var = UnitGroupUnitFromEnd(autoEA05D24C_g, autoEA05D24C_u);
             if (autoEA05D24C_var == null) { break; }
             if (((UnitGetType(autoEA05D24C_var) == "VespeneGeyser") || (UnitGetType(autoEA05D24C_var) == "SpacePlatformGeyser"))) {
-                UnitRemove(autoEA05D24C_var);
+                libNtve_gf_SendActorMessageToUnit(autoEA05D24C_var, "AnimPlay Cover Cover PlayForever 0.000000 0.300000");
+                libNtve_gf_SendActorMessageToUnit(autoEA05D24C_var, "Signal Covered");
             }
 
         }
