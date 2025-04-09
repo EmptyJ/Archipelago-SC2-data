@@ -6586,6 +6586,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     VisExploreArea(gv_pLAYER_01_USER, RegionFromId(11), true, false);
     RegionPlayableMapSet(RegionFromId(9));
     TriggerExecute(gt_StartAI, true, false);
+    libABFE498B_gf_AP_Triggers_resetBase(gv_pLAYER_01_USER);
     Wait(0.5, c_timeReal);
     TriggerEnable(gt_DefeatBaseDead, true);
     if ((gv_cinematicCompleted == true)) {
@@ -6943,6 +6944,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
         CinematicFade(true, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, false);
     }
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, true);
     return true;
 }
 

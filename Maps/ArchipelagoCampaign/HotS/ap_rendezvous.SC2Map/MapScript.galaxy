@@ -6301,6 +6301,7 @@ bool gt_ReinforcementsProtoss3_Func (bool testConds, bool runActions) {
     for ( ; ( (auto548E08A4_ai >= 0 && lv_index <= auto548E08A4_ae) || (auto548E08A4_ai < 0 && lv_index >= auto548E08A4_ae) ) ; lv_index += auto548E08A4_ai ) {
         lv_unit = lv_warpPrism[lv_index];
         UnitIssueOrder(lv_unit, Order(AbilityCommand("AP_PhasingMode", 0)), c_orderQueueReplace);
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisiblePylon", c_unitCreateIgnorePlacement, gv_pLAYER_02_RESCUEZERG, UnitGetPosition(lv_unit));
     }
     Wait(1.0, c_timeGame);
     auto14322C94_ae = (lv_count - 1);
@@ -6626,6 +6627,7 @@ bool gt_ReinforcementsProtoss4_Func (bool testConds, bool runActions) {
     for ( ; ( (autoDD242A1A_ai >= 0 && lv_index <= autoDD242A1A_ae) || (autoDD242A1A_ai < 0 && lv_index >= autoDD242A1A_ae) ) ; lv_index += autoDD242A1A_ai ) {
         lv_unit = lv_warpPrism[lv_index];
         UnitIssueOrder(lv_unit, Order(AbilityCommand("AP_PhasingMode", 0)), c_orderQueueReplace);
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisiblePylon", c_unitCreateIgnorePlacement, gv_pLAYER_02_RESCUEZERG, UnitGetPosition(lv_unit));
     }
     Wait(1.0, c_timeGame);
     autoDC308017_ae = (lv_count - 1);
@@ -10543,6 +10545,7 @@ bool gt_MidReinforcementsProtoss12_Func (bool testConds, bool runActions) {
     for ( ; ( (auto37636E07_ai >= 0 && lv_index <= auto37636E07_ae) || (auto37636E07_ai < 0 && lv_index >= auto37636E07_ae) ) ; lv_index += auto37636E07_ai ) {
         lv_unit = lv_warpPrism[lv_index];
         UnitIssueOrder(lv_unit, Order(AbilityCommand("AP_PhasingMode", 0)), c_orderQueueReplace);
+        libNtve_gf_CreateUnitsWithDefaultFacing(1, "InvisiblePylon", c_unitCreateIgnorePlacement, gv_pLAYER_02_RESCUEZERG, UnitGetPosition(lv_unit));
     }
     Wait(1.0, c_timeGame);
     auto97970A1C_ae = (lv_count3 - 1);

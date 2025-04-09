@@ -36822,6 +36822,7 @@
         <Action Type="FunctionCall" Id="C0A55937"/>
         <Action Type="Comment" Id="457F9152"/>
         <Action Type="FunctionCall" Id="BE50EC1D"/>
+        <Action Type="FunctionCall" Id="D9982849"/>
         <Action Type="Comment" Id="059CA572"/>
         <Action Type="Comment" Id="BF5A96DA"/>
         <Action Type="FunctionCall" Id="ED8A3BFE"/>
@@ -37525,6 +37526,14 @@
     <Element Type="Param" Id="7810463D">
         <ParameterDef Type="ParamDef" Library="SwaC" Id="2A482A81"/>
         <Preset Type="PresetValue" Library="Ntve" Id="00000063"/>
+    </Element>
+    <Element Type="FunctionCall" Id="D9982849">
+        <FunctionDef Type="FunctionDef" Library="ABFE498B" Id="70370416"/>
+        <Parameter Type="Param" Id="46521426"/>
+    </Element>
+    <Element Type="Param" Id="46521426">
+        <ParameterDef Type="ParamDef" Library="ABFE498B" Id="75570CCE"/>
+        <Variable Type="Variable" Id="B220A157"/>
     </Element>
     <Element Type="Comment" Id="059CA572">
         <Comment>
@@ -40892,9 +40901,10 @@
         <Action Type="Comment" Id="D3D6F3F8"/>
         <Action Type="FunctionCall" Id="4F34F451"/>
         <Action Type="FunctionCall" Id="80AD6FA9"/>
+        <Action Type="FunctionCall" Id="2A70D03E"/>
         <Action Type="Comment" Id="27836215"/>
         <Action Type="FunctionCall" Id="114421EB"/>
-        <Action Type="FunctionCall" Id="2A70D03E"/>
+        <Action Type="FunctionCall" Id="DF4197FF"/>
         <Action Type="FunctionCall" Id="819B10DF"/>
         <Action Type="FunctionCall" Id="97C7F28B"/>
         <Action Type="FunctionCall" Id="16850CBC"/>
@@ -42279,6 +42289,14 @@
     <Element Type="FunctionCall" Id="91622199">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
     </Element>
+    <Element Type="FunctionCall" Id="2A70D03E">
+        <FunctionDef Type="FunctionDef" Library="ABFE498B" Id="9FF320A7"/>
+        <Parameter Type="Param" Id="484405DC"/>
+    </Element>
+    <Element Type="Param" Id="484405DC">
+        <ParameterDef Type="ParamDef" Library="ABFE498B" Id="533B7D95"/>
+        <Variable Type="Variable" Id="B220A157"/>
+    </Element>
     <Element Type="Comment" Id="27836215">
         <Comment>
             End cinematic mode and fade in
@@ -42340,24 +42358,24 @@
         <Value>true</Value>
         <ValueType Type="bool"/>
     </Element>
-    <Element Type="FunctionCall" Id="2A70D03E">
+    <Element Type="FunctionCall" Id="DF4197FF">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="E92E544E"/>
-        <Parameter Type="Param" Id="695DF4B2"/>
-        <Parameter Type="Param" Id="751E5ACE"/>
-        <Parameter Type="Param" Id="E93FD8B2"/>
+        <Parameter Type="Param" Id="BB5239B2"/>
+        <Parameter Type="Param" Id="FDA36521"/>
+        <Parameter Type="Param" Id="57090B5E"/>
     </Element>
-    <Element Type="Param" Id="695DF4B2">
+    <Element Type="Param" Id="BB5239B2">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="C016C6E2"/>
         <Preset Type="PresetValue" Library="Ntve" Id="00000545"/>
     </Element>
-    <Element Type="Param" Id="751E5ACE">
+    <Element Type="Param" Id="FDA36521">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="8F9FC828"/>
-        <FunctionCall Type="FunctionCall" Id="A627DA99"/>
+        <FunctionCall Type="FunctionCall" Id="4E23E95A"/>
     </Element>
-    <Element Type="FunctionCall" Id="A627DA99">
+    <Element Type="FunctionCall" Id="4E23E95A">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000192"/>
     </Element>
-    <Element Type="Param" Id="E93FD8B2">
+    <Element Type="Param" Id="57090B5E">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="5755FC77"/>
         <Variable Type="Variable" Id="9A7EFB37"/>
     </Element>
