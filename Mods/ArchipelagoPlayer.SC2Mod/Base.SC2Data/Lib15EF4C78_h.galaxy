@@ -416,6 +416,7 @@ void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldowns (int lp_player);
 void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsTerran (int lp_player);
 void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsZerg (int lp_player);
 void lib15EF4C78_gf_AP_Player_AddMercenaryCooldown (int lp_player, fixed lp_addedCooldown);
+void lib15EF4C78_gf_AP_Player_PauseMercenaryCooldowns (int lp_player, bool lp_pauseunpause);
 void lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit (unit lp_unit);
 bool lib15EF4C78_gf_AP_Player_UnitTypeHasBehavior (string lp_unitType, string lp_behavior);
 unit lib15EF4C78_gf_AP_Player_UtilTownHallFindNearestMinerals (int lp_player, unit lp_regionMineralWorker);
