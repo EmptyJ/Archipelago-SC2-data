@@ -2818,7 +2818,7 @@ Button/Tooltip/AP_HotSRoachShield=Roach gains +<d ref="Behavior,AP_RoachShield,M
 Button/Tooltip/AP_HotSSplitterlingMedium=Suicide unit. Deals damage over a small area upon death. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_HotSZerglingFrenzy=Attack speed increased by 50%.
 Button/Tooltip/AP_HunterCliffJumper=This unit can jump up and down cliffs.
-Button/Tooltip/AP_HunterKiller=Elite Hydralisk.<n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
+Button/Tooltip/AP_HunterKiller=Elite Hydralisk.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
 Button/Tooltip/AP_HunterSeekerMissile=Missile that chases its target. Has enough fuel for <d ref="Behavior,AP_SeekerMissileTimeout,Duration"/> seconds. Deals up to <d ref="Effect,AP_SeekerMissileDamage,Amount"/> area damage.
 Button/Tooltip/AP_Hunterling=Mercenary unit that can cliff jump and leap on enemies to stun and damage them. <n/><n/><c val="ffff8a">Can attack ground units.</c>
 Button/Tooltip/AP_HunterlingSummon=Summon <d ref="Effect,AP_SummonZergMercenaryDummy,PeriodicPeriodArray[6]"/> Hunterlings.<n/><n/>A Mercenary unit that can cliff jump and leap on enemies to stun and damage them.<n/><n/><c val="ffff8a">Can attack ground units.</c>
