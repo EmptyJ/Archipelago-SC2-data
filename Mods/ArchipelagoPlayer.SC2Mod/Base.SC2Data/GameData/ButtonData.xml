@@ -7379,4 +7379,10 @@
         <AlertIcon value="Assets\Textures\talent-tychus-level02-additionaloutlaw.dds"/>
         <ChargeText value="Button/ChargeText/AP_FastDelivery"/>
     </CButton>
+    <CButton id="AP_EchidnaWormRallyWorker" parent="RallyEgg">
+        <Tooltip value="Button/Tooltip/AP_EchidnaWormRallyWorker"/>
+    </CButton>
+    <CButton id="AP_EchidnaWormRally" parent="Rally">
+        <Tooltip value="Button/Tooltip/AP_EchidnaWormRally"/>
+    </CButton>
 </Catalog>
