@@ -14761,6 +14761,7 @@
                 <Location value="Player"/>
                 <TimeStart value="60"/>
             </Charge>
+            <Cooldown Location="Player" TimeStart="60" TimeUse="60"/>
         </Cost>
         <Range value="500"/>
         <Arc value="360"/>

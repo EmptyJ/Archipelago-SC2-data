@@ -9774,6 +9774,32 @@ void libABFE498B_gf_AP_Triggers_startNoBuild (int lp_player) {
 
 }
 
+void libABFE498B_gf_AP_Triggers_pauseBuild (int lp_player, bool lp_pauseunpause) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_pauseunpause == true)) {
+        if ((libABFE498B_gf_AP_Triggers_checkSoA(lp_player, 0, true) == false)) {
+            lib15EF4C78_gf_ShowSpearofAdunUI(false, c_transitionDurationDefault);
+            lib15EF4C78_gf_PauseUnpauseSpearofAdunCooldowns(lp_player, true);
+        }
+
+        lib15EF4C78_gf_AP_Player_PauseMercenaryCooldowns(lp_player, true);
+    }
+
+    if ((lp_pauseunpause == false)) {
+        if ((libABFE498B_gf_AP_Triggers_checkSoA(lp_player, 0, false) == true)) {
+            if ((libABFE498B_gf_AP_Triggers_checkSoA(lp_player, 0, true) == false)) {
+                lib15EF4C78_gf_ShowSpearofAdunUI(true, c_transitionDurationDefault);
+                lib15EF4C78_gf_PauseUnpauseSpearofAdunCooldowns(lp_player, false);
+            }
+
+        }
+
+        lib15EF4C78_gf_AP_Player_PauseMercenaryCooldowns(lp_player, false);
+    }
+
+}
+
 void libABFE498B_gf_AP_Triggers_resetBase (int lp_player) {
     // Automatic Variable Declarations
     unitgroup autoF6FB042E_g;
@@ -9792,6 +9818,8 @@ void libABFE498B_gf_AP_Triggers_resetBase (int lp_player) {
     }
 
     lib15EF4C78_gf_AP_Player_findPrimaryTownHall(lp_player);
+    lib15EF4C78_gf_AP_Player_UtilTownHallAutoRally(lp_player);
+    lib15EF4C78_gf_StartingWorkersAutoHarvest(lp_player, RegionEntireMap(), null);
     autoF6FB042E_g = UnitGroup(null, lp_player, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     autoF6FB042E_u = UnitGroupCount(autoF6FB042E_g, c_unitCountAll);
     for (;; autoF6FB042E_u -= 1) {
@@ -9802,10 +9830,14 @@ void libABFE498B_gf_AP_Triggers_resetBase (int lp_player) {
             UnitSetPropertyFixed(autoF6FB042E_var, c_unitPropEnergy, 50.0);
         }
 
+        if (((UnitGetType(autoF6FB042E_var) == "AP_Nexus"))) {
+            UnitAbilityAddChargeUsed(autoF6FB042E_var, "AP_ProbeWarpin", "Abil/AP_ProbeWarpin", 2.0);
+        }
+
     }
+    libNtve_gf_PlayerRemoveCooldown(lp_player, "Abil/AP_ElderProbeWarpin");
+    PlayerAddCooldown(lp_player, "Abil/AP_ElderProbeWarpin", 60.0);
     lib15EF4C78_gf_AP_Player_clearZerglingRespawnChargesFromPlayer(lp_player);
-    lib15EF4C78_gf_AP_Player_UtilTownHallAutoRally(lp_player);
-    lib15EF4C78_gf_StartingWorkersAutoHarvest(lp_player, RegionEntireMap(), null);
 }
 
 void libABFE498B_gf_AP_Triggers_replaceUpgrade (int lp_player, string lp_oldUpgrade, string lp_newUpgrade) {

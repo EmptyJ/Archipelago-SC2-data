@@ -6793,6 +6793,7 @@ bool gt_BonusObjectiveNovaEntersMines_Func (bool testConds, bool runActions) {
     SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, true);
     SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack3, c_soundtrackCueAny, c_soundtrackIndexAny);
     gf_BonusObjectivePauseUnpauseUnitGroup(false, UnitGroup(null, c_playerAny, RegionFromId(79), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, true);
     UnitGroupSelect(UnitGroupSelected(gv_pLAYER_01_USER), gv_pLAYER_01_USER, false);
     UnitSelect(gv_nova, gv_pLAYER_01_USER, true);
     if ((gv_bonusObjective_BlightbringerActive == true)) {
@@ -6863,6 +6864,7 @@ bool gt_BonusObjectiveNovaLeavesMines_Func (bool testConds, bool runActions) {
     CinematicFade(true, 0.75, c_fadeStyleNormal, Color(0.00, 0.00, 0.00), 0.0, true);
     libComC_gf_PauseAITimeCampaign(false);
     gf_BonusObjectivePauseUnpauseUnitGroup(false, UnitGroup(null, c_playerAny, null, UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32))), 0));
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, false);
     TriggerEnable(TriggerGetCurrent(), true);
     return true;
 }
@@ -6927,6 +6929,7 @@ bool gt_BonusObjectiveNovaEntersScienceFacility_Func (bool testConds, bool runAc
     SoundtrackStopCurrent(PlayerGroupAll(), c_soundtrackCategoryAmbience, true);
     SoundtrackDefault(PlayerGroupAll(), c_soundtrackCategoryAmbience, gv_mapMusicTrack4, c_soundtrackCueAny, c_soundtrackIndexAny);
     gf_BonusObjectivePauseUnpauseUnitGroup(false, UnitGroup(null, c_playerAny, RegionFromId(78), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, true);
     UnitGroupSelect(UnitGroupSelected(gv_pLAYER_01_USER), gv_pLAYER_01_USER, false);
     UnitSelect(gv_nova, gv_pLAYER_01_USER, true);
     CinematicFade(true, 0.75, c_fadeStyleNormal, Color(0.00, 0.00, 0.00), 0.0, true);
@@ -6992,6 +6995,7 @@ bool gt_BonusObjectiveNovaLeavesScienceFacility_Func (bool testConds, bool runAc
     CameraSetData(PlayerGroupAll(), "Dflt");
     libComC_gf_PauseAITimeCampaign(false);
     gf_BonusObjectivePauseUnpauseUnitGroup(false, UnitGroup(null, c_playerAny, null, UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32))), 0));
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, false);
     TriggerEnable(TriggerGetCurrent(), true);
     return true;
 }
@@ -11450,6 +11454,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     UnitSetPropertyFixed(UnitFromId(1), c_unitPropResources, gv_introMinerals[7]);
     PlayerModifyPropertyInt(gv_pLAYER_01_USER, c_playerPropVespene, c_playerPropOperSetTo, gv_introGas[0]);
     UnitSetPropertyFixed(UnitFromId(9), c_unitPropResources, gv_introGas[1]);
+    libABFE498B_gf_AP_Triggers_resetBase(gv_pLAYER_01_USER);
     TriggerExecute(gt_StartAI, true, false);
     Wait(0.5, c_timeReal);
     TriggerEnable(gt_DefeatBaseDead, true);

@@ -1723,7 +1723,7 @@ bool gt_DominionAttackerSquads_Func (bool testConds, bool runActions) {
     }
 
     while (true) {
-        if (((ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateCompleted) || (ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateFailed) || (UnitGetOwner(gv_medicBarracks) == gv_pLAYER_01_USER))) {
+        if (((ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateCompleted) || (ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateFailed) || (UnitGetOwner(gv_medicBarracks) == gv_pLAYER_01_USER) || (UnitGetOwner(UnitFromId(1900535743)) == gv_pLAYER_01_USER) || (UnitGetOwner(UnitFromId(682191634)) == gv_pLAYER_01_USER))) {
             return true;
         }
 

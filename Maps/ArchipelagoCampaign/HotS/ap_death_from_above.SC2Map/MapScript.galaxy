@@ -5861,6 +5861,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     PlayerSetState(gv_pLAYER_01_USER, c_playerStateXPGain, true);
     GameTimeOfDayPause(false);
     libSwaC_gf_EnableDisableZerglingRespawn(true);
+    libABFE498B_gf_AP_Triggers_startNoBuild(gv_pLAYER_01_USER);
     UnitSelect(gv_dEHAKA, gv_pLAYER_01_USER, true);
     TriggerEnable(gt_IntroMutaliskDeathSound, false);
     TriggerExecute(gt_DestroyerFieldSetup, true, false);
@@ -6314,6 +6315,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
         }
     }
 
+    libABFE498B_gf_AP_Triggers_resetBase(gv_pLAYER_01_USER);
     if ((gv_cinematicCompleted == true)) {
         lv_fadeDuration = 1.5;
     }

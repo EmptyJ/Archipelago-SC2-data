@@ -2585,6 +2585,7 @@ bool gt_DebugStage2FindIntel_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+    TriggerExecute(gt_ObjectiveRecoverDownedForcesCreate, true, true);
     TriggerExecute(gt_S1GarrisonsAllFilledUp, true, true);
     return true;
 }
@@ -4093,6 +4094,7 @@ bool gt_S1GarrisonsAllFilledUp_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+    TriggerExecute(gt_ObjectiveRecoverDownedForcesCreate, true, true);
     lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_ALL_GARRISONS);
     TriggerExecute(gt_ObjectiveFillGarrisonsComplete, true, false);
     libNtve_gf_ChangeUnitDamage(gv_zeratul, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No);
@@ -10807,6 +10809,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     }
     ActorScopeCreate("AmbTarsonisDebrisLoopActorSoundSite");
     gv_cameraSoundActorScope = libNtve_gf_ActorScopeLastCreated();
+    libABFE498B_gf_AP_Triggers_resetBase(gv_pLAYER_01_USER);
     TriggerExecute(gt_StartAI, true, false);
     Wait(0.5, c_timeReal);
     if ((gv_cinematicCompleted == true)) {
@@ -11329,6 +11332,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
     }
 
     lib5BD4895D_gf_AP_Core_setObjectiveVisibility(gv_objectiveFillGarrisons, false);
+    TriggerExecute(gt_ObjectiveRecoverDownedForcesCreate, true, true);
     lib5BD4895D_gf_AP_Core_setObjectiveVisibility(gv_objectiveRecoverDownedForces, false);
     gv_currentStage = 2;
     libNtve_gf_ClearAnimation(libNtve_gf_MainActorofUnit(gv_zeratul), c_animNameDefault);
@@ -11365,6 +11369,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
     }
     libNCMI_gf_CinematicModeCampaign(false, lv_fadeDuration, false);
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, true);
     if ((gv_cinematicCompleted == true)) {
         CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(71), lv_fadeDuration, -1, 10.0, true);
     }
