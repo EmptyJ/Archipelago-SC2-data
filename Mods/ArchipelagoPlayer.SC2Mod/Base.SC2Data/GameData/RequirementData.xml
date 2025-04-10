@@ -3083,17 +3083,9 @@
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Use" Link="AP_CountUpgradeImmortalImprovedBarrierCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveAnnihilatorAerialTracking">
+    <CRequirement id="AP_HaveAnnihilatorTwilightChassis">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
-    </CRequirement>
-    <CRequirement id="AP_ShowAnnihilatorAerialTracking">
-        <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
-    </CRequirement>
-    <CRequirement id="AP_NotShowAnnihilatorAerialTracking">
-        <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_NotCountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeAnnihilatorTwilightChassisCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveDragoonEnchancedStriderServos">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
