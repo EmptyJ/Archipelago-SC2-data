@@ -7560,4 +7560,56 @@
         <CombineArray value="AP_FastDelivery1"/>
         <CombineArray value="AP_NotFastDelivery2"/>
     </CValidatorCombine>
+    <CValidatorCombine id="AP_MothershipRangeCheckCombine">
+        <Type value="And"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="AP_MothershipRangeCheck"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="AP_MothershipRangeCheckNoBonusRange">
+        <Compare value="LE"/>
+        <Range value="10"/>
+        <WhichLocation Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="AP_MothershipRangeCheck1BonusRange">
+        <Compare value="LE"/>
+        <Range value="11"/>
+        <WhichLocation Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="AP_MothershipRangeCheck2BonusRange">
+        <Compare value="LE"/>
+        <Range value="12"/>
+        <WhichLocation Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="AP_MothershipRangeCheck3BonusRange">
+        <Compare value="LE"/>
+        <Range value="13"/>
+        <WhichLocation Value="TargetUnit"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="AP_MothershipRangeCheckNoBonusRangeAndNoRangeBonusBehavior">
+        <Type value="And"/>
+        <CombineArray value="AP_MothershipRangeCheckNoBonusRange"/>
+        <CombineArray value="AP_HaveNoBonusRangeBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_MothershipRangeCheck1BonusRangeAnd1BonusRangeBehavior">
+        <Type value="And"/>
+        <CombineArray value="AP_MothershipRangeCheck1BonusRange"/>
+        <CombineArray value="AP_Have1BonusRangeBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_MothershipRangeCheck2BonusRangeAnd2BonusRangeBehavior">
+        <Type value="And"/>
+        <CombineArray value="AP_MothershipRangeCheck2BonusRange"/>
+        <CombineArray value="AP_Have2BonusRangeBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_MothershipRangeCheck3BonusRangeAnd3BonusRangeBehavior">
+        <Type value="And"/>
+        <CombineArray value="AP_MothershipRangeCheck3BonusRange"/>
+        <CombineArray value="AP_Have3BonusRangeBehavior"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AP_MothershipRangeCheck">
+        <!-- Targets shall not escape beyond this range to let Tal'darim Mothership still fire -->
+        <CombineArray value="AP_MothershipRangeCheckNoBonusRangeAndNoRangeBonusBehavior"/>
+        <CombineArray value="AP_MothershipRangeCheck1BonusRangeAnd1BonusRangeBehavior"/>
+        <CombineArray value="AP_MothershipRangeCheck2BonusRangeAnd2BonusRangeBehavior"/>
+        <CombineArray value="AP_MothershipRangeCheck3BonusRangeAnd3BonusRangeBehavior"/>
+    </CValidatorCombine>
 </Catalog>

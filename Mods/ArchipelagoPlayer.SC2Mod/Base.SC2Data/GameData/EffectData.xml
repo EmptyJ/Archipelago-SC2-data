@@ -11749,7 +11749,7 @@
         <Behavior value="AP_SOAMothershipTimedLife"/>
     </CEffectApplyBehavior>
     <CEffectDamage id="AP_SOAMothershipv4BeamDamage" parent="DU_WEAP_MISSILE">
-        <ValidatorArray value="MothershipRangeCheck"/>
+        <ValidatorArray value="AP_MothershipRangeCheck"/>
         <ValidatorArray value="NotHidden"/>
         <EditorCategories value="Race:Protoss"/>
         <Visibility value="Visible"/>
@@ -11757,7 +11757,7 @@
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectModifyUnit id="AP_SOAMothershipv4BeamDummy">
-        <ValidatorArray value="MothershipRangeCheck"/>
+        <ValidatorArray value="AP_MothershipRangeCheck"/>
         <EditorCategories value="Race:Protoss"/>
     </CEffectModifyUnit>
     <CEffectCreatePersistent id="AP_SOAMothershipv4BeamPersistent">
@@ -11784,7 +11784,7 @@
         <InitialDelay value="0.25"/>
         <InitialEffect value="AP_SOAMothershipv4BeamDummy"/>
         <PeriodCount value="3"/>
-        <PeriodicValidator value="MothershipRangeCheckCombine"/>
+        <PeriodicValidator value="AP_MothershipRangeCheckCombine"/>
         <PeriodicEffectArray value="AP_SOAMothershipv4BeamDamage"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
