@@ -7385,4 +7385,10 @@
     <CButton id="AP_EchidnaWormRally" parent="Rally">
         <Tooltip value="Button/Tooltip/AP_EchidnaWormRally"/>
     </CButton>
+    <CButton id="AP_Salvage">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
 </Catalog>

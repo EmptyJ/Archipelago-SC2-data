@@ -6871,7 +6871,7 @@
             <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="AP_BunkerTransport,0" Row="2" Column="1"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="AP_BunkerTransport,1" Row="2" Column="2"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="3"/>
             <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_SalvageShared,1" Row="2" Column="4"/>
@@ -7130,7 +7130,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" AbilCmd="BuildInProgress,Cancel" Row="1" Column="3"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_HiSecAutoTracking" Type="Passive" Requirements="AP_HaveHiSecAutoTracking" Row="1" Column="0"/>
             <LayoutButtons Face="AP_DevastatorTurretSlow" Type="Passive" Requirements="AP_HaveDevastatorTurretSlow" Row="1" Column="1"/>
             <LayoutButtons Face="AP_DevastatorTurretPunisherGrenades" Type="Passive" Requirements="AP_HaveDevastatorTurretPunisherGrenades" Row="1" Column="2"/>
@@ -29823,7 +29823,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="1" Column="3"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
             <LayoutButtons Face="Detector" Type="Passive" Requirements="NotUnderConstruction" Row="2" Column="2"/>
             <LayoutButtons Face="AP_ZergCreepStomach" Type="Passive" Requirements="AP_HaveZergCreepStomach" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ZergExcavatingClaws" Type="Passive" Requirements="AP_HaveZergExcavatingClaws" Row="1" Column="2"/>
@@ -29899,7 +29899,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
             <LayoutButtons Face="AP_ZergCreepStomach" Type="Passive" Requirements="AP_HaveZergCreepStomach" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ZergExcavatingClaws" Type="Passive" Requirements="AP_HaveZergExcavatingClaws" Row="1" Column="2"/>
             <LayoutButtons Face="AP_BioelectricPayload" Type="Passive" Requirements="AP_HaveBioelectricPayload" Row="1" Column="0"/>
