@@ -323,7 +323,7 @@
     </CUpgrade>
     <CUpgrade id="AP_MechanicalKnowHow">
         <!-- Override -->
-        <EffectArray Operation="Multiply" Reference="Unit,AP_SCV,LifeMax" Value="1.2001"/>
+        <EffectArray Operation="Multiply" Reference="Unit,Warbot,LifeMax" Value="1.2001"/>
     </CUpgrade>
     <CUpgrade id="AP_ShieldRegenBonus">
         <!-- Override -->
@@ -332,5 +332,27 @@
     <CUpgrade id="AP_ShieldRegenBonus100Stack">
         <!-- Override -->
         <EffectArray Reference="Unit,StoneZealot,ShieldRegenRate" Value="5"/>
+    </CUpgrade>
+    <CUpgrade id="AP_RegenerativeBioSteel">
+        <!-- Override -->
+        <EffectArray Operation="Set" Reference="Unit,Warbot,LifeRegenRate" Value="0.601500"/>
+        <EffectArray Operation="Set" Reference="Unit,Warbot,LifeRegenDelay" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AP_RegenerativeBioSteelLevel2">
+        <!-- Override -->
+        <EffectArray Operation="Set" Reference="Unit,Warbot,LifeRegenRate" Value="2"/>
+        <EffectArray Operation="Set" Reference="Unit,Warbot,LifeRegenDelay" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AP_RegenerativeBioSteelLevel3">
+        <!-- Override -->
+        <EffectArray Operation="Set" Reference="Unit,Warbot,LifeRegenRate" Value="10"/>
+        <EffectArray Operation="Set" Reference="Unit,Warbot,LifeRegenDelay" Value="3"/>
+    </CUpgrade>
+    <CUpgrade id="AP_SwannCommanderVehicleWeaponRange">
+        <!-- Override -->
+        <EffectArray Reference="Weapon,WarbotA,Range" Value="1"/>
+        <EffectArray Reference="Weapon,WarbotA,MinScanRange" Value="1"/>
+        <EffectArray Reference="Weapon,WarbotB,Range" Value="1"/>
+        <EffectArray Reference="Weapon,WarbotB,MinScanRange" Value="1"/>
     </CUpgrade>
 </Catalog>
