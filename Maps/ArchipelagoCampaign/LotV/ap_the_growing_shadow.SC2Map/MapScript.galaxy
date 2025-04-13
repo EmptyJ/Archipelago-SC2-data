@@ -4886,7 +4886,7 @@ bool gt_FindNerazimPylon01_Func (bool testConds, bool runActions) {
     }
     else if (auto38E9833D_val == "Terr") {
         libNtve_gf_CreateUnitsAtPoint2(1, "AP_SpartanCompany", 0, gv_pLAYER_01_USER, PointFromId(492));
-        libVCMI_gf_CreateDropPod(libVCMI_ge_DropPodRace_Terran, PointFromId(1351), UnitLastCreatedGroup(), false, gv_pLAYER_01_USER);
+        libVCMI_gf_CreateDropPod(libVCMI_ge_DropPodRace_Terran, PointWithOffset(PointFromId(1351), 0.0, 0.0), UnitLastCreatedGroup(), false, gv_pLAYER_01_USER);
     }
     else if (auto38E9833D_val == "Zerg") {
         libNtve_gf_CreateUnitsAtPoint2(1, "AP_Hydralisk", 0, gv_pLAYER_01_USER, PointFromId(492));
@@ -4908,7 +4908,7 @@ bool gt_FindNerazimPylon01_Func (bool testConds, bool runActions) {
     }
     else if (autoC051EF36_val == "Terr") {
         libNtve_gf_CreateUnitsAtPoint2(1, "AP_SpartanCompany", 0, gv_pLAYER_01_USER, PointFromId(492));
-        libVCMI_gf_CreateDropPod(libVCMI_ge_DropPodRace_Terran, PointFromId(1352), UnitLastCreatedGroup(), false, gv_pLAYER_01_USER);
+        libVCMI_gf_CreateDropPod(libVCMI_ge_DropPodRace_Terran, PointWithOffset(PointFromId(1351), 2.0, 0.0), UnitLastCreatedGroup(), false, gv_pLAYER_01_USER);
     }
     else if (autoC051EF36_val == "Zerg") {
         libNtve_gf_CreateUnitsAtPoint2(1, "AP_Hydralisk", 0, gv_pLAYER_01_USER, PointFromId(492));
@@ -4930,7 +4930,7 @@ bool gt_FindNerazimPylon01_Func (bool testConds, bool runActions) {
     }
     else if (auto1B9F865A_val == "Terr") {
         libNtve_gf_CreateUnitsAtPoint2(1, "AP_SpartanCompany", 0, gv_pLAYER_01_USER, PointFromId(492));
-        libVCMI_gf_CreateDropPod(libVCMI_ge_DropPodRace_Terran, PointFromId(1354), UnitLastCreatedGroup(), false, gv_pLAYER_01_USER);
+        libVCMI_gf_CreateDropPod(libVCMI_ge_DropPodRace_Terran, PointWithOffset(PointFromId(1351), 1.0, 2.0), UnitLastCreatedGroup(), false, gv_pLAYER_01_USER);
     }
     else if (auto1B9F865A_val == "Zerg") {
         libNtve_gf_CreateUnitsAtPoint2(1, "AP_Hydralisk", 0, gv_pLAYER_01_USER, PointFromId(492));
@@ -5638,6 +5638,7 @@ bool gt_MainSectionCompleteQ_Func (bool testConds, bool runActions) {
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+    TriggerExecute(gt_ObjectiveFindNerazimPylonsCreate, true, true);
     TriggerExecute(gt_ObjectiveReachTemplarBaseComplete, true, true);
     TriggerExecute(gt_MidUpperBaseQ, true, true);
     TriggerExecute(gt_StartGameStage3Q, true, false);
@@ -8382,7 +8383,6 @@ bool gt_MidUpperBaseCleanup_Func (bool testConds, bool runActions) {
     lib5BD4895D_gf_AP_Core_setObjectiveVisibility(gv_objective_ReachTemplar, false);
     lib5BD4895D_gf_AP_Core_setObjectiveVisibility(gv_objectiveRescueStalkers, false);
     VisExploreArea(gv_pLAYER_01_USER, RegionFromId(14), false, false);
-    libVCUI_gf_EnableLowHealthWarning(1, gv_zeratul);
     UnitSetPropertyFixed(UnitFromId(254), c_unitPropEnergy, 0.0);
     if ((gv_cinematicCompleted == true)) {
         lv_fadeDuration = 1.5;
