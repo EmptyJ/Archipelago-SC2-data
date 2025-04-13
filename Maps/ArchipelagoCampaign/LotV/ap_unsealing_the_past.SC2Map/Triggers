@@ -48909,7 +48909,6 @@
         <Action Type="FunctionCall" Id="2F57EBF0"/>
         <Action Type="FunctionCall" Id="F9A318DB"/>
         <Action Type="FunctionCall" Id="8AA6FC77"/>
-        <Action Type="FunctionCall" Id="788C3775"/>
         <Action Type="FunctionCall" Id="06C0218D"/>
         <Action Type="FunctionCall" Id="350F4256"/>
         <Action Type="FunctionCall" Id="821F486D"/>
@@ -49273,19 +49272,6 @@
         <ParameterDef Type="ParamDef" Library="Ntve" Id="A8FE7C12"/>
         <ValueType Type="region"/>
         <ValueId Id="66"/>
-    </Element>
-    <Element Type="FunctionCall" Id="788C3775">
-        <FunctionDef Type="FunctionDef" Library="VCUI" Id="FBA1BC5A"/>
-        <Parameter Type="Param" Id="BDEEFD50"/>
-        <Parameter Type="Param" Id="831CF668"/>
-    </Element>
-    <Element Type="Param" Id="BDEEFD50">
-        <ParameterDef Type="ParamDef" Library="VCUI" Id="ED630CE8"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="00000121"/>
-    </Element>
-    <Element Type="Param" Id="831CF668">
-        <ParameterDef Type="ParamDef" Library="VCUI" Id="2ACA1D7F"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="D88ACDB5"/>
     </Element>
     <Element Type="FunctionCall" Id="06C0218D">
         <FunctionDef Type="FunctionDef" Library="ABFE498B" Id="70370416"/>
