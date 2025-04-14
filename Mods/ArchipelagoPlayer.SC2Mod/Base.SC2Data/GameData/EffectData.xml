@@ -23616,6 +23616,7 @@
         <ImpactEffect value="AP_ScoutNerazimPhantomDashImpact"/>
         <Flags index="Placement" value="1"/>
         <Flags index="PlacementIgnoreBlockers" value="1"/>
+        <Flags index="2D" value="1"/>
     </CEffectLaunchMissile>
     <CEffectIssueOrder id="AP_ScoutNerazimPhantomDashOrder">
         <EditorCategories value="Race:Protoss"/>

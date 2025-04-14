@@ -2434,7 +2434,7 @@ bool gt_RebelMarines01Rescued_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((UnitGroupCount(UnitGroup(null, gv_pLAYER01_USER, RegionFromId(72), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 1))) {
+        if (!((UnitGroupCount(UnitGroup(null, gv_pLAYER01_USER, RegionFromId(72), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0))) {
             return false;
         }
     }
@@ -2483,7 +2483,7 @@ bool gt_RebelMarines02Rescued_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((UnitGroupCount(UnitGroup(null, gv_pLAYER01_USER, RegionFromId(3), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 1))) {
+        if (!((UnitGroupCount(UnitGroup(null, gv_pLAYER01_USER, RegionFromId(3), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0))) {
             return false;
         }
     }
@@ -2532,7 +2532,7 @@ bool gt_RebelMarines03Rescued_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!((UnitGroupCount(UnitGroup(null, gv_pLAYER01_USER, RegionFromId(71), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 1))) {
+        if (!((UnitGroupCount(UnitGroup(null, gv_pLAYER01_USER, RegionFromId(71), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0))) {
             return false;
         }
     }
@@ -4110,6 +4110,13 @@ bool gt_TransmissionRebelMarines01RescuedQ_Func (bool testConds, bool runActions
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+        while (!((libNtve_gf_UnitIsUnderConstruction(UnitGroupUnit(gv_rebelMarines01, 1)) != true))) {
+            Wait(1.0, c_timeGame);
+        }
+        Wait(1.0, c_timeReal);
+    }
+
     auto14DC20EB_g = gv_rebelMarines01;
     auto14DC20EB_u = UnitGroupCount(auto14DC20EB_g, c_unitCountAll);
     for (;; auto14DC20EB_u -= 1) {
@@ -4180,6 +4187,13 @@ bool gt_TransmissionRebelMarines02RescuedQ_Func (bool testConds, bool runActions
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+        while (!((libNtve_gf_UnitIsUnderConstruction(UnitGroupUnit(gv_rebelMarines02, 1)) == false))) {
+            Wait(1.0, c_timeGame);
+        }
+        Wait(1.5, c_timeReal);
+    }
+
     auto2AB4C609_g = gv_rebelMarines02;
     auto2AB4C609_u = UnitGroupCount(auto2AB4C609_g, c_unitCountAll);
     for (;; auto2AB4C609_u -= 1) {
@@ -4252,6 +4266,13 @@ bool gt_TransmissionRebelMarines03RescuedQ_Func (bool testConds, bool runActions
     }
 
     TriggerEnable(TriggerGetCurrent(), false);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+        while (!((libNtve_gf_UnitIsUnderConstruction(UnitGroupUnit(gv_rebelMarines03, 1)) == false))) {
+            Wait(1.0, c_timeGame);
+        }
+        Wait(2.0, c_timeReal);
+    }
+
     auto419AAC42_g = gv_rebelMarines03;
     auto419AAC42_u = UnitGroupCount(auto419AAC42_g, c_unitCountAll);
     for (;; auto419AAC42_u -= 1) {
