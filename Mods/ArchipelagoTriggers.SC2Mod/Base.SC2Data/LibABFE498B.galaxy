@@ -9770,6 +9770,7 @@ void libABFE498B_gf_AP_Triggers_startNoBuild (int lp_player) {
         lib15EF4C78_gf_ShowSpearofAdunUI(false, c_transitionDurationImmediate);
     }
     else {
+        lib15EF4C78_gf_AP_Player_ResetSoA(lp_player);
         lib15EF4C78_gf_PauseUnpauseSpearofAdunCooldowns(lp_player, false);
         lib15EF4C78_gf_PauseUnpauseSpearofAdunAutocasts(lp_player, false);
     }
