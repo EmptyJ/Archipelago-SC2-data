@@ -75,6 +75,7 @@
 <Sound id="SiegeTank_Explode"/>
 <Sound id="UI_TerranPing" Variations="0"/>
 <Sound id="UI_TerranReminderPing" Variations="0"/>
+<Sound id="ToshPissedLinesTosh00007"/>
 <Sound id="THorner01BriefingHorner00002"/>
 <Sound id="THorner01BriefingHorner00004"/>
 <Sound id="THorner01BriefingHorner00006"/>
@@ -82,6 +83,9 @@
 <Sound id="THorner01BriefingHorner00008"/>
 <Sound id="THorner01BriefingRaynor00009"/>
 <Sound id="THorner01BriefingRaynor00018"/>
+<Sound id="ArmorySwannRaynor00080"/>
+<Sound id="ArmorySwannSwann00090"/>
+<Sound id="TZeratul01Zeratul00051"/>
 <Sound id="THorner01Horner00001"/>
 <Sound id="THorner01Swann00002"/>
 <Sound id="THorner01Horner00003"/>
@@ -112,6 +116,7 @@
 <Sound id="THorner03Tychus00057"/>
 <Sound id="LabHansonRaynor00031"/>
 <Sound id="TZeratul02Zeratul00029"/>
+<Sound id="TZeratul02Immortal00070"/>
 <Soundtrack id="THorner01MusicEventA"/>
 <Soundtrack id="THorner01MusicIntro"/>
 <Soundtrack id="THorner01MusicMain"/>
@@ -165,6 +170,8 @@
 <Unit id="AP_CreepTumorBurrowed"/>
 <Unit id="AP_Diamondback"/>
 <Unit id="AP_RoboticsFacility"/>
+<Unit id="AP_ImmortalAiur"/>
+<Unit id="AP_ZealotAiur"/>
 <Unit id="AP_StalkerPurifier"/>
 <Unit id="AP_Pylon"/>
 <Unit id="AP_Forge"/>
@@ -177,4 +184,5 @@
 <Unit id="AP_SpawningPool"/>
 <Unit id="AP_EvolutionChamber"/>
 <Unit id="AP_ZergMercenaryCompound"/>
+<Unit id="AP_StukovInfestedDiamondBack"/>
 </Preload>

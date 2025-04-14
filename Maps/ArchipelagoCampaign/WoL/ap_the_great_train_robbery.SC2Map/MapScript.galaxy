@@ -107,6 +107,12 @@ const int ge_PRESET_ChargeState_Pulsing = 2;
 //--------------------------------------------------------------------------------------------------
 // Global Variables
 //--------------------------------------------------------------------------------------------------
+unit gv_closeDiamondback;
+unit gv_northwestDiamondback;
+unit gv_northDiamondback;
+unit gv_northeastDiamondback;
+unit gv_southeastDiamondback;
+unit gv_southwestDiamondback;
 bool gv_gameOver;
 bool gv_inCinematic;
 playergroup gv_dominionPlayerGroup;
@@ -170,6 +176,12 @@ void InitGlobals () {
     int init_i;
     int init_i1;
 
+    gv_closeDiamondback = UnitFromId(668);
+    gv_northwestDiamondback = UnitFromId(667);
+    gv_northDiamondback = UnitFromId(338);
+    gv_northeastDiamondback = UnitFromId(332);
+    gv_southeastDiamondback = UnitFromId(1318);
+    gv_southwestDiamondback = UnitFromId(463);
     gv_dominionPlayerGroup = PlayerGroupEmpty();
     for (init_i = 0; init_i <= 15; init_i += 1) {
         gv_trainList[init_i].lv_numberOfCars = 5;
@@ -465,6 +477,8 @@ bool auto_gf_RevealDiamondback_TriggerFunc (bool testConds, bool runActions) {
     unit lp_diamondback = auto_gf_RevealDiamondback_lp_diamondback;
 
     // Automatic Variable Declarations
+    string auto64F13C35_val;
+
     // Implementation
     if (((UnitIsAlive(lp_diamondback) == false) || (UnitGetOwner(lp_diamondback) != gv_pLAYER_05_ABANDONEDVEHICLES))) {
         return true;
@@ -475,7 +489,19 @@ bool auto_gf_RevealDiamondback_TriggerFunc (bool testConds, bool runActions) {
     VisRevealerEnable(VisRevealerLastCreated(), true);
     libNtve_gf_CreatePingFacingAngle(PlayerGroupAll(), "PingObjective", UnitGetPosition(lp_diamondback), ColorWithAlpha(100.00, 100.00, 0.00, 0.00), 0.0, 270.0);
     PingSetScale(PingLastCreated(), 0.75);
-    PingSetTooltip(PingLastCreated(), StringExternal("Param/Value/EC45B863"));
+    auto64F13C35_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+    if (auto64F13C35_val == "Prot") {
+        PingSetTooltip(PingLastCreated(), StringExternal("Param/Value/423CD956"));
+    }
+    else if (auto64F13C35_val == "Zerg") {
+        PingSetTooltip(PingLastCreated(), StringExternal("Param/Value/607A5865"));
+    }
+    else if (auto64F13C35_val == "Terr") {
+        PingSetTooltip(PingLastCreated(), StringExternal("Param/Value/EC45B863"));
+    }
+    else {
+        PingSetTooltip(PingLastCreated(), StringExternal("Param/Value/27D46C98"));
+    }
     while (!(((UnitIsAlive(lp_diamondback) == false) || (UnitGetOwner(lp_diamondback) != gv_pLAYER_05_ABANDONEDVEHICLES)))) {
         Wait(1.0, c_timeGame);
     }
@@ -511,22 +537,22 @@ bool auto_gf_RescueDiamondback_TriggerFunc (bool testConds, bool runActions) {
         UnitBehaviorAdd(lp_diamondback, "AP_BurstCapacitorsDamageBuff", lp_diamondback, 1);
     }
 
-    if ((lp_diamondback == UnitFromId(668))) {
+    if ((lp_diamondback == gv_closeDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_CLOSE_DIAMONDBACK);
     }
-    else if ((lp_diamondback == UnitFromId(667))) {
+    else if ((lp_diamondback == gv_northwestDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_NORTHWEST_DIAMONDBACK);
     }
-    else if ((lp_diamondback == UnitFromId(338))) {
+    else if ((lp_diamondback == gv_northDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_NORTH_DIAMONDBACK);
     }
-    else if ((lp_diamondback == UnitFromId(332))) {
+    else if ((lp_diamondback == gv_northeastDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_NORTHEAST_DIAMONDBACK);
     }
-    else if ((lp_diamondback == UnitFromId(463))) {
+    else if ((lp_diamondback == gv_southwestDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_SOUTHWEST_DIAMONDBACK);
     }
-    else if ((lp_diamondback == UnitFromId(1318))) {
+    else if ((lp_diamondback == gv_southeastDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_SOUTHEAST_DIAMONDBACK);
     }
     gv_diamondbacksFound += 1;
@@ -3394,6 +3420,12 @@ bool gt_DiamondbackRescue_Func (bool testConds, bool runActions) {
     unitgroup auto5F63F107_g;
     int auto5F63F107_u;
     unit auto5F63F107_var;
+    unitgroup auto3E65044B_g;
+    int auto3E65044B_u;
+    unit auto3E65044B_var;
+    unitgroup auto4AA30F92_g;
+    int auto4AA30F92_u;
+    unit auto4AA30F92_var;
 
     // Actions
     if (!runActions) {
@@ -3402,7 +3434,7 @@ bool gt_DiamondbackRescue_Func (bool testConds, bool runActions) {
 
     while (true) {
         Wait(0.5, c_timeAI);
-        if ((UnitGroupCount(UnitGroup("AP_Diamondback", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0)) {
+        if (((UnitGroupCount(UnitGroup("AP_ImmortalAiur", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_StukovInfestedDiamondBack", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_Diamondback", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0))) {
             return true;
         }
 
@@ -3415,6 +3447,34 @@ bool gt_DiamondbackRescue_Func (bool testConds, bool runActions) {
                 if ((UnitGetCustomValue(auto5F63F107_var, 0) < 1.0)) {
                     UnitSetCustomValue(auto5F63F107_var, 0, 2.0);
                     gf_RescueDiamondback(auto5F63F107_var);
+                }
+
+            }
+
+        }
+        auto3E65044B_g = UnitGroup("AP_StukovInfestedDiamondBack", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto3E65044B_u = UnitGroupCount(auto3E65044B_g, c_unitCountAll);
+        for (;; auto3E65044B_u -= 1) {
+            auto3E65044B_var = UnitGroupUnitFromEnd(auto3E65044B_g, auto3E65044B_u);
+            if (auto3E65044B_var == null) { break; }
+            if ((UnitGroupCount(UnitGroup(null, gv_pLAYER_01_USER, RegionCircle(UnitGetPosition(auto3E65044B_var), 3.0), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
+                if ((UnitGetCustomValue(auto3E65044B_var, 0) < 1.0)) {
+                    UnitSetCustomValue(auto3E65044B_var, 0, 2.0);
+                    gf_RescueDiamondback(auto3E65044B_var);
+                }
+
+            }
+
+        }
+        auto4AA30F92_g = UnitGroup("AP_ImmortalAiur", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto4AA30F92_u = UnitGroupCount(auto4AA30F92_g, c_unitCountAll);
+        for (;; auto4AA30F92_u -= 1) {
+            auto4AA30F92_var = UnitGroupUnitFromEnd(auto4AA30F92_g, auto4AA30F92_u);
+            if (auto4AA30F92_var == null) { break; }
+            if ((UnitGroupCount(UnitGroup(null, gv_pLAYER_01_USER, RegionCircle(UnitGetPosition(auto4AA30F92_var), 3.0), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
+                if ((UnitGetCustomValue(auto4AA30F92_var, 0) < 1.0)) {
+                    UnitSetCustomValue(auto4AA30F92_var, 0, 2.0);
+                    gf_RescueDiamondback(auto4AA30F92_var);
                 }
 
             }
@@ -3962,6 +4022,11 @@ bool gt_TurbochargedQ_Func (bool testConds, bool runActions) {
     libLbty_gf_PlayTransmissionCueSound(PlayerGroupAll());
     // Transmission - SoundLink("THorner01Swann00007", -1)
     libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Swann00007", -1), c_transmissionDurationAdd, 0.0, true);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+        // Transmission - SoundLink("ArmorySwannRaynor00080", -1)
+        libCamp_gf_SendTransmissionCampaign(null, SoundLink("ArmorySwannRaynor00080", -1), c_transmissionDurationAdd, 0.0, true);
+    }
+
     libCamp_gf_SetAllSoundChannelVolumesCampaign(libNtve_ge_VolumeChannelMode_Game);
     TriggerQueueExit();
     return true;
@@ -4064,9 +4129,9 @@ bool gt_DiamondbacksQ_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    gf_RevealDiamondback(UnitFromId(668));
-    gf_RevealDiamondback(UnitFromId(667));
-    gf_RevealDiamondback(UnitFromId(332));
+    gf_RevealDiamondback(gv_closeDiamondback);
+    gf_RevealDiamondback(gv_northwestDiamondback);
+    gf_RevealDiamondback(gv_northeastDiamondback);
     if ((gv_diamondbacksRevealed == false)) {
         return true;
     }
@@ -4077,9 +4142,9 @@ bool gt_DiamondbacksQ_Func (bool testConds, bool runActions) {
     libLbty_gf_PlayTransmissionCueSound(PlayerGroupAll());
     // Transmission - SoundLink("THorner01Horner00001", -1)
     libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Horner00001", -1), c_transmissionDurationAdd, 0.0, true);
-    // Transmission - SoundLink("THorner01Swann00002", -1)
-    libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Swann00002", -1), c_transmissionDurationAdd, 0.0, true);
     if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Zerg")) {
+        // Transmission - SoundLink("THorner01Swann00002", -1)
+        libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Swann00002", -1), c_transmissionDurationAdd, 0.0, true);
         // Transmission - SoundLink("LabHansonRaynor00031", -1)
         libCamp_gf_SendTransmissionCampaign(null, SoundLink("LabHansonRaynor00031", -1), c_transmissionDurationAdd, 0.0, true);
         // Transmission - SoundLink("THorner03Tychus00057", -1)
@@ -4088,11 +4153,15 @@ bool gt_DiamondbacksQ_Func (bool testConds, bool runActions) {
     }
     else {
         if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+            // Transmission - SoundLink("ArmorySwannSwann00090", -1)
+            libCamp_gf_SendTransmissionCampaign(null, SoundLink("ArmorySwannSwann00090", -1), c_transmissionDurationAdd, 0.0, true);
             // Transmission - SoundLink("TZeratul02Zeratul00029", -1)
             libCamp_gf_SendTransmissionCampaign(null, SoundLink("TZeratul02Zeratul00029", -1), c_transmissionDurationAdd, 0.0, true);
             libCamp_gf_SetAllSoundChannelVolumesCampaign(libNtve_ge_VolumeChannelMode_Game);
         }
         else {
+            // Transmission - SoundLink("THorner01Swann00002", -1)
+            libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Swann00002", -1), c_transmissionDurationAdd, 0.0, true);
             // Transmission - SoundLink("THorner01Swann00005", -1)
             libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Swann00005", -1), c_transmissionDurationAdd, 0.0, true);
             // Transmission - SoundLink("THorner01Horner00003", -1)
@@ -4251,8 +4320,22 @@ bool gt_DiamondbacksRescuedQ_Func (bool testConds, bool runActions) {
 
     libCamp_gf_SetAllSoundChannelVolumesCampaign(libNtve_ge_VolumeChannelMode_Speech);
     libLbty_gf_PlayTransmissionCueSound(PlayerGroupAll());
-    // Transmission - SoundLink("THorner01Horner00025", -1)
-    libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Horner00025", -1), c_transmissionDurationAdd, 0.0, true);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Zerg")) {
+        // Transmission - SoundLink("ToshPissedLinesTosh00007", -1)
+        libCamp_gf_SendTransmissionCampaign(null, SoundLink("ToshPissedLinesTosh00007", -1), c_transmissionDurationAdd, 0.0, true);
+    }
+    else {
+        if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+            // Transmission - SoundLink("TZeratul02Immortal00070", -1)
+            libCamp_gf_SendTransmissionCampaign(null, SoundLink("TZeratul02Immortal00070", -1), c_transmissionDurationAdd, 0.0, true);
+            // Transmission - SoundLink("TZeratul01Zeratul00051", -1)
+            libCamp_gf_SendTransmissionCampaign(null, SoundLink("TZeratul01Zeratul00051", -1), c_transmissionDurationAdd, 0.0, true);
+        }
+        else {
+            // Transmission - SoundLink("THorner01Horner00025", -1)
+            libCamp_gf_SendTransmissionCampaign(null, SoundLink("THorner01Horner00025", -1), c_transmissionDurationAdd, 0.0, true);
+        }
+    }
     libCamp_gf_SetAllSoundChannelVolumesCampaign(libNtve_ge_VolumeChannelMode_Game);
     TriggerQueueExit();
     return true;
@@ -5535,6 +5618,8 @@ bool gt_ObjectiveLocateDiamondbacksCreateQ_Func (bool testConds, bool runActions
     int lv_category;
 
     // Automatic Variable Declarations
+    string auto8E51E4A1_val;
+
     // Variable Initialization
     lv_category = lib5BD4895D_ge_APObjectiveCategory_Secondary;
 
@@ -5552,7 +5637,19 @@ bool gt_ObjectiveLocateDiamondbacksCreateQ_Func (bool testConds, bool runActions
 
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerQueueEnter();
-    ObjectiveCreate(StringExternal("Param/Value/933BCC66"), StringExternal("Param/Value/EF484F1C"), c_objectiveStateHidden, false);
+    auto8E51E4A1_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+    if (auto8E51E4A1_val == "Prot") {
+        ObjectiveCreate(StringExternal("Param/Value/DB7D3EF6"), StringExternal("Param/Value/9A72C01E"), c_objectiveStateHidden, false);
+    }
+    else if (auto8E51E4A1_val == "Zerg") {
+        ObjectiveCreate(StringExternal("Param/Value/8F59436B"), StringExternal("Param/Value/32A1493C"), c_objectiveStateHidden, false);
+    }
+    else if (auto8E51E4A1_val == "Terr") {
+        ObjectiveCreate(StringExternal("Param/Value/933BCC66"), StringExternal("Param/Value/EF484F1C"), c_objectiveStateHidden, false);
+    }
+    else {
+        ObjectiveCreate(StringExternal("Param/Value/2485DFFF"), StringExternal("Param/Value/6BB4ED8F"), c_objectiveStateHidden, false);
+    }
     gv_objective_Locate_Diamondbacks = ObjectiveLastCreated();
     lib5BD4895D_gf_AP_Core_addCategoryObjectiveWithCounter(gv_objective_Locate_Diamondbacks, lv_category, "", gv_diamondbacksFound, 6, false);
     lib5BD4895D_gf_AP_Core_associateObjectiveWithLocation(gv_objective_Locate_Diamondbacks, gv_LOCATION_ID_CLOSE_DIAMONDBACK);
@@ -6222,11 +6319,41 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
         libLbty_gf_OrderWorkerstoGatherNearbyResources(RegionEntireMap(), gv_pLAYER_01_USER);
         lib15EF4C78_gf_AP_Player_UtilTownHallAutoRally(gv_pLAYER_01_USER);
         if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Zerg")) {
+            libNtve_gf_ReplaceUnit(gv_northwestDiamondback, "AP_StukovInfestedDiamondBack", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+            gv_northwestDiamondback = libNtve_gf_LastReplacedUnit();
+            libNtve_gf_TurnAnimationPropertiesOn(libNtve_gf_MainActorofUnit(libNtve_gf_LastReplacedUnit()), "Morph");
+            libNtve_gf_ReplaceUnit(gv_northeastDiamondback, "AP_StukovInfestedDiamondBack", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+            gv_northeastDiamondback = libNtve_gf_LastReplacedUnit();
+            libNtve_gf_TurnAnimationPropertiesOn(libNtve_gf_MainActorofUnit(libNtve_gf_LastReplacedUnit()), "Morph");
+            libNtve_gf_ReplaceUnit(gv_northDiamondback, "AP_StukovInfestedDiamondBack", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+            gv_northDiamondback = libNtve_gf_LastReplacedUnit();
+            libNtve_gf_TurnAnimationPropertiesOn(libNtve_gf_MainActorofUnit(libNtve_gf_LastReplacedUnit()), "Morph");
+            libNtve_gf_ReplaceUnit(gv_closeDiamondback, "AP_StukovInfestedDiamondBack", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+            gv_closeDiamondback = libNtve_gf_LastReplacedUnit();
+            libNtve_gf_TurnAnimationPropertiesOn(libNtve_gf_MainActorofUnit(libNtve_gf_LastReplacedUnit()), "Morph");
+            libNtve_gf_ReplaceUnit(gv_southeastDiamondback, "AP_StukovInfestedDiamondBack", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+            gv_southeastDiamondback = libNtve_gf_LastReplacedUnit();
+            libNtve_gf_TurnAnimationPropertiesOn(libNtve_gf_MainActorofUnit(libNtve_gf_LastReplacedUnit()), "Morph");
+            libNtve_gf_ReplaceUnit(gv_southwestDiamondback, "AP_StukovInfestedDiamondBack", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+            gv_southwestDiamondback = libNtve_gf_LastReplacedUnit();
+            libNtve_gf_TurnAnimationPropertiesOn(libNtve_gf_MainActorofUnit(libNtve_gf_LastReplacedUnit()), "Morph");
             PlayerSetRace(gv_pLAYER_01_USER, "Zerg");
             lib5BD4895D_gf_AP_Core_MapConfig_setPlayerFaction(gv_pLAYER_01_USER, lib5BD4895D_gv_aP_Core_Faction_KERRIGAN_SWARM);
         }
         else {
             if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+                libNtve_gf_ReplaceUnit(gv_northwestDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+                gv_northwestDiamondback = libNtve_gf_LastReplacedUnit();
+                libNtve_gf_ReplaceUnit(gv_northeastDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+                gv_northeastDiamondback = libNtve_gf_LastReplacedUnit();
+                libNtve_gf_ReplaceUnit(gv_northDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+                gv_northDiamondback = libNtve_gf_LastReplacedUnit();
+                libNtve_gf_ReplaceUnit(gv_closeDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+                gv_closeDiamondback = libNtve_gf_LastReplacedUnit();
+                libNtve_gf_ReplaceUnit(gv_southeastDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+                gv_southeastDiamondback = libNtve_gf_LastReplacedUnit();
+                libNtve_gf_ReplaceUnit(gv_southwestDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
+                gv_southwestDiamondback = libNtve_gf_LastReplacedUnit();
                 PlayerSetRace(gv_pLAYER_01_USER, "Prot");
                 lib5BD4895D_gf_AP_Core_MapConfig_setPlayerFaction(gv_pLAYER_01_USER, lib5BD4895D_gv_aP_Core_Faction_DAELAAM);
             }
@@ -6549,6 +6676,8 @@ bool gt_VictoryCinematic_Func (bool testConds, bool runActions) {
     unit auto9586D451_var;
     const int auto92BAF6BC_ae = 4;
     const int auto92BAF6BC_ai = 1;
+    string auto15810C9B_val;
+    string autoAF3BA274_val;
     unitgroup auto9C174672_g;
     int auto9C174672_u;
     unit auto9C174672_var;
@@ -6589,11 +6718,41 @@ bool gt_VictoryCinematic_Func (bool testConds, bool runActions) {
     }
     lv_i = 1;
     for ( ; ( (auto92BAF6BC_ai >= 0 && lv_i <= auto92BAF6BC_ae) || (auto92BAF6BC_ai < 0 && lv_i >= auto92BAF6BC_ae) ) ; lv_i += auto92BAF6BC_ai ) {
-        libNtve_gf_UnitCreateFacingPoint(1, "Marine", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(2.0, 4.0), ((90.0 * IntToFixed(lv_i)) + 45.0)), UnitGetPosition(lv_crate));
-        UnitGroupAdd(lv_crateUnits, UnitLastCreated());
+        auto15810C9B_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+        if (auto15810C9B_val == "Prot") {
+            libNtve_gf_UnitCreateFacingPoint(1, "AP_ZealotAiur", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(2.0, 4.0), ((90.0 * IntToFixed(lv_i)) + 45.0)), UnitGetPosition(lv_crate));
+            UnitGroupAdd(lv_crateUnits, UnitLastCreated());
+        }
+        else if (auto15810C9B_val == "Zerg") {
+            libNtve_gf_UnitCreateFacingPoint(1, "AP_DefilerSCBW", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(2.0, 4.0), ((90.0 * IntToFixed(lv_i)) + 45.0)), UnitGetPosition(lv_crate));
+            UnitGroupAdd(lv_crateUnits, UnitLastCreated());
+        }
+        else if (auto15810C9B_val == "Terr") {
+            libNtve_gf_UnitCreateFacingPoint(1, "Marine", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(2.0, 4.0), ((90.0 * IntToFixed(lv_i)) + 45.0)), UnitGetPosition(lv_crate));
+            UnitGroupAdd(lv_crateUnits, UnitLastCreated());
+        }
+        else {
+            libNtve_gf_UnitCreateFacingPoint(1, "Marine", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(2.0, 4.0), ((90.0 * IntToFixed(lv_i)) + 45.0)), UnitGetPosition(lv_crate));
+            UnitGroupAdd(lv_crateUnits, UnitLastCreated());
+        }
     }
-    libNtve_gf_UnitCreateFacingPoint(1, "Diamondback", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) + 90.0)), UnitGetPosition(lv_crate));
-    libNtve_gf_UnitCreateFacingPoint(1, "Diamondback", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) - 90.0)), UnitGetPosition(lv_crate));
+    autoAF3BA274_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+    if (autoAF3BA274_val == "Prot") {
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_ImmortalAiur", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) + 90.0)), UnitGetPosition(lv_crate));
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_ImmortalAiur", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) - 90.0)), UnitGetPosition(lv_crate));
+    }
+    else if (autoAF3BA274_val == "Zerg") {
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_StukovInfestedDiamondBack", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) + 90.0)), UnitGetPosition(lv_crate));
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_StukovInfestedDiamondBack", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) - 90.0)), UnitGetPosition(lv_crate));
+    }
+    else if (autoAF3BA274_val == "Terr") {
+        libNtve_gf_UnitCreateFacingPoint(1, "Diamondback", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) + 90.0)), UnitGetPosition(lv_crate));
+        libNtve_gf_UnitCreateFacingPoint(1, "Diamondback", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) - 90.0)), UnitGetPosition(lv_crate));
+    }
+    else {
+        libNtve_gf_UnitCreateFacingPoint(1, "Diamondback", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) + 90.0)), UnitGetPosition(lv_crate));
+        libNtve_gf_UnitCreateFacingPoint(1, "Diamondback", 0, gv_pLAYER_01_USER, PointWithOffsetPolar(UnitGetPosition(lv_crate), RandomFixed(5.0, 6.0), (UnitGetFacing(lv_crate) - 90.0)), UnitGetPosition(lv_crate));
+    }
     CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(59), 0.0, -1, 10, true);
     CameraPan(1, UnitGetPosition(lv_crate), 0.0, -1, 10, false);
     CinematicFade(true, 1.0, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, false);
