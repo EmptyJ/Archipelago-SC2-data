@@ -6,6 +6,7 @@
 <Achievement id="THorner01_2"/>
 <Achievement id="THorner01_3"/>
 <Actor id="SYSTEM_ActorConfig"/>
+<Actor id="ProtossWarpInPadFlat"/>
 <Actor id="AgriaDebris" Variations="0,1"/>
 <Actor id="AgriaTree" Variations="5"/>
 <Actor id="AgriaUnderbrush" Variations="2"/>
@@ -63,6 +64,8 @@
 <Actor id="TRaynor01RadarDish"/>
 <Behavior id="KillSquad"/>
 <Behavior id="AP_BurstCapacitorsDamageBuff"/>
+<Behavior id="Exp03StasisLongTerm"/>
+<Behavior id="Exp03StasisEnding"/>
 <Model id="PingArrow"/>
 <Model id="PingBoss"/>
 <Model id="PingObjective"/>

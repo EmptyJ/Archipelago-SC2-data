@@ -232,6 +232,7 @@ point gf_ExpectedPositionofTrainCar (int lp_trainCar, int lp_pathIndex);
 void gf_InitializeCharger (point lp_position, int lp_tunnel, int lp_index);
 void gf_RevealDiamondback (unit lp_diamondback);
 void gf_RescueDiamondback (unit lp_diamondback);
+void gf_AwakenProtoss (unit lp_pickedUnit);
 void gf_SetStackKillerTargetTop ();
 void gf_SetStackKillerTargetBottom ();
 void gf_SetStackKillerTargetSingle ();
@@ -555,6 +556,85 @@ bool auto_gf_RescueDiamondback_TriggerFunc (bool testConds, bool runActions) {
     else if ((lp_diamondback == gv_southeastDiamondback)) {
         lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_SOUTHEAST_DIAMONDBACK);
     }
+    gv_diamondbacksFound += 1;
+    gv_diamondbacksUsed += 1;
+    TriggerExecute(gt_ObjectiveLocateDiamondbacksDiscover, true, true);
+    if ((gv_diamondbacksFound <= gv_totalDiamondbacks)) {
+        lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objective_Locate_Diamondbacks, gv_diamondbacksFound);
+    }
+
+    if ((gv_diamondbacksFound == gv_totalDiamondbacks)) {
+        TriggerExecute(gt_ObjectiveLocateDiamondbacksComplete, true, false);
+        Wait(libCamp_gv_campaignObjectiveDelay, c_timeReal);
+        TriggerExecute(gt_DiamondbacksRescuedQ, true, false);
+    }
+
+    return true;
+}
+
+trigger auto_gf_AwakenProtoss_Trigger = null;
+unit auto_gf_AwakenProtoss_lp_pickedUnit;
+
+void gf_AwakenProtoss (unit lp_pickedUnit) {
+    auto_gf_AwakenProtoss_lp_pickedUnit = lp_pickedUnit;
+
+    if (auto_gf_AwakenProtoss_Trigger == null) {
+        auto_gf_AwakenProtoss_Trigger = TriggerCreate("auto_gf_AwakenProtoss_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_AwakenProtoss_Trigger, false, false);
+}
+
+bool auto_gf_AwakenProtoss_TriggerFunc (bool testConds, bool runActions) {
+    unit lp_pickedUnit = auto_gf_AwakenProtoss_lp_pickedUnit;
+
+    // Variable Declarations
+    unitgroup lv_localGroup;
+
+    // Automatic Variable Declarations
+    unitgroup autoA940D6CB_g;
+    int autoA940D6CB_u;
+    unit autoA940D6CB_var;
+    const int autoE98FC53E_n = 1;
+    int autoE98FC53E_i;
+    unitgroup autoF59A0FB1_g;
+    int autoF59A0FB1_u;
+    unit autoF59A0FB1_var;
+
+    // Variable Initialization
+    lv_localGroup = UnitGroupEmpty();
+
+    // Implementation
+    if ((UnitHasBehavior(lp_pickedUnit, "Exp03StasisLongTerm") == true)) {
+        UnitGroupAdd(lv_localGroup, lp_pickedUnit);
+    }
+
+    autoA940D6CB_g = lv_localGroup;
+    autoA940D6CB_u = UnitGroupCount(autoA940D6CB_g, c_unitCountAll);
+    for (;; autoA940D6CB_u -= 1) {
+        autoA940D6CB_var = UnitGroupUnitFromEnd(autoA940D6CB_g, autoA940D6CB_u);
+        if (autoA940D6CB_var == null) { break; }
+        UnitBehaviorAddPlayer(autoA940D6CB_var, "Exp03StasisEnding", gv_pLAYER_05_ABANDONEDVEHICLES, 1);
+        libNtve_gf_PauseUnit(autoA940D6CB_var, false);
+    }
+    for (autoE98FC53E_i = 1; autoE98FC53E_i <= autoE98FC53E_n; autoE98FC53E_i += 1) {
+        Wait(1.5, c_timeAI);
+    }
+    autoF59A0FB1_g = lv_localGroup;
+    autoF59A0FB1_u = UnitGroupCount(autoF59A0FB1_g, c_unitCountAll);
+    for (;; autoF59A0FB1_u -= 1) {
+        autoF59A0FB1_var = UnitGroupUnitFromEnd(autoF59A0FB1_g, autoF59A0FB1_u);
+        if (autoF59A0FB1_var == null) { break; }
+        UnitBehaviorRemovePlayer(autoF59A0FB1_var, "Exp03StasisLongTerm", gv_pLAYER_05_ABANDONEDVEHICLES, 1);
+        UnitBehaviorRemovePlayer(autoF59A0FB1_var, "Exp03StasisEnding", gv_pLAYER_05_ABANDONEDVEHICLES, 1);
+        UnitSetState(autoF59A0FB1_var, c_unitStateTargetable, true);
+        UnitSetState(autoF59A0FB1_var, c_unitStateSelectable, true);
+        libNtve_gf_MakeUnitInvulnerable(autoF59A0FB1_var, false);
+        AIAttackWaveUseUnit(gv_pLAYER_05_ABANDONEDVEHICLES, autoF59A0FB1_var);
+        AISetUnitScriptControlled(autoF59A0FB1_var, false);
+        libNtve_gf_RescueUnit(autoF59A0FB1_var, gv_pLAYER_01_USER, true);
+    }
+    UIAlertUnit("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/D5B425EC"), null, lp_pickedUnit);
     gv_diamondbacksFound += 1;
     gv_diamondbacksUsed += 1;
     TriggerExecute(gt_ObjectiveLocateDiamondbacksDiscover, true, true);
@@ -3474,7 +3554,7 @@ bool gt_DiamondbackRescue_Func (bool testConds, bool runActions) {
             if ((UnitGroupCount(UnitGroup(null, gv_pLAYER_01_USER, RegionCircle(UnitGetPosition(auto4AA30F92_var), 3.0), UnitFilter(0, 0, (1 << c_targetFilterAir) | (1 << c_targetFilterStructure) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > 0)) {
                 if ((UnitGetCustomValue(auto4AA30F92_var, 0) < 1.0)) {
                     UnitSetCustomValue(auto4AA30F92_var, 0, 2.0);
-                    gf_RescueDiamondback(auto4AA30F92_var);
+                    gf_AwakenProtoss(auto4AA30F92_var);
                 }
 
             }
@@ -6305,9 +6385,17 @@ void gt_ArchInit_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    unitgroup autoF4A6BFA3_g;
+    int autoF4A6BFA3_u;
+    unit autoF4A6BFA3_var;
+
     // Actions
     if (!runActions) {
         return true;
+    }
+
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace != "Prot")) {
+        libNtve_gf_RemoveDoodadsinRegion(RegionEntireMap(), "ProtossWarpInPadFlat");
     }
 
     if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Neut")) {
@@ -6354,6 +6442,17 @@ bool gt_FactionSwapInit_Func (bool testConds, bool runActions) {
                 gv_southeastDiamondback = libNtve_gf_LastReplacedUnit();
                 libNtve_gf_ReplaceUnit(gv_southwestDiamondback, "AP_ImmortalAiur", libNtve_ge_ReplaceUnitOptions_OldUnitsRelative);
                 gv_southwestDiamondback = libNtve_gf_LastReplacedUnit();
+                autoF4A6BFA3_g = UnitGroup("AP_ImmortalAiur", gv_pLAYER_05_ABANDONEDVEHICLES, null, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterStasis - 32)) | (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+                autoF4A6BFA3_u = UnitGroupCount(autoF4A6BFA3_g, c_unitCountAll);
+                for (;; autoF4A6BFA3_u -= 1) {
+                    autoF4A6BFA3_var = UnitGroupUnitFromEnd(autoF4A6BFA3_g, autoF4A6BFA3_u);
+                    if (autoF4A6BFA3_var == null) { break; }
+                    libNtve_gf_MakeUnitInvulnerable(autoF4A6BFA3_var, true);
+                    UnitSetState(autoF4A6BFA3_var, c_unitStateTargetable, false);
+                    UnitSetState(autoF4A6BFA3_var, c_unitStateSelectable, false);
+                    libNtve_gf_PauseUnit(autoF4A6BFA3_var, true);
+                    UnitBehaviorAddPlayer(autoF4A6BFA3_var, "Exp03StasisLongTerm", gv_pLAYER_05_ABANDONEDVEHICLES, 1);
+                }
                 PlayerSetRace(gv_pLAYER_01_USER, "Prot");
                 lib5BD4895D_gf_AP_Core_MapConfig_setPlayerFaction(gv_pLAYER_01_USER, lib5BD4895D_gv_aP_Core_Faction_DAELAAM);
             }
