@@ -15903,6 +15903,7 @@
         <AbilArray Link="AP_NexusTrain"/>
         <AbilArray Link="AP_ProbeWarpin"/>
         <AbilArray Link="AP_ElderProbeWarpin"/>
+        <AbilArray Link="AP_ElderProbeWarpinBackground"/>
         <AbilArray Link="AP_RallyNexus"/>
         <AbilArray Link="AP_stopProtossBuilding"/>
         <AbilArray Link="AP_NexusInvulnerability"/>
@@ -18081,6 +18082,7 @@
                 <Row value="2"/>
                 <Column value="1"/>
             </LayoutButtons>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
         </CardLayouts>
         <CardLayouts CardId="PBl1">
             <LayoutButtons Face="AP_Nexus" Type="AbilCmd" AbilCmd="AP_ProtossBuild,0" Row="0" Column="0"/>
@@ -30667,6 +30669,10 @@
         <LifeMax value="50"/>
         <ShieldsStart value="50"/>
         <ShieldsMax value="50"/>
+        <Food value="0"/>
+        <CostResource index="Minerals" value="0"/>
+        <AbilArray index="5" Link="AP_WarpableAnywhere"/>
+        <AbilArray Link="BuildInProgress"/>
         <SubgroupPriority value="5"/>
         <LeaderAlias value="AP_ElderProbe"/>
         <HotkeyAlias value="AP_ElderProbe"/>

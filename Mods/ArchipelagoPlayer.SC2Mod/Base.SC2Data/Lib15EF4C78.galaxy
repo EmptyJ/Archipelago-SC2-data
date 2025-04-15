@@ -4474,7 +4474,7 @@ void lib15EF4C78_gt_ArchipelagoPlayerHandlersConstructor_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Untitled Trigger 004
+// Trigger: AP_Player_GatewayStickyKeys
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
@@ -4495,7 +4495,7 @@ void lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Untitled Trigger 005
+// Trigger: AP_Player_RoboStickyKeys
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_RoboStickyKeys_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
@@ -4516,7 +4516,7 @@ void lib15EF4C78_gt_AP_Player_RoboStickyKeys_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Untitled Trigger 006
+// Trigger: AP_Player_StargateStickyKeys
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_StargateStickyKeys_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
@@ -5605,6 +5605,38 @@ bool lib15EF4C78_gt_KerriganEconDrop_Func (bool testConds, bool runActions) {
 void lib15EF4C78_gt_KerriganEconDrop_Init () {
     lib15EF4C78_gt_KerriganEconDrop = TriggerCreate("lib15EF4C78_gt_KerriganEconDrop_Func");
     TriggerAddEventUnitDied(lib15EF4C78_gt_KerriganEconDrop, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_ElderProbeWarpInHandler
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    unit lv_unit;
+    point lv_targetPoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitCreate(1, "AP_ElderProbe", c_unitCreateConstruct, EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster), EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), libNtve_gf_RandomAngle());
+    lv_unit = UnitLastCreated();
+    lv_targetPoint = UnitGetPosition(lv_unit);
+    UnitRemove(lv_unit);
+    UnitIssueOrder(lv_caster, OrderTargetingPoint(AbilityCommand("AP_ElderProbeWarpinBackground", 0), lv_targetPoint), c_orderQueueAddToFront);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Init () {
+    lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler = TriggerCreate("lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Func");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler, c_playerAny, "AP_ElderProbeWarpinDummy");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -9538,6 +9570,7 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_ZerglingRespawnFindPrimaryWhenTimeElapsed_Init();
     lib15EF4C78_gt_KerriganPsiStrike_Init();
     lib15EF4C78_gt_KerriganEconDrop_Init();
+    lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Init();
     lib15EF4C78_gt_PM_SoAStatusWatch_Init();
     lib15EF4C78_gt_PM_SoAAutonomousStatusWatch_Init();
     lib15EF4C78_gt_PM_CinematicModeOn_Init();

@@ -14779,6 +14779,14 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_ElderProbes" Requirements="AP_HaveElderProbes"/>
         <PlaceUnit value="AP_ElderProbe"/>
     </CAbilEffectTarget>
+    <CAbilBuild id="AP_ElderProbeBuild">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="AP_ElderProbe" Time="5">
+            <Button DefaultButtonFace="AP_ElderProbes"/>
+        </InfoArray>
+    </CAbilBuild>
     <CAbilWarpTrain id="AP_ProbeWarpin">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <InfoArray index="Train1" Time="5" Unit="AP_Probe">
@@ -14791,6 +14799,20 @@
             </Charge>
             <Cooldown Location="Unit"/>
             <Button DefaultButtonFace="AP_ProbeWarpin" Requirements="AP_HaveProbeWarpin">
+                <Flags index="AllowMinimap" value="1"/>
+                <Flags index="AllowSelfCast" value="1"/>
+            </Button>
+        </InfoArray>
+        <Flags index="WarpTrainersButton" value="0"/>
+    </CAbilWarpTrain>
+    <CAbilWarpTrain id="AP_ElderProbeWarpinBackground">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Train1" Time="5" Unit="AP_ElderProbe">
+            <Charge>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit"/>
+            <Button DefaultButtonFace="AP_ElderProbes" Requirements="AP_HaveElderProbes">
                 <Flags index="AllowMinimap" value="1"/>
                 <Flags index="AllowSelfCast" value="1"/>
             </Button>

@@ -18615,7 +18615,7 @@
         <Model value="Probe"/>
         <AnimBlendTime value="0.250000"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
-        <BuildModel value="ProtossGenericWarpInOut"/>
+        <BuildModel value="AP_ProtossGenericWarpInOut"/>
         <DeathArray index="Normal" ModelLink="ProbeDeath" SoundLink="Probe_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
         <DeathCustoms ModelLink="DarkProbeDeath" Name="DarkProtoss"/>
@@ -23003,6 +23003,7 @@
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_ElderProbeBuild.BuiltStart" Send="Create"/>
         <On Terms="Behavior.AP_UnderConstructionOrDeadTracker.On" Send="Create"/>
         <On Terms="Behavior.AP_UnderConstructionOrDeadTracker.Off" Send="Destroy"/>
         <On Terms="ActorCreation; !ValidateUnit AP_UsesWarpInGlitch" Target="_Unit" Send="$Birth 0 0.000000 0.000000 5.000000 AsDuration"/>
@@ -43978,6 +43979,7 @@
         <On Terms="UnitRevive.AP_ElderProbe" Send="Create"/>
         <On Terms="UnitRevive.AP_ElderProbe" Send="RefSet ::HostTurretBody _Selectable"/>
         <On Terms="UnitConstruction.AP_ElderProbe.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Start" Send="Create AP_ElderProbeWarpin"/>
         <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <Model value="AP_ElderProbe"/>
         <BuildModel value="AP_ElderProbe"/>
@@ -44052,21 +44054,20 @@
         <On Terms="ActorCreation" Send="TimerSet 0.000000 Start"/>
         <On Terms="Signal.*.WarpIn" Target="_Unit" Send="SetOpacity"/>
         <On Terms="TimerExpired; TimerName Start" Send="Signal WarpIn"/>
-        <On Terms="Signal.*.WarpIn" Send="TimerSet 5.000000 WarpIn"/>
         <On Terms="Signal.*.WarpIn" Send="TimerSet 2.000000 Opacity"/>
         <On Terms="TimerExpired; TimerName Opacity" Target="_Unit" Send="SetOpacity 1.000000 3.000000"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="AnimSetCompletion BSD 40.000000"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="SetOpacity 0.000000 2.000000"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="TimerSet 2.000000 Destroy"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="AnimSetCompletion BSD 40.000000"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="SetOpacity 0.000000 2.000000"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="TimerSet 2.000000 Destroy"/>
         <On Terms="Signal.*.WarpIn" Target="_Unit" Send="AnimSetTimeScaleGlobal 0.001000 AP_WarpIn"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Target="_Unit" Send="AnimSetTimeScaleGlobal 1.000000 AP_WarpIn"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Target="_Unit" Send="AnimSetTimeScaleGlobal 1.000000 AP_WarpIn"/>
         <On Terms="Behavior.AP_ElderProbeWarpin.On" Send="Create"/>
         <On Terms="Signal.*.WarpIn" Send="Create WarpTrainStart"/>
         <On Terms="Signal.*.WarpIn" Send="Create WarpTrainLoop"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Target="WarpTrainLoop" Send="Destroy"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="Create WarpTrainStop"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Target="WarpTrainLoop" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="Create WarpTrainStop"/>
         <On Terms="TimerExpired; TimerName Destroy" Send="Destroy"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="Create AP_ElderProbeWarpinSound"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="Create AP_ElderProbeWarpinSound"/>
         <HostSiteOps Ops="SOpAttachHardPoint AP_ProbeWarpinOffset"/>
         <Model value="AP_ProbeWarpin"/>
         <Scale value="0.700000,0.600000,0.600000"/>
