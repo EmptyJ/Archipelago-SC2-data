@@ -21458,6 +21458,11 @@
         <GlossaryWeakArray value="VoidRay"/>
         <HotkeyCategory value="Unit/Category/AP_ProtossUnitsAir"/>
     </CUnit>
+    <CUnit id="AP_SOAMothershipv4Placement" parent="AP_SOAMothershipv4">
+        <!-- Placement only into power fields -->
+        <AbilArray index="8" Link="AP_AutoMorphToSOAMothershipv4"/>
+        <BehaviorArray index="0" Link=""/>
+    </CUnit>
     <CUnit id="AP_MothershipTaldarim" parent="AP_SOAMothershipv4">
         <AbilArray index="8" Link=""/>
         <BehaviorArray index="0" Link=""/>

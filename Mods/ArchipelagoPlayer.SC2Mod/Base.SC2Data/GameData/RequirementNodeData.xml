@@ -4716,6 +4716,7 @@
     <CRequirementSum id="AP_SumCountTaldarimMothershipTypesQueuedOrBetter">
         <OperandArray value="AP_CountUnitSOAMothershipv4QueuedOrBetter"/>
         <OperandArray value="AP_CountUnitMothershipTaldarimQueuedOrBetter"/>
+        <OperandArray value="AP_CountUnitSOAMothershipv4PlacementQueuedOrBetter"/>
     </CRequirementSum>
     <CRequirementCountUnit id="AP_CountUnitSOAMothershipv4QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -4726,6 +4727,11 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
         <Count Link="AP_MothershipTaldarim" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="AP_CountUnitSOAMothershipv4PlacementQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AP_SOAMothershipv4Placement" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUpgrade id="AP_CountUpgradeSOADragoonReviveCompleteOnly">
         <Count Link="AP_SOADragoonRevive" State="CompleteOnly"/>

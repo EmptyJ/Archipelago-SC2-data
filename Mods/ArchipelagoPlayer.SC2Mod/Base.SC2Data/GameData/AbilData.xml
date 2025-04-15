@@ -6676,7 +6676,7 @@
             </Charge>
             <Button DefaultButtonFace="AP_Arbiter" State="Restricted"/>
         </InfoArray>
-        <InfoArray index="Train9" Time="5" Unit="AP_SOAMothershipv4">
+        <InfoArray index="Train9" Time="5" Unit="AP_SOAMothershipv4Placement">
             <Charge Location="Unit">
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -7342,6 +7342,17 @@
         <Flags index="IgnoreUnitCost" value="1"/>
         <Flags index="IgnoreFood" value="1"/>
         <InfoArray Unit="AP_MothershipTaldarim" CollideRange="0"/>
+    </CAbilMorph>
+    <CAbilMorph id="AP_AutoMorphToSOAMothershipv4">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Structures"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Raise"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="Automatic" value="1"/>
+        <Flags index="IgnorePlacement" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <InfoArray Unit="AP_SOAMothershipv4" CollideRange="0"/>
     </CAbilMorph>
     <CAbilEffectTarget id="AP_InduceScopophobia">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>

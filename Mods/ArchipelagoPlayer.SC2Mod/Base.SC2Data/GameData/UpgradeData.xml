@@ -1644,6 +1644,8 @@
         <EffectArray Reference="Unit,AP_SOAMothershipv4,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,LifeArmor" Value="1"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_Oracle,LifeArmorLevel" Value="1"/>
@@ -1828,6 +1830,8 @@
         <EffectArray Reference="Unit,AP_SOAMothershipv4,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldArmor" Value="1"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_Oracle,ShieldArmorLevel" Value="1"/>
@@ -17275,6 +17279,7 @@
         <!--  Mothership -->
         <EffectArray Reference="Unit,AP_SOAMothershipv4,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldRegenRate" Value="0.05"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldRegenRate" Value="0.05"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_OracleStasisTrap,ShieldRegenRate" Value="0.05"/>
@@ -17410,6 +17415,7 @@
         <!--  Mothership -->
         <EffectArray Reference="Unit,AP_SOAMothershipv4,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldRegenRate" Value="5"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldRegenRate" Value="5"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_OracleStasisTrap,ShieldRegenRate" Value="5"/>
