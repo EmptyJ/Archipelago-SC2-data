@@ -199,6 +199,9 @@
         <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
+    <ObjectDoodad Id="1836973997" Position="89.0603,92.2248,9.9504" Rotation="4.8388" Scale="1,1,1" Type="ProtossWarpInPadFlat">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="1097" Variation="3" Position="191,16,7.9848" Rotation="1.5703" Scale="1,1,1" Type="ChainLinkFenceDiagonal">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
@@ -1972,6 +1975,9 @@
         <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
+    <ObjectDoodad Id="1787207299" Position="117.0368,130.3608,9.9577" Rotation="0.025" Scale="1,1,1" Type="ProtossWarpInPadFlat">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="2354" Variation="6" Position="126.7185,133.9335,7.9616" Rotation="2.6687" Scale="0.993,0.993,0.993" Type="PortZionGroundMix">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
@@ -2090,7 +2096,7 @@
         <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
-    <ObjectDoodad Id="1364" Variation="1" Position="87.7712,92.2275,9.979" Rotation="1.582" Scale="1,1,1" Type="MarSaraGroundProps">
+    <ObjectDoodad Id="1364" Variation="1" Position="88,92.5,9.9631" Rotation="5.6796" Scale="1,1,1" Type="MarSaraGroundProps">
         <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
@@ -5431,6 +5437,9 @@
     <ObjectDoodad Id="635" Variation="5" Position="166,55.5,9.9831" Scale="1,1,1" Type="ChainLinkFenceStraight">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
+    <ObjectDoodad Id="263771024" Position="172.0898,54.563,9.9592" Rotation="1.335" Scale="1,1,1" Type="ProtossWarpInPadFlat">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="2688" Variation="5" Position="177.5,91.5,9.9714" Rotation="2.0317" Scale="0.9707,0.9707,0.9707" Type="TarsonisFoliage">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
@@ -6449,6 +6458,9 @@
         <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
+    <ObjectDoodad Id="1842934643" Position="88.8862,68.6091,10.025" Rotation="3.1982" Scale="1,1,1" Type="ProtossWarpInPadFlat">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="975" Position="179.5,62.5,7.9848" Rotation="2.4392" Scale="1,1,1" Type="BunkerWrecked">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
@@ -6670,6 +6682,10 @@
     <ObjectDoodad Id="2272" Variation="3" Position="126.013,81.9255,10.0556" Rotation="5.1145" Scale="1.0283,1.0283,1.0283" Type="PortZionGroundMix">
         <Flag Index="HeightAbsolute" Value="1"/>
     </ObjectDoodad>
+    <ObjectDoodad Id="35822448" Position="86.1052,115.7805,10.0234" Rotation="0.794" Scale="1,1,1" Type="ProtossWarpInPadFlat">
+        <Flag Index="HeightAbsolute" Value="1"/>
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectDoodad>
     <ObjectDoodad Id="998" Variation="1" Position="86.0297,61.3698,9.9858" Rotation="3.1413" Scale="1,1,1" Type="WaterTank">
         <Flag Index="HeightAbsolute" Value="1"/>
         <Flag Index="ForcePlacement" Value="1"/>
@@ -6807,6 +6823,9 @@
     </ObjectDoodad>
     <ObjectDoodad Id="1052" Position="194.659,128.3503,7.9755" Rotation="3.917" Scale="1,1,1" Type="TarsonisCharger">
         <Flag Index="HeightAbsolute" Value="1"/>
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectDoodad>
+    <ObjectDoodad Id="1914087395" Position="96.4042,139.5637,10.0202" Rotation="0.6235" Scale="1,1,1" Type="ProtossWarpInPadFlat">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectDoodad>
     <ObjectDoodad Id="1976" Variation="1" Position="219.1198,62.73,11.9753" Rotation="4.364" Scale="3,3,3" Type="KorhalBuildingWrecked">
@@ -8045,7 +8064,7 @@
         <AIRebuild Index="2" Value="14"/>
         <AIRebuild Index="4" Value="14"/>
     </ObjectUnit>
-    <ObjectUnit Id="809615216" Position="120.4384,92.9531,0" Rotation="4.792" Scale="1,1,1" UnitType="AP_Zergling" Player="1"/>
+    <ObjectUnit Id="809615216" Position="120.5,93.5,0" Rotation="4.792" Scale="1,1,1" UnitType="AP_Zergling" Player="1"/>
     <ObjectUnit Id="1417" Position="61.5,111.5,0" Rotation="5.496" Scale="1,1,1" UnitType="Bunker" Player="2">
         <AIRebuild Index="2" Value="14"/>
         <AIRebuild Index="4" Value="14"/>
@@ -8652,6 +8671,9 @@
         <AIRebuild Index="2" Value="14"/>
         <AIRebuild Index="4" Value="14"/>
     </ObjectUnit>
+    <ObjectUnit Id="1536418717" Position="119.5,92,0" Rotation="4.7675" Scale="1,1,1" UnitType="AP_Zergling" Player="1">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="660960729" Position="122.5,84.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="AP_ZergMercenaryCompound" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
@@ -8987,7 +9009,7 @@
         <AIRebuild Index="4" Value="14"/>
     </ObjectUnit>
     <ObjectUnit Id="1890" Position="148.3894,49.4338,0" Rotation="1.4216" Scale="1,1,1" UnitType="Lyote"/>
-    <ObjectUnit Id="262609847" Position="119.4724,92.3186,0" Rotation="4.91" Scale="1,1,1" UnitType="AP_Zergling" Player="1"/>
+    <ObjectUnit Id="262609847" Position="119.5,93,0" Rotation="4.91" Scale="1,1,1" UnitType="AP_Zergling" Player="1"/>
     <ObjectUnit Id="142" Variation="1" Position="62,133.5,0" Scale="1,1,1" UnitType="MineralField" Resources="897">
         <Resources Index="3" Value="616"/>
         <Resources Index="4" Value="616"/>
@@ -9199,7 +9221,7 @@
         <AIFlag Index="IsUseable" Value="0"/>
     </ObjectUnit>
     <ObjectUnit Id="1888" Position="159.794,116.7373,0" Rotation="4.6374" Scale="1,1,1" UnitType="Lyote"/>
-    <ObjectUnit Id="1449328828" Position="120.5617,91.7004,0" Rotation="4.839" Scale="1,1,1" UnitType="AP_Zergling" Player="1"/>
+    <ObjectUnit Id="1449328828" Position="120.5,91.5,0" Rotation="4.839" Scale="1,1,1" UnitType="AP_Zergling" Player="1"/>
     <ObjectUnit Id="329" Position="124.6713,92.4206,0" Rotation="5.1015" Scale="1,1,1" UnitType="AP_Marine" Player="1"/>
     <ObjectUnit Id="1327" Position="64.2697,128.8598,0" Rotation="5.4836" Scale="1,1,1" UnitType="Marine" Player="4">
         <AIRebuild Index="1" Value="0"/>
@@ -10279,6 +10301,7 @@
         <GroupObject Id="1260792330"/>
         <GroupObject Id="1289545161"/>
         <GroupObject Id="1449328828"/>
+        <GroupObject Id="1536418717"/>
         <GroupObject Id="1554303061"/>
         <GroupObject Id="1606529922"/>
         <GroupObject Id="1846451425"/>
