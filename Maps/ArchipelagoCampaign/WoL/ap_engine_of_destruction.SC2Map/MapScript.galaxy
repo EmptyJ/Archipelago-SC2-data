@@ -1141,6 +1141,7 @@ bool gt_IntroSequence_Func (bool testConds, bool runActions) {
     CinematicFade(true, 1.5, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, true);
     PlayerPauseAllCooldowns(gv_p01_USER, true);
     PlayerPauseAllCharges(gv_p01_USER, true);
+    libABFE498B_gf_AP_Triggers_startNoBuild(gv_p01_USER);
     UIAlertPoint("Trigger", gv_p01_USER, StringExternal("Param/Value/9E4D978B"), null, PointFromId(966));
     TriggerExecute(gt_StartGameWarehouse, true, false);
     return true;
@@ -1611,6 +1612,7 @@ bool gt_StartGameEscort_Func (bool testConds, bool runActions) {
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeSupply, true);
     PlayerPauseAllCooldowns(gv_p01_USER, false);
     PlayerPauseAllCharges(gv_p01_USER, false);
+    libABFE498B_gf_AP_Triggers_resetBase(gv_p01_USER);
     gv_odinAIPlayerTarget = gv_p04_DOMINION_INFANTRY_A;
     TriggerExecute(gt_CreateOdinBossBar, true, false);
     PingCreate(PlayerGroupSingle(gv_p01_USER), "PingSimple", UnitGetPosition(UnitFromId(2)), ColorWithAlpha(0.00, 100.00, 0.00, 0.00), 0.0);

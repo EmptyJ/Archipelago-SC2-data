@@ -6144,7 +6144,6 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     GameTimeOfDayPause(false);
     PlayerSetState(gv_pLAYER_01_USER, c_playerStateXPGain, true);
     VisRevealArea(gv_pLAYER_01_USER, RegionFromId(66), 5.0, false);
-    libVCUI_gf_ShowSpearofAdunUI(false, c_transitionDurationImmediate);
     libABFE498B_gf_AP_Triggers_startNoBuild(gv_pLAYER_01_USER);
     RegionPlayableMapSet(RegionFromId(32));
     libNtve_gf_ShowHideDoodadsInRegion(false, RegionFromId(75), "PurifierStasisPadFlat");
