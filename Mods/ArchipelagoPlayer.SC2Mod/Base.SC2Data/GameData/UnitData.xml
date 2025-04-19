@@ -12444,6 +12444,7 @@
         <BehaviorArray Link="AP_SOAHeroicShieldProcBuff"/>
         <WeaponArray Link="AP_CarrierPurifierPrismaticBeam"/>
         <WeaponArray Link="AP_CarrierPurifierBomberLaunch"/>
+        <WeaponArray Link="AP_CarrierPurifierPrismaticBeamDummy"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -12468,7 +12469,6 @@
         <TacticalAI value="Carrier"/>
         <Mass value="0.6"/>
         <EquipmentArray Weapon="AP_CarrierPurifierBomberBomb"/>
-        <EquipmentArray Weapon="AP_CarrierPurifierPrismaticBeamDummy"/>
         <GlossaryCategory value="Unit/Category/AP_ProtossUnitsAir"/>
         <GlossaryPriority value="170"/>
         <GlossaryStrongArray value="Thor"/>

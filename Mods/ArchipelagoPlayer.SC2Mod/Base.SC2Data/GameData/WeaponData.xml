@@ -3260,7 +3260,7 @@
         <Options index="Disabled" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
         <DisplayEffect value="AP_CarrierPurifierChargeBeamDamageCharge1"/>
-        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters value="Air,Visible;Player,Ally,Neutral,Enemy,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <MinScanRange value="8.5"/>
         <Range value="8"/>
         <RangeSlop value="2"/>
