@@ -33187,8 +33187,10 @@
         <Variable Type="Variable" Library="VCMI" Id="831D332A"/>
     </Element>
     <Element Type="Trigger" Id="ED682307">
+        <Variable Type="Variable" Id="AEAF07D3"/>
         <Event Type="FunctionCall" Id="8C7D831B"/>
         <Event Type="FunctionCall" Id="E7BF741D"/>
+        <Condition Type="FunctionCall" Id="A3B5E5F7"/>
         <Action Type="Comment" Id="A98E6EF2"/>
         <Action Type="FunctionCall" Id="DD92FB60"/>
         <Action Type="Comment" Id="371041CB"/>
@@ -33196,6 +33198,18 @@
         <Action Type="FunctionCall" Id="C7E8810C"/>
         <Action Type="Comment" Id="5A93F801"/>
         <Action Type="FunctionCall" Id="04EE74BA"/>
+    </Element>
+    <Element Type="Variable" Id="AEAF07D3">
+        <VariableType>
+            <Type Value="unit"/>
+        </VariableType>
+        <Value Type="Param" Id="325DCB68"/>
+    </Element>
+    <Element Type="Param" Id="325DCB68">
+        <FunctionCall Type="FunctionCall" Id="962A3C31"/>
+    </Element>
+    <Element Type="FunctionCall" Id="962A3C31">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
     </Element>
     <Element Type="FunctionCall" Id="8C7D831B">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="D00F9D6F"/>
@@ -33244,6 +33258,39 @@
         <ParameterDef Type="ParamDef" Library="Ntve" Id="3F2584C8"/>
         <Value>PickupGas100</Value>
         <ValueType Type="abilcmd"/>
+    </Element>
+    <Element Type="FunctionCall" Id="A3B5E5F7">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+        <Parameter Type="Param" Id="B1433DD0"/>
+        <Parameter Type="Param" Id="54DB76BD"/>
+        <Parameter Type="Param" Id="763830D6"/>
+    </Element>
+    <Element Type="Param" Id="B1433DD0">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+        <FunctionCall Type="FunctionCall" Id="37B45AF5"/>
+    </Element>
+    <Element Type="FunctionCall" Id="37B45AF5">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="22E8E351"/>
+        <Parameter Type="Param" Id="272B5B1D"/>
+        <Parameter Type="Param" Id="FBA18D5E"/>
+    </Element>
+    <Element Type="Param" Id="272B5B1D">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="54D03063"/>
+        <Variable Type="Variable" Id="AEAF07D3"/>
+    </Element>
+    <Element Type="Param" Id="FBA18D5E">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="9EB21B31"/>
+        <ValueType Type="region"/>
+        <ValueId Id="15"/>
+    </Element>
+    <Element Type="Param" Id="54DB76BD">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+    </Element>
+    <Element Type="Param" Id="763830D6">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+        <Value>true</Value>
+        <ValueType Type="bool"/>
     </Element>
     <Element Type="Comment" Id="A98E6EF2">
         <Comment>
