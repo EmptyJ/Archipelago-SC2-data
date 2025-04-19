@@ -4335,6 +4335,7 @@ bool gt_ObjectivePowerUpWarpGatesComplete_Func (bool testConds, bool runActions)
 
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerExecute(gt_ObjectivePowerUpWarpGatesCreate, true, false);
+    lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objectivePowerUpWarpGates, 3);
     lib5BD4895D_gf_AP_Core_setObjectiveCompleted(gv_objectivePowerUpWarpGates);
     Wait(libVCMI_gv_campaignObjectiveDelay, c_timeReal);
     return true;
