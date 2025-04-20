@@ -7616,4 +7616,9 @@
         <WhichPlayer Value="Caster"/>
         <Value value="AP_HaveOracleStasisWardUpgradeL2"/>
     </CValidatorPlayerRequirement>
+    <CValidatorLocationComparePower id="AP_HasAtLeastNormalPower">
+        <ResultFailed value="Error,Error/AP_TargetIsUnpowered"/>
+        <PowerLink value="PowerSource"/>
+        <Compare value="GT"/>
+    </CValidatorLocationComparePower>
 </Catalog>

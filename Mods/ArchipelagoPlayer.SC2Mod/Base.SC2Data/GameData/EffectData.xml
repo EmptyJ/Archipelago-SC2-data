@@ -24063,6 +24063,7 @@
     </CEffectModifyUnit>
     <CEffectCreatePersistent id="AP_ElderProbeWarpin">
         <EditorCategories value="Race:Protoss"/>
+        <ValidatorArray value="AP_HasAtLeastNormalPower"/>
         <OffsetVectorStartLocation Value="SourcePoint"/>
         <OffsetVectorEndLocation Value="SourcePoint"/>
         <PeriodCount value="5"/>
