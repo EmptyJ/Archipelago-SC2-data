@@ -413,6 +413,7 @@ void gf_BunkerGet (unit lp_unit) {
     PingCreate(PlayerGroupSingle(gv_p1_USER), "PingSimple", UnitGetPosition(lp_unit), ColorWithAlpha(0.00, 100.00, 0.00, 0.00), 5.0);
     UIAlertPoint("Trigger", gv_p1_USER, StringExternal("Param/Value/EB027D65"), null, UnitGetPosition(lp_unit));
     libNtve_gf_RescueUnit(lp_unit, gv_p1_USER, true);
+    lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lp_unit);
     TriggerExecute(gt_BunkerLineQ, true, false);
 }
 

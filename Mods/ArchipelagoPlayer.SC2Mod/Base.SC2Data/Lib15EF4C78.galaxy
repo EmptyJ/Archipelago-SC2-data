@@ -3768,6 +3768,7 @@ void lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit (unit lp_unit) {
     for ( ; ( (auto01D20A2A_ai >= 0 && lv_index <= auto01D20A2A_ae) || (auto01D20A2A_ai < 0 && lv_index >= auto01D20A2A_ae) ) ; lv_index += auto01D20A2A_ai ) {
         lv_behavior = (CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(lp_unit), "BehaviorArray[" + IntToString(lv_index) + "].Link", UnitGetOwner(lp_unit)));
         if ((lv_behavior != null) && (lv_behavior != "")) {
+            UnitBehaviorRemove(lp_unit, lv_behavior, c_unitBehaviorCountAll);
             UnitBehaviorAdd(lp_unit, lv_behavior, lp_unit, 1);
         }
 
