@@ -18768,6 +18768,7 @@
         <EditorCategories value=""/>
         <SearchFilters value="-;Self,Neutral,Enemy,Missile,Destructible,Dead,Hidden"/>
         <AreaArray Radius="10" Effect="AP_FusionCoreFusionReactorBuffAB"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_FusionCoreFusionReactorBuffAB">
         <EditorCategories value=""/>
