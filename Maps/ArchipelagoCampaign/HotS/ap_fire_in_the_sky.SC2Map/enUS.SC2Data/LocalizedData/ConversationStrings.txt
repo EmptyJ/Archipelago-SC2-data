@@ -1,3 +1,5 @@
-Character/Name/Tychus=Tychus
+﻿Character/Name/Tychus=Tychus
+Conversation/RaynorDrills/Line00001=Get an SCV to repair that Laser Drill!
+Conversation/ZeratulPylons/Line00001=There are many abandoned structures in this place, that we can make use of. They merely need their power restored, by the construction of a few well-placed pylons.
 Conversation/zMission_Char02/Line00456=Fire it up! One hundred and seventy four gigawatts - 'the power of the sun at your fingertips.' Now get it aimed at that door and let's get cuttin'!
 Conversation/zMission_Char02/Line00654=Hey hey hey! We need that damn drill! Don't trash it!
