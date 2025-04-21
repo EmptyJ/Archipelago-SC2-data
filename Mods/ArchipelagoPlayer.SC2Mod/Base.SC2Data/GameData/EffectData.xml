@@ -3302,6 +3302,11 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_LockOnDummyWeapon"/>
     </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AP_LockOnDummyWeaponRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_LockOnDummyWeapon"/>
+    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="AP_LockOnEndDisableAttack">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Caster"/>
