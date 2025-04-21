@@ -80,6 +80,7 @@ Param/Value/C5438079=Move your units here<n/>to rescue the rebels.
 Param/Value/C95BAC98=Ten minutes until evacuation...
 Param/Value/CAB93CB5=Rebel Fighters
 Param/Value/CAF01B4A=/8
+Param/Value/CBF5072A=Triggering Drop Pod
 Param/Value/CF3A2355=Zerg Forces
 Param/Value/D0B3E765=Move your units here<n/>to rescue the rebels.
 Param/Value/D4649464=<c val="00FF00">Engineering Bay</c>

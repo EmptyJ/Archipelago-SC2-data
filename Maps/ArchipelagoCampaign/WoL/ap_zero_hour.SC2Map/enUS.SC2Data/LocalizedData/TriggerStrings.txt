@@ -176,6 +176,7 @@ Trigger/Name/CB350C5D=Tip Repair Q
 Trigger/Name/CBE8D293=Start First Zerg Wave - Special
 Trigger/Name/D16B405C=Victory Nydus - Spawn 03
 Trigger/Name/D19696BC=Init 01 Technology
+Trigger/Name/D2FB2435=DEBUG - Drop Pod
 Trigger/Name/D3F1056B=Transmission - 5 Minute Warning Q
 Trigger/Name/D577D414=Attack Waves - Red - Zerg P02
 Trigger/Name/D5A5A7CD=Transmission - Rebel Marines 01 Mayday! Q
