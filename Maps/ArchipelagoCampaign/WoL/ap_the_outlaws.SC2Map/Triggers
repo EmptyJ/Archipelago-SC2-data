@@ -14725,6 +14725,7 @@
         <Parameter Type="Param" Id="2189188C"/>
         <FunctionCall Type="FunctionCall" Id="5A1048D9"/>
         <FunctionCall Type="FunctionCall" Id="9D816743"/>
+        <FunctionCall Type="FunctionCall" Id="AAA55B27"/>
     </Element>
     <Element Type="Param" Id="2189188C">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="F96B466D"/>
@@ -14838,6 +14839,18 @@
         <Value>Marine</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
+    </Element>
+    <Element Type="FunctionCall" Id="AAA55B27">
+        <FunctionDef Type="FunctionDef" Library="15EF4C78" Id="B5A72AB1"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="9441B8B5"/>
+        <Parameter Type="Param" Id="80BF0846"/>
+    </Element>
+    <Element Type="Param" Id="80BF0846">
+        <ParameterDef Type="ParamDef" Library="15EF4C78" Id="FD281233"/>
+        <FunctionCall Type="FunctionCall" Id="CB36DC39"/>
+    </Element>
+    <Element Type="FunctionCall" Id="CB36DC39">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
     </Element>
     <Element Type="FunctionCall" Id="DC61B949">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000089"/>

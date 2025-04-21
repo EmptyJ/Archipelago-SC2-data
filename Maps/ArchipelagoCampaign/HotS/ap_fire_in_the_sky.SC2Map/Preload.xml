@@ -98,6 +98,8 @@
 <Model id="PingAlert"/>
 <Model id="PingBoss"/>
 <Model id="PingWarning"/>
+<Model id="RaynorMarinePortrait"/>
+<Model id="ZeratulPortrait"/>
 <Race id="Terr"/>
 <Race id="Zerg"/>
 <Race id="Prot"/>
@@ -206,8 +208,10 @@
 <Sound id="zMission_Expedition01_ExepeditionLeader_057"/>
 <Sound id="zMission_Char02_Tychus_456"/>
 <Sound id="zMission_Char02_Tychus_654"/>
+<Sound id="AP_RaynorDrills00001"/>
 <Sound id="BattlecruiserStinger"/>
 <Sound id="ScourgeCannonStinger"/>
+<Sound id="AP_ZeratulPylons00001"/>
 <Soundtrack id="ZChar02MusicAlt"/>
 <Soundtrack id="ZChar02MusicMain"/>
 <Soundtrack id="ZChar02MusicOutro14_WarfieldDefeated"/>
