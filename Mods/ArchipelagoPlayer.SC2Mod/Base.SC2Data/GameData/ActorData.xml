@@ -44111,8 +44111,6 @@
         <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="AnimSetCompletion BSD 40.000000"/>
         <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="SetOpacity 0.000000 2.000000"/>
         <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="TimerSet 2.000000 Destroy"/>
-        <On Terms="Signal.*.WarpIn" Target="_Unit" Send="AnimSetTimeScaleGlobal 0.001000 AP_WarpIn"/>
-        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Target="_Unit" Send="AnimSetTimeScaleGlobal 1.000000 AP_WarpIn"/>
         <On Terms="Behavior.AP_ElderProbeWarpin.On" Send="Create"/>
         <On Terms="Signal.*.WarpIn" Send="Create WarpTrainStart"/>
         <On Terms="Signal.*.WarpIn" Send="Create WarpTrainLoop"/>
