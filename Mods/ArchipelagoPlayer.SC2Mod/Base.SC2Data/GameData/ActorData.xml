@@ -9944,10 +9944,18 @@
     </CActorMissile>
     <CActorUnit id="AP_ImpalerEgg" parent="GenericUnitMorph" unitName="AP_ImpalerEgg">
         <Aliases value="_UnitMedium"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEggMorphling" Send="Destroy"/>
+        <On Terms="UnitBirth.AP_ImpalerEggMorphling" Send="Create SoundEmitter AP_HydraliskLurkerEgg_Ambience"/>
+        <On Terms="UnitBirth.AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_ImpalerEggMorphling" Send="RefSet ::HostTurretBody _Selectable"/>
+        <On Terms="UnitConstruction.AP_ImpalerEggMorphling.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_ImpalerEggMorphling.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Hydralisk" Send="AnimBaselineStop"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Hydralisk" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
         <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
         <HostSiteOps Ops="SOpRotVariancerForward30"/>
         <DeathArray index="Normal" ModelLink="AP_HydraliskLurkerEggDeath" SoundLink="LurkerEgg_Explode"/>
@@ -9978,6 +9986,7 @@
     </CActorUnit>
     <CActorSound id="AP_ImpalerEggDeathSound" parent="SoundOneShot">
         <On Terms="UnitDeath.AP_ImpalerEgg; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.AP_ImpalerEggMorphling; PassChance 25.000000" Send="Create"/>
         <Sound value="LurkerEgg_Death"/>
     </CActorSound>
     <CActorModel id="AP_ImpalerMissileGroundCracks" parent="ModelAnimationStyleOneShot">
@@ -10004,10 +10013,18 @@
         <IconArcLength value="5.000000"/>
     </CActorRange>
     <CActorUnit id="AP_HydraliskLurkerEgg" parent="GenericUnitMorph" unitName="AP_HydraliskLurkerEgg">
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEggMorphling" Send="Destroy"/>
+        <On Terms="UnitBirth.AP_HydraliskLurkerEggMorphling" Send="Create SoundEmitter AP_HydraliskLurkerEgg_Ambience"/>
+        <On Terms="UnitBirth.AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_HydraliskLurkerEggMorphling" Send="RefSet ::HostTurretBody _Selectable"/>
+        <On Terms="UnitConstruction.AP_HydraliskLurkerEggMorphling.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_HydraliskLurkerEggMorphling.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Hydralisk" Send="AnimBaselineStop"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Hydralisk" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
         <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
         <HostSiteOps Ops="SOpRotVariancerForward30"/>
         <DeathArray index="Normal" ModelLink="AP_HydraliskLurkerEggDeath" SoundLink="LurkerEgg_Explode"/>
@@ -10037,6 +10054,7 @@
     </CActorUnit>
     <CActorSound id="AP_HydraliskLurkerEgg_Death" parent="SoundOneShot">
         <On Terms="UnitDeath.AP_HydraliskLurkerEgg; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.AP_HydraliskLurkerEggMorphling; PassChance 25.000000" Send="Create"/>
         <Sound value="LurkerEgg_Death"/>
     </CActorSound>
     <CActorUnit id="AP_Lurker" parent="GenericBurrowerStandard" unitName="AP_Lurker">
@@ -11293,12 +11311,16 @@
     </CActorSound>
     <CActorSound id="AP_HydraliskLurkerEggBirth" parent="SoundOneShot">
         <On Terms="AbilMorph.*.Start; MorphTo AP_HydraliskLurkerEgg" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_HydraliskLurkerEggMorphling" Send="Create"/>
         <Sound value="LurkerEgg_Birth"/>
     </CActorSound>
     <CActorModel id="AP_HydraliskLurkerEggDeath">
         <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEgg" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEgg" Send="$Death"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEggMorphling" Send="$Death"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling" Send="Destroy"/>
         <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
         <On Terms="ActorCreation" Send="Create AP_CocoonCancelOrCocoonComplete"/>
         <Host Subject="_Selectable"/>
@@ -11306,12 +11328,16 @@
     </CActorModel>
     <CActorSound id="AP_ImpalerEggBirthSound" parent="SoundOneShot">
         <On Terms="AbilMorph.*.Start; MorphTo AP_ImpalerEgg" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_ImpalerEggMorphling" Send="Create"/>
         <Sound value="LurkerEgg_Birth"/>
     </CActorSound>
     <CActorModel id="AP_ImpalerEggDeath">
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEgg" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEgg" Send="$Death"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEggMorphling" Send="$Death"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling" Send="Destroy"/>
         <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOriginStationary"/>

@@ -10926,6 +10926,7 @@
         <SubgroupPriority value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="AP_ImpalerEggMorphling" parent="AP_ImpalerEgg"/>
     <CUnit id="AP_HydraliskLurkerEgg">
         <DeathRevealRadius value="3"/>
         <Facing value="45"/>
@@ -10964,6 +10965,7 @@
         <SubgroupPriority value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="AP_HydraliskLurkerEggMorphling" parent="AP_HydraliskLurkerEgg"/>
     <CUnit id="AP_Lurker">
         <DeathRevealRadius value="3"/>
         <Facing value="45"/>

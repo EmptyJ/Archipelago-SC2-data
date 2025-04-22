@@ -5557,7 +5557,7 @@
         <Flags index="KillOnFinish" value="1"/>
         <Flags index="Select" value="1"/>
         <Flags index="WaitForFood" value="0"/>
-        <MorphUnit value="AP_ImpalerEgg"/>
+        <MorphUnit value="AP_ImpalerEggMorphling"/>
         <InfoArray index="Train1" Time="40" Alert="MorphComplete_Zerg">
             <Button DefaultButtonFace="AP_Impaler" Requirements="AP_HaveImpalerDen">
                 <Flags index="ShowInGlossary" value="1"/>
@@ -5603,7 +5603,7 @@
         <Flags index="KillOnFinish" value="1"/>
         <Flags index="Select" value="1"/>
         <Flags index="WaitForFood" value="0"/>
-        <MorphUnit value="AP_HydraliskLurkerEgg"/>
+        <MorphUnit value="AP_HydraliskLurkerEggMorphling"/>
         <InfoArray index="Train1" Time="40" Alert="MorphComplete_Zerg">
             <Button DefaultButtonFace="AP_Lurker" Requirements="AP_HaveLurkerDen">
                 <Flags index="ShowInGlossary" value="1"/>
