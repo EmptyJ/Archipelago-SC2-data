@@ -2178,6 +2178,9 @@ bool gt_SwitchtoEscortPhase_Func (bool testConds, bool runActions) {
     unitgroup autoEAEE2387_g;
     int autoEAEE2387_u;
     unit autoEAEE2387_var;
+    unitgroup auto5485E036_g;
+    int auto5485E036_u;
+    unit auto5485E036_var;
 
     // Variable Initialization
 
@@ -2235,6 +2238,14 @@ bool gt_SwitchtoEscortPhase_Func (bool testConds, bool runActions) {
     lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_LOCATION_ID_REACH_HANSON);
     libABFE498B_gf_AP_Triggers_resetBase(gv_p1_USER);
     TriggerExecute(gt_ObjectiveDestroyBasesCreate, true, false);
+    Wait(2.0, c_timeReal);
+    auto5485E036_g = UnitGroup(null, gv_p1_USER, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto5485E036_u = UnitGroupCount(auto5485E036_g, c_unitCountAll);
+    for (;; auto5485E036_u -= 1) {
+        auto5485E036_var = UnitGroupUnitFromEnd(auto5485E036_g, auto5485E036_u);
+        if (auto5485E036_var == null) { break; }
+        libNtve_gf_SendActorMessageToUnit(auto5485E036_var, "Signal ProtossPowerUp");
+    }
     return true;
 }
 
