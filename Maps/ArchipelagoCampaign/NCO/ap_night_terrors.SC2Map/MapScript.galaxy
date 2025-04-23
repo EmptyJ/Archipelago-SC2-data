@@ -1003,7 +1003,10 @@ void gf_BonusObjectivePauseUnpauseUnitGroup (bool lp_pauseUnpause, unitgroup lp_
                 UnitSetState(auto725FFC0D_var, c_unitStateSelectable, true);
                 UnitSetState(auto725FFC0D_var, c_unitStateTargetable, true);
                 libNtve_gf_MakeUnitUncommandable(auto725FFC0D_var, false);
-                libNtve_gf_MakeUnitInvulnerable(auto725FFC0D_var, false);
+                if ((UnitTypeTestFlag(UnitGetType(auto725FFC0D_var), c_unitFlagInvulnerable) == false)) {
+                    libNtve_gf_MakeUnitInvulnerable(auto725FFC0D_var, false);
+                }
+
             }
 
         }
