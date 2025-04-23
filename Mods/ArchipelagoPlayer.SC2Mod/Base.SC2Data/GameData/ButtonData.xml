@@ -6379,10 +6379,12 @@
     <CButton id="AP_SILiberatorBaseAttackEnable">
         <Icon value="Assets\Textures\btn-upgrade-zagara-scourgegasreduction.dds"/>
         <EditorCategories value="Race:Zerg"/>
+        <HotkeySet value="AP_SILiberatorBaseAttack"/>
     </CButton>
     <CButton id="AP_SILiberatorBaseAttackDisable">
         <Icon value="Assets\Textures\btn-ability-zerg-parasiticbomb.dds"/>
         <EditorCategories value="Race:Zerg"/>
+        <HotkeySet value="AP_SILiberatorBaseAttack"/>
     </CButton>
     <CButton id="AP_BattlecruiserRangeAura">
         <Icon value="Assets\Textures\btn-ability-mengsk-battlecruiser-decksights.dds"/>
@@ -7094,13 +7096,15 @@
     </CButton>
     <CButton id="AP_SILiberatorAAMode" parent="AP_LiberatorAAMode">
         <Hotkey value="Button/Hotkey/AP_SILiberatorAAMode"/>
-        <HotkeySet value="SILiberatorModes"/>
+        <HotkeySet value="AP_SILiberatorModes"/>
+        <HotkeyAlias value="AP_SILiberatorAAMode"/>
         <Tooltip value="Button/Tooltip/AP_SILiberatorAAMode"/>
         <AlertTooltip value="Button/Tooltip/AP_SILiberatorAAMode"/>
     </CButton>
     <CButton id="AP_SILiberatorAGMode" parent="AP_LiberatorAGMode">
         <Hotkey value="Button/Hotkey/AP_SILiberatorAGMode"/>
-        <HotkeySet value="SILiberatorModes"/>
+        <HotkeySet value="AP_SILiberatorModes"/>
+        <HotkeyAlias value="AP_SILiberatorAGMode"/>
         <Tooltip value="Button/Tooltip/AP_SILiberatorAGMode"/>
         <AlertTooltip value="Button/Tooltip/AP_SILiberatorAGMode"/>
     </CButton>
@@ -7301,13 +7305,14 @@
     <CButton id="AP_SupplicantSacrifice">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeon.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeon.dds"/>
+        <HotkeySet value="AP_SupplicantSacrifice"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_SupplicantSacrificeOff">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeoff.dds"/>
         <AlertTooltip value="Button/Tooltip/AP_SupplicantSacrifice"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeoff.dds"/>
-        <HotkeyAlias value="AP_SupplicantSacrifice"/>
+        <HotkeySet value="AP_SupplicantSacrifice"/>
         <Tooltip value="Button/Tooltip/AP_SupplicantSacrifice"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>

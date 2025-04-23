@@ -15936,8 +15936,8 @@
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="AP_RallyNexus,0" Row="1" Column="4"/>
             <LayoutButtons Face="AP_TimeWarp" Type="AbilCmd" AbilCmd="AP_TimeWarp,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_TimeWarp" Type="AbilCmd" AbilCmd="AP_TimeWarp,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_Mothership" Type="AbilCmd" AbilCmd="AP_NexusTrainMothership,0" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_MothershipCore" Type="AbilCmd" AbilCmd="AP_NexusTrainMothershipCore,0" Row="1" Column="0"/>
+<!--            <LayoutButtons Face="AP_Mothership" Type="AbilCmd" AbilCmd="AP_NexusTrainMothership,0" Row="1" Column="0"/>-->
+<!--            <LayoutButtons Face="AP_MothershipCore" Type="AbilCmd" AbilCmd="AP_NexusTrainMothershipCore,0" Row="1" Column="0"/>-->
             <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="AP_attackProtossBuilding,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="AP_stopProtossBuilding,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="AP_RallyNexus,1" Row="1" Column="4"/>
