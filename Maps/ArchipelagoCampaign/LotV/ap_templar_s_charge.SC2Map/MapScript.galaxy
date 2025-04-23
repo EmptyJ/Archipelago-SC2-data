@@ -648,7 +648,7 @@ void gf_MovePlatform (int lp_nextLocation, fixed lp_direction) {
             lv_unit = UnitGroupUnitFromEnd(autoE92EDCFE_g, autoE92EDCFE_u);
             if (lv_unit == null) { break; }
             if (((UnitGetType(lv_unit) == "AP_Hatchery") || (UnitGetType(lv_unit) == "AP_Lair") || (UnitGetType(lv_unit) == "AP_Hive"))) {
-                lib15EF4C78_gf_AP_Player_SpawnLarvaForHatchery(lv_unit, MaxI(lv_count, 6));
+                lib15EF4C78_gf_AP_Player_SpawnLarvaForHatchery(lv_unit, MinI(lv_count, 6));
                 lv_count -= 6;
                 if ((lv_count <= 0)) {
                     break;
