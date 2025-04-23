@@ -8007,9 +8007,9 @@
         <MinimapRadius value="0.25"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="Drone"/>
         <TechTreeProducedUnitArray value="Overlord"/>
         <TechTreeProducedUnitArray value="Zergling"/>
@@ -8133,8 +8133,8 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <MinimapRadius value="0.375"/>
     </CUnit>
     <CUnit id="AP_AutomatedExtractor">
@@ -8199,7 +8199,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_AutomatedExtractorRich">
         <DeathRevealRadius value="3"/>
@@ -8322,7 +8322,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_ExtractorPipes">
         <DeathRevealRadius value="3"/>
@@ -8446,7 +8446,7 @@
         <SubgroupAlias value="Extractor"/>
         <GlossaryPriority value="10"/>
         <GlossaryAlias value="Extractor"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_Drone">
         <DeathRevealRadius value="3"/>
@@ -8550,9 +8550,9 @@
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Drone"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="20"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -8714,7 +8714,7 @@
         <SelectAlias value="CreepTumor"/>
         <TechAliasArray value="Alias_CreepTumor"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_CreepTumorUsed">
         <Description value="Button/Tooltip/CreepTumorBurrowed"/>
@@ -8903,7 +8903,7 @@
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
         <TacticalAIThink value="AIThinkLeviathan"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="145"/>
         <KillDisplay value="Never"/>
     </CUnit>
@@ -9233,7 +9233,7 @@
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
         <TechAliasArray value="Alias_Kerrigan"/>
         <GlossaryCategory value="Unit/Category/ZergCharacter"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Never"/>
         <Fidget>
@@ -9493,9 +9493,9 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <HotkeyAlias value="AP_Broodling"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="200"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <CostCategory value="Army"/>
         <Mob value="Multiplayer"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
@@ -9854,9 +9854,9 @@
         <SubgroupPriority value="2"/>
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="NydusCanal"/>
     </CUnit>
     <CUnit id="AP_NydusWorm">
@@ -9927,9 +9927,9 @@
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <AIEvalFactor value="0.2"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="110"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_TradeStructure">
         <DeathRevealRadius value="3"/>
@@ -10126,9 +10126,9 @@
         <SubgroupPriority value="60"/>
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionEvolved"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="20"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_CreateCocoonMissileWeapon" parent="MISSILE_INVULNERABLE">
         <Race value="Zerg"/>
@@ -10613,13 +10613,13 @@
         <SubgroupPriority value="7"/>
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="125"/>
         <GlossaryStrongArray value="Firebat"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryWeakArray value="Marine"/>
         <GlossaryWeakArray value="SiegeTank"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="50"/>
             <ChanceArray index="Idle" value="50"/>
@@ -10802,14 +10802,14 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="19"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="170"/>
         <GlossaryStrongArray value="SiegeTank"/>
         <GlossaryStrongArray value="SiegeTankSieged"/>
         <GlossaryStrongArray value="Stalker"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -11033,7 +11033,7 @@
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Lurker"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="170"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Zealot"/>
@@ -11044,7 +11044,7 @@
         <GlossaryWeakArray value="Immortal"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -11181,7 +11181,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Hydralisk"/>
         <AIEvalFactor value="2"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="70"/>
         <GlossaryStrongArray value="Banshee"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -11525,9 +11526,9 @@
         <SubgroupPriority value="1"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="149"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
     </CUnit>
@@ -11610,7 +11611,7 @@
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <HotkeyAlias value="AP_Locust"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
     </CUnit>
@@ -12045,7 +12046,7 @@
         <TacticalAI value="Infestor"/>
         <TacticalAIThink value="AIThinkInfestor"/>
         <AIEvalFactor value="1.8"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="150"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -12053,7 +12054,7 @@
         <GlossaryWeakArray value="Ghost"/>
         <GlossaryWeakArray value="Ultralisk"/>
         <GlossaryWeakArray value="HighTemplar"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -12974,7 +12975,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="1.5"/>
         <Mass value="0.6"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="190"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -12982,7 +12983,7 @@
         <GlossaryWeakArray value="VikingFighter"/>
         <GlossaryWeakArray value="Corruptor"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_BroodLordCocoon">
         <DeathRevealRadius value="3"/>
@@ -13062,9 +13063,9 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="200"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_BroodlingEscort" parent="AP_BroodlingDefault">
         <FlagArray index="Uncommandable" value="1"/>
@@ -13242,7 +13243,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="10"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="130"/>
         <GlossaryStrongArray value="VikingFighter"/>
         <GlossaryStrongArray value="BroodLord"/>
@@ -13250,7 +13251,7 @@
         <GlossaryWeakArray value="Thor"/>
         <GlossaryWeakArray value="Corruptor"/>
         <GlossaryWeakArray value="Phoenix"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_Corruptor">
         <DeathRevealRadius value="3"/>
@@ -13326,9 +13327,9 @@
         <TacticalAIThink value="AIThinkCorruptor"/>
         <AIEvalFactor value="0.7"/>
         <Mass value="0.6"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="140"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_Scourge">
         <DeathRevealRadius value="3"/>
@@ -13383,9 +13384,9 @@
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
         <TacticalAI value=""/>
         <LeaderAlias value="Scourge"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="145"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
         <AIEvaluateAlias value=""/>
@@ -15099,7 +15100,7 @@
         <TacticalAIThink value="AIThinkBaneling"/>
         <AIEvalFactor value="3"/>
         <EquipmentArray Weapon="AP_HotSBanelingDummy"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="60"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Zergling"/>
@@ -15107,7 +15108,7 @@
         <GlossaryWeakArray value="Marauder"/>
         <GlossaryWeakArray value="Roach"/>
         <GlossaryWeakArray value="Stalker"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -15334,7 +15335,7 @@
         <SelectAlias value="AP_Baneling"/>
         <SubgroupAlias value="AP_Baneling"/>
         <EquipmentArray Weapon="AP_HotSBanelingDummySmall"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="62"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Zealot"/>
@@ -16986,7 +16987,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TechAliasArray value="Alias_AP_Spire"/>
         <GlossaryPriority value="244"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_LurkerDen">
         <DeathRevealRadius value="3"/>
@@ -17043,7 +17044,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
     </CUnit>
     <CUnit id="AP_ImpalerDen">
@@ -17105,7 +17106,7 @@
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Impaler"/>
     </CUnit>
     <CUnit id="AP_InfestationPit">
@@ -17169,7 +17170,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="237"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="SwarmHostMP"/>
         <TechTreeUnlockedUnitArray value=""/>
     </CUnit>
@@ -17240,7 +17241,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_BanelingNest">
         <DeathRevealRadius value="3"/>
@@ -17302,7 +17303,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="37"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_EvolutionChamber">
         <DeathRevealRadius value="3"/>
@@ -17378,7 +17379,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="29"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value=""/>
     </CUnit>
     <CUnit id="AP_Gateway">
@@ -18191,9 +18192,9 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
         <TechAliasArray value="Alias_Overlord"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="201"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_Hive">
         <DeathRevealRadius value="3"/>
@@ -18284,7 +18285,7 @@
         <TechAliasArray value="Alias_AP_Hatchery"/>
         <TechAliasArray value="Alias_AP_Lair"/>
         <GlossaryPriority value="18"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="Hatchery">
         <!-- Override -->
@@ -18405,7 +18406,7 @@
         <AIEvalFactor value="0"/>
         <TechAliasArray value="Alias_AP_Hatchery"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="Larva"/>
         <TechTreeProducedUnitArray value="Queen"/>
     </CUnit>
@@ -18501,7 +18502,7 @@
         <TechAliasArray value="Alias_AP_Hatchery"/>
         <TechAliasArray value="Alias_AP_Lair"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Overseer"/>
     </CUnit>
     <CUnit id="AP_Queen">
@@ -18590,7 +18591,7 @@
         <TacticalAIThink value="AIThinkQueen"/>
         <AIEvalFactor value="0.55"/>
         <TechAliasArray value="Alias_Queen"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="217"/>
         <GlossaryStrongArray value="Hellion"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -18598,7 +18599,7 @@
         <GlossaryWeakArray value="Marine"/>
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -18721,7 +18722,7 @@
         <ScoreKill value="50"/>
         <SubgroupPriority value="7"/>
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="450"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -18729,7 +18730,7 @@
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Baneling"/>
         <GlossaryWeakArray value="Colossus"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -18828,7 +18829,7 @@
         <ScoreMake value="100"/>
         <ScoreKill value="200"/>
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="470"/>
         <GlossaryStrongArray value="Banshee"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -18836,7 +18837,7 @@
         <GlossaryWeakArray value="SiegeTankSieged"/>
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Colossus"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
     </CUnit>
     <CUnit id="AP_PrimalHydraliskBurrowed">
         <Name value="Unit/Name/AP_PrimalHydralisk"/>
@@ -18942,7 +18943,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="7"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="465"/>
         <GlossaryStrongArray value="Hellion"/>
         <GlossaryStrongArray value="Zergling"/>
@@ -18950,7 +18951,7 @@
         <GlossaryWeakArray value="Marauder"/>
         <GlossaryWeakArray value="Ultralisk"/>
         <GlossaryWeakArray value="Immortal"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -19071,7 +19072,7 @@
         <InnerRadius value="0.75"/>
         <CargoSize value="8"/>
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="580"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="Roach"/>
@@ -19079,7 +19080,7 @@
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="Mutalisk"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
     </CUnit>
     <CUnit id="AP_PrimalUltraliskBurrowed">
         <Name value="Unit/Name/AP_PrimalUltralisk"/>
@@ -19702,7 +19703,7 @@
         <SubgroupPriority value="7"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Roach"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="100"/>
         <GlossaryStrongArray value="Hellion"/>
         <GlossaryStrongArray value="Zealot"/>
@@ -19710,7 +19711,7 @@
         <GlossaryWeakArray value="Marauder"/>
         <GlossaryWeakArray value="Immortal"/>
         <GlossaryWeakArray value="Ultralisk"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <LeaderAlias value="Roach"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
@@ -19835,9 +19836,9 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="66"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_Ravager">
         <Description value="Button/Tooltip/Ravager"/>
@@ -19910,9 +19911,9 @@
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkRavager"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="66"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -19968,7 +19969,7 @@
         <LeaderAlias value="AP_Ravager"/>
         <HotkeyAlias value="AP_Ravager"/>
         <SelectAlias value="AP_Ravager"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <AIEvaluateAlias value="Ravager"/>
@@ -20429,14 +20430,14 @@
         <SubgroupPriority value="17"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <Mass value="0.6"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="146"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Stalker"/>
         <GlossaryStrongArray value="Roach"/>
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Archon"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -21993,7 +21994,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TechAliasArray value="Alias_AP_Spire"/>
         <GlossaryPriority value="241"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Mutalisk"/>
     </CUnit>
     <CUnit id="AP_RoachWarren">
@@ -22057,7 +22058,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="33"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Roach"/>
     </CUnit>
     <CUnit id="AP_SpineCrawlerRootableAnywhere">
@@ -22132,9 +22133,9 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkCrawler"/>
         <AIEvalFactor value="0.7"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="110"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -22290,9 +22291,9 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkCrawler"/>
         <AIEvalFactor value="0.65"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="120"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -22436,7 +22437,7 @@
         <MinimapRadius value="0.875"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionEvolved"/>
         <AIEvalFactor value="0.65"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="130"/>
     </CUnit>
     <CUnit id="AP_BileLauncherMissile" parent="MISSILE_INVULNERABLE">
@@ -22506,7 +22507,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="26"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Zergling"/>
         <TechTreeUnlockedUnitArray value="Queen"/>
     </CUnit>
@@ -22787,11 +22788,11 @@
         <TacticalAIThink value="AIThinkQueenClassic"/>
         <AIEvalFactor value="0.55"/>
         <!--        <LeaderAlias value="QueenClassic"/>-->
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="217"/>
         <GlossaryStrongArray value="Zealot"/>
         <GlossaryWeakArray value="Stalker"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_SIQueenWeapon" parent="MISSILE">
         <Race value="Zerg"/>
@@ -22870,8 +22871,8 @@
         <SubgroupPriority value="3"/>
         <MinimapRadius value="1.75"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="245"/>
     </CUnit>
     <CUnit id="AP_SIInfestedBunker" parent="AP_SIInfestedBunkerRootableAnywhere">
@@ -22951,8 +22952,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
         <HotkeyAlias value="AP_SIInfestedBunker"/>
         <EquipmentArray Weapon="AP_InfestedBunkerFakeUprootedMelee"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
     </CUnit>
     <CUnit id="AP_SICocoon">
@@ -23094,9 +23095,9 @@
         <SubgroupPriority value="4"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -23169,8 +23170,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <LeaderAlias value="SIBarracks"/>
         <TechAliasArray value="Alias_SIBarracks"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="245"/>
     </CUnit>
     <CUnit id="AP_SIBarracksFlying">
@@ -23227,7 +23228,7 @@
         <HotkeyAlias value="AP_SIBarracks"/>
         <TechAliasArray value="Alias_SIBarracks"/>
         <GlossaryAlias value="AP_SIBarracks"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="TechLab">
         <!-- Override -->
@@ -23426,7 +23427,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Ultralisk"/>
         <TacticalAIThink value="AIThinkUltralisk"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="180"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="AP_Roach"/>
@@ -23434,7 +23435,7 @@
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="Mutalisk"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -23907,7 +23908,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkViper"/>
         <AIEvalFactor value="0"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="80"/>
         <GlossaryStrongArray value="SiegeTankSieged"/>
         <GlossaryStrongArray value="Colossus"/>
@@ -23915,7 +23916,7 @@
         <GlossaryWeakArray value="VikingFighter"/>
         <GlossaryWeakArray value="Mutalisk"/>
         <GlossaryWeakArray value="Phoenix"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_ViperAirWeapon" parent="MISSILE">
         <Race value="Zerg"/>
@@ -24384,7 +24385,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_ZealotAiur">
         <DeathRevealRadius value="3"/>
@@ -24769,7 +24770,7 @@
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Zergling"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="50"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -24777,7 +24778,7 @@
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Baneling"/>
         <GlossaryWeakArray value="Colossus"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -25163,8 +25164,8 @@
         <SeparationRadius value="0.875"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.75"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkDevourerSCBW"/>
         <GlossaryPriority value="190"/>
@@ -25264,8 +25265,8 @@
         <SeparationRadius value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="1"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkGuardianSCBW"/>
         <GlossaryPriority value="140"/>
@@ -25476,8 +25477,8 @@
         <SubgroupPriority value="46"/>
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TacticalAIThink value="AIThinkDefilerSCBW"/>
         <AIEvalFactor value="1.8"/>
         <GlossaryPriority value="90"/>
@@ -26008,8 +26009,8 @@
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -26063,7 +26064,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
         <LeaderAlias value="AP_SIInfestedMarine"/>
         <HotkeyAlias value="AP_SIInfestedMarine"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <SelectAlias value="AP_SIInfestedMarine"/>
         <AIEvaluateAlias value="AP_SIInfestedMarine"/>
         <Food value="-1"/>
@@ -26122,8 +26123,8 @@
         <SubgroupPriority value="10"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -26177,7 +26178,7 @@
         <LeaderAlias value="AP_SIInfestedTrooper"/>
         <HotkeyAlias value="AP_SIInfestedTrooper"/>
         <SelectAlias value="AP_SIInfestedTrooper"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="AP_SIInfestedTrooper"/>
     </CUnit>
     <CUnit id="AP_VoidRayPurifierBeam">
@@ -26295,7 +26296,7 @@
         <SubgroupPriority value="9"/>
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectFamily:FactionPrimal,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="180"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="AP_Roach"/>
@@ -26303,7 +26304,7 @@
         <GlossaryWeakArray value="Siege Tank"/>
         <GlossaryWeakArray value="Immortal"/>
         <GlossaryWeakArray value="Tempest"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_TyrannozorBurrowed">
         <DeathRevealRadius value="3"/>
@@ -26355,7 +26356,7 @@
         <EditorCategories value="ObjectFamily:FactionPrimal,ObjectType:Unit"/>
         <LeaderAlias value="AP_Tyrannozor"/>
         <HotkeyAlias value="AP_Tyrannozor"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="AP_Tyrannozor"/>
     </CUnit>
     <CUnit id="AP_TyrannozorAAWeapon" parent="MISSILE">
@@ -26466,7 +26467,7 @@
         <Collide index="ForceField" value="1"/>
         <GlossaryPriority value="10"/>
         <EditorCategories value="ObjectType:Structure"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_MercZergling" parent="AP_Zergling">
         <Name value="Unit/Name/AP_MercZergling"/>
@@ -26980,8 +26981,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <TechAliasArray value="Alias_InfestedFactory"/>
         <GlossaryPriority value="245"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_SIFactoryFlying">
         <Name value="Unit/Name/AP_SIFactory"/>
@@ -27037,8 +27038,8 @@
         <LeaderAlias value="Factory"/>
         <HotkeyAlias value="Factory"/>
         <TechAliasArray value="Alias_InfestedFactory"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryAlias value="AP_SIFactory"/>
         <HotkeyAlias value="AP_SIFactory"/>
         <InnerRadius value="1"/>
@@ -27114,8 +27115,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <TechAliasArray value="Alias_InfestedStarport"/>
         <GlossaryPriority value="245"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_SIStarportFlying">
         <Name value="Unit/Name/AP_SIStarport"/>
@@ -27170,8 +27171,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <LeaderAlias value="AP_SIStarport"/>
         <HotkeyAlias value="AP_SIStarport"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechAliasArray value="Alias_InfestedStarport"/>
         <GlossaryAlias value="AP_SIStarport"/>
         <InnerRadius value="1"/>
@@ -27236,7 +27237,7 @@
         <AddedOnArray UnitLink="AP_SIFactory" BehaviorLink="AP_SIFactoryTechLab"/>
         <AddedOnArray UnitLink="AP_SIStarport" BehaviorLink="AP_SIStarportTechLab"/>
         <GlossaryPriority value="245"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <HotkeyCategory value=""/>
     </CUnit>
     <CUnit id="AP_SIFactoryTechLab" parent="AP_SITechLab">
@@ -27340,8 +27341,8 @@
         <SelectAlias value="AP_StukovInfestedSiegeTank"/>
         <SubgroupAlias value="AP_StukovInfestedSiegeTank"/>
         <TechAliasArray value="Alias_SiegeTank"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -27424,8 +27425,8 @@
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="LiberatorAG"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryAlias value="AP_StukovInfestedSiegeTank"/>
         <HotkeyAlias value="AP_StukovInfestedSiegeTank"/>
         <AIEvaluateAlias value="SiegeTankSieged"/>
@@ -27542,7 +27543,7 @@
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="HERC"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_SIVolatileInfestedBurrowed">
         <DeathRevealRadius value="3"/>
@@ -27657,8 +27658,8 @@
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
         <GlossaryWeakArray value="Marauder"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
     <CUnit id="AP_StukovInfestedDiamondSlimePuddle">
@@ -27790,8 +27791,8 @@
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryWeakArray value="Liberator"/>
         <GlossaryWeakArray value="Goliath"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <AIEvaluateAlias value="Banshee"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
@@ -27920,7 +27921,7 @@
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
         <TacticalAIThink value="AIThinkSILiberator"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="160"/>
         <GlossaryStrongArray value="Mutalisk"/>
         <GlossaryStrongArray value="VoidRay"/>
@@ -27928,7 +27929,7 @@
         <GlossaryWeakArray value="SporeCrawler"/>
         <GlossaryWeakArray value="PhotonCannon"/>
         <GlossaryWeakArray value="MissileTurret"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <TurningRate value="1499.9414"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
@@ -29856,8 +29857,8 @@
         <GlossaryWeakArray value="Marine"/>
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="MissileTurret"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
@@ -29930,8 +29931,8 @@
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
         <GlossaryAlias value="AP_SIMissileTurret"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="MissileTurret"/>
     </CUnit>
     <CUnit id="AP_SILongboltMissileWeapon" parent="MISSILE_HALFLIFE">
@@ -30188,9 +30189,9 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
         <TechAliasArray value="Alias_Overlord"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="201"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_BanelingLaunchAmmo">
         <FlagArray index="Uncommandable" value="1"/>
@@ -30744,9 +30745,9 @@
         <CargoSize value="8"/>
         <SubgroupPriority value="17"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="146"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <PushPriority value="11"/>
