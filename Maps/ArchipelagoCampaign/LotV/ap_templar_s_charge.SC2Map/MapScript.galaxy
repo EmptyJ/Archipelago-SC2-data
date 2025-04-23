@@ -437,10 +437,12 @@ void gf_MovePlatform (int lp_nextLocation, fixed lp_direction) {
     // Variable Declarations
     fixed lv_distance;
     int lv_i;
+    int lv_count;
     point lv_visionPoint;
     unitgroup lv_enemyGroundUnits;
     unitgroup lv_friendlyGroundUnits;
     unitgroup lv_platformUnits;
+    unit lv_unit;
 
     // Automatic Variable Declarations
     fixed auto8935DBA5_val;
@@ -466,6 +468,10 @@ void gf_MovePlatform (int lp_nextLocation, fixed lp_direction) {
     int autoF3549FED_u;
     unit autoF3549FED_var;
     fixed auto25890817_val;
+    unitgroup auto1A5217D2_g;
+    int auto1A5217D2_u;
+    unitgroup autoE92EDCFE_g;
+    int autoE92EDCFE_u;
     unitgroup autoB914CE5F_g;
     int autoB914CE5F_u;
     unit autoB914CE5F_var;
@@ -625,6 +631,32 @@ void gf_MovePlatform (int lp_nextLocation, fixed lp_direction) {
     TriggerExecute(gt_EnableButtons, true, false);
     if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Zerg")) {
         CreepModify(gv_platformLocations[lp_nextLocation].lv_centerPoint, 8.0, true, false);
+        auto1A5217D2_g = lv_platformUnits;
+        auto1A5217D2_u = UnitGroupCount(auto1A5217D2_g, c_unitCountAll);
+        for (;; auto1A5217D2_u -= 1) {
+            lv_unit = UnitGroupUnitFromEnd(auto1A5217D2_g, auto1A5217D2_u);
+            if (lv_unit == null) { break; }
+            if ((UnitGetType(lv_unit) == "AP_Larva")) {
+                UnitRemove(lv_unit);
+                lv_count += 1;
+            }
+
+        }
+        autoE92EDCFE_g = lv_platformUnits;
+        autoE92EDCFE_u = UnitGroupCount(autoE92EDCFE_g, c_unitCountAll);
+        for (;; autoE92EDCFE_u -= 1) {
+            lv_unit = UnitGroupUnitFromEnd(autoE92EDCFE_g, autoE92EDCFE_u);
+            if (lv_unit == null) { break; }
+            if (((UnitGetType(lv_unit) == "AP_Hatchery") || (UnitGetType(lv_unit) == "AP_Lair") || (UnitGetType(lv_unit) == "AP_Hive"))) {
+                lib15EF4C78_gf_AP_Player_SpawnLarvaForHatchery(lv_unit, MinI(lv_count, 6));
+                lv_count -= 6;
+                if ((lv_count <= 0)) {
+                    break;
+                }
+
+            }
+
+        }
     }
 
     autoB914CE5F_g = lv_enemyGroundUnits;
