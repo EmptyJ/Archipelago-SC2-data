@@ -242,6 +242,7 @@
 <Unit id="BiodomeHalfBuilt" Variations="0,2"/>
 <Unit id="DestructibleSandbags" Variations="0,1,2"/>
 <Unit id="SpecialOpsDropship"/>
+<Unit id="InvisiblePylon"/>
 <Unit id="Colonist" Variations="0,1,2"/>
 <Unit id="PalletMinerals"/>
 <Unit id="Food1000"/>

@@ -6184,6 +6184,7 @@ bool gt_ReinforcementsTerran3_Func (bool testConds, bool runActions) {
     for ( ; ( (auto6EA37FC4_ai >= 0 && lv_index <= auto6EA37FC4_ae) || (auto6EA37FC4_ai < 0 && lv_index >= auto6EA37FC4_ae) ) ; lv_index += auto6EA37FC4_ai ) {
         lv_unit = lv_medivac[lv_index];
         libNtve_gf_RescueUnit(lv_unit, gv_pLAYER_01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lv_unit);
         libNtve_gf_RescueUnit2(lv_medivacCargo[lv_index], gv_pLAYER_01_USER, true);
         UnitIssueOrder(lv_unit, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(lv_unit), 15.0, UnitGetFacing(lv_unit))), c_orderQueueReplace);
         UnitSetPropertyFixed(lv_unit, c_unitPropLifePercent, 100.0);
@@ -6193,6 +6194,7 @@ bool gt_ReinforcementsTerran3_Func (bool testConds, bool runActions) {
             auto8599E393_var = UnitGroupUnitFromEnd(auto8599E393_g, auto8599E393_u);
             if (auto8599E393_var == null) { break; }
             UnitSetPropertyFixed(auto8599E393_var, c_unitPropLifePercent, 100.0);
+            lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(auto8599E393_var);
         }
     }
     Wait(0.1, c_timeGame);
@@ -6319,6 +6321,7 @@ bool gt_ReinforcementsProtoss3_Func (bool testConds, bool runActions) {
     for ( ; ( (auto52E4EC0E_ai >= 0 && lv_index <= auto52E4EC0E_ae) || (auto52E4EC0E_ai < 0 && lv_index >= auto52E4EC0E_ae) ) ; lv_index += auto52E4EC0E_ai ) {
         lv_unit = lv_warpPrism[lv_index];
         libNtve_gf_RescueUnit(lv_unit, gv_pLAYER_01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lv_unit);
         libNtve_gf_RescueUnit2(lv_warpPrismCargo[lv_index], gv_pLAYER_01_USER, true);
     }
     libNtve_gf_RescueUnit2(UnitGroup("AP_ZealotAiur", gv_pLAYER_02_RESCUEZERG, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), 1, true);
@@ -6510,6 +6513,7 @@ bool gt_ReinforcementsTerran4_Func (bool testConds, bool runActions) {
     for ( ; ( (auto0B101816_ai >= 0 && lv_index <= auto0B101816_ae) || (auto0B101816_ai < 0 && lv_index >= auto0B101816_ae) ) ; lv_index += auto0B101816_ai ) {
         lv_unit = lv_medivac[lv_index];
         libNtve_gf_RescueUnit(lv_unit, gv_pLAYER_01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lv_unit);
         libNtve_gf_RescueUnit2(lv_medivacCargo[lv_index], gv_pLAYER_01_USER, true);
         UnitIssueOrder(lv_unit, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(lv_unit), 15.0, UnitGetFacing(lv_unit))), c_orderQueueReplace);
         UnitSetPropertyFixed(lv_unit, c_unitPropLifePercent, 100.0);
@@ -6519,6 +6523,7 @@ bool gt_ReinforcementsTerran4_Func (bool testConds, bool runActions) {
             auto9F170F67_var = UnitGroupUnitFromEnd(auto9F170F67_g, auto9F170F67_u);
             if (auto9F170F67_var == null) { break; }
             UnitSetPropertyFixed(auto9F170F67_var, c_unitPropLifePercent, 100.0);
+            lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(auto9F170F67_var);
         }
     }
     Wait(0.1, c_timeGame);
@@ -6645,6 +6650,7 @@ bool gt_ReinforcementsProtoss4_Func (bool testConds, bool runActions) {
     for ( ; ( (auto890CEE77_ai >= 0 && lv_index <= auto890CEE77_ae) || (auto890CEE77_ai < 0 && lv_index >= auto890CEE77_ae) ) ; lv_index += auto890CEE77_ai ) {
         lv_unit = lv_warpPrism[lv_index];
         libNtve_gf_RescueUnit(lv_unit, gv_pLAYER_01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lv_unit);
         libNtve_gf_RescueUnit2(lv_warpPrismCargo[lv_index], gv_pLAYER_01_USER, true);
     }
     libNtve_gf_RescueUnit2(UnitGroup("AP_ZealotAiur", gv_pLAYER_02_RESCUEZERG, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), 1, true);
@@ -10401,6 +10407,7 @@ bool gt_MidReinforcementsTerran12_Func (bool testConds, bool runActions) {
     for ( ; ( (auto94D3E463_ai >= 0 && lv_index <= auto94D3E463_ae) || (auto94D3E463_ai < 0 && lv_index >= auto94D3E463_ae) ) ; lv_index += auto94D3E463_ai ) {
         lv_unit = lv_medivac[lv_index];
         libNtve_gf_RescueUnit(lv_unit, gv_pLAYER_01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lv_unit);
         libNtve_gf_RescueUnit2(lv_medivacCargo[lv_index], gv_pLAYER_01_USER, true);
         UnitIssueOrder(lv_unit, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(lv_unit), 15.0, UnitGetFacing(lv_unit))), c_orderQueueReplace);
         UnitSetPropertyFixed(lv_unit, c_unitPropLifePercent, 100.0);
@@ -10411,6 +10418,7 @@ bool gt_MidReinforcementsTerran12_Func (bool testConds, bool runActions) {
             auto59E4B2B4_var = UnitGroupUnitFromEnd(auto59E4B2B4_g, auto59E4B2B4_u);
             if (auto59E4B2B4_var == null) { break; }
             UnitSetPropertyFixed(auto59E4B2B4_var, c_unitPropLifePercent, 100.0);
+            lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(auto59E4B2B4_var);
         }
     }
     Wait(0.1, c_timeGame);
