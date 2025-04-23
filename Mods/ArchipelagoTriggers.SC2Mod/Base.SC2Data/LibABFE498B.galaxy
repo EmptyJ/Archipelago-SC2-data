@@ -9857,6 +9857,9 @@ void libABFE498B_gf_AP_Triggers_resetBase (int lp_player) {
     unitgroup autoF6FB042E_g;
     int autoF6FB042E_u;
     unit autoF6FB042E_var;
+    unitgroup auto03384150_g;
+    int auto03384150_u;
+    unit auto03384150_var;
 
     // Implementation
     lib15EF4C78_gf_AP_Player_ResetMercenaryCooldowns(lp_player);
@@ -9900,6 +9903,17 @@ void libABFE498B_gf_AP_Triggers_resetBase (int lp_player) {
     libNtve_gf_PlayerRemoveCooldown(lp_player, "Abil/AP_ElderProbeWarpin");
     PlayerAddCooldown(lp_player, "Abil/AP_ElderProbeWarpin", 60.0);
     lib15EF4C78_gf_AP_Player_clearZerglingRespawnChargesFromPlayer(lp_player);
+    Wait(0.625, c_timeGame);
+    auto03384150_g = UnitGroup(null, lp_player, RegionEntireMap(), UnitFilter((1 << c_targetFilterStructure), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto03384150_u = UnitGroupCount(auto03384150_g, c_unitCountAll);
+    for (;; auto03384150_u -= 1) {
+        auto03384150_var = UnitGroupUnitFromEnd(auto03384150_g, auto03384150_u);
+        if (auto03384150_var == null) { break; }
+        if ((PowerLevel(lp_player, UnitGetPosition(auto03384150_var), "PowerSource") >= 1)) {
+            libNtve_gf_SendActorMessageToUnit(auto03384150_var, "Signal ProtossPowerUp");
+        }
+
+    }
 }
 
 void libABFE498B_gf_AP_Triggers_replaceUpgrade (int lp_player, string lp_oldUpgrade, string lp_newUpgrade) {
