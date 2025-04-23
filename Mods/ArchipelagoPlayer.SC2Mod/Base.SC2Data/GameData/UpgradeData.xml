@@ -1660,6 +1660,8 @@
         <!-- Oppressor -->
         <EffectArray Reference="Unit,AP_ScoutTaldarim,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,LifeArmorLevel" Value="1"/>
         <!-- Caladrius -->
         <EffectArray Reference="Unit,AP_ScoutPurifier,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,LifeArmorLevel" Value="1"/>
@@ -1848,6 +1850,8 @@
         <!-- Oppressor-->
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldArmorLevel" Value="1"/>
         <!-- Caladrius-->
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldArmorLevel" Value="1"/>
@@ -10249,6 +10253,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
@@ -10286,6 +10291,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
@@ -10323,6 +10329,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
@@ -10359,6 +10366,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
@@ -10394,6 +10402,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
@@ -11034,6 +11043,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
@@ -11131,6 +11141,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
@@ -11228,6 +11239,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
@@ -11324,6 +11336,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
@@ -11420,6 +11433,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
@@ -17306,6 +17320,7 @@
         <!-- Scout-->
         <EffectArray Reference="Unit,AP_ScoutMP,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldRegenRate" Value="0.05"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_ScoutNerazim,ShieldRegenRate" Value="0.05"/>
         <!-- Arbiter -->
@@ -17442,6 +17457,7 @@
         <!-- Scout-->
         <EffectArray Reference="Unit,AP_ScoutMP,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldRegenRate" Value="5"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_ScoutNerazim,ShieldRegenRate" Value="5"/>
         <!-- Arbiter -->
