@@ -7621,4 +7621,12 @@
         <PowerLink value="PowerSource"/>
         <Compare value="GT"/>
     </CValidatorLocationComparePower>
+    <CValidatorUnitCompareBehaviorCount id="AP_TacticalStimpackTestBuff">
+        <Behavior value="AP_Stimpack"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="TacticalStimpack">
+        <!-- Override -->
+        <!-- Not stimmed by AP Stim -->
+        <CombineArray value="AP_TacticalStimpackTestBuff"/>
+    </CValidatorCombine>
 </Catalog>
