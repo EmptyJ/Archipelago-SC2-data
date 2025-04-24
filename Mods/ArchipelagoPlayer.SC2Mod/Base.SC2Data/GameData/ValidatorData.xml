@@ -7629,4 +7629,13 @@
         <!-- Not stimmed by AP Stim -->
         <CombineArray value="AP_TacticalStimpackTestBuff"/>
     </CValidatorCombine>
+    <CValidatorCombine id="AP_TacticalStimpack">
+        <Type value="And"/>
+        <CombineArray value="AP_TacticalStimpackTestBuff"/>
+        <CombineArray value="TacticalStimpackTestBuff"/>
+        <CombineArray value="TacticalMarauderStimpackTestBuff"/>
+        <CombineArray value="CasterIsAttacking"/>
+        <CombineArray value="CasterNotInCombat"/>
+        <CombineArray value="TacticalStimpackHostiles"/>
+    </CValidatorCombine>
 </Catalog>

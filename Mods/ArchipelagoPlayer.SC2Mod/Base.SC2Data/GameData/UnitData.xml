@@ -253,7 +253,7 @@
         <SubgroupPriority value="18"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Marine"/>
+        <TacticalAI value="AP_Marine"/>
         <GlossaryCategory value="Unit/Category/AP_TerranUnitsGround"/>
         <GlossaryPriority value="21"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -582,7 +582,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="18"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Marauder"/>
+        <TacticalAI value="AP_Marauder"/>
         <GlossaryCategory value="Unit/Category/AP_TerranUnitsGround"/>
         <GlossaryPriority value="50"/>
         <GlossaryStrongArray value="Roach"/>
@@ -4025,7 +4025,7 @@
         <SubgroupPriority value="18"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Marine"/>
+        <TacticalAI value="AP_Marine"/>
         <SelectAlias value="AP_Marine"/>
         <GlossaryPriority value="31"/>
         <GlossaryStrongArray value="Marauder"/>
@@ -4223,7 +4223,7 @@
         <ScoreKill value="150"/>
         <SubgroupPriority value="18"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
-        <TacticalAI value="Marauder"/>
+        <TacticalAI value="AP_Marauder"/>
         <SelectAlias value="AP_Marauder"/>
         <GlossaryPriority value="51"/>
         <GlossaryStrongArray value="Thor"/>
