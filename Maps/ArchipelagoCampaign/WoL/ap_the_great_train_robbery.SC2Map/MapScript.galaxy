@@ -529,13 +529,16 @@ bool auto_gf_RescueDiamondback_TriggerFunc (bool testConds, bool runActions) {
 
     // Automatic Variable Declarations
     // Implementation
-    libNtve_gf_TurnAllAnimationPropertiesOff(libNtve_gf_MainActorofUnit(lp_diamondback));
-    libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_diamondback), c_animNameDefault, "Stand Morph End", 0, c_animTimeDefault);
-    Wait(1.5, c_timeGame);
-    UIAlertUnit("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/8DAA5783"), null, lp_diamondback);
-    libNtve_gf_RescueUnit(lp_diamondback, gv_pLAYER_01_USER, true);
-    if ((TechTreeUpgradeCount(gv_pLAYER_01_USER, "AP_BurstCapacitors", c_techCountCompleteOnly) >= 1)) {
-        UnitBehaviorAdd(lp_diamondback, "AP_BurstCapacitorsDamageBuff", lp_diamondback, 1);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace != "Prot")) {
+        libNtve_gf_TurnAllAnimationPropertiesOff(libNtve_gf_MainActorofUnit(lp_diamondback));
+        libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lp_diamondback), c_animNameDefault, "Stand Morph End", 0, c_animTimeDefault);
+        Wait(1.5, c_timeGame);
+        UIAlertUnit("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/8DAA5783"), null, lp_diamondback);
+        libNtve_gf_RescueUnit(lp_diamondback, gv_pLAYER_01_USER, true);
+        if ((TechTreeUpgradeCount(gv_pLAYER_01_USER, "AP_BurstCapacitors", c_techCountCompleteOnly) >= 1)) {
+            UnitBehaviorAdd(lp_diamondback, "AP_BurstCapacitorsDamageBuff", lp_diamondback, 1);
+        }
+
     }
 
     if ((lp_diamondback == gv_closeDiamondback)) {
@@ -635,19 +638,7 @@ bool auto_gf_AwakenProtoss_TriggerFunc (bool testConds, bool runActions) {
         libNtve_gf_RescueUnit(autoF59A0FB1_var, gv_pLAYER_01_USER, true);
     }
     UIAlertUnit("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/D5B425EC"), null, lp_pickedUnit);
-    gv_diamondbacksFound += 1;
-    gv_diamondbacksUsed += 1;
-    TriggerExecute(gt_ObjectiveLocateDiamondbacksDiscover, true, true);
-    if ((gv_diamondbacksFound <= gv_totalDiamondbacks)) {
-        lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objective_Locate_Diamondbacks, gv_diamondbacksFound);
-    }
-
-    if ((gv_diamondbacksFound == gv_totalDiamondbacks)) {
-        TriggerExecute(gt_ObjectiveLocateDiamondbacksComplete, true, false);
-        Wait(libCamp_gv_campaignObjectiveDelay, c_timeReal);
-        TriggerExecute(gt_DiamondbacksRescuedQ, true, false);
-    }
-
+    gf_RescueDiamondback(lp_pickedUnit);
     return true;
 }
 
