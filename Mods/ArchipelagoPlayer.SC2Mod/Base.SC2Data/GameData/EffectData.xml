@@ -11221,6 +11221,7 @@
         <Visibility value="Visible"/>
         <Kind value="Ranged"/>
         <Amount value="8"/>
+        <AttributeBonus index="Light" value="8"/>
     </CEffectDamage>
     <CEffectDamage id="AP_ScoutMPGroundUpgraded" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
@@ -11233,6 +11234,7 @@
         <Visibility value="Visible"/>
         <Kind value="Ranged"/>
         <Amount value="16"/>
+        <AttributeBonus index="Light" value="16"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_LightningBombAB">
         <EditorCategories value="Race:Protoss"/>
