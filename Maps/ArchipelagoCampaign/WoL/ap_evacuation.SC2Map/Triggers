@@ -14531,9 +14531,6 @@
         <Action Type="FunctionCall" Id="955C90E9"/>
         <Action Type="FunctionCall" Id="EE3B3F98"/>
         <Action Type="FunctionCall" Id="25F72298"/>
-        <Action Type="FunctionCall" Id="242ABAA1"/>
-        <Action Type="Comment" Id="68980262"/>
-        <Action Type="FunctionCall" Id="5485E036"/>
     </Element>
     <Element Type="Variable" Id="2D3E232F">
         <VariableType>
@@ -15540,84 +15537,6 @@
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000182"/>
         <ValueType Type="trigger"/>
         <ValueElement Type="Trigger" Id="A99BC4F5"/>
-    </Element>
-    <Element Type="FunctionCall" Id="242ABAA1">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000242"/>
-        <Parameter Type="Param" Id="562D8794"/>
-        <Parameter Type="Param" Id="9C43283D"/>
-    </Element>
-    <Element Type="Param" Id="562D8794">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000419"/>
-        <Value>2</Value>
-        <ValueType Type="fixed"/>
-    </Element>
-    <Element Type="Param" Id="9C43283D">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000420"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="00000012"/>
-    </Element>
-    <Element Type="Comment" Id="68980262">
-        <Comment>
-            Fix for unpowered protoss building visuals
-        </Comment>
-    </Element>
-    <Element Type="FunctionCall" Id="5485E036">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C4DC760C"/>
-        <Parameter Type="Param" Id="BFCAEF32"/>
-        <FunctionCall Type="FunctionCall" Id="8EFA0DFD"/>
-    </Element>
-    <Element Type="Param" Id="BFCAEF32">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="F96B466D"/>
-        <FunctionCall Type="FunctionCall" Id="150ABDC4"/>
-    </Element>
-    <Element Type="FunctionCall" Id="150ABDC4">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000359"/>
-        <Parameter Type="Param" Id="FC98883B"/>
-        <Parameter Type="Param" Id="43E177A5"/>
-        <Parameter Type="Param" Id="CA9A9F02"/>
-        <Parameter Type="Param" Id="2AA289A5"/>
-        <Parameter Type="Param" Id="A2C437D5"/>
-    </Element>
-    <Element Type="Param" Id="FC98883B">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000691"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="00000231"/>
-    </Element>
-    <Element Type="Param" Id="43E177A5">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000692"/>
-        <Variable Type="Variable" Id="00000017"/>
-    </Element>
-    <Element Type="Param" Id="CA9A9F02">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000693"/>
-        <FunctionCall Type="FunctionCall" Id="1E392B00"/>
-    </Element>
-    <Element Type="FunctionCall" Id="1E392B00">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000356"/>
-    </Element>
-    <Element Type="Param" Id="2AA289A5">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000695"/>
-        <Value>-;Missile,Dead,Hidden</Value>
-        <ValueType Type="unitfilter"/>
-    </Element>
-    <Element Type="Param" Id="A2C437D5">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000694"/>
-        <Preset Type="PresetValue" Library="Ntve" Id="1468BD55"/>
-    </Element>
-    <Element Type="FunctionCall" Id="8EFA0DFD">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="E1552C18"/>
-        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="9441B8B5"/>
-        <Parameter Type="Param" Id="38B609DC"/>
-        <Parameter Type="Param" Id="27297DB2"/>
-    </Element>
-    <Element Type="Param" Id="38B609DC">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="5A8D5B9F"/>
-        <FunctionCall Type="FunctionCall" Id="B9DD5589"/>
-    </Element>
-    <Element Type="FunctionCall" Id="B9DD5589">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
-    </Element>
-    <Element Type="Param" Id="27297DB2">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="8FF77F87"/>
-        <Value>Signal ProtossPowerUp</Value>
-        <ValueType Type="actormsg"/>
     </Element>
     <Element Type="Trigger" Id="017DBD0A">
         <Condition Type="FunctionCall" Id="EF345197"/>
