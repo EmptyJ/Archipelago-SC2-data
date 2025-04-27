@@ -2042,7 +2042,6 @@ bool gt_RebelsCompleteQ_Func (bool testConds, bool runActions) {
     UnitIssueOrder(UnitFromId(600), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(736)), c_orderQueueReplace);
     libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(599)), c_animNameDefault, "Stand Victory", c_animFlagNonLooping, c_animTimeDefault);
     Wait(1.0, c_timeReal);
-    libNtve_gf_SendActorMessageToUnit(UnitFromId(1900535743), "Signal ProtossPowerUp");
     TriggerExecute(gt_DominionRebelResponseWave, true, false);
     TriggerExecute(gt_ObjectiveRebelsComplete, true, false);
     while (!((UnitGroupCount(UnitGroupAlliance(gv_pLAYER_02_DOMINION, c_unitAllianceAlly, RegionFromId(25), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0))) {

@@ -14413,7 +14413,6 @@
         <Action Type="FunctionCall" Id="DC61B949"/>
         <Action Type="FunctionCall" Id="E657833A"/>
         <Action Type="FunctionCall" Id="B5DB5429"/>
-        <Action Type="FunctionCall" Id="6AA218D2"/>
         <Action Type="FunctionCall" Id="3F19742B"/>
         <Action Type="Comment" Id="F461132A"/>
         <Action Type="FunctionCall" Id="61BB58F8"/>
@@ -14939,21 +14938,6 @@
     <Element Type="Param" Id="0B9F8190">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000420"/>
         <Preset Type="PresetValue" Library="Ntve" Id="00000012"/>
-    </Element>
-    <Element Type="FunctionCall" Id="6AA218D2">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="E1552C18"/>
-        <Parameter Type="Param" Id="E7D5E73B"/>
-        <Parameter Type="Param" Id="5112A70F"/>
-    </Element>
-    <Element Type="Param" Id="E7D5E73B">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="5A8D5B9F"/>
-        <ValueType Type="unit"/>
-        <ValueId Id="1900535743"/>
-    </Element>
-    <Element Type="Param" Id="5112A70F">
-        <ParameterDef Type="ParamDef" Library="Ntve" Id="8FF77F87"/>
-        <Value>Signal ProtossPowerUp</Value>
-        <ValueType Type="actormsg"/>
     </Element>
     <Element Type="FunctionCall" Id="3F19742B">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000116"/>
