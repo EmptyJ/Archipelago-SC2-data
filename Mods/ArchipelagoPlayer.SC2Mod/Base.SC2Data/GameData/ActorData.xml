@@ -4283,12 +4283,20 @@
     <CActorTurret id="AP_SiegeTankTurret">
         <On Terms="TurretEnable.AP_SiegeTank" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTank" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankTransportable" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreakerTransportable" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreakerTransportable" Send="Destroy"/>
     </CActorTurret>
     <CActorTurret id="AP_SiegeTankSiegedTurret">
         <On Terms="TurretEnable.AP_SiegeTankSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankSieged; MorphTo AP_SiegeTank" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankSiegedTransportable; MorphTo AP_SiegeTank" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreakerSieged; MorphTo AP_SiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreakerSiegedTransportable; MorphTo AP_SiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreaker; MorphTo AP_InfestedSiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreakerTransportable; MorphTo AP_InfestedSiegeBreaker" Send="Destroy"/>
     </CActorTurret>
     <CActorUnit id="AP_Medivac" parent="AP_MedivacBase" unitName="AP_Medivac">
         <On Terms="Behavior.AP_MedivacMengskSiegeTankAirlift.On" Send="Create AP_MedivacCustomFrame"/>
@@ -28950,6 +28958,7 @@
     <CActorUnit id="AP_InfestedSiegeBreaker" parent="GenericUnitMorph" unitName="AP_InfestedSiegeBreaker">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="UnitBirth.AP_InfestedSiegeBreaker" Send="Create AP_InfestedSiegeBreakerInfestation"/>
         <On Terms="Behavior.AP_MercGroundDrop.Create" Send="Create AP_SiegeBreakerDropModel"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_SiegeTank_Land"/>
@@ -29018,6 +29027,7 @@
     </CActorAction>
     <CActorUnit id="AP_InfestedSiegeBreakerSiegeModeMorphModel" parent="GenericUnitBaseMorphTransition" unitName="AP_InfestedSiegeBreakerSiegeModeMorphModel">
         <Aliases value="_UnitLarge"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreakerSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreakerSiegedTransportable" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreakerSieged" Send="AnimPlay Start Morph,Start"/>
@@ -29062,6 +29072,7 @@
     <CActorUnit id="AP_InfestedSiegeBreakerSieged" parent="GenericUnitMorph" unitName="AP_InfestedSiegeBreakerSieged">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="UnitBirth.AP_InfestedSiegeBreakerSiegedTransportable" Send="Create"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_InfestedSiegeBreakerSiegedTransportable" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreakerSiegedTransportable" Send="Destroy"/>
@@ -29167,6 +29178,7 @@
     </CActorRange>
     <CActorUnit id="AP_InfestedSiegeBreakerTankModeMorphModel" parent="GenericUnitBaseMorphTransition" unitName="AP_InfestedSiegeBreakerTankModeMorphModel">
         <Aliases value="_UnitLarge"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreaker" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreaker" Send="AnimPlay End Morph,End"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_InfestedSiegeBreaker" Send="Destroy"/>
@@ -29209,6 +29221,7 @@
     </CActorUnit>
     <CActorModel id="AP_InfestedSiegeBreakerInfestation" parent="ModelAddition">
         <Model value="NeuralParasiteModel"/>
+        <CreepHeightClass value="Tiny"/>
         <HostSiteOps Ops="SOpAttachHead"/>
         <On Terms="UnitDeath" Send="Destroy"/>
     </CActorModel>

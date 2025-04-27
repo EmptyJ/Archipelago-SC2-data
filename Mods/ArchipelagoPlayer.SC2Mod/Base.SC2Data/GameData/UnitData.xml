@@ -380,9 +380,11 @@
         <Name value="Unit/Name/AP_InfestedMedic"/>
         <Description value="Button/Tooltip/AP_Medic"/>
         <Race value="Zerg"/>
+        <SpeedMultiplierCreep value="1.3"/>
         <LifeRegenRate value="0.2734"/>
         <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <BehaviorArray Link="AP_MalignantCreepFix"/>
     </CUnit>
     <CUnit id="AP_MedicSCBWOpticFlare@Missile" parent="MISSILE_INVULNERABLE">
         <Race value="BWTe"/>
@@ -4366,7 +4368,7 @@
         <AbilArray Link="AP_DeploySpiderMines"/>
         <BehaviorArray Link="AP_SiegeTankShapedHullIndicator"/>
         <BehaviorArray Link="AP_SiegeTankEnhancedCombustionEnginesIndicator"/>
-        <WeaponArray Link="AP_SiegeBreaker" Turret="SiegeTank"/>
+        <WeaponArray Link="AP_SiegeBreaker" Turret="AP_SiegeTank"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -4460,7 +4462,7 @@
         <AbilArray Link="AP_SiegeBreakerSiegedTransportableMorph"/>
         <BehaviorArray Link="AP_SiegeTankSiegeModeProgressiveRangeApplySafeguard"/>
         <BehaviorArray Link="AP_SiegeTankShapedHullIndicator"/>
-        <WeaponArray Link="AP_ArcliteShockCannon" Turret="SiegeTankSieged"/>
+        <WeaponArray Link="AP_ArcliteShockCannon" Turret="AP_SiegeTankSieged"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -4521,6 +4523,7 @@
         <Name value="Unit/Name/AP_InfestedSiegeBreaker"/>
         <Description value="Button/Tooltip/AP_SiegeTank"/>
         <Race value="Zerg"/>
+        <SpeedMultiplierCreep value="1.3"/>
         <LifeRegenRate value="0.2734"/>
         <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
@@ -4529,7 +4532,8 @@
         <!--        <AbilArray index="4" Link="AP_MercSiegeTankJumpJet"/>-->
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL1L2"/>
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL3"/>
-        <WeaponArray index="0" Link="AP_InfestedSiegeBreaker" Turret="SiegeTank"/>
+        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <WeaponArray index="0" Link="AP_InfestedSiegeBreaker" Turret="AP_SiegeTank"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="SiegeMode" Type="AbilCmd" AbilCmd="AP_InfestedSiegeBreakerSiege,0" Row="2" Column="0"/>
         </CardLayouts>
@@ -4547,7 +4551,8 @@
         <AbilArray index="5" Link="AP_InfestedSiegeBreakerSiegedTransportableMorph"/>
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL1L2"/>
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL3"/>
-        <WeaponArray index="0" Link="AP_InfestedArcliteShockCannon" Turret="SiegeTankSieged"/>
+        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <WeaponArray index="0" Link="AP_InfestedArcliteShockCannon" Turret="AP_SiegeTankSieged"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="Unsiege" Type="AbilCmd" AbilCmd="AP_InfestedSiegeBreakerUnsiege,0" Row="2" Column="1"/>
         </CardLayouts>
