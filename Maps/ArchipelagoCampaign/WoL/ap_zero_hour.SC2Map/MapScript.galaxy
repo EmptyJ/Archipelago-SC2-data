@@ -4152,6 +4152,7 @@ bool gt_TransmissionRebelMarines01RescuedQ_Func (bool testConds, bool runActions
         auto14DC20EB_var = UnitGroupUnitFromEnd(auto14DC20EB_g, auto14DC20EB_u);
         if (auto14DC20EB_var == null) { break; }
         libNtve_gf_RescueUnit(auto14DC20EB_var, gv_pLAYER01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(auto14DC20EB_var);
     }
     Wait(1.0, c_timeReal);
     UIAlertUnit("Trigger", gv_pLAYER01_USER, StringExternal("Param/Value/252F3104"), null, gv_rebelMarinesBeacon01);
@@ -4229,6 +4230,7 @@ bool gt_TransmissionRebelMarines02RescuedQ_Func (bool testConds, bool runActions
         auto2AB4C609_var = UnitGroupUnitFromEnd(auto2AB4C609_g, auto2AB4C609_u);
         if (auto2AB4C609_var == null) { break; }
         libNtve_gf_RescueUnit(auto2AB4C609_var, gv_pLAYER01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(auto2AB4C609_var);
     }
     Wait(1.0, c_timeReal);
     UIAlertUnit("Trigger", gv_pLAYER01_USER, StringExternal("Param/Value/28F3F94C"), null, gv_rebelMarinesBeacon02);
@@ -4308,6 +4310,7 @@ bool gt_TransmissionRebelMarines03RescuedQ_Func (bool testConds, bool runActions
         auto419AAC42_var = UnitGroupUnitFromEnd(auto419AAC42_g, auto419AAC42_u);
         if (auto419AAC42_var == null) { break; }
         libNtve_gf_RescueUnit(auto419AAC42_var, gv_pLAYER01_USER, true);
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(auto419AAC42_var);
     }
     Wait(1.0, c_timeReal);
     UIAlertUnit("Trigger", gv_pLAYER01_USER, StringExternal("Param/Value/6FEBAEC8"), null, gv_rebelMarinesBeacon03);

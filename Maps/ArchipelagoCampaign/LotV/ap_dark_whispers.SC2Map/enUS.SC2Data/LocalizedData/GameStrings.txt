@@ -14,7 +14,7 @@ MapInfo/Player06/Name=Kerrigan's Zerg
 MapInfo/Player07/Name=Kerrigan's Zerg
 MapInfo/Player08/Name=Kerrigan's Zerg
 MapInfo/Player09/Name=Moebius Corps
-MapInfo/Player10/Name=Captive Protoss
+MapInfo/Player10/Name=Captives
 MapInfo/Player11/Name=Moebius Corps
 MapInfo/Player12/Name=Hostile
 Param/Value/012B3B55=Protoss Captives
@@ -46,6 +46,7 @@ Param/Value/3E22C200=Zerg Base
 Param/Value/3EA10D89=Primary <c val="00FFFF">production</c> structure. Warps in <c val="00FFFF">warriors</c>.
 Param/Value/4300C019=Primary Protoss structure. Receives gathered resources.
 Param/Value/44CA44BC=Protoss Captives
+Param/Value/466755C0=Fixing position
 Param/Value/46996082=Enables <c val="00FFFF">Colossi</c> at the <c val="00FFFF">Robotics Facility</c>.
 Param/Value/484FACD6=Contains upgrades for ground units and shields.
 Param/Value/499FC3E1=Free First Captive Zerg
