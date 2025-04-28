@@ -80,6 +80,8 @@
 <Model id="PingAlert"/>
 <Model id="PingArrow"/>
 <Model id="PingBoss"/>
+<Model id="GhostAlternatePortrait"/>
+<Model id="InfestorPortrait"/>
 <Model id="PingCircle"/>
 <Model id="MoebiusLabHoloPlanetDisplay"/>
 <Model id="MoebiusLabDoorsWideAirlockWind"/>
@@ -159,6 +161,10 @@
 <Sound id="Prologue_Zerg_Horde_Quad_Aggro" Variations="0"/>
 <Sound id="Prologue_Zerg_Horde_Quad_Foley" Variations="0"/>
 <Sound id="Prologue_Zerg_Horde_AmbLow" Variations="0"/>
+<Sound id="InfestorVictory00001"/>
+<Sound id="InfestorVictory00002"/>
+<Sound id="GhostVictory00001"/>
+<Sound id="GhostVictory00002"/>
 <Soundtrack id="MidMusic"/>
 <Soundtrack id="VictoryMusic"/>
 <Soundtrack id="IntroMusic"/>
