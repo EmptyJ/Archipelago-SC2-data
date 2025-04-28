@@ -20833,7 +20833,13 @@
         <HostSiteOps Ops="SOpShadow"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
-    <CActorPortrait id="AP_FenixEx2Portrait" parent="CompositePortrait"/>
+    <CActorPortrait id="AP_FenixEx2Portrait" parent="CompositePortrait">
+        <Remove Terms="ActorCreation" Send="Create FenixEx2PortraitAddition"/>
+        <On Terms="ActorCreation" Send="Create AP_FenixEx2Portrait3DAddition"/>
+        <FaceFXTarget value="AP_FenixEx2Portrait3DAddition"/>
+        <AnimTargets value="AP_FenixEx2Portrait3DAddition"/>
+    </CActorPortrait>
+    <CActorModel id="AP_FenixEx2Portrait3DAddition" parent="CompositePortraitAddition"/>
     <CActorAction id="AP_FenixSOAAttack" parent="GenericAttack" effectAttack="AP_FenixSOAWeaponDamage">
         <LaunchAssets Sound="AP_Fenix_CleaveAttackLaunch"/>
         <ImpactMap index="None" Sound="AP_Fenix_CleaveAttackImpact"/>
