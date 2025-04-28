@@ -254,6 +254,7 @@ Trigger/Name/BD814D35=Transmission - Main Base Invasion Q
 Trigger/Name/BD9C8C07=Objective - Kill All Create
 Trigger/Name/BEB35942=Transmission - Spine CrawlerQ
 Trigger/Name/C0E2966A=Zerg Attack Left Base Reaction Q
+Trigger/Name/C151FD1B=DEBUG_Fenix
 Trigger/Name/C2C8C71B=Spine Crawler: Drone Issued Order
 Trigger/Name/C2D43A97=Queen: Hatchery Selected
 Trigger/Name/C309BEDF=Victory Cleanup

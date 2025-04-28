@@ -43,6 +43,7 @@ Param/Value/2B491027=Trapped Swarm Queen
 Param/Value/2BE5D96F=Select a Drone
 Param/Value/2D1B3279=Spawned by <c val="FF9800">Swarm Queens</c>.<n/>Spreads <c val="FF9800">creep</c>.
 Param/Value/2F9F2727=Reinforcements
+Param/Value/3202F384=Glory is at hand, brothers! Join me as I slay these foul creatures.
 Param/Value/33AC9686=Left-Click to Select
 Param/Value/34EF9B3C=Enables <c val="FF9800">Zerglings</c>, <c val="FF9800">Swarm Queens</c>, <n/>and <c val="FF9800">Spine Crawlers</c>.
 Param/Value/35692B69=Enables Zerglings, Swarm Queens, and Spine Crawlers.
@@ -67,6 +68,7 @@ Param/Value/6143A6B6=Trapped Swarm Queen
 Param/Value/6299F80D=Increases <c val="FF9800">supply</c>.<n/>Morphed from <c val="FF9800">Larvae</c>.
 Param/Value/655423E6=Reinforcements
 Param/Value/669BA0F3=Select the Hatchery
+Param/Value/6872F67D=Spawn Fenix
 Param/Value/6AAD0C25=Mutate Spawning Pool Here
 Param/Value/72C0D40D=Reinforcements Arrived
 Param/Value/72D1F867=Zerglings Rescued
@@ -82,6 +84,7 @@ Param/Value/94436C89=Hive Cluster
 Param/Value/9D48A476=Reinforcements
 Param/Value/9DDFF7FC=Dominion Patrol
 Param/Value/A1212FD8=Reinforcements
+Param/Value/A3B130EA=Fenix
 Param/Value/A523208F=Trapped Swarm Queen
 Param/Value/AC14B339=Dominion Patrol
 Param/Value/AC797F6F=Enables Spore Crawlers and contains unit upgrades.
