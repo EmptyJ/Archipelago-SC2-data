@@ -7967,6 +7967,8 @@ void libABFE498B_gf_AP_Triggers_Protoss_unlockTaldarimMothership (int lp_player)
         libABFE498B_gf_AP_Triggers_Protoss_unlockStargate(lp_player);
         TechTreeUnitAllow(lp_player, "AP_FleetBeacon", true);
         TechTreeUnitAllow(lp_player, "AP_SOAMothershipv4", true);
+        TechTreeUnitAllow(lp_player, "AP_SOAMothershipv4Placement", true);
+        TechTreeUnitAllow(lp_player, "AP_MothershipTaldarim", true);
         libNtve_gf_SetUpgradeLevelForPlayer(lp_player, "AP_StargateFactionTaldarim", 1);
     }
 
@@ -9664,6 +9666,8 @@ void libABFE498B_gf_AP_Triggers_clearProtossTech (int lp_player) {
     TechTreeUnitAllow(lp_player, "AP_ScoutPurifier", false);
     TechTreeUnitAllow(lp_player, "AP_ScoutNerazim", false);
     TechTreeUnitAllow(lp_player, "AP_SOAMothershipv4", false);
+    TechTreeUnitAllow(lp_player, "AP_SOAMothershipv4Placement", false);
+    TechTreeUnitAllow(lp_player, "AP_MothershipTaldarim", false);
     TechTreeUnitAllow(lp_player, "AP_TempestPurifier", false);
     TechTreeUnitAllow(lp_player, "AP_ArbiterMP", false);
     TechTreeUnitAllow(lp_player, "AP_Oracle", false);
