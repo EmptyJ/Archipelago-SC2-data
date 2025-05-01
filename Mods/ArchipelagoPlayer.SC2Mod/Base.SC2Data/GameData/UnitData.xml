@@ -9600,6 +9600,7 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowInfestorTerranDown"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_InfestedAcidSpines"/>
         <WeaponArray Link="AP_InfestedGuassRifle"/>
         <CardLayouts>
@@ -9653,6 +9654,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
         <AbilArray Link="AP_BurrowInfestorTerranUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowInfestorTerranUp,Execute" Row="2" Column="4"/>
@@ -22882,6 +22884,7 @@
         <BehaviorArray Link="AP_SIInfestedBunkerAutoSpawner"/>
         <BehaviorArray Link="AP_SIBunkerArmorUpgradeIndicator"/>
         <BehaviorArray Link="AP_SIInfestedBunkerImprovedCargoUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <EffectArray index="Create" value="AP_SIInfestedBunkerCreation"/>
         <CardLayouts>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="AP_SIInfestedBunkerTransport,0" Row="2" Column="0"/>
@@ -22959,6 +22962,7 @@
         <BehaviorArray Link="AP_DisableRedirect"/>
         <BehaviorArray Link="AP_SIBunkerArmorUpgradeIndicator"/>
         <BehaviorArray Link="AP_SIInfestedBunkerImprovedCargoUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_InfestedBunkerHiddenRealUprootedWeapon"/>
         <EffectArray index="Create" value="AP_SIInfestedBunkerCreation"/>
         <CardLayouts>
@@ -23088,6 +23092,7 @@
         <AbilArray Link="GatherSpecialObject"/>
         <AbilArray Link="CancelTerrazineHarvest"/>
         <BehaviorArray Link="AP_SCVCliffJump"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_FusionCutter"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -23185,6 +23190,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIUproot" Type="AbilCmd" AbilCmd="AP_SIBarracksLiftOff,0" Row="2" Column="3"/>
             <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
@@ -23245,6 +23251,7 @@
         <AbilArray Link="AP_SIBarracksLand"/>
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!--        <AbilArray Link="SIBarracksAddOns3"/>-->
         <CardLayouts>
             <LayoutButtons Face="AP_SIRoot" Type="AbilCmd" AbilCmd="AP_SIBarracksLand,0" Row="2" Column="3"/>
@@ -26032,6 +26039,7 @@
         <AbilArray Link="AP_BurrowSIInfestedMarineDown"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_SIInfestedMarine"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -26086,6 +26094,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <AbilArray Link="AP_BurrowSIInfestedMarineUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowSIInfestedMarineUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AP_SIMarineTrooperImprovedRange" Type="Passive" Requirements="AP_HaveSIMarineTrooperRange" Row="2" Column="0"/>
@@ -26141,6 +26150,7 @@
         <AbilArray Link="AP_BurrowSIInfestedTrooperDown"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_SIInfestedTrooper"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -26199,6 +26209,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <AbilArray Link="AP_BurrowSIInfestedTrooperUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowSIInfestedTrooperUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AP_SIMarineTrooperImprovedRange" Type="Passive" Requirements="AP_HaveSIMarineTrooperRange" Row="2" Column="0"/>
@@ -26994,6 +27005,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIDiamondBack" Type="AbilCmd" AbilCmd="AP_SIFactoryTrain,Train3" Row="0" Column="0"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
@@ -27058,6 +27070,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_SIFactoryAddOns"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIRoot" Type="AbilCmd" AbilCmd="AP_SIFactoryLand,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -27128,6 +27141,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SILiberator" Type="AbilCmd" AbilCmd="AP_SIStarportTrain,Train2" Row="0" Column="0"/>
             <LayoutButtons Face="AP_SIBanshee" Type="AbilCmd" AbilCmd="AP_SIStarportTrain,Train1" Row="0" Column="1"/>
@@ -27192,6 +27206,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_SIStarportAddOns"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIRoot" Type="AbilCmd" AbilCmd="AP_SIStarportLand,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -27267,6 +27282,7 @@
         <AbilArray Link="que5Addon"/>
         <AbilArray Link="AP_SIFactoryTechLabMorph"/>
         <AbilArray Link="AP_SIStarportTechLabMorph"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5Addon,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -27607,6 +27623,7 @@
         <AbilArray Link="AP_BurrowSIVolatileInfestedUp"/>
         <AbilArray Link="AP_ExplodeHeal"/>
         <BehaviorArray Link="AP_SIVolatileInfestedDeathPreExplode"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!--BehaviorArray Link="StukovInfestedCivilianSpawnBroodlingOnDeath"/-->  <!-- not added yet-->
         <EffectArray index="Create" value="AP_VolatileBurstBuildingOn"/>
         <EquipmentArray Weapon="AP_SIVolatileInfestedDummy"/>
@@ -27868,6 +27885,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <AbilArray Link="AP_BurrowStukovInfestedBansheeUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_AttackChampions" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowStukovInfestedBansheeUp,Execute" Row="2" Column="4"/>
@@ -29940,6 +29958,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="AP_SalvageShared"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!--WeaponArray Link="LongboltMissile" Turret="MissileTurret"/>
         <WeaponArray Link="HailstormMissilePods" Turret="MissileTurret"/-->
         <CardLayouts>
