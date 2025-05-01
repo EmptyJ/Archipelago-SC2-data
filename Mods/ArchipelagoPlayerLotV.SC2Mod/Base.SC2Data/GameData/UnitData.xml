@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Catalog>
+    <CUnit id="InfestedStukov">
+        <!-- Override -->
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
+    </CUnit>
+    <CUnit id="StukovInfestedTerran">
+        <!-- Override -->
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
+    </CUnit>
     <CUnit id="SuperWarpGate">
         <!-- Override -->
         <!-- WoL Protoss warp in reinforcements -->

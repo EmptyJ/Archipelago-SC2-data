@@ -256,33 +256,4 @@
         <EffectArray Operation="Set" Reference="Weapon,StukovInfestedTerran,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,InfestedStukov,Icon" Value="AP\Assets\Custom\Textures\btn-upgrade-zerg-missileattacks-level5.dds"/>
     </CUpgrade>
-    <CUpgrade id="AP_K5CreepBonuses">
-        <!-- Override -->
-        <EffectArray Reference="Unit,InfestedStukov,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,StukovInfestedTerran,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,InfestedTerranCampaign,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,InfestedCivilian,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,Dehaka,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,DehakaMirrorImage,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,SwarmQueen,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,LargeSwarmQueen,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,HugeSwarmQueen,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,Locust,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,Brutalisk,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,InfestedStukov,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,StukovInfestedTerran,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,InfestedTerranCampaign,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,InfestedCivilian,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,Dehaka,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,DehakaBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,DehakaMirrorImage,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,DehakaMirrorImageBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,SwarmQueen,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,SwarmQueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,LargeSwarmQueen,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,LargeSwarmQueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,HugeSwarmQueen,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,HugeSwarmQueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,Brutalisk,LifeRegenRateCreep" Value="0.820200"/>
-    </CUpgrade>
 </Catalog>

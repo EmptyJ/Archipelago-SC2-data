@@ -491,6 +491,7 @@ Behavior/Name/AP_Charging=Charging
 Behavior/Name/AP_Contaminated=Contaminated
 Behavior/Name/AP_Corruption=Corruption
 Behavior/Name/AP_CorsairMPDisruptionWeb=Disruption Web
+Behavior/Name/AP_CreepFrenzy13Crawler=Malignant Creep
 Behavior/Name/AP_DarkArchonConfusion=Confusion
 Behavior/Name/AP_DarkArchonMindControl=Mind Controlled
 Behavior/Name/AP_DarkArchonSCBWMaelstrom=Maelstrom
@@ -761,6 +762,7 @@ Behavior/Tooltip/AP_Charging=This Zealot is charging, allowing it to quickly clo
 Behavior/Tooltip/AP_Contaminated=This structure is unable to train new units or research upgrades.
 Behavior/Tooltip/AP_Corruption=This unit takes 20% extra damage.
 Behavior/Tooltip/AP_CorsairMPDisruptionWeb=This unit cannot attack.
+Behavior/Tooltip/AP_CreepFrenzy13Crawler=This unit is currently on Malignant Creep. It has +<d ref="(Behavior,AP_CreepFrenzy13Crawler,Modification.AttackSpeedMultiplier-1)*100" precision="1"/>% attack speed and regenerates +<d ref="Behavior,AP_CreepFrenzy13Crawler,Modification.VitalRegenArray[Life]" precision="1"/> life per second.
 Behavior/Tooltip/AP_DarkArchonConfusion=This unit may attack its allies.
 Behavior/Tooltip/AP_DarkArchonSCBWMaelstrom=While active, this unit cannot attack or move.
 Behavior/Tooltip/AP_DarkTemplarRecentlyRecalled=This unit has been recently recalled to a Dark Shrine and cannot be recalled again.

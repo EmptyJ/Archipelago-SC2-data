@@ -3903,11 +3903,7 @@ void lib15EF4C78_gf_AP_Player_UtilTownHallAutoRally (int lp_player) {
 void lib15EF4C78_gf_AP_Player_applyMalignantCreepFix (unit lp_unit) {
     // Automatic Variable Declarations
     // Implementation
-    if ((UnitHasBehavior2(lp_unit, "AP_MalignantCreepFix") == true) && (CreepIsPresent(UnitGetPosition(lp_unit)) == true)) {
-        UnitSetPropertyFixed(lp_unit, c_unitPropLifeRegen, (UnitGetPropertyFixed(lp_unit, c_unitPropLifeRegen, c_unitPropCurrent) + 0.8202));
-        UnitBehaviorAdd(lp_unit, "AP_MalignantCreepAttack", lp_unit, 1);
-    }
-
+    lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lp_unit);
 }
 
 void lib15EF4C78_gf_AP_Player_SpawnLarvaForHatchery (unit lp_hatchery, int lp_larvaCount) {
@@ -4023,6 +4019,7 @@ bool auto_lib15EF4C78_gf_StartingWorkersAutoHarvest_TriggerFunc (bool testConds,
         lv_unitGroupHarvestGas = UnitGroup(null, lp_player, lp_regionGasWorker, UnitFilter((1 << c_targetFilterWorker), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     }
 
+    UnitGroupRemoveUnitGroup(lv_unitGroupHarvestMinerals, lv_unitGroupHarvestGas);
     if ((UnitGroupCount(lv_unitGroupHarvestGas, c_unitCountAlive) > 0)) {
         auto4EC1769A_g = lv_unitGroupHarvestGas;
         auto4EC1769A_u = UnitGroupCount(auto4EC1769A_g, c_unitCountAll);
