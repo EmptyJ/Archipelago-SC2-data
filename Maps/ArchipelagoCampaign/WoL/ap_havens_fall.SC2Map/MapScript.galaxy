@@ -102,6 +102,7 @@ fixed gv_aberrationLife;
 fixed gv_virophageLife;
 playergroup gv_zergPlayers;
 int gv_tEMP_ColonyIndex;
+bool gv_aP_DEBUG_MODE;
 region[11] gv_infestationRegion;
 int[11] gv_infestationPings;
 point[11] gv_infestationVirophageSpot;
@@ -239,6 +240,13 @@ trigger gt_Init04Music;
 trigger gt_Init05Environment;
 trigger gt_Init06Difficulties;
 trigger gt_Init07Help;
+trigger gt_DEBUGyellow;
+trigger gt_DEBUGgreen;
+trigger gt_DEBUGwhite;
+trigger gt_DEBUGred;
+trigger gt_DEBUGpurple;
+trigger gt_DEBUGpink;
+trigger gt_DEBUGBroodlord;
 trigger gt_StartGame;
 trigger gt_InitialInfestation;
 trigger gt_InitWarningPings;
@@ -386,6 +394,7 @@ void gf_SpawnAndUnburrowUnitsAtColony (int lp_qty, string lp_type, int lp_colony
 void gf_InitInfestationColony (int lp_colonyIndex, region lp_area, bool lp_cleanUp) {
     // Variable Declarations
     unit lv_u;
+    unitgroup lv_group;
 
     // Automatic Variable Declarations
     unitgroup auto009D0608_g;
@@ -394,6 +403,7 @@ void gf_InitInfestationColony (int lp_colonyIndex, region lp_area, bool lp_clean
     int autoED4A8D80_u;
 
     // Variable Initialization
+    lv_group = UnitGroupEmpty();
 
     // Implementation
     gv_infestationRegion[lp_colonyIndex] = lp_area;
@@ -414,7 +424,10 @@ void gf_InitInfestationColony (int lp_colonyIndex, region lp_area, bool lp_clean
     gv_infestationDefenderCount[lp_colonyIndex] = 0;
     gv_infestationOverlords[lp_colonyIndex] = UnitGroupEmpty();
     gv_infestationOverseers[lp_colonyIndex] = UnitGroupEmpty();
-    auto009D0608_g = UnitGroup(null, gv_p07_ZERG_INFESTED, lp_area, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    gv_infestationOverseers[lp_colonyIndex] = UnitGroupEmpty();
+    lv_group = UnitGroup(null, gv_p07_ZERG_INFESTED, lp_area, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    UnitGroupRemoveUnitGroup(lv_group, UnitGroup("BroodlingEscort", gv_p07_ZERG_INFESTED, lp_area, UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0));
+    auto009D0608_g = lv_group;
     auto009D0608_u = UnitGroupCount(auto009D0608_g, c_unitCountAll);
     for (;; auto009D0608_u -= 1) {
         lv_u = UnitGroupUnitFromEnd(auto009D0608_g, auto009D0608_u);
@@ -438,8 +451,13 @@ void gf_InitInfestationColony (int lp_colonyIndex, region lp_area, bool lp_clean
 }
 
 void gf_InitInfestationColonyUnit (int lp_colonyIndex, unit lp_unit) {
+    // Variable Declarations
+    string lv_type;
+
     // Automatic Variable Declarations
     string autoA7EBEB0F_val;
+
+    // Variable Initialization
 
     // Implementation
     autoA7EBEB0F_val = UnitGetType(lp_unit);
@@ -464,7 +482,8 @@ void gf_InitInfestationColonyUnit (int lp_colonyIndex, unit lp_unit) {
             gv_infestationDefenderCount[lp_colonyIndex] += 1;
             gv_infestationDefenderLocation[lp_colonyIndex][gv_infestationDefenderCount[lp_colonyIndex]] = UnitGetPosition(lp_unit);
             gv_infestationDefenderUnit[lp_colonyIndex][gv_infestationDefenderCount[lp_colonyIndex]] = null;
-            gv_infestationDefenderType[lp_colonyIndex][gv_infestationDefenderCount[lp_colonyIndex]] = UnitGetType(lp_unit);
+            lv_type = UnitGetType(lp_unit);
+            gv_infestationDefenderType[lp_colonyIndex][gv_infestationDefenderCount[lp_colonyIndex]] = lv_type;
         }
 
     }
@@ -1847,6 +1866,214 @@ void gt_Init07Help_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - yellow
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGyellow_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/4FD6CDF6"));
+    gf_InfestAColonyAndWait(ge_ColonyIndex_Base6Yellow, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGyellow_Init () {
+    gt_DEBUGyellow = TriggerCreate("gt_DEBUGyellow_Func");
+    TriggerAddEventChatMessage(gt_DEBUGyellow, gv_p01_USER, "yellow", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - green
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGgreen_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/161CECAA"));
+    gf_InfestAColonyAndWait(ge_ColonyIndex_Base1Green, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGgreen_Init () {
+    gt_DEBUGgreen = TriggerCreate("gt_DEBUGgreen_Func");
+    TriggerAddEventChatMessage(gt_DEBUGgreen, gv_p01_USER, "green", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - white
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGwhite_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/FA82DB5A"));
+    gf_InfestAColonyAndWait(ge_ColonyIndex_Base5White, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGwhite_Init () {
+    gt_DEBUGwhite = TriggerCreate("gt_DEBUGwhite_Func");
+    TriggerAddEventChatMessage(gt_DEBUGwhite, gv_p01_USER, "white", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - red
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGred_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/A883C4D4"));
+    gf_InfestAColonyAndWait(ge_ColonyIndex_Base4Red, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGred_Init () {
+    gt_DEBUGred = TriggerCreate("gt_DEBUGred_Func");
+    TriggerAddEventChatMessage(gt_DEBUGred, gv_p01_USER, "red", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - purple
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGpurple_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/4CE48A7F"));
+    gf_InfestAColonyAndWait(ge_ColonyIndex_Base3Purple, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGpurple_Init () {
+    gt_DEBUGpurple = TriggerCreate("gt_DEBUGpurple_Func");
+    TriggerAddEventChatMessage(gt_DEBUGpurple, gv_p01_USER, "purple", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - pink
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGpink_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/4A099037"));
+    gf_InfestAColonyAndWait(ge_ColonyIndex_Base2Pink, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGpink_Init () {
+    gt_DEBUGpink = TriggerCreate("gt_DEBUGpink_Func");
+    TriggerAddEventChatMessage(gt_DEBUGpink, gv_p01_USER, "pink", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: DEBUG - Broodlord
+//--------------------------------------------------------------------------------------------------
+bool gt_DEBUGBroodlord_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    unitgroup autoE41389E5_g;
+    int autoE41389E5_u;
+    unit autoE41389E5_var;
+
+    // Conditions
+    if (testConds) {
+        if (!((gv_aP_DEBUG_MODE == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/B6D456AA"), true);
+    autoE41389E5_g = UnitGroup("BroodLord", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    autoE41389E5_u = UnitGroupCount(autoE41389E5_g, c_unitCountAll);
+    for (;; autoE41389E5_u -= 1) {
+        autoE41389E5_var = UnitGroupUnitFromEnd(autoE41389E5_g, autoE41389E5_u);
+        if (autoE41389E5_var == null) { break; }
+        UnitAbilityEnable(autoE41389E5_var, "AP_BroodLordHangar", false);
+        libNtve_gf_SendActorMessageToUnit(autoE41389E5_var, "HaloStart");
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_DEBUGBroodlord_Init () {
+    gt_DEBUGBroodlord = TriggerCreate("gt_DEBUGBroodlord_Func");
+    TriggerAddEventChatMessage(gt_DEBUGBroodlord, c_playerAny, "bl", true);
+    TriggerAddEventHotkeyPressed(gt_DEBUGBroodlord, c_playerAny, c_hotkeyHeroSelect0, true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Start Game
 //--------------------------------------------------------------------------------------------------
 bool gt_StartGame_Func (bool testConds, bool runActions) {
@@ -1866,6 +2093,10 @@ bool gt_StartGame_Func (bool testConds, bool runActions) {
     TriggerExecute(gt_InitialInfestation, true, false);
     TriggerExecute(gt_InfestColoniesForever, true, false);
     Wait(1.0, c_timeGame);
+    if ((gv_aP_DEBUG_MODE == true)) {
+        TriggerDebugOutput(1, StringExternal("Param/Value/0534D9FE"), true);
+    }
+
     TriggerExecute(gt_ObjectiveDestroyInfestationCreateQ, true, true);
     Wait(1.0, c_timeGame);
     TriggerExecute(gt_ObjectiveKeepColonyBasesnotinfestedCreateQ, true, true);
@@ -5454,6 +5685,13 @@ void InitTriggers () {
     gt_Init05Environment_Init();
     gt_Init06Difficulties_Init();
     gt_Init07Help_Init();
+    gt_DEBUGyellow_Init();
+    gt_DEBUGgreen_Init();
+    gt_DEBUGwhite_Init();
+    gt_DEBUGred_Init();
+    gt_DEBUGpurple_Init();
+    gt_DEBUGpink_Init();
+    gt_DEBUGBroodlord_Init();
     gt_StartGame_Init();
     gt_InitialInfestation_Init();
     gt_InitWarningPings_Init();

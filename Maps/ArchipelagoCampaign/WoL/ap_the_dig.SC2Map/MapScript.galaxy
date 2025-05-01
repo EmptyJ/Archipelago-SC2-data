@@ -6067,7 +6067,10 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
     for (;; auto8C8E2B83_u -= 1) {
         auto8C8E2B83_var = UnitGroupUnitFromEnd(auto8C8E2B83_g, auto8C8E2B83_u);
         if (auto8C8E2B83_var == null) { break; }
-        libNtve_gf_RescueUnit(auto8C8E2B83_var, gv_p1_USER, true);
+        if ((auto8C8E2B83_var != gv_tHEONEDRILL)) {
+            libNtve_gf_RescueUnit(auto8C8E2B83_var, gv_p1_USER, true);
+        }
+
     }
     auto8C7973B7_g = UnitGroup("AP_Overlord", gv_p7_ABANDONED_BASE, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     auto8C7973B7_u = UnitGroupCount(auto8C7973B7_g, c_unitCountAll);
