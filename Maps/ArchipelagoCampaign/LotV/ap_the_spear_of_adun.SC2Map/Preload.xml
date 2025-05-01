@@ -67,8 +67,14 @@
 <Actor id="TempleBricksLarge" Variations="1,3,4"/>
 <Actor id="Vines" Variations="0,1,4,6"/>
 <Model id="PingSimple"/>
+<Model id="QueenPortrait"/>
 <Model id="PylonPlacement"/>
+<Model id="ArtanisPortrait"/>
+<Model id="TychusPortrait"/>
+<Model id="KerriganPortrait"/>
+<Model id="RaynorMarinePortrait"/>
 <Model id="ProtossGenericWarpInOut"/>
+<Model id="ArtanisPortraitAiur01"/>
 <Race id="Terr"/>
 <Race id="Zerg"/>
 <Race id="Prot"/>
@@ -97,6 +103,8 @@
 <Sound id="PAiur03_PlatformFinish"/>
 <Sound id="PAiur03_PlatformEngage"/>
 <Sound id="PAiur03_ArmsInitiate"/>
+<Sound id="pCutscene_Aiur04Before_Artanis_001"/>
+<Sound id="Mission_Epilogue02_Raynor_107"/>
 <Sound id="pMission_Aiur03_Smith_033"/>
 <Sound id="pMission_Aiur03_Artanis_034"/>
 <Sound id="pMission_Aiur03_Smith_035"/>
@@ -148,6 +156,16 @@
 <Sound id="pMission_Aiur03_Artanis_113"/>
 <Sound id="pMission_Aiur03_Smith_114"/>
 <Sound id="pMission_Aiur03_Smith_115"/>
+<Sound id="pMission_Ulnar02_Artanis_128"/>
+<Sound id="RaynorIntro00001"/>
+<Sound id="ArtanisIntro00002"/>
+<Sound id="TychusIntro00001"/>
+<Sound id="KerriganIntro00001"/>
+<Sound id="ArtanisBuilding00001"/>
+<Sound id="QueenBuilding00001"/>
+<Sound id="KerriganBuilding00002"/>
+<Sound id="KerriganBuilding00001"/>
+<Sound id="KerriganBuilding00003"/>
 <Soundtrack id="Music_Silence"/>
 <Soundtrack id="PAiur03_Music_Intro"/>
 <Soundtrack id="PAiur03_Music_LastObjective"/>
@@ -218,12 +236,10 @@
 <Unit id="Aiur03MechanismDisabler"/>
 <Unit id="AP_SupplyDepot"/>
 <Unit id="AP_Barracks"/>
-<Unit id="AP_BarracksMengsk"/>
 <Unit id="AP_PerditionTurret"/>
 <Unit id="AP_Assimilator"/>
 <Unit id="AP_Factory"/>
-<Unit id="AP_FactoryMengsk"/>
-<Unit id="AP_StarportMengsk"/>
+<Unit id="AP_Starport"/>
 <Unit id="AP_PhotonCannon"/>
 <Unit id="AP_Probe"/>
 <Unit id="AP_SpineCrawlerUprooted"/>
@@ -241,6 +257,7 @@
 <Unit id="AP_EngineeringBay"/>
 <Unit id="AP_Bunker"/>
 <Unit id="AP_MercCompound"/>
+<Unit id="AP_Armory"/>
 <Unit id="AP_Queen"/>
 <Unit id="AP_SpawningPool"/>
 <Unit id="AP_EvolutionChamber"/>
