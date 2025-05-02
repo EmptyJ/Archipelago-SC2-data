@@ -26491,6 +26491,7 @@
         <FunctionCall Type="FunctionCall" Id="4E690177"/>
         <FunctionCall Type="FunctionCall" Id="3655EE1A"/>
         <FunctionCall Type="FunctionCall" Id="ED9FF4D4"/>
+        <FunctionCall Type="FunctionCall" Id="9B6E7708"/>
     </Element>
     <Element Type="FunctionCall" Id="A66A4889">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
@@ -26617,6 +26618,38 @@
     <Element Type="Param" Id="C80FB9E3">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
         <Value>AP_Probe</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Unit"/>
+    </Element>
+    <Element Type="FunctionCall" Id="9B6E7708">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
+        <Parameter Type="Param" Id="7D1AA5DD"/>
+        <Parameter Type="Param" Id="A08B5D80"/>
+        <Parameter Type="Param" Id="FB926460"/>
+    </Element>
+    <Element Type="Param" Id="7D1AA5DD">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+        <FunctionCall Type="FunctionCall" Id="4A58A160"/>
+    </Element>
+    <Element Type="FunctionCall" Id="4A58A160">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000079"/>
+        <Parameter Type="Param" Id="00F4BF35"/>
+    </Element>
+    <Element Type="Param" Id="00F4BF35">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000138"/>
+        <FunctionCall Type="FunctionCall" Id="F424BB92"/>
+    </Element>
+    <Element Type="FunctionCall" Id="F424BB92">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+    </Element>
+    <Element Type="Param" Id="A08B5D80">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+    </Element>
+    <Element Type="Param" Id="FB926460">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+        <Value>AP_ElderProbe</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>
@@ -28755,6 +28788,7 @@
         <FunctionCall Type="FunctionCall" Id="D60E184B"/>
         <FunctionCall Type="FunctionCall" Id="C97AF0BF"/>
         <FunctionCall Type="FunctionCall" Id="0435DA53"/>
+        <FunctionCall Type="FunctionCall" Id="7F60B9C2"/>
     </Element>
     <Element Type="FunctionCall" Id="FC3D8F19">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
@@ -28881,6 +28915,38 @@
     <Element Type="Param" Id="81F968B2">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
         <Value>AP_Probe</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Unit"/>
+    </Element>
+    <Element Type="FunctionCall" Id="7F60B9C2">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000001"/>
+        <Parameter Type="Param" Id="68CFE735"/>
+        <Parameter Type="Param" Id="C3DA2297"/>
+        <Parameter Type="Param" Id="69510A79"/>
+    </Element>
+    <Element Type="Param" Id="68CFE735">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+        <FunctionCall Type="FunctionCall" Id="899D15C2"/>
+    </Element>
+    <Element Type="FunctionCall" Id="899D15C2">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000079"/>
+        <Parameter Type="Param" Id="CB1E8F55"/>
+    </Element>
+    <Element Type="Param" Id="CB1E8F55">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000138"/>
+        <FunctionCall Type="FunctionCall" Id="9EB2EDDD"/>
+    </Element>
+    <Element Type="FunctionCall" Id="9EB2EDDD">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000092"/>
+    </Element>
+    <Element Type="Param" Id="C3DA2297">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+    </Element>
+    <Element Type="Param" Id="69510A79">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+        <Value>AP_ElderProbe</Value>
         <ValueType Type="gamelink"/>
         <ValueGameType Type="Unit"/>
     </Element>

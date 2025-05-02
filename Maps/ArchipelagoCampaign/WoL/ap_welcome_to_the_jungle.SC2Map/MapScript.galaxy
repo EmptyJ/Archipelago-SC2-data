@@ -2290,7 +2290,7 @@ bool gt_Playerstartsharvestingterrazine_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
 
@@ -2522,7 +2522,7 @@ bool gt_SCViskilledwhileharvesting_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
     }
@@ -2705,7 +2705,7 @@ bool gt_SCVisheadinghomewithterrazine_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
 
@@ -2835,7 +2835,7 @@ bool gt_SCVwithterrazinediesonreturntrip_Func (bool testConds, bool runActions) 
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
     }
