@@ -12677,7 +12677,7 @@
         <Flags index="IgnoreFacing" value="1"/>
         <Flags index="IgnoreFood" value="1"/>
         <Flags index="IgnoreUnitCost" value="1"/>
-        <Flags index="Produce" value="1"/>
+        <Flags index="Produce" value="0"/>
         <Flags index="Rally" value="1"/>
         <Flags index="ShowProgress" value="1"/>
         <Flags index="SuppressMovement" value="1"/>

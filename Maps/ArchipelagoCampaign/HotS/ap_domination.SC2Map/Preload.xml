@@ -62,7 +62,9 @@
 <Behavior id="ColonyInfestation"/>
 <Behavior id="AP_ImmortalShakurasAntiAirMissileDisableAttack"/>
 <Effect id="FungalGrowthInitialSet"/>
+<Effect id="NukeDetonate"/>
 <Model id="MinimapPing"/>
+<Model id="GhostNukeIndicator"/>
 <Model id="BriefingUnitSelectZerg"/>
 <Model id="BriefingUnitSelectZergSmall"/>
 <Model id="KerriganSearchImpact"/>
@@ -70,6 +72,8 @@
 <Race id="Terr"/>
 <Race id="Zerg"/>
 <Race id="Prot"/>
+<Sound id="Ghost_NukeLaunch"/>
+<Sound id="Ghost_NukeSeek"/>
 <Sound id="UI_TerranPing"/>
 <Sound id="UI_TerranRescueUnit"/>
 <Sound id="UI_ResourcePickup"/>
@@ -89,10 +93,12 @@
 <Sound id="zMission_Expedition02_ExepeditionLeader_012"/>
 <Sound id="zMission_Expedition02_ExepeditionLeader_019"/>
 <Sound id="zMission_Expedition03_ZExpedition03Zealot_047"/>
+<Sound id="zMission_Expedition03_ExepeditionLeader_051"/>
 <Sound id="zMission_Char02_GeneralWarfield_042"/>
 <Sound id="zMission_Char02_GeneralWarfield_054"/>
 <Sound id="zMission_Char03_GeneralWarfield_005"/>
 <Sound id="zMission_Char03_DMarineB_045"/>
+<Sound id="zMission_Char03_GeneralWarfield_048"/>
 <Sound id="zMission_Char03_DMarineA_054"/>
 <Sound id="zMission_Char01_Kerrigan_001"/>
 <Sound id="zMission_Char01_RogueQueen_002"/>

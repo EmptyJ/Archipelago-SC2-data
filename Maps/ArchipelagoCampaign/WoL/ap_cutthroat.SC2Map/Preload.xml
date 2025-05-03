@@ -64,6 +64,7 @@
 <Behavior id="AP_RegeneratorRegenBioSteelL1L2"/>
 <Behavior id="AP_RegeneratorRegenBioSteelL3"/>
 <Behavior id="AP_VultureAutoRepair"/>
+<Behavior id="AP_StukovInfestedSiegeTankAmmo"/>
 <Model id="PingObjective"/>
 <Model id="GhostNukeIndicator"/>
 <Model id="BriefingUnitSelect"/>
@@ -172,6 +173,7 @@
 <Unit id="PortJunker"/>
 <Unit id="AP_Zergling"/>
 <Unit id="AP_Roach"/>
+<Unit id="AP_Hydralisk"/>
 <Unit id="AP_SiegeBreaker"/>
 <Unit id="AP_SupplyDepot"/>
 <Unit id="AP_BarracksFlying"/>
@@ -188,13 +190,22 @@
 <Unit id="AP_CreepTumorUsed"/>
 <Unit id="AP_Diamondback"/>
 <Unit id="AP_Vulture"/>
+<Unit id="AP_PhotonCannon"/>
+<Unit id="AP_SporeCrawler"/>
 <Unit id="AP_Adept"/>
 <Unit id="AP_ZealotPurifier"/>
-<Unit id="AP_Monitor"/>
+<Unit id="AP_StalkerPurifier"/>
+<Unit id="AP_SentryPurifier"/>
 <Unit id="AP_Pylon"/>
+<Unit id="AP_Forge"/>
+<Unit id="AP_RoboticsBay"/>
 <Unit id="AP_CyberneticsCore"/>
+<Unit id="AP_KhaydarinMonolith"/>
 <Unit id="AP_WarpGate"/>
+<Unit id="AP_RoboticsFacilityWarp"/>
 <Unit id="AP_Overlord"/>
+<Unit id="AP_SIInfestedBunker"/>
+<Unit id="AP_SIMissileTurret"/>
 <Unit id="AP_WarPig"/>
 <Unit id="AP_SpartanCompany"/>
 <Unit id="AP_HammerSecurity"/>
@@ -204,7 +215,16 @@
 <Unit id="AP_Bunker"/>
 <Unit id="AP_MercCompound"/>
 <Unit id="AP_Armory"/>
+<Unit id="AP_SentryPhasing"/>
+<Unit id="AP_LurkerDen"/>
+<Unit id="AP_Queen"/>
 <Unit id="AP_SpawningPool"/>
+<Unit id="AP_EvolutionChamber"/>
+<Unit id="AP_InfestationPit"/>
+<Unit id="AP_BanelingNest"/>
 <Unit id="AP_RoachWarren"/>
 <Unit id="AP_ZergMercenaryCompound"/>
+<Unit id="AP_MercZergling"/>
+<Unit id="AP_Yggdrasil"/>
+<Unit id="AP_SIInfestedTrooper"/>
 </Preload>

@@ -60,6 +60,7 @@ ParamDef/Name/556DFC26=NumberOfCars
 ParamDef/Name/57EF0B6B=PickedUnit
 ParamDef/Name/6A67A304=NumberOfCars
 ParamDef/Name/7F63F50B=TrainCar
+ParamDef/Name/8470F742=ImmortalCheck
 ParamDef/Name/8C86A775=Tunnel
 ParamDef/Name/9DAD3859=SpawnWave
 ParamDef/Name/A768E494=PathIndex

@@ -88,7 +88,6 @@
 <Sound id="THorner01BriefingRaynor00018"/>
 <Sound id="ArmorySwannRaynor00080"/>
 <Sound id="ArmorySwannSwann00090"/>
-<Sound id="TZeratul01Zeratul00051"/>
 <Sound id="THorner01Horner00001"/>
 <Sound id="THorner01Swann00002"/>
 <Sound id="THorner01Horner00003"/>
@@ -119,6 +118,7 @@
 <Sound id="THorner03Tychus00057"/>
 <Sound id="LabHansonRaynor00031"/>
 <Sound id="TZeratul02Zeratul00029"/>
+<Sound id="TZeratul02Zeratul00031"/>
 <Sound id="TZeratul02Immortal00070"/>
 <Soundtrack id="THorner01MusicEventA"/>
 <Soundtrack id="THorner01MusicIntro"/>
