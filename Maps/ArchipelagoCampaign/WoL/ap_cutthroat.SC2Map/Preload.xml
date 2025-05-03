@@ -190,6 +190,7 @@
 <Unit id="AP_CreepTumorUsed"/>
 <Unit id="AP_Diamondback"/>
 <Unit id="AP_Vulture"/>
+<Unit id="AP_RoboticsFacility"/>
 <Unit id="AP_PhotonCannon"/>
 <Unit id="AP_SporeCrawler"/>
 <Unit id="AP_Adept"/>
@@ -202,7 +203,6 @@
 <Unit id="AP_CyberneticsCore"/>
 <Unit id="AP_KhaydarinMonolith"/>
 <Unit id="AP_WarpGate"/>
-<Unit id="AP_RoboticsFacilityWarp"/>
 <Unit id="AP_Overlord"/>
 <Unit id="AP_SIInfestedBunker"/>
 <Unit id="AP_SIMissileTurret"/>

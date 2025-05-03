@@ -3806,6 +3806,9 @@
     <ObjectUnit Id="1531" Variation="3" Position="88.2934,72.9265,0" Rotation="5.8007" Scale="1,1,1" UnitType="ScrapSalvage1x1" Player="5">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
+    <ObjectUnit Id="224311143" Position="20.5,38.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="AP_RoboticsFacility" Player="3">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="535" Position="71.403,30.21,0" Rotation="3.2963" Scale="1,1,1" UnitType="Marine" Player="2">
         <AIRebuild Index="1" Value="0"/>
         <AIRebuild Index="2" Value="0"/>
@@ -4048,9 +4051,6 @@
         <AIFlag Index="IsUseable" Value="0"/>
     </ObjectUnit>
     <ObjectUnit Id="585" Variation="1" Position="73.5,66.5,0" Rotation="0.0156" Scale="1,1,1" UnitType="ScrapSalvage1x1" Player="5"/>
-    <ObjectUnit Id="1060843576" Position="29.5,29.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="AP_RoboticsFacilityWarp" Player="3">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
     <ObjectUnit Id="1642" Position="63.3598,77.2697,0" Rotation="0.8728" Scale="1,1,1" UnitType="Marine" Player="2">
         <AIRebuild Index="1" Value="0"/>
         <AIRebuild Index="2" Value="0"/>
@@ -5240,9 +5240,6 @@
         <AIRebuild Index="4" Value="0"/>
         <AIFlag Index="IsUseable" Value="0"/>
     </ObjectUnit>
-    <ObjectUnit Id="958946591" Position="20.5,38.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="AP_RoboticsFacilityWarp" Player="3">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
     <ObjectUnit Id="105" Position="31,33,0" Rotation="2.4497" Scale="1,1,1" UnitType="AP_SpartanCompany" Player="3"/>
     <ObjectUnit Id="2" Variation="5" Position="17,30.5,0" Scale="1,1,1" UnitType="MineralField" Resources="1050"/>
     <ObjectUnit Id="71" Position="23.5,26,0" Rotation="6.1967" Scale="1,1,1" UnitType="AP_SCV" Player="3"/>
@@ -5426,6 +5423,9 @@
     </ObjectUnit>
     <ObjectUnit Id="1551" Variation="8" Position="37.237,56.7834,0" Rotation="5.6281" Scale="1,1,1" UnitType="ScrapSalvage1x1" Player="5"/>
     <ObjectUnit Id="1636" Position="30,40,0" Rotation="2.3308" Scale="1,1,1" UnitType="AP_Diamondback" Player="3"/>
+    <ObjectUnit Id="1323418749" Position="29.5,29.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="AP_RoboticsFacility" Player="3">
+        <Flag Index="ForcePlacement" Value="1"/>
+    </ObjectUnit>
     <ObjectUnit Id="483" Position="47,82,0" Rotation="0.0234" Scale="1,1,1" UnitType="ScrapSalvage2x2" Player="5"/>
     <ObjectUnit Id="38" Position="61.519,56.0351,0" Rotation="0.4882" Scale="1,1,1" UnitType="Marine" Player="2">
         <AIRebuild Index="1" Value="0"/>
@@ -5859,6 +5859,7 @@
         <GroupObject Id="1649"/>
         <GroupObject Id="77688464"/>
         <GroupObject Id="85284783"/>
+        <GroupObject Id="224311143"/>
         <GroupObject Id="226299431"/>
         <GroupObject Id="333286619"/>
         <GroupObject Id="351405601"/>
@@ -5871,13 +5872,12 @@
         <GroupObject Id="797367800"/>
         <GroupObject Id="819898829"/>
         <GroupObject Id="879561093"/>
-        <GroupObject Id="958946591"/>
         <GroupObject Id="1042564069"/>
-        <GroupObject Id="1060843576"/>
         <GroupObject Id="1061628529"/>
         <GroupObject Id="1166611832"/>
         <GroupObject Id="1202505031"/>
         <GroupObject Id="1285467534"/>
+        <GroupObject Id="1323418749"/>
         <GroupObject Id="1329901806"/>
         <GroupObject Id="1366635090"/>
         <GroupObject Id="1404525785"/>
