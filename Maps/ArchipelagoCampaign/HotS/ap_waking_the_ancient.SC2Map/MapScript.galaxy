@@ -4598,7 +4598,7 @@ bool gt_CorpseHarvestStarted_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
 
@@ -4804,7 +4804,7 @@ bool gt_CorpseHarvestEndedFinished_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
 

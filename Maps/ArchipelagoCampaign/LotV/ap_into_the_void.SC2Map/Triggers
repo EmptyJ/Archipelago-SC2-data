@@ -35877,8 +35877,7 @@
         <Event Type="FunctionCall" Id="550987AE"/>
         <Condition Type="FunctionCall" Id="B20DBEA5"/>
         <Condition Type="FunctionCall" Id="3F850499"/>
-        <Action Type="Comment" Id="9EB58529"/>
-        <Action Type="FunctionCall" Id="C52CE3F3"/>
+        <Action Type="FunctionCall" Id="A91176D0"/>
     </Element>
     <Element Type="FunctionCall" Id="550987AE">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000090"/>
@@ -35937,13 +35936,48 @@
         <Value>false</Value>
         <ValueType Type="bool"/>
     </Element>
+    <Element Type="FunctionCall" Id="A91176D0">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000137"/>
+        <FunctionCall Type="Comment" Id="864F1E55"/>
+        <FunctionCall Type="Comment" Id="9EB58529"/>
+        <FunctionCall Type="FunctionCall" Id="EDA41506"/>
+        <FunctionCall Type="FunctionCall" Id="C52CE3F3"/>
+        <FunctionCall Type="FunctionCall" Id="9E17D5A0"/>
+    </Element>
+    <Element Type="Comment" Id="864F1E55">
+        <Comment>
+            Ally Control, make Stukov revive at primary building
+        </Comment>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000004"/>
+    </Element>
     <Element Type="Comment" Id="9EB58529">
         <Comment>
-            Kerrigan respawns according to HotS rules
+            Stukov respawns according to HotS rules
         </Comment>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000005"/>
+    </Element>
+    <Element Type="FunctionCall" Id="EDA41506">
+        <FunctionDef Type="FunctionDef" Library="VCMI" Id="A448443E"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000005"/>
+        <Parameter Type="Param" Id="81FF408C"/>
+        <Parameter Type="Param" Id="F0F6AB67"/>
+        <Parameter Type="Param" Id="A4381BB5"/>
+    </Element>
+    <Element Type="Param" Id="81FF408C">
+        <ParameterDef Type="ParamDef" Library="VCMI" Id="C21ACEFF"/>
+        <Variable Type="Variable" Id="86D06A0B"/>
+    </Element>
+    <Element Type="Param" Id="F0F6AB67">
+        <ParameterDef Type="ParamDef" Library="VCMI" Id="82AB2DA2"/>
+        <Preset Type="PresetValue" Library="VCMI" Id="CCA3AA65"/>
+    </Element>
+    <Element Type="Param" Id="A4381BB5">
+        <ParameterDef Type="ParamDef" Library="VCMI" Id="B8E53C6D"/>
+        <Preset Type="PresetValue" Library="VCMI" Id="190D2EB9"/>
     </Element>
     <Element Type="FunctionCall" Id="C52CE3F3">
         <FunctionDef Type="FunctionDef" Library="VCMI" Id="A448443E"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000004"/>
         <Parameter Type="Param" Id="B568445D"/>
         <Parameter Type="Param" Id="D11E3353"/>
         <Parameter Type="Param" Id="C33636FB"/>
@@ -35954,11 +35988,46 @@
     </Element>
     <Element Type="Param" Id="D11E3353">
         <ParameterDef Type="ParamDef" Library="VCMI" Id="82AB2DA2"/>
-        <Preset Type="PresetValue" Library="VCMI" Id="CCA3AA65"/>
+        <FunctionCall Type="FunctionCall" Id="CF1D8442"/>
+    </Element>
+    <Element Type="FunctionCall" Id="CF1D8442">
+        <FunctionDef Type="FunctionDef" Library="15EF4C78" Id="60269372"/>
+        <Parameter Type="Param" Id="2E102864"/>
+    </Element>
+    <Element Type="Param" Id="2E102864">
+        <ParameterDef Type="ParamDef" Library="15EF4C78" Id="C67D181B"/>
+        <Variable Type="Variable" Id="34A58E06"/>
     </Element>
     <Element Type="Param" Id="C33636FB">
         <ParameterDef Type="ParamDef" Library="VCMI" Id="B8E53C6D"/>
         <Preset Type="PresetValue" Library="VCMI" Id="190D2EB9"/>
+    </Element>
+    <Element Type="FunctionCall" Id="9E17D5A0">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000003"/>
+        <Parameter Type="Param" Id="CFFB10A9"/>
+        <Parameter Type="Param" Id="0DBB281C"/>
+        <Parameter Type="Param" Id="304A63FA"/>
+    </Element>
+    <Element Type="Param" Id="CFFB10A9">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+        <FunctionCall Type="FunctionCall" Id="8FD2A902"/>
+    </Element>
+    <Element Type="FunctionCall" Id="8FD2A902">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000081"/>
+        <Parameter Type="Param" Id="392F1250"/>
+    </Element>
+    <Element Type="Param" Id="392F1250">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="00000140"/>
+        <Variable Type="Variable" Id="86D06A0B"/>
+    </Element>
+    <Element Type="Param" Id="0DBB281C">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+    </Element>
+    <Element Type="Param" Id="304A63FA">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+        <Variable Type="Variable" Id="34A58E06"/>
     </Element>
     <Element Type="Trigger" Id="39B87614">
         <Event Type="FunctionCall" Id="0E9657EE"/>

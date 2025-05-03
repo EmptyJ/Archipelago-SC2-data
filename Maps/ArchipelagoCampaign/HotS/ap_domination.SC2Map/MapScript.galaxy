@@ -203,6 +203,7 @@ void gf_HatchBanelings (int lp_number, point lp_location);
 void gf_CorruptEggwithZagara (unit lp_eggToCorrupt, int lp_cluster);
 void gf_FeralBanelingAttack (region lp_sPAWN_REGION, region lp_aTTACK_REGION);
 void gf_MidEggNestSpawn (int lp_numberOfSpawns, region lp_region);
+void gf_VictoryDropNukeAtPoint (point lp_cHOSEN_POINT);
 
 //--------------------------------------------------------------------------------------------------
 // Trigger Variables
@@ -787,6 +788,52 @@ bool auto_gf_MidEggNestSpawn_TriggerFunc (bool testConds, bool runActions) {
 
             }
         }
+    }
+    return true;
+}
+
+trigger auto_gf_VictoryDropNukeAtPoint_Trigger = null;
+point auto_gf_VictoryDropNukeAtPoint_lp_cHOSEN_POINT;
+
+void gf_VictoryDropNukeAtPoint (point lp_cHOSEN_POINT) {
+    auto_gf_VictoryDropNukeAtPoint_lp_cHOSEN_POINT = lp_cHOSEN_POINT;
+
+    if (auto_gf_VictoryDropNukeAtPoint_Trigger == null) {
+        auto_gf_VictoryDropNukeAtPoint_Trigger = TriggerCreate("auto_gf_VictoryDropNukeAtPoint_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_VictoryDropNukeAtPoint_Trigger, false, false);
+}
+
+bool auto_gf_VictoryDropNukeAtPoint_TriggerFunc (bool testConds, bool runActions) {
+    point lp_cHOSEN_POINT = auto_gf_VictoryDropNukeAtPoint_lp_cHOSEN_POINT;
+
+    // Variable Declarations
+    sound lv_nukeLaunchSound;
+    actor lv_localNukeActor;
+
+    // Automatic Variable Declarations
+    const int auto6661690B_n = 40;
+    int auto6661690B_i;
+    const int auto31D81FD4_n = 50;
+    int auto31D81FD4_i;
+
+    // Variable Initialization
+
+    // Implementation
+    SoundPlay(SoundLink("Ghost_NukeLaunch", -1), PlayerGroupAll(), 75.0, 0.0);
+    lv_nukeLaunchSound = SoundLastPlayed();
+    SoundPlay(SoundLink("Ghost_NukeSeek", -1), PlayerGroupAll(), 100.0, 0.0);
+    libNtve_gf_CreateModelAtPoint("GhostNukeIndicator", lp_cHOSEN_POINT);
+    lv_localNukeActor = libNtve_gf_ActorLastCreated();
+    for (auto6661690B_i = 1; auto6661690B_i <= auto6661690B_n; auto6661690B_i += 1) {
+        Wait(0.1, c_timeGame);
+    }
+    SoundStop(lv_nukeLaunchSound, true);
+    PlayerCreateEffectPoint(gv_pLAYER_02_ZERG2224, "NukeDetonate", lp_cHOSEN_POINT);
+    libNtve_gf_KillModel(lv_localNukeActor);
+    for (auto31D81FD4_i = 1; auto31D81FD4_i <= auto31D81FD4_n; auto31D81FD4_i += 1) {
+        Wait(0.1, c_timeGame);
     }
     return true;
 }
@@ -2058,6 +2105,9 @@ bool gt_GetEggPickers_Func (bool testConds, bool runActions) {
     UnitGroupClear(gv_militaryUnits);
     if (((libABFE498B_gv_aP_Triggers_Option_KerriganPresence == 0) || ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace != "Neut") && (libABFE498B_gv_aP_Triggers_Option_KerriganPresence != 4)))) {
         UnitGroupAddUnitGroup(gv_militaryUnits, UnitGroup(null, gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterAirUnit - 32))), 0));
+        UnitGroupAddUnitGroup(gv_militaryUnits, UnitGroup("AP_Colossus", gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterAirUnit - 32))), 0));
+        UnitGroupAddUnitGroup(gv_militaryUnits, UnitGroup("AP_ColossusPurifier", gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterAirUnit - 32))), 0));
+        UnitGroupAddUnitGroup(gv_militaryUnits, UnitGroup("AP_ColossusTaldarim", gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterPlayer) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterAir) | (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterAirUnit - 32))), 0));
     }
     else {
         UnitGroupAdd(gv_militaryUnits, gv_kerrigan);
@@ -3216,12 +3266,12 @@ bool gt_FirstAttackBanelingDefense_Func (bool testConds, bool runActions) {
         }
         UnitGroupIssueOrder(gv_feralBanelingGroup, OrderTargetingPoint(AbilityCommand("attack", 0), RegionGetCenter(RegionFromId(41))), c_orderQueueReplace);
         UnitIssueOrder(gv_firstHighTemplar, OrderTargetingUnit(AbilityCommand("AP_Feedback", 0), gv_zagara), c_orderQueueReplace);
-        Wait(1.8, c_timeGame);
+        Wait(2.0, c_timeGame);
         UnitGroupIssueOrder(gv_feralBanelingGroup, OrderTargetingPoint(AbilityCommand("attack", 0), RegionGetCenter(RegionFromId(41))), c_orderQueueReplace);
         UnitIssueOrder(gv_secondHighTemplar, OrderTargetingPoint(AbilityCommand("AP_HighArchonPsiStorm", 0), UnitGetPosition(gv_zagara)), c_orderQueueReplace);
-        Wait(0.7, c_timeGame);
+        Wait(1.0, c_timeGame);
         UnitGroupIssueOrder(gv_feralBanelingGroup, OrderTargetingPoint(AbilityCommand("attack", 0), RegionGetCenter(RegionFromId(41))), c_orderQueueReplace);
-        Wait(2.3, c_timeGame);
+        Wait(2.5, c_timeGame);
         UnitIssueOrder(gv_firstHighTemplar, OrderTargetingPoint(AbilityCommand("AP_HighArchonPsiStorm", 0), UnitGetPosition(gv_zagara)), c_orderQueueReplace);
     }
     else {
@@ -6580,6 +6630,10 @@ void gt_VictorySetup_Init () {
 // Trigger: Victory Cinematic
 //--------------------------------------------------------------------------------------------------
 bool gt_VictoryCinematic_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_victoryFeedbackHT;
+    unit lv_victoryPsiStormHT;
+
     // Automatic Variable Declarations
     unitgroup autoA0361EB6_g;
     int autoA0361EB6_u;
@@ -6590,6 +6644,8 @@ bool gt_VictoryCinematic_Func (bool testConds, bool runActions) {
     unitgroup autoEF98789C_g;
     int autoEF98789C_u;
     unit autoEF98789C_var;
+
+    // Variable Initialization
 
     // Actions
     if (!runActions) {
@@ -6620,38 +6676,94 @@ bool gt_VictoryCinematic_Func (bool testConds, bool runActions) {
         if (autoEF98789C_var == null) { break; }
         UnitRemove(autoEF98789C_var);
     }
-    libSwaC_gf_CreateHero2(PointFromId(822), gv_pLAYER_01_USER, libSwaC_ge_HeroUnit_Kerrigan, PointGetFacing(PointFromId(822)), 0, libSwaC_ge_KerriganCreatePurpose_Cinematic);
-    gv_victoryKerrigan = UnitLastCreated();
-    UnitSetState(gv_victoryKerrigan, c_unitStateFidget, false);
-    UnitBehaviorAdd(gv_victoryKerrigan, "KerriganWalk", gv_victoryKerrigan, 1);
-    UnitIssueOrder(gv_victoryKerrigan, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(220)), c_orderQueueReplace);
-    libNtve_gf_CreateUnitsAtPoint2(1, "ZaGara", 0, gv_pLAYER_02_ZERG, PointFromId(1611));
-    gv_victoryZagara = UnitLastCreated();
-    libNtve_gf_ChangeUnitDamage(gv_victoryZagara, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No);
-    UnitSetState(gv_victoryZagara, c_unitStateFidget, false);
-    TriggerExecute(gt_VictoryZerglings, true, false);
-    SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "ZChar01MusicOutro25_KerrigansRetaliation", c_soundtrackCueAny, c_soundtrackIndexAny, false);
-    TriggerSkippableBegin(PlayerGroupAll(), 0, null, true, false);
-    gv_victoryCinematicCompleted = false;
-    CinematicFade(true, 2.0, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, true);
-    libSwaC_gf_SetAllSoundChannelVolumesCampaign(libSwaC_ge_VolumeChannelModeCampaign_CinematicInTransmission);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00001", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00002", c_transmissionDurationAdd, 0.0, false, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_victoryZagara), c_animNameDefault, "Spell", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
-    Wait(1.332, c_timeGame);
-    libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_victoryZagara), c_animNameDefault, "Cover", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
-    TransmissionWait(TransmissionLastSent(), 0.0);
-    UnitIssueOrder(gv_victoryKerrigan, OrderTargetingUnit(AbilityCommand("move", 4), gv_victoryZagara), c_orderQueueReplace);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00003", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_LeavePortraitVisibleAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    TriggerExecute(gt_VictoryZergHold, true, false);
-    Wait(1.0, c_timeReal);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00004", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(1612), (SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00005", true), c_soundIndexAny)) + SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00006", true), c_soundIndexAny)) + SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00058", true), c_soundIndexAny)) + SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00007", true), c_soundIndexAny))), -1, 10.0, true);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00005", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00006", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00058", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00007", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00008", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Prot")) {
+        libNtve_gf_CreateUnitsAtPoint2(1, "ZaGara", 0, gv_pLAYER_02_ZERG, PointFromId(1611));
+        gv_victoryZagara = UnitLastCreated();
+        UnitSetState(gv_victoryZagara, c_unitStateFidget, false);
+        SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "ZChar01MusicOutro25_KerrigansRetaliation", c_soundtrackCueAny, c_soundtrackIndexAny, false);
+        TriggerSkippableBegin(PlayerGroupAll(), 0, null, true, false);
+        gv_victoryCinematicCompleted = false;
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_HighArchonTemplar", 0, gv_pLAYER_02_ZERG2223, PointFromId(355176588), UnitGetPosition(gv_victoryZagara));
+        UnitSetPropertyFixed(UnitLastCreated(), c_unitPropEnergyPercent, 100.0);
+        UnitGroupAdd(gv_victoryZerg, UnitLastCreated());
+        lv_victoryFeedbackHT = UnitLastCreated();
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_Archon", 0, gv_pLAYER_02_ZERG2223, PointFromId(1705369001), UnitGetPosition(gv_victoryZagara));
+        UnitGroupAdd(gv_victoryZerg, UnitLastCreated());
+        libNtve_gf_UnitCreateFacingPoint(1, "AP_HighArchonTemplar", 0, gv_pLAYER_02_ZERG2223, PointFromId(1590010962), UnitGetPosition(gv_victoryZagara));
+        UnitSetPropertyFixed(UnitLastCreated(), c_unitPropEnergyPercent, 100.0);
+        UnitGroupAdd(gv_victoryZerg, UnitLastCreated());
+        lv_victoryPsiStormHT = UnitLastCreated();
+        CinematicFade(true, 2.0, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, true);
+        libSwaC_gf_SetAllSoundChannelVolumesCampaign(libSwaC_ge_VolumeChannelModeCampaign_CinematicInTransmission);
+        libSwaC_gf_SendTransmissionCampaign(null, "zMission_Expedition02|Line00019", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+        UnitGroupIssueOrder(gv_victoryZerg, OrderTargetingUnit(AbilityCommand("attack", 0), gv_victoryZagara), c_orderQueueReplace);
+        UnitIssueOrder(lv_victoryFeedbackHT, OrderTargetingUnit(AbilityCommand("AP_Feedback", 0), gv_victoryZagara), c_orderQueueReplace);
+        UnitIssueOrder(lv_victoryPsiStormHT, OrderTargetingPoint(AbilityCommand("AP_HighArchonPsiStorm", 0), UnitGetPosition(gv_victoryZagara)), c_orderQueueReplace);
+        Wait(3.4, c_timeGame);
+        UnitKill(gv_victoryZagara);
+        libSwaC_gf_SendTransmissionCampaign(null, "zMission_Expedition03|Line00051", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    }
+    else {
+        if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Terr")) {
+            libNtve_gf_CreateUnitsAtPoint2(1, "ZaGara", 0, gv_pLAYER_02_ZERG, PointFromId(1611));
+            gv_victoryZagara = UnitLastCreated();
+            UnitSetState(gv_victoryZagara, c_unitStateFidget, false);
+            SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "ZChar01MusicOutro25_KerrigansRetaliation", c_soundtrackCueAny, c_soundtrackIndexAny, false);
+            TriggerSkippableBegin(PlayerGroupAll(), 0, null, true, false);
+            gv_victoryCinematicCompleted = false;
+            CinematicFade(true, 2.0, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, true);
+            libSwaC_gf_SetAllSoundChannelVolumesCampaign(libSwaC_ge_VolumeChannelModeCampaign_CinematicInTransmission);
+            libSwaC_gf_SendTransmissionCampaign(null, "zMission_Char03|Line00048", c_transmissionDurationAdd, 0.0, false, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            gf_VictoryDropNukeAtPoint(PointFromId(1611));
+            Wait(0.2, c_timeGame);
+            gf_VictoryDropNukeAtPoint(PointFromId(2075465073));
+            Wait(0.2, c_timeGame);
+            gf_VictoryDropNukeAtPoint(PointFromId(1950129723));
+            Wait(0.2, c_timeGame);
+            gf_VictoryDropNukeAtPoint(PointFromId(928465269));
+            Wait(0.2, c_timeGame);
+            gf_VictoryDropNukeAtPoint(PointFromId(472681773));
+            Wait(5.4, c_timeGame);
+            CameraShake(gv_pLAYER_01_USER, "Light", "Earthquake", 1.0, 1.0, 5.0);
+            Wait(0.4, c_timeGame);
+            UnitKill(gv_victoryZagara);
+            Wait(5.0, c_timeGame);
+        }
+        else {
+            libSwaC_gf_CreateHero2(PointFromId(822), gv_pLAYER_01_USER, libSwaC_ge_HeroUnit_Kerrigan, PointGetFacing(PointFromId(822)), 0, libSwaC_ge_KerriganCreatePurpose_Cinematic);
+            gv_victoryKerrigan = UnitLastCreated();
+            UnitSetState(gv_victoryKerrigan, c_unitStateFidget, false);
+            UnitBehaviorAdd(gv_victoryKerrigan, "KerriganWalk", gv_victoryKerrigan, 1);
+            UnitIssueOrder(gv_victoryKerrigan, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(220)), c_orderQueueReplace);
+            libNtve_gf_CreateUnitsAtPoint2(1, "ZaGara", 0, gv_pLAYER_02_ZERG, PointFromId(1611));
+            gv_victoryZagara = UnitLastCreated();
+            libNtve_gf_ChangeUnitDamage(gv_victoryZagara, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No);
+            UnitSetState(gv_victoryZagara, c_unitStateFidget, false);
+            TriggerExecute(gt_VictoryZerglings, true, false);
+            SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "ZChar01MusicOutro25_KerrigansRetaliation", c_soundtrackCueAny, c_soundtrackIndexAny, false);
+            TriggerSkippableBegin(PlayerGroupAll(), 0, null, true, false);
+            gv_victoryCinematicCompleted = false;
+            CinematicFade(true, 2.0, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, true);
+            libSwaC_gf_SetAllSoundChannelVolumesCampaign(libSwaC_ge_VolumeChannelModeCampaign_CinematicInTransmission);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00001", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00002", c_transmissionDurationAdd, 0.0, false, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_victoryZagara), c_animNameDefault, "Spell", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
+            Wait(1.332, c_timeGame);
+            libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(gv_victoryZagara), c_animNameDefault, "Cover", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
+            TransmissionWait(TransmissionLastSent(), 0.0);
+            UnitIssueOrder(gv_victoryKerrigan, OrderTargetingUnit(AbilityCommand("move", 4), gv_victoryZagara), c_orderQueueReplace);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00003", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_LeavePortraitVisibleAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            TriggerExecute(gt_VictoryZergHold, true, false);
+            Wait(1.0, c_timeReal);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00004", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            CameraApplyInfo(gv_pLAYER_01_USER, CameraInfoFromId(1612), (SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00005", true), c_soundIndexAny)) + SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00006", true), c_soundIndexAny)) + SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00058", true), c_soundIndexAny)) + SoundLengthSync(SoundLink(ConversationDataGetSound("zMission_Char01|Line00007", true), c_soundIndexAny))), -1, 10.0, true);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00005", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00006", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00058", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryKerrigan, "zMission_Char01|Line00007", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+            libSwaC_gf_SendTransmissionCampaign(gv_victoryZagara, "zMission_Char01|Line00008", c_transmissionDurationAdd, 0.0, true, libSwaC_ge_CampaignTransmissionPortraitOptioins_HidePortraitAfter, libSwaC_ge_CampaignTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+        }
+    }
     gv_victoryCinematicCompleted = true;
     return true;
 }

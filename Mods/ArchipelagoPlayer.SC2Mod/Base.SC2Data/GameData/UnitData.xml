@@ -25569,6 +25569,7 @@
         <AbilArray Link="AP_DefilerSCBWPredatoryConsumption"/>
         <AbilArray Link="AP_DefilerSCBWDarkSwarm"/>
         <AbilArray Link="AP_DefilerSCBWPlague"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
@@ -26387,6 +26388,7 @@
         <BehaviorArray Link="AP_TyrannozorTyrantsProtectionCaster"/>
         <BehaviorArray Link="AP_HealingAdaption"/>
         <BehaviorArray Link="Frenzy"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_TyrannozorBurrowUp,Execute" Row="2" Column="4"/>
@@ -26449,6 +26451,7 @@
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
         <BehaviorArray Link="AP_ZergMercCompoundTabNotSelected"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <!-- Brood War -->
             <LayoutButtons Face="AP_MercZergling" Type="AbilCmd" AbilCmd="AP_SummonZergMercs,Train8" Row="0" Column="0"/>
