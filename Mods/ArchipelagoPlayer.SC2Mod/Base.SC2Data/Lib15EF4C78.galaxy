@@ -3243,7 +3243,7 @@ void lib15EF4C78_gf_RemoveUnusedStartingUnits (unitgroup lp_startingUnits, strin
             continue;
         }
 
-        if (((UnitGetType(autoA0E4A284_var) == "AP_Hatchery") || (UnitGetType(autoA0E4A284_var) == "AP_Lair") || (UnitGetType(autoA0E4A284_var) == "AP_Hive") || (UnitGetType(autoA0E4A284_var) == "AP_Nexus") || (UnitGetType(autoA0E4A284_var) == "AP_CommandCenter"))) {
+        if (((UnitGetType(autoA0E4A284_var) == "AP_Hatchery") || (UnitGetType(autoA0E4A284_var) == "AP_Lair") || (UnitGetType(autoA0E4A284_var) == "AP_Hive") || (UnitGetType(autoA0E4A284_var) == "AP_Nexus") || (UnitGetType(autoA0E4A284_var) == "AP_CommandCenter") || (UnitGetType(autoA0E4A284_var) == "AP_PlanetaryFortress"))) {
             if ((lp_hiveUpgrade == true)) {
                 lib15EF4C78_gf_ReplaceTownHall(autoA0E4A284_var, lp_desiredFaction, true);
             }
