@@ -3664,7 +3664,7 @@ Button/Tooltip/AP_TissueAssimilation=Gains life equal to 40% of all damage dealt
 Button/Tooltip/AP_TornadoMissile=When attacking a mechanical unit, the Warhound launches electrically charged missiles at its target, dealing 30 damage per volley.<n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/AP_TorrasqueChrysalis=Allows the Ultralisk to revive upon death.<n/>Cooldown: <d ref="Behavior,AP_MercTorrasqueTimerBehavior,Duration"/> seconds.
 Button/Tooltip/AP_TorrasqueChrysalisFakeTimer=The Ultralisk cannot revive at this time.
-Button/Tooltip/AP_TradeCharge=You can receive this many units via Void Trade. You get 1 Token for every unit you send. Your Tokens are only valid for this mission.
+Button/Tooltip/AP_TradeCharge=You can receive this many units via Void Trade. You get 1 Token for every point of supply you send, rounded down. Your Tokens are only valid for this mission.
 Button/Tooltip/AP_TradeStructure=Can send friendly units to the void and receive random units from the void.
 Button/Tooltip/AP_TradeStructureDummyReceive=Asks the void for a random unit in exchange for a small tribute.<n/><n/>You can only receive units if other players have already deposited units into the void.
 Button/Tooltip/AP_TradeStructureDummyReceive5=Asks the void for 5 random units in exchange for a medium tribute.<n/><n/>You can only receive units if other players have already deposited units into the void.

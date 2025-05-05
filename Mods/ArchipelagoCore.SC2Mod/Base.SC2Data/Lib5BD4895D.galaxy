@@ -1900,10 +1900,15 @@ void lib5BD4895D_gt_AP_Core_tradeFail_Init () {
 // Trigger: AP_Core_tradeSendSuccess
 //--------------------------------------------------------------------------------------------------
 bool lib5BD4895D_gt_AP_Core_tradeSendSuccess_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_totalsupply;
+
     // Automatic Variable Declarations
     unitgroup autoE5F28EA7_g;
     int autoE5F28EA7_u;
     unit autoE5F28EA7_var;
+
+    // Variable Initialization
 
     // Actions
     if (!runActions) {
@@ -1917,9 +1922,10 @@ bool lib5BD4895D_gt_AP_Core_tradeSendSuccess_Func (bool testConds, bool runActio
         for (;; autoE5F28EA7_u -= 1) {
             autoE5F28EA7_var = UnitGroupUnitFromEnd(autoE5F28EA7_g, autoE5F28EA7_u);
             if (autoE5F28EA7_var == null) { break; }
+            lv_totalsupply = (lv_totalsupply + UnitGetPropertyFixed(autoE5F28EA7_var, c_unitPropSuppliesUsed, c_unitPropCurrent));
             UnitRemove(autoE5F28EA7_var);
-            lib5BD4895D_gf_AP_Core_Trade_changeTradeCharges(1);
         }
+        lib5BD4895D_gf_AP_Core_Trade_changeTradeCharges(FloorI(lv_totalsupply));
         UnitIssueOrder(lib5BD4895D_gv_aP_Core_tradeUnit, Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
     }
 
