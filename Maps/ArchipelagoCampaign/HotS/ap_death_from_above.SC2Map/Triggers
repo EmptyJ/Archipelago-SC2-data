@@ -56264,12 +56264,55 @@
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="C4DC760C"/>
         <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000005"/>
         <Parameter Type="Param" Id="079AD873"/>
+        <FunctionCall Type="FunctionCall" Id="9DC45333"/>
+        <FunctionCall Type="FunctionCall" Id="15BE72E3"/>
         <FunctionCall Type="FunctionCall" Id="C638A4D4"/>
     </Element>
     <Element Type="Param" Id="079AD873">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="F96B466D"/>
         <ValueType Type="unitgroup"/>
         <ValueId Id="5"/>
+    </Element>
+    <Element Type="FunctionCall" Id="9DC45333">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="47D6D6BB"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="9441B8B5"/>
+        <Parameter Type="Param" Id="1F2E3F0A"/>
+        <Parameter Type="Param" Id="FC77535D"/>
+    </Element>
+    <Element Type="Param" Id="1F2E3F0A">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="1638EDC1"/>
+        <FunctionCall Type="FunctionCall" Id="03AC7115"/>
+    </Element>
+    <Element Type="FunctionCall" Id="03AC7115">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
+    </Element>
+    <Element Type="Param" Id="FC77535D">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="7F636C64"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="C708B9C5"/>
+    </Element>
+    <Element Type="FunctionCall" Id="15BE72E3">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="09840835"/>
+        <SubFunctionType Type="SubFuncType" Library="Ntve" Id="9441B8B5"/>
+        <Parameter Type="Param" Id="760B098F"/>
+        <Parameter Type="Param" Id="2B0DD38D"/>
+        <Parameter Type="Param" Id="375DF11E"/>
+    </Element>
+    <Element Type="Param" Id="760B098F">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="A45406E1"/>
+        <Preset Type="PresetValue" Library="Ntve" Id="FD763737"/>
+    </Element>
+    <Element Type="Param" Id="2B0DD38D">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="EB47C731"/>
+        <Value>AP_BanelingExplode</Value>
+        <ValueType Type="gamelink"/>
+        <ValueGameType Type="Behavior"/>
+    </Element>
+    <Element Type="Param" Id="375DF11E">
+        <ParameterDef Type="ParamDef" Library="Ntve" Id="A6600060"/>
+        <FunctionCall Type="FunctionCall" Id="5294D638"/>
+    </Element>
+    <Element Type="FunctionCall" Id="5294D638">
+        <FunctionDef Type="FunctionDef" Library="Ntve" Id="19CE733E"/>
     </Element>
     <Element Type="FunctionCall" Id="C638A4D4">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000078"/>
