@@ -1070,8 +1070,6 @@ void gf_HideKerrigan () {
         for (;; auto6A0EE54F_u -= 1) {
             auto6A0EE54F_var = UnitGroupUnitFromEnd(auto6A0EE54F_g, auto6A0EE54F_u);
             if (auto6A0EE54F_var == null) { break; }
-            UnitBehaviorRemoveCategory(auto6A0EE54F_var, c_unitBehaviorFlagPermanent);
-            UnitBehaviorRemove(auto6A0EE54F_var, "AP_BanelingExplode", c_unitBehaviorCountAll);
             UnitRemove(auto6A0EE54F_var);
         }
     }
