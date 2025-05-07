@@ -253,6 +253,7 @@ Variable/Name/EBBF0DE0=VictoryCinematicCompleted
 Variable/Name/F0CB73CB=P4_PROTOSS_WEST_ESCORTS
 Variable/Name/F1A54E09=HarvestingSCV
 Variable/Name/F20D72DC=TerrazineGroup
+Variable/Name/F37D7074=cc
 Variable/Name/F485358A=OffsetAngle
 Variable/Name/F6EB46BB=TerrazineGroup
 Variable/Name/FD48180B=i
