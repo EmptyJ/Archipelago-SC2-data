@@ -15081,7 +15081,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowBanelingDown"/>
         <AbilArray Link="AP_VolatileBurstBuilding"/>
-        <AbilArray Link="AP_ExplodeHeal"/>
+        <AbilArray Link="AP_Explode"/>
         <BehaviorArray Link="AP_BanelingExplode"/>
         <BehaviorArray Link="AP_HotSHunterJump"/>
         <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
@@ -15100,7 +15100,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="AP_BurrowBanelingDown,Execute" Row="2" Column="4"/>
-            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_ExplodeHeal,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_Explode,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_EnableBuildingAttack" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,On" Row="2" Column="1"/>
             <LayoutButtons Face="AP_DisableBuildingAttack" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,Off" Row="2" Column="1"/>
             <LayoutButtons Face="AP_BanelingCorrosiveBile" Type="Passive" Requirements="AP_HaveHotSBanelingCorrosiveBile" Row="1" Column="0"/>
@@ -15317,7 +15317,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowHotSSplitterlingMediumDown"/>
         <AbilArray Link="AP_VolatileBurstBuilding"/>
-        <AbilArray Link="AP_ExplodeHealSmall"/>
+        <AbilArray Link="AP_ExplodeSmall"/>
         <BehaviorArray Link="AP_BanelingExplodeSmall"/>
         <BehaviorArray Link="AP_HotSHunterJump"/>
         <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
@@ -15335,7 +15335,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AP_HunterCliffJumper" Type="Passive" Requirements="AP_HaveHotSHunter" Row="2" Column="2"/>
             <LayoutButtons Face="AP_BanelingSplitterlingSplitPassive" Type="Passive" Requirements="AP_HaveHotSSplitterling" Row="2" Column="3"/>
-            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_ExplodeHealSmall,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_ExplodeSmall,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="AP_BurrowHotSSplitterlingMediumDown,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AP_EnableBuildingAttackSplitterling" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,On" Row="2" Column="1"/>
             <LayoutButtons Face="AP_DisableBuildingAttackSplitterling" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,Off" Row="2" Column="1"/>

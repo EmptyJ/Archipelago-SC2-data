@@ -229,8 +229,6 @@ void gf_AddEscorttoTrain (string lp_unitType, int lp_escortCar, fixed lp_polarRa
 void gf_PlayDamagedAnimationsforTrainCar (unit lp_trainCar, fixed lp_breakPoint);
 void gf_ActivatePingforTrainCar (unit lp_trainCar);
 point gf_ExpectedPositionofTrainCar (int lp_trainCar, int lp_pathIndex);
-bool gf_isTrainCar (unit lp_unit);
-unitgroup gf_getTrainCars (unit lp_unit);
 void gf_InitializeCharger (point lp_position, int lp_tunnel, int lp_index);
 void gf_RevealDiamondback (unit lp_diamondback, bool lp_immortalCheck);
 void gf_RescueDiamondback (unit lp_diamondback);
@@ -274,8 +272,6 @@ trigger gt_TrainDespawn;
 trigger gt_EscortDespawn;
 trigger gt_TrainCarDamageAnimationController;
 trigger gt_TrainCarPingController;
-trigger gt_onTrainCarDebuffApply;
-trigger gt_onTrainCarDebuffRefresh;
 trigger gt_InitializeTrainStations;
 trigger gt_InitializeChargers;
 trigger gt_TrainStationController;
@@ -456,86 +452,6 @@ point gf_ExpectedPositionofTrainCar (int lp_trainCar, int lp_pathIndex) {
     }
     PointSetFacing(lv_currentPoint, AngleBetweenPoints(lv_currentPoint, gv_trainPath[lv_currentTarget]));
     return lv_currentPoint;
-}
-
-bool gf_isTrainCar (unit lp_unit) {
-    // Variable Declarations
-    int lv_train;
-    int lv_car;
-    unit lv_carUnit;
-
-    // Automatic Variable Declarations
-    const int auto10D2A517_ae = 15;
-    const int auto10D2A517_ai = 1;
-    const int autoEB80EE1C_ae = 15;
-    const int autoEB80EE1C_ai = 1;
-
-    // Variable Initialization
-
-    // Implementation
-    if ((lp_unit == null)) {
-        return false;
-    }
-
-    lv_train = 0;
-    for ( ; ( (auto10D2A517_ai >= 0 && lv_train <= auto10D2A517_ae) || (auto10D2A517_ai < 0 && lv_train >= auto10D2A517_ae) ) ; lv_train += auto10D2A517_ai ) {
-        lv_car = 0;
-        for ( ; ( (autoEB80EE1C_ai >= 0 && lv_car <= autoEB80EE1C_ae) || (autoEB80EE1C_ai < 0 && lv_car >= autoEB80EE1C_ae) ) ; lv_car += autoEB80EE1C_ai ) {
-            lv_carUnit = gv_trainList[lv_train].lv_trainCars[lv_car];
-            if ((lv_carUnit == lp_unit)) {
-                return true;
-            }
-
-        }
-    }
-    return false;
-}
-
-unitgroup gf_getTrainCars (unit lp_unit) {
-    // Variable Declarations
-    int lv_train;
-    int lv_car;
-    int lv_pickedTrainCar;
-    unit lv_carUnit;
-    unit lv_pickedTrainCarUnit;
-    unitgroup lv_unitGroup;
-
-    // Automatic Variable Declarations
-    const int auto01108C21_ae = 15;
-    const int auto01108C21_ai = 1;
-    const int autoC4DFD6D7_ae = 15;
-    const int autoC4DFD6D7_ai = 1;
-    const int auto5A746A84_ae = 15;
-    const int auto5A746A84_ai = 1;
-
-    // Variable Initialization
-    lv_unitGroup = UnitGroupEmpty();
-
-    // Implementation
-    if ((gf_isTrainCar(lp_unit) == false)) {
-        return UnitGroupEmpty();
-    }
-
-    lv_train = 0;
-    for ( ; ( (auto01108C21_ai >= 0 && lv_train <= auto01108C21_ae) || (auto01108C21_ai < 0 && lv_train >= auto01108C21_ae) ) ; lv_train += auto01108C21_ai ) {
-        lv_car = 0;
-        for ( ; ( (autoC4DFD6D7_ai >= 0 && lv_car <= autoC4DFD6D7_ae) || (autoC4DFD6D7_ai < 0 && lv_car >= autoC4DFD6D7_ae) ) ; lv_car += autoC4DFD6D7_ai ) {
-            lv_carUnit = gv_trainList[lv_train].lv_trainCars[lv_car];
-            if ((lv_carUnit == lp_unit)) {
-                lv_pickedTrainCar = 0;
-                for ( ; ( (auto5A746A84_ai >= 0 && lv_pickedTrainCar <= auto5A746A84_ae) || (auto5A746A84_ai < 0 && lv_pickedTrainCar >= auto5A746A84_ae) ) ; lv_pickedTrainCar += auto5A746A84_ai ) {
-                    lv_pickedTrainCarUnit = gv_trainList[lv_train].lv_trainCars[lv_pickedTrainCar];
-                    if ((lv_pickedTrainCarUnit != null)) {
-                        UnitGroupAdd(lv_unitGroup, lv_pickedTrainCarUnit);
-                    }
-
-                }
-                return lv_unitGroup;
-            }
-
-        }
-    }
-    return UnitGroupEmpty();
 }
 
 void gf_InitializeCharger (point lp_position, int lp_tunnel, int lp_index) {
@@ -3019,103 +2935,6 @@ void gt_TrainCarPingController_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: onTrainCarDebuffApply
-//--------------------------------------------------------------------------------------------------
-bool gt_onTrainCarDebuffApply_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_behavior;
-    unit lv_target;
-    unit lv_caster;
-    unit lv_trainCar;
-
-    // Automatic Variable Declarations
-    unitgroup autoF7FD5C79_g;
-    int autoF7FD5C79_u;
-
-    // Variable Initialization
-    lv_behavior = EventUnitBehavior();
-    lv_target = EventUnit();
-    lv_caster = UnitBehaviorEffectUnit(lv_target, lv_behavior, c_effectUnitCaster, 0);
-
-    // Conditions
-    if (testConds) {
-        if (!((gf_isTrainCar(lv_target) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoF7FD5C79_g = gf_getTrainCars(lv_target);
-    autoF7FD5C79_u = UnitGroupCount(autoF7FD5C79_g, c_unitCountAll);
-    for (;; autoF7FD5C79_u -= 1) {
-        lv_trainCar = UnitGroupUnitFromEnd(autoF7FD5C79_g, autoF7FD5C79_u);
-        if (lv_trainCar == null) { break; }
-        if ((UnitHasBehavior(lv_trainCar, lv_behavior) == false)) {
-            UnitBehaviorAdd(lv_trainCar, lv_behavior, lv_caster, 1);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_onTrainCarDebuffApply_Init () {
-    gt_onTrainCarDebuffApply = TriggerCreate("gt_onTrainCarDebuffApply_Func");
-    TriggerAddEventUnitBehaviorChange(gt_onTrainCarDebuffApply, null, null, c_unitBehaviorChangeActivate);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: onTrainCarDebuffRefresh
-//--------------------------------------------------------------------------------------------------
-bool gt_onTrainCarDebuffRefresh_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    string lv_behavior;
-    unit lv_target;
-    unit lv_caster;
-    unit lv_trainCar;
-
-    // Automatic Variable Declarations
-    unitgroup autoDF2CA64E_g;
-    int autoDF2CA64E_u;
-
-    // Variable Initialization
-    lv_behavior = EventUnitBehavior();
-    lv_target = EventUnit();
-    lv_caster = UnitBehaviorEffectUnit(lv_target, lv_behavior, c_effectUnitCaster, 0);
-
-    // Conditions
-    if (testConds) {
-        if (!((gf_isTrainCar(lv_target) == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoDF2CA64E_g = gf_getTrainCars(lv_target);
-    autoDF2CA64E_u = UnitGroupCount(autoDF2CA64E_g, c_unitCountAll);
-    for (;; autoDF2CA64E_u -= 1) {
-        lv_trainCar = UnitGroupUnitFromEnd(autoDF2CA64E_g, autoDF2CA64E_u);
-        if (lv_trainCar == null) { break; }
-        UnitBehaviorSetDurationRemaining(lv_trainCar, lv_behavior, libNtve_gf_CatalogReferenceGetAsReal("Behavior," + lv_behavior + ",Duration", UnitGetOwner(lv_caster)));
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void gt_onTrainCarDebuffRefresh_Init () {
-    gt_onTrainCarDebuffRefresh = TriggerCreate("gt_onTrainCarDebuffRefresh_Func");
-    TriggerAddEventUnitBehaviorChange(gt_onTrainCarDebuffRefresh, null, null, c_unitBehaviorChangeRefresh);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Initialize Train Stations
 //--------------------------------------------------------------------------------------------------
 bool gt_InitializeTrainStations_Func (bool testConds, bool runActions) {
@@ -3724,7 +3543,7 @@ bool gt_DiamondbackRescue_Func (bool testConds, bool runActions) {
 
     while (true) {
         Wait(0.5, c_timeAI);
-        if (((UnitGroupCount(UnitGroup("AP_ImmortalAiur", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_StukovInfestedDiamondBack", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_Diamondback", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0))) {
+        if (((UnitGroupCount(UnitGroup("AP_ImmortalAiur", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_StukovInfestedDiamondBack", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_Diamondback", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup("AP_StalkerPurifier", gv_pLAYER_05_ABANDONEDVEHICLES, RegionEntireMap(), UnitFilter(0, 0, 0, (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) == 0))) {
             return true;
         }
 
@@ -7230,8 +7049,6 @@ void InitTriggers () {
     gt_EscortDespawn_Init();
     gt_TrainCarDamageAnimationController_Init();
     gt_TrainCarPingController_Init();
-    gt_onTrainCarDebuffApply_Init();
-    gt_onTrainCarDebuffRefresh_Init();
     gt_InitializeTrainStations_Init();
     gt_InitializeChargers_Init();
     gt_TrainStationController_Init();
