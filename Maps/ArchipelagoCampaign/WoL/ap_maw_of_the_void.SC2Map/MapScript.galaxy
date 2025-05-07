@@ -5656,7 +5656,6 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    UnitPauseAll(false);
     auto97F3A6A2_g = gv_introCineProtossGroup;
     auto97F3A6A2_u = UnitGroupCount(auto97F3A6A2_g, c_unitCountAll);
     for (;; auto97F3A6A2_u -= 1) {
@@ -5669,6 +5668,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     for (;; auto97D1B544_u -= 1) {
         auto97D1B544_var = UnitGroupUnitFromEnd(auto97D1B544_g, auto97D1B544_u);
         if (auto97D1B544_var == null) { break; }
+        libNtve_gf_PauseUnit(auto97D1B544_var, false);
         libNtve_gf_ShowHideUnit(auto97D1B544_var, true);
     }
     autoB80C02D8_g = gv_gROUPLZEnemies;
@@ -5676,6 +5676,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     for (;; autoB80C02D8_u -= 1) {
         autoB80C02D8_var = UnitGroupUnitFromEnd(autoB80C02D8_g, autoB80C02D8_u);
         if (autoB80C02D8_var == null) { break; }
+        libNtve_gf_PauseUnit(autoB80C02D8_var, false);
         libNtve_gf_ShowHideUnit(autoB80C02D8_var, true);
     }
     auto48C5B6F7_g = gv_gROUPPlayersStartingUNITS;
@@ -5683,6 +5684,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     for (;; auto48C5B6F7_u -= 1) {
         auto48C5B6F7_var = UnitGroupUnitFromEnd(auto48C5B6F7_g, auto48C5B6F7_u);
         if (auto48C5B6F7_var == null) { break; }
+        libNtve_gf_PauseUnit(auto48C5B6F7_var, false);
         libNtve_gf_ShowHideUnit(auto48C5B6F7_var, true);
     }
     GameTimeOfDayPause(false);
