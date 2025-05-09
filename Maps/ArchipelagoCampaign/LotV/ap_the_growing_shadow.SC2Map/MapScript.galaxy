@@ -957,12 +957,6 @@ bool gt_Init01Technology_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TechTreeUnitAllow(gv_pLAYER_01_USER, "AP_CyberneticsCore", true);
-    libVoiC_gf_EnableCampaignTechUnit(true, "AP_StalkerShakuras", gv_pLAYER_01_USER);
-    TechTreeUnitAllow(gv_pLAYER_01_USER, "Forge", false);
-    TechTreeUnitAllow(gv_pLAYER_01_USER, "PhotonCannon", false);
-    TechTreeUnitAllow(gv_pLAYER_01_USER, "SoACaster", false);
-    TechTreeAbilityAllow(gv_pLAYER_01_USER, AbilityCommand("UpgradeToWarpGate", 0), false);
     TechTreeAbilityAllow(gv_pLAYER_01_USER, AbilityCommand("ZeratulVoidPrisonAiur01", 0), false);
     TechTreeAbilityAllow(gv_pLAYER_01_USER, AbilityCommand("ZeratulStun", 0), false);
     TechTreeUpgradeAddLevel(gv_pLAYER_01_USER, "HaveZeratulChampion", 1);
