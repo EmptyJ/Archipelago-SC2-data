@@ -263,6 +263,7 @@ Variable/Name/AB4458DB=ObjectiveSpeedrun
 Variable/Name/AB802343=WaveGroup
 Variable/Name/ADC8AA3B=FriendlyUnitsNearTugOfWar
 Variable/Name/ADCEEE01=CinematicEnemyGroup
+Variable/Name/AEAF07D3=resource
 Variable/Name/AFC5894F=ObjectiveElementalsKilledCount
 Variable/Name/B088B4AA=TugOfWar_ForwardSpeed
 Variable/Name/B0E6F2AE=NexusesDestroyed

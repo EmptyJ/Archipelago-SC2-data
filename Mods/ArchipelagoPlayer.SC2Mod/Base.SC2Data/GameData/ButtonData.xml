@@ -2253,7 +2253,7 @@
         <AlertIcon value="Assets\Textures\BTN-Ability-Protoss-ShadowCannon.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_AnnihilatorAerialTracking">
+    <CButton id="AP_AnnihilatorTwilightChassis">
         <Icon value="Assets\Textures\btn-progression-protoss-fenix-12-immortalandscoutchampions-research.dds"/>
         <AlertIcon value="Assets\Textures\btn-progression-protoss-fenix-12-immortalandscoutchampions-research.dds"/>
         <EditorCategories value="Race:Protoss"/>
@@ -5122,7 +5122,7 @@
         <Icon value="Assets\Textures\BTN-Upgrade-Protoss-FluxVanes.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
-    <CButton id="AP_DestroyerChargingBeam">
+    <CButton id="AP_DestroyerReforgedBloodshardCore">
         <Icon value="assets\textures\btn-amonshardsarmor.dds"/>
         <AlertIcon value="assets\textures\btn-amonshardsarmor.dds"/>
         <EditorCategories value="Race:Protoss"/>
@@ -6379,10 +6379,12 @@
     <CButton id="AP_SILiberatorBaseAttackEnable">
         <Icon value="Assets\Textures\btn-upgrade-zagara-scourgegasreduction.dds"/>
         <EditorCategories value="Race:Zerg"/>
+        <HotkeySet value="AP_SILiberatorBaseAttack"/>
     </CButton>
     <CButton id="AP_SILiberatorBaseAttackDisable">
         <Icon value="Assets\Textures\btn-ability-zerg-parasiticbomb.dds"/>
         <EditorCategories value="Race:Zerg"/>
+        <HotkeySet value="AP_SILiberatorBaseAttack"/>
     </CButton>
     <CButton id="AP_BattlecruiserRangeAura">
         <Icon value="Assets\Textures\btn-ability-mengsk-battlecruiser-decksights.dds"/>
@@ -7094,13 +7096,15 @@
     </CButton>
     <CButton id="AP_SILiberatorAAMode" parent="AP_LiberatorAAMode">
         <Hotkey value="Button/Hotkey/AP_SILiberatorAAMode"/>
-        <HotkeySet value="SILiberatorModes"/>
+        <HotkeySet value="AP_SILiberatorModes"/>
+        <HotkeyAlias value="AP_SILiberatorAAMode"/>
         <Tooltip value="Button/Tooltip/AP_SILiberatorAAMode"/>
         <AlertTooltip value="Button/Tooltip/AP_SILiberatorAAMode"/>
     </CButton>
     <CButton id="AP_SILiberatorAGMode" parent="AP_LiberatorAGMode">
         <Hotkey value="Button/Hotkey/AP_SILiberatorAGMode"/>
-        <HotkeySet value="SILiberatorModes"/>
+        <HotkeySet value="AP_SILiberatorModes"/>
+        <HotkeyAlias value="AP_SILiberatorAGMode"/>
         <Tooltip value="Button/Tooltip/AP_SILiberatorAGMode"/>
         <AlertTooltip value="Button/Tooltip/AP_SILiberatorAGMode"/>
     </CButton>
@@ -7108,6 +7112,7 @@
         <Icon value="Assets\Textures\abilityicon_spawnbanelings_square.dds"/>
     </CButton>
     <CButton id="AP_BanelingLaunchTrain">
+        <AlertIcon value="Assets\Textures\abilityicon_spawnbanelings_square.dds"/>
         <Icon value="Assets\Textures\abilityicon_spawnbanelings_square.dds"/>
     </CButton>
     <CButton id="AP_SummonMercRoach">
@@ -7300,13 +7305,14 @@
     <CButton id="AP_SupplicantSacrifice">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeon.dds"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeon.dds"/>
+        <HotkeySet value="AP_SupplicantSacrifice"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="AP_SupplicantSacrificeOff">
         <Icon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeoff.dds"/>
         <AlertTooltip value="Button/Tooltip/AP_SupplicantSacrifice"/>
         <AlertIcon value="AP\Assets\Textures\btn-ability-protoss-supplicant-sacrificeoff.dds"/>
-        <HotkeyAlias value="AP_SupplicantSacrifice"/>
+        <HotkeySet value="AP_SupplicantSacrifice"/>
         <Tooltip value="Button/Tooltip/AP_SupplicantSacrifice"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
@@ -7378,5 +7384,27 @@
         <Icon value="Assets\Textures\talent-tychus-level02-additionaloutlaw.dds"/>
         <AlertIcon value="Assets\Textures\talent-tychus-level02-additionaloutlaw.dds"/>
         <ChargeText value="Button/ChargeText/AP_FastDelivery"/>
+    </CButton>
+    <CButton id="AP_EchidnaWormRallyWorker" parent="RallyEgg">
+        <Tooltip value="Button/Tooltip/AP_EchidnaWormRallyWorker"/>
+    </CButton>
+    <CButton id="AP_EchidnaWormRally" parent="Rally">
+        <Tooltip value="Button/Tooltip/AP_EchidnaWormRally"/>
+    </CButton>
+    <CButton id="AP_Salvage">
+        <Icon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-terran-salvage.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="AP_ScoutGammaPhotonBlasters">
+        <Icon value="AP\Assets\Custom\Textures\btn-upgrade-protoss-stabilized-electrodes.dds"/>
+        <AlertIcon value="AP\Assets\Custom\Textures\btn-upgrade-protoss-stabilized-electrodes.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="AP_BloodshardRealignment">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-rangeincrease.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-rangeincrease.dds"/>
+        <EditorCategories value="Race:Protoss"/>
     </CButton>
 </Catalog>

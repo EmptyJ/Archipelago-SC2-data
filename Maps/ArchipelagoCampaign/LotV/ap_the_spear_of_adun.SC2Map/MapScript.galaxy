@@ -1462,6 +1462,8 @@ void gt_StartGameQ_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_DeployPylonQ_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    string auto63C853A0_val;
+
     // Conditions
     if (testConds) {
         if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
@@ -1475,10 +1477,6 @@ bool gt_DeployPylonQ_Func (bool testConds, bool runActions) {
         if (!((libVCMI_gf_PlayerInCinematicModeCampaign() == false))) {
             return false;
         }
-
-        if (!((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Neut"))) {
-            return false;
-        }
     }
 
     // Actions
@@ -1488,26 +1486,51 @@ bool gt_DeployPylonQ_Func (bool testConds, bool runActions) {
 
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerQueueEnter();
-    Wait(1.0, c_timeAI);
-    if ((libLotv_gf_DifficultyValueInt2(1, 1, 0, 0) == 1) && (libABFE498B_gv_aP_Triggers_disableForcedCamera == false)) {
-        CameraPan(gv_pLAYER_01_USER, PointFromId(71), 2.0, -1, 10.0, true);
+    if ((libABFE498B_gv_aP_Triggers_Option_overridePlayerRace == "Neut")) {
+        if ((libLotv_gf_DifficultyValueInt2(1, 1, 0, 0) == 1) && (libABFE498B_gv_aP_Triggers_disableForcedCamera == false)) {
+            CameraPan(gv_pLAYER_01_USER, PointFromId(71), 2.0, -1, 10.0, true);
+            Wait(1.0, c_timeAI);
+            libVCMI_gf_PingMinimapCampaign(PlayerGroupSingle(gv_pLAYER_01_USER), PointFromId(71), 3.0, Color(0.00, 100.00, 0.00));
+            UIAlertPoint("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/F99FD8EF"), null, PointFromId(71));
+        }
+
+        libVCUI_gf_TurnSpearofAdunSlotHighlightOnOff(1, true);
+        if ((libLotv_gf_DifficultyValueInt2(1, 1, 0, 0) == 1)) {
+            libVCMI_gf_CreateReticleEffectAndTextTagAtPoint(libVCMI_ge_CampaginReticleType_ProtossMainObjective, libVCMI_ge_CampaginReticleSize_Medium, StringExternal("Param/Value/2F2FCFB6"), PointFromId(71));
+            gv_introReticle = libNtve_gf_ActorLastCreated();
+            gv_introTextTag = TextTagLastCreated();
+            TextTagSetPosition(gv_introTextTag, PointFromId(71), 0.0);
+        }
+
+        TriggerExecute(gt_DeployPylonUnitsPowered, true, false);
         Wait(1.0, c_timeAI);
-        libVCMI_gf_PingMinimapCampaign(PlayerGroupSingle(gv_pLAYER_01_USER), PointFromId(71), 3.0, Color(0.00, 100.00, 0.00));
-        UIAlertPoint("Trigger", gv_pLAYER_01_USER, StringExternal("Param/Value/F99FD8EF"), null, PointFromId(71));
     }
 
-    libVCUI_gf_TurnSpearofAdunSlotHighlightOnOff(1, true);
-    if ((libLotv_gf_DifficultyValueInt2(1, 1, 0, 0) == 1)) {
-        libVCMI_gf_CreateReticleEffectAndTextTagAtPoint(libVCMI_ge_CampaginReticleType_ProtossMainObjective, libVCMI_ge_CampaginReticleSize_Medium, StringExternal("Param/Value/2F2FCFB6"), PointFromId(71));
-        gv_introReticle = libNtve_gf_ActorLastCreated();
-        gv_introTextTag = TextTagLastCreated();
-        TextTagSetPosition(gv_introTextTag, PointFromId(71), 0.0);
-    }
-
-    TriggerExecute(gt_DeployPylonUnitsPowered, true, false);
-    Wait(1.0, c_timeAI);
     libVoiC_gf_SetAllSoundChannelVolumesCampaign(libVoiC_ge_VolumeChannelModeCampaign_Speech);
-    libVCMI_gf_SendTransmissionCampaign(null, "pMission_Aiur03|Line00056", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    auto63C853A0_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+    if (auto63C853A0_val == "Terr") {
+        // Transmission - SoundLink("pCutscene_Aiur04Before_Artanis_001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(""), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("pCutscene_Aiur04Before_Artanis_001", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("RaynorIntro00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("RaynorMarinePortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("RaynorIntro00001", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("ArtanisIntro00002", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("ArtanisPortraitAiur01"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("ArtanisIntro00002", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("pMission_Ulnar02_Artanis_128", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel(""), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("pMission_Ulnar02_Artanis_128", -1), 0.0, c_transmissionDurationAdd, true);
+    }
+    else if (auto63C853A0_val == "Zerg") {
+        // Transmission - SoundLink("TychusIntro00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("TychusPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("TychusIntro00001", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(2.0, c_timeReal);
+        // Transmission - SoundLink("KerriganIntro00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("KerriganPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("KerriganIntro00001", -1), 0.0, c_transmissionDurationAdd, true);
+    }
+    else {
+        libVCMI_gf_SendTransmissionCampaign(null, "pMission_Aiur03|Line00056", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    }
     libVoiC_gf_SetAllSoundChannelVolumesCampaign(libVoiC_ge_VolumeChannelModeCampaign_Game);
     TriggerQueueExit();
     SoundtrackStop(PlayerGroupAll(), c_soundtrackCategoryMusic, true);
@@ -2358,6 +2381,8 @@ void gt_PowerCell4Reinforcements2_Init () {
 //--------------------------------------------------------------------------------------------------
 bool gt_IntroduceUnpoweredWarpGatesQ_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
+    string auto289F2BC3_val;
+
     // Conditions
     if (testConds) {
         if (!((libVCMI_gf_GameIsOver() == false))) {
@@ -2392,8 +2417,30 @@ bool gt_IntroduceUnpoweredWarpGatesQ_Func (bool testConds, bool runActions) {
     TriggerExecute(gt_ObjectivePowerUpWarpGatesCreate, true, false);
     Wait(1.0, c_timeAI);
     libVoiC_gf_SetAllSoundChannelVolumesCampaign(libVoiC_ge_VolumeChannelModeCampaign_Speech);
-    libVCMI_gf_SendTransmissionCampaign(null, "pMission_Aiur03|Line00042", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
-    libVCMI_gf_SendTransmissionCampaign(null, "pMission_Aiur03|Line00043", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    auto289F2BC3_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+    if (auto289F2BC3_val == "Terr") {
+        // Transmission - SoundLink("ArtanisBuilding00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("ArtanisPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("ArtanisBuilding00001", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("Mission_Epilogue02_Raynor_107", -1)
+        libVCMI_gf_SendTransmissionCampaign(null, "Mission_Epilogue02|Line00107", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    }
+    else if (auto289F2BC3_val == "Zerg") {
+        // Transmission - SoundLink("KerriganBuilding00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("KerriganPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("KerriganBuilding00001", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("QueenBuilding00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("QueenPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("QueenBuilding00001", -1), 0.0, c_transmissionDurationAdd, true);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("KerriganBuilding00002", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("KerriganPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("KerriganBuilding00002", -1), 2.0, c_transmissionDurationSub, true);
+        // Transmission - SoundLink("KerriganBuilding00003", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("KerriganPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), SoundLink("KerriganBuilding00003", -1), 0.0, c_transmissionDurationAdd, true);
+    }
+    else {
+        libVCMI_gf_SendTransmissionCampaign(null, "pMission_Aiur03|Line00042", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+        libVCMI_gf_SendTransmissionCampaign(null, "pMission_Aiur03|Line00043", c_transmissionDurationAdd, 0.0, true, libVCMI_ge_MissionTransmissionPortraitOptioins_HidePortraitAfter, libVCMI_ge_MissionTransmissionCueSoundOptions_DefaultCueSoundBehavior);
+    }
     libVoiC_gf_SetAllSoundChannelVolumesCampaign(libVoiC_ge_VolumeChannelModeCampaign_Game);
     TriggerQueueExit();
     if ((TriggerIsEnabled(gt_BonusProximityTrigger) == true)) {
@@ -4335,6 +4382,7 @@ bool gt_ObjectivePowerUpWarpGatesComplete_Func (bool testConds, bool runActions)
 
     TriggerEnable(TriggerGetCurrent(), false);
     TriggerExecute(gt_ObjectivePowerUpWarpGatesCreate, true, false);
+    lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objectivePowerUpWarpGates, 3);
     lib5BD4895D_gf_AP_Core_setObjectiveCompleted(gv_objectivePowerUpWarpGates);
     Wait(libVCMI_gv_campaignObjectiveDelay, c_timeReal);
     return true;

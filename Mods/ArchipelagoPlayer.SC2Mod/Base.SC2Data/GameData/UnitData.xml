@@ -30,6 +30,7 @@
         <HotkeyAlias value=""/>
         <SelectAlias value="Broodling"/>
         <AIEvaluateAlias value="Broodling"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
     </CUnit>
     <CUnit default="1" id="AP_VoidRayCampaignBase">
         <DeathRevealRadius value="3"/>
@@ -253,7 +254,7 @@
         <SubgroupPriority value="18"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Marine"/>
+        <TacticalAI value="AP_Marine"/>
         <GlossaryCategory value="Unit/Category/AP_TerranUnitsGround"/>
         <GlossaryPriority value="21"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -380,9 +381,11 @@
         <Name value="Unit/Name/AP_InfestedMedic"/>
         <Description value="Button/Tooltip/AP_Medic"/>
         <Race value="Zerg"/>
+        <SpeedMultiplierCreep value="1.3"/>
         <LifeRegenRate value="0.2734"/>
         <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
     </CUnit>
     <CUnit id="AP_MedicSCBWOpticFlare@Missile" parent="MISSILE_INVULNERABLE">
         <Race value="BWTe"/>
@@ -582,7 +585,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="18"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Marauder"/>
+        <TacticalAI value="AP_Marauder"/>
         <GlossaryCategory value="Unit/Category/AP_TerranUnitsGround"/>
         <GlossaryPriority value="50"/>
         <GlossaryStrongArray value="Roach"/>
@@ -4025,7 +4028,7 @@
         <SubgroupPriority value="18"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <TacticalAI value="Marine"/>
+        <TacticalAI value="AP_Marine"/>
         <SelectAlias value="AP_Marine"/>
         <GlossaryPriority value="31"/>
         <GlossaryStrongArray value="Marauder"/>
@@ -4223,7 +4226,7 @@
         <ScoreKill value="150"/>
         <SubgroupPriority value="18"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
-        <TacticalAI value="Marauder"/>
+        <TacticalAI value="AP_Marauder"/>
         <SelectAlias value="AP_Marauder"/>
         <GlossaryPriority value="51"/>
         <GlossaryStrongArray value="Thor"/>
@@ -4366,7 +4369,7 @@
         <AbilArray Link="AP_DeploySpiderMines"/>
         <BehaviorArray Link="AP_SiegeTankShapedHullIndicator"/>
         <BehaviorArray Link="AP_SiegeTankEnhancedCombustionEnginesIndicator"/>
-        <WeaponArray Link="AP_SiegeBreaker" Turret="SiegeTank"/>
+        <WeaponArray Link="AP_SiegeBreaker" Turret="AP_SiegeTank"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -4460,7 +4463,7 @@
         <AbilArray Link="AP_SiegeBreakerSiegedTransportableMorph"/>
         <BehaviorArray Link="AP_SiegeTankSiegeModeProgressiveRangeApplySafeguard"/>
         <BehaviorArray Link="AP_SiegeTankShapedHullIndicator"/>
-        <WeaponArray Link="AP_ArcliteShockCannon" Turret="SiegeTankSieged"/>
+        <WeaponArray Link="AP_ArcliteShockCannon" Turret="AP_SiegeTankSieged"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -4521,6 +4524,7 @@
         <Name value="Unit/Name/AP_InfestedSiegeBreaker"/>
         <Description value="Button/Tooltip/AP_SiegeTank"/>
         <Race value="Zerg"/>
+        <SpeedMultiplierCreep value="1.3"/>
         <LifeRegenRate value="0.2734"/>
         <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
@@ -4529,7 +4533,8 @@
         <!--        <AbilArray index="4" Link="AP_MercSiegeTankJumpJet"/>-->
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL1L2"/>
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL3"/>
-        <WeaponArray index="0" Link="AP_InfestedSiegeBreaker" Turret="SiegeTank"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
+        <WeaponArray index="0" Link="AP_InfestedSiegeBreaker" Turret="AP_SiegeTank"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="SiegeMode" Type="AbilCmd" AbilCmd="AP_InfestedSiegeBreakerSiege,0" Row="2" Column="0"/>
         </CardLayouts>
@@ -4547,7 +4552,8 @@
         <AbilArray index="5" Link="AP_InfestedSiegeBreakerSiegedTransportableMorph"/>
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL1L2"/>
         <BehaviorArray Link="AP_RegeneratorRegenBioSteelL3"/>
-        <WeaponArray index="0" Link="AP_InfestedArcliteShockCannon" Turret="SiegeTankSieged"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
+        <WeaponArray index="0" Link="AP_InfestedArcliteShockCannon" Turret="AP_SiegeTankSieged"/>
         <CardLayouts index="0">
             <LayoutButtons index="5" Face="Unsiege" Type="AbilCmd" AbilCmd="AP_InfestedSiegeBreakerUnsiege,0" Row="2" Column="1"/>
         </CardLayouts>
@@ -6871,7 +6877,7 @@
             <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="AP_BunkerTransport,0" Row="2" Column="1"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="AP_BunkerTransport,1" Row="2" Column="2"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="3"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="3"/>
             <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_SalvageShared,1" Row="2" Column="4"/>
@@ -7130,7 +7136,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" AbilCmd="BuildInProgress,Cancel" Row="1" Column="3"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_HiSecAutoTracking" Type="Passive" Requirements="AP_HaveHiSecAutoTracking" Row="1" Column="0"/>
             <LayoutButtons Face="AP_DevastatorTurretSlow" Type="Passive" Requirements="AP_HaveDevastatorTurretSlow" Row="1" Column="1"/>
             <LayoutButtons Face="AP_DevastatorTurretPunisherGrenades" Type="Passive" Requirements="AP_HaveDevastatorTurretPunisherGrenades" Row="1" Column="2"/>
@@ -8007,9 +8013,9 @@
         <MinimapRadius value="0.25"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="Drone"/>
         <TechTreeProducedUnitArray value="Overlord"/>
         <TechTreeProducedUnitArray value="Zergling"/>
@@ -8091,6 +8097,7 @@
         <AbilArray Link="AP_MorphlingToTyrannozorMerge"/>
         <AbilArray Link="AP_MorphlingToTyrannozorMergeDummy"/>
         <BehaviorArray Link="AP_DisableTyrannozorMorphlingMergeSupply"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -8133,8 +8140,8 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <MinimapRadius value="0.375"/>
     </CUnit>
     <CUnit id="AP_AutomatedExtractor">
@@ -8176,6 +8183,7 @@
         <AbilArray Link="BuildInProgress"/>
         <BehaviorArray Link="AP_AutomaticHarvestableVespene"/>
         <BehaviorArray Link="AP_AutoHarvestVespeneZerg"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_K5AutoExtractor" Type="Passive" Row="2" Column="0"/>
@@ -8199,7 +8207,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_AutomatedExtractorRich">
         <DeathRevealRadius value="3"/>
@@ -8240,6 +8248,7 @@
         <AbilArray Link="BuildInProgress"/>
         <BehaviorArray Link="AP_AutomaticHarvestableVespene"/>
         <BehaviorArray Link="AP_AutoHarvestVespeneZergRich"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_K5AutoExtractor" Type="Passive" Row="2" Column="0"/>
@@ -8299,6 +8308,7 @@
         <AbilArray Link="AP_ExtractorToAutomatedExtractor"/>
         <BehaviorArray Link="AP_HarvestableVespeneGeyserGasZerg"/>
         <BehaviorArray Link="AP_AutomatedExtractorMorph"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_K5GasBonuses" Type="Passive" Requirements="AP_HaveK5GasBonuses" Row="2" Column="1"/>
@@ -8322,7 +8332,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_ExtractorPipes">
         <DeathRevealRadius value="3"/>
@@ -8366,6 +8376,7 @@
         <AbilArray Link="AP_ExtractorToAutomatedExtractor"/>
         <BehaviorArray Link="AP_HarvestableVespeneGeyserGasZerg"/>
         <BehaviorArray Link="AP_ExtractorPipesMorph"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_K5GasBonuses" Type="Passive" Requirements="AP_HaveK5GasBonuses" Row="2" Column="1"/>
@@ -8425,6 +8436,7 @@
         <AbilArray Link="AP_ExtractorToAutomatedExtractorRich"/>
         <BehaviorArray Link="AP_HarvestableRichVespeneGeyserGasZerg"/>
         <BehaviorArray Link="AP_AutomatedExtractorMorphRich"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_K5GasBonuses" Type="Passive" Requirements="AP_HaveK5GasBonuses" Row="2" Column="1"/>
@@ -8446,7 +8458,7 @@
         <SubgroupAlias value="Extractor"/>
         <GlossaryPriority value="10"/>
         <GlossaryAlias value="Extractor"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_Drone">
         <DeathRevealRadius value="3"/>
@@ -8488,6 +8500,7 @@
         <AbilArray Link="AP_ZergBuild"/>
         <AbilArray Link="AP_DroneHarvest"/>
         <AbilArray Link="AP_BurrowDroneDown"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_Spines"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -8550,9 +8563,9 @@
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Drone"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="20"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -8587,6 +8600,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
         <AbilArray Link="AP_BurrowDroneUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AttackWorker" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowDroneUp,Execute" Row="2" Column="4"/>
@@ -8638,6 +8652,7 @@
         <!--        <BehaviorArray Link="QueenofVenomCreepTumorSearch"/>-->
         <BehaviorArray Link="AP_makeCreep4x4Enhanced"/>
         <BehaviorArray Link="AP_CreepFrenzy13CreepTumor"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="AP_CreepTumorPassive" Type="Passive" Row="1" Column="0"/>
@@ -8695,6 +8710,7 @@
         <BehaviorArray Link="AP_makeCreep4x4"/>
         <BehaviorArray Link="AP_makeCreep4x4Enhanced"/>
         <BehaviorArray Link="AP_CreepFrenzy13CreepTumor"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_CreepTumorBuild,Halt" Row="2" Column="4"/>
             <LayoutButtons Face="AP_BuildCreepTumorPropagate" Type="AbilCmd" AbilCmd="AP_CreepTumorBuild,Build1" Row="2" Column="0"/>
@@ -8714,7 +8730,7 @@
         <SelectAlias value="CreepTumor"/>
         <TechAliasArray value="Alias_CreepTumor"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_CreepTumorUsed">
         <Description value="Button/Tooltip/CreepTumorBurrowed"/>
@@ -8754,6 +8770,7 @@
         <BehaviorArray Link="AP_makeCreep4x4Enhanced"/>
         <BehaviorArray Link="AP_CreepFrenzy13CreepTumor"/>
         <BehaviorArray Link="AP_CreepTumorExhausted"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_CreepTumorPassive" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="AP_K5CreepBonuses" Type="Passive" Requirements="AP_HaveK5CreepBonuses" Row="1" Column="1"/>
@@ -8807,6 +8824,7 @@
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="AP_BurrowCreepTumorDown"/>
         <BehaviorArray Link="AP_makeCreep4x4"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
         </CardLayouts>
@@ -8903,7 +8921,7 @@
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
         <TacticalAIThink value="AIThinkLeviathan"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="145"/>
         <KillDisplay value="Never"/>
     </CUnit>
@@ -9186,7 +9204,7 @@
         <BehaviorArray Link="AP_ChainReactionIndicator"/>
         <BehaviorArray Link="AP_K5InfestBroodlingsIndicator"/>
         <BehaviorArray Link="AP_K5FuryIndicator"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_K5Ranged"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -9233,7 +9251,7 @@
         <EditorCategories value="ObjectType:Hero,ObjectFamily:Campaign"/>
         <TechAliasArray value="Alias_Kerrigan"/>
         <GlossaryCategory value="Unit/Category/ZergCharacter"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Never"/>
         <Fidget>
@@ -9299,7 +9317,7 @@
         <BehaviorArray Link="AP_ChainReactionIndicator"/>
         <BehaviorArray Link="AP_K5InfestBroodlingsIndicator"/>
         <BehaviorArray Link="AP_K5FuryIndicator"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -9493,9 +9511,9 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
         <HotkeyAlias value="AP_Broodling"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="200"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <CostCategory value="Army"/>
         <Mob value="Multiplayer"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
@@ -9582,6 +9600,7 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowInfestorTerranDown"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_InfestedAcidSpines"/>
         <WeaponArray Link="AP_InfestedGuassRifle"/>
         <CardLayouts>
@@ -9635,6 +9654,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="10"/>
         <AbilArray Link="AP_BurrowInfestorTerranUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowInfestorTerranUp,Execute" Row="2" Column="4"/>
@@ -9834,6 +9854,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="NydusCanalLoad" Type="AbilCmd" AbilCmd="AP_NydusWormTransport,Load" Row="2" Column="1"/>
@@ -9854,9 +9875,9 @@
         <SubgroupPriority value="2"/>
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="NydusCanal"/>
     </CUnit>
     <CUnit id="AP_NydusWorm">
@@ -9904,6 +9925,7 @@
         <AbilArray Link="AP_NydusWormTransport"/>
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_SalvageNydus"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="SetRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
@@ -9927,9 +9949,9 @@
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <AIEvalFactor value="0.2"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="110"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_TradeStructure">
         <DeathRevealRadius value="3"/>
@@ -10094,6 +10116,7 @@
         <AbilArray Link="AP_EchidnaTrainSwarmling"/>
         <BehaviorArray Link="AP_makeCreep8x6"/>
         <BehaviorArray Link="AP_makeCreep8x6Enhanced"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_BuildCreepTumorPropagate" Type="AbilCmd" AbilCmd="AP_EchidnaCreepBuild,Build1" Row="2" Column="0"/>
             <LayoutButtons Face="AP_NydusWormSubterraneanScales" Type="Passive" Requirements="AP_HaveNydusWormSubterraneanScales" Row="1" Column="0"/>
@@ -10111,8 +10134,8 @@
             <LayoutButtons Face="AP_BirthAberration" Type="AbilCmd" AbilCmd="AP_EchidnaTrain,Train11" Row="0" Column="4"/>
             <LayoutButtons Face="AP_EchidnaWormOuroborosStrain" Type="Passive" Requirements="AP_HaveEchidnaWormOuroborosStrain" Row="1" Column="1"/>
             <LayoutButtons Face="AP_NydusWormJormungandrStrain" Type="Passive" Requirements="AP_HaveNydusWormJormungandrStrain" Row="1" Column="2"/>
-            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="AP_RallyHatchery,Rally1" Row="1" Column="4"/>
-            <LayoutButtons Face="RallyEgg" Type="AbilCmd" AbilCmd="AP_RallyHatchery,Rally2" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_EchidnaWormRally" Type="AbilCmd" AbilCmd="AP_RallyHatchery,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_EchidnaWormRallyWorker" Type="AbilCmd" AbilCmd="AP_RallyHatchery,Rally2" Row="1" Column="3"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="AP_que7,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="AP_NydusRecall" Type="AbilCmd" AbilCmd="AP_SalvageNydus,On" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -10126,9 +10149,9 @@
         <SubgroupPriority value="60"/>
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionEvolved"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="20"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_CreateCocoonMissileWeapon" parent="MISSILE_INVULNERABLE">
         <Race value="Zerg"/>
@@ -10585,7 +10608,7 @@
         <AbilArray Link="AP_BanelingLaunchHangar"/>
         <AbilArray Link="AP_HangarQueue5"/>
         <AbilArray Link="AP_BanelingLaunchRefill"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_AberrationArmorAura"/>
         <BehaviorArray Link="AP_AberrationBanelingIncubation"/>
         <WeaponArray Link="AP_InfestedAbomination"/>
@@ -10613,13 +10636,13 @@
         <SubgroupPriority value="7"/>
         <MinimapRadius value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="125"/>
         <GlossaryStrongArray value="Firebat"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryWeakArray value="Marine"/>
         <GlossaryWeakArray value="SiegeTank"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="50"/>
             <ChanceArray index="Idle" value="50"/>
@@ -10659,7 +10682,7 @@
         <AbilArray Link="AP_BurrowInfestedAbominationUp"/>
         <AbilArray Link="AP_HangarQueue5"/>
         <AbilArray Link="AP_BanelingLaunchHangar"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_AberrationBanelingIncubation"/>
         <CardLayouts>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowInfestedAbominationUp,0" Row="2" Column="4"/>
@@ -10802,14 +10825,14 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="19"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="170"/>
         <GlossaryStrongArray value="SiegeTank"/>
         <GlossaryStrongArray value="SiegeTankSieged"/>
         <GlossaryStrongArray value="Stalker"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -10926,6 +10949,7 @@
         <SubgroupPriority value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="AP_ImpalerEggMorphling" parent="AP_ImpalerEgg"/>
     <CUnit id="AP_HydraliskLurkerEgg">
         <DeathRevealRadius value="3"/>
         <Facing value="45"/>
@@ -10964,6 +10988,7 @@
         <SubgroupPriority value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
     </CUnit>
+    <CUnit id="AP_HydraliskLurkerEggMorphling" parent="AP_HydraliskLurkerEgg"/>
     <CUnit id="AP_Lurker">
         <DeathRevealRadius value="3"/>
         <Facing value="45"/>
@@ -11031,7 +11056,7 @@
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Lurker"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="170"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Zealot"/>
@@ -11042,7 +11067,7 @@
         <GlossaryWeakArray value="Immortal"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -11152,7 +11177,7 @@
         <AbilArray Link="AP_HydraliskFrenzy"/>
         <AbilArray Link="AP_MorphRoachToImpaler"/>
         <AbilArray Link="AP_MorphHydraliskToLurker"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_HydraliskMelee"/>
         <WeaponArray Link="AP_NeedleSpines"/>
         <CardLayouts>
@@ -11179,7 +11204,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Hydralisk"/>
         <AIEvalFactor value="2"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="70"/>
         <GlossaryStrongArray value="Banshee"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -11228,7 +11254,7 @@
         <AbilArray Link="AP_HydraliskFrenzy"/>
         <!-- Missing in vanilla -->
         <BehaviorArray Link="AP_BurrowCracks"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowHydraliskUp,Execute" Row="2" Column="4"/>
@@ -11507,6 +11533,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_LocustMelee"/>
         <WeaponArray Link="AP_Locust"/>
         <CardLayouts>
@@ -11523,9 +11550,9 @@
         <SubgroupPriority value="1"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="149"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
     </CUnit>
@@ -11608,7 +11635,7 @@
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <HotkeyAlias value="AP_Locust"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
     </CUnit>
@@ -12015,7 +12042,7 @@
         <AbilArray Link="AP_InfestorConsumption"/>
         <AbilArray Link="AP_InfestedTerrans"/>
         <AbilArray Link="AP_AmorphousArmorcloud"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -12043,7 +12070,7 @@
         <TacticalAI value="Infestor"/>
         <TacticalAIThink value="AIThinkInfestor"/>
         <AIEvalFactor value="1.8"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="150"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -12051,7 +12078,7 @@
         <GlossaryWeakArray value="Ghost"/>
         <GlossaryWeakArray value="Ultralisk"/>
         <GlossaryWeakArray value="HighTemplar"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -12102,7 +12129,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowInfestorUp"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -12444,6 +12471,7 @@
         <BehaviorArray Link="AP_SOAHeroicShieldProcBuff"/>
         <WeaponArray Link="AP_CarrierPurifierPrismaticBeam"/>
         <WeaponArray Link="AP_CarrierPurifierBomberLaunch"/>
+        <WeaponArray Link="AP_CarrierPurifierPrismaticBeamDummy"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -12468,7 +12496,6 @@
         <TacticalAI value="Carrier"/>
         <Mass value="0.6"/>
         <EquipmentArray Weapon="AP_CarrierPurifierBomberBomb"/>
-        <EquipmentArray Weapon="AP_CarrierPurifierPrismaticBeamDummy"/>
         <GlossaryCategory value="Unit/Category/AP_ProtossUnitsAir"/>
         <GlossaryPriority value="170"/>
         <GlossaryStrongArray value="Thor"/>
@@ -12972,7 +12999,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="1.5"/>
         <Mass value="0.6"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="190"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -12980,7 +13007,7 @@
         <GlossaryWeakArray value="VikingFighter"/>
         <GlossaryWeakArray value="Corruptor"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_BroodLordCocoon">
         <DeathRevealRadius value="3"/>
@@ -13060,9 +13087,9 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="200"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_BroodlingEscort" parent="AP_BroodlingDefault">
         <FlagArray index="Uncommandable" value="1"/>
@@ -13240,7 +13267,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="10"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="130"/>
         <GlossaryStrongArray value="VikingFighter"/>
         <GlossaryStrongArray value="BroodLord"/>
@@ -13248,7 +13275,7 @@
         <GlossaryWeakArray value="Thor"/>
         <GlossaryWeakArray value="Corruptor"/>
         <GlossaryWeakArray value="Phoenix"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_Corruptor">
         <DeathRevealRadius value="3"/>
@@ -13324,9 +13351,9 @@
         <TacticalAIThink value="AIThinkCorruptor"/>
         <AIEvalFactor value="0.7"/>
         <Mass value="0.6"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="140"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_Scourge">
         <DeathRevealRadius value="3"/>
@@ -13381,9 +13408,9 @@
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
         <TacticalAI value=""/>
         <LeaderAlias value="Scourge"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="145"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <KillDisplay value="Never"/>
         <RankDisplay value="Never"/>
         <AIEvaluateAlias value=""/>
@@ -13606,8 +13633,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="200"/>
-        <LifeMax value="200"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
         <LifeArmor value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/ProtossArmor"/>
         <ShieldsStart value="100"/>
@@ -13633,7 +13660,6 @@
         <AbilArray Link="Warpable"/>
         <AbilArray Link="ProgressRally"/>
         <AbilArray Link="AP_ImmortalShakurasShadowCannon"/>
-        <AbilArray Link="AP_ImmortalShakurasShadowCannonAA"/>
         <BehaviorArray Link="AP_SOAHeroicShieldProcBuff"/>
         <WeaponArray Link="AP_AnnihilatorParticleDisruptors" Turret="AP_Immortal"/>
         <CardLayouts>
@@ -13642,12 +13668,11 @@
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="AP_ImmortalSingularityCharge" Type="Passive" Requirements="AP_HaveImmortalIncreasedRange" Row="1" Column="0"/>
+            <LayoutButtons Face="AP_AnnihilatorTwilightChassis" Type="Passive" Requirements="AP_HaveAnnihilatorTwilightChassis" Row="1" Column="0"/>
             <LayoutButtons Face="AP_ImmortalAdvancedTargetingMechanics" Type="Passive" Requirements="AP_HaveImmortalAirAttack" Row="1" Column="1"/>
             <LayoutButtons Face="AP_DisruptorDispersion" Type="Passive" Requirements="AP_HaveVoidImmortalWeaponSplash" Row="1" Column="2"/>
-            <LayoutButtons Face="AP_AnnihilatorAerialTracking" Type="Passive" Requirements="AP_HaveAnnihilatorAerialTracking" Row="1" Column="3"/>
+            <LayoutButtons Face="AP_ImmortalSingularityCharge" Type="Passive" Requirements="AP_HaveImmortalIncreasedRange" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ImmortalShakurasShadowCannon" Type="AbilCmd" AbilCmd="AP_ImmortalShakurasShadowCannon,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_ImmortalShakurasShadowCannon" Type="AbilCmd" AbilCmd="AP_ImmortalShakurasShadowCannonAA,0" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="0.625"/>
@@ -15056,10 +15081,10 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowBanelingDown"/>
         <AbilArray Link="AP_VolatileBurstBuilding"/>
-        <AbilArray Link="AP_ExplodeHeal"/>
+        <AbilArray Link="AP_Explode"/>
         <BehaviorArray Link="AP_BanelingExplode"/>
         <BehaviorArray Link="AP_HotSHunterJump"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_HotSBanelingExplode"/>
         <WeaponArray Link="AP_HotSBanelingExplodeBuilding"/>
         <WeaponArray Link="AP_BanelingSeekTarget"/>
@@ -15075,7 +15100,7 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="AP_BurrowBanelingDown,Execute" Row="2" Column="4"/>
-            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_ExplodeHeal,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_Explode,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="AP_EnableBuildingAttack" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,On" Row="2" Column="1"/>
             <LayoutButtons Face="AP_DisableBuildingAttack" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,Off" Row="2" Column="1"/>
             <LayoutButtons Face="AP_BanelingCorrosiveBile" Type="Passive" Requirements="AP_HaveHotSBanelingCorrosiveBile" Row="1" Column="0"/>
@@ -15099,7 +15124,7 @@
         <TacticalAIThink value="AIThinkBaneling"/>
         <AIEvalFactor value="3"/>
         <EquipmentArray Weapon="AP_HotSBanelingDummy"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="60"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Zergling"/>
@@ -15107,7 +15132,7 @@
         <GlossaryWeakArray value="Marauder"/>
         <GlossaryWeakArray value="Roach"/>
         <GlossaryWeakArray value="Stalker"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -15147,7 +15172,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_burrowedBanelingStop"/>
         <BehaviorArray Link="AP_BanelingExplode"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!-- BehaviorArray Link="BurrowCracks"/ -->
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -15292,10 +15317,10 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowHotSSplitterlingMediumDown"/>
         <AbilArray Link="AP_VolatileBurstBuilding"/>
-        <AbilArray Link="AP_ExplodeHealSmall"/>
+        <AbilArray Link="AP_ExplodeSmall"/>
         <BehaviorArray Link="AP_BanelingExplodeSmall"/>
         <BehaviorArray Link="AP_HotSHunterJump"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_HotSBanelingExplodeSmall"/>
         <WeaponArray Link="AP_HotSBanelingExplodeBuildingSmall"/>
         <WeaponArray Link="AP_BanelingSeekTarget"/>
@@ -15310,7 +15335,7 @@
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
             <LayoutButtons Face="AP_HunterCliffJumper" Type="Passive" Requirements="AP_HaveHotSHunter" Row="2" Column="2"/>
             <LayoutButtons Face="AP_BanelingSplitterlingSplitPassive" Type="Passive" Requirements="AP_HaveHotSSplitterling" Row="2" Column="3"/>
-            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_ExplodeHealSmall,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Explode" Type="AbilCmd" AbilCmd="AP_ExplodeSmall,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="AP_BurrowHotSSplitterlingMediumDown,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AP_EnableBuildingAttackSplitterling" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,On" Row="2" Column="1"/>
             <LayoutButtons Face="AP_DisableBuildingAttackSplitterling" Type="AbilCmd" AbilCmd="AP_VolatileBurstBuilding,Off" Row="2" Column="1"/>
@@ -15334,7 +15359,7 @@
         <SelectAlias value="AP_Baneling"/>
         <SubgroupAlias value="AP_Baneling"/>
         <EquipmentArray Weapon="AP_HotSBanelingDummySmall"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="62"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Zealot"/>
@@ -15380,7 +15405,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_burrowedBanelingStop"/>
         <BehaviorArray Link="AP_BanelingExplodeSmall"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -15905,6 +15930,7 @@
         <AbilArray Link="AP_NexusTrain"/>
         <AbilArray Link="AP_ProbeWarpin"/>
         <AbilArray Link="AP_ElderProbeWarpin"/>
+        <AbilArray Link="AP_ElderProbeWarpinBackground"/>
         <AbilArray Link="AP_RallyNexus"/>
         <AbilArray Link="AP_stopProtossBuilding"/>
         <AbilArray Link="AP_NexusInvulnerability"/>
@@ -15935,8 +15961,8 @@
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="AP_RallyNexus,0" Row="1" Column="4"/>
             <LayoutButtons Face="AP_TimeWarp" Type="AbilCmd" AbilCmd="AP_TimeWarp,0" Row="2" Column="0"/>
             <LayoutButtons Face="AP_TimeWarp" Type="AbilCmd" AbilCmd="AP_TimeWarp,0" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_Mothership" Type="AbilCmd" AbilCmd="AP_NexusTrainMothership,0" Row="1" Column="0"/>
-            <LayoutButtons Face="AP_MothershipCore" Type="AbilCmd" AbilCmd="AP_NexusTrainMothershipCore,0" Row="1" Column="0"/>
+<!--            <LayoutButtons Face="AP_Mothership" Type="AbilCmd" AbilCmd="AP_NexusTrainMothership,0" Row="1" Column="0"/>-->
+<!--            <LayoutButtons Face="AP_MothershipCore" Type="AbilCmd" AbilCmd="AP_NexusTrainMothershipCore,0" Row="1" Column="0"/>-->
             <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="AP_attackProtossBuilding,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="AP_stopProtossBuilding,Stop" Row="0" Column="3"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="AP_RallyNexus,1" Row="1" Column="4"/>
@@ -16951,6 +16977,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5CancelToSelection,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -16985,7 +17012,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TechAliasArray value="Alias_AP_Spire"/>
         <GlossaryPriority value="244"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_LurkerDen">
         <DeathRevealRadius value="3"/>
@@ -17025,6 +17052,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
@@ -17042,7 +17070,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
     </CUnit>
     <CUnit id="AP_ImpalerDen">
@@ -17086,6 +17114,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
@@ -17104,7 +17133,7 @@
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Impaler"/>
     </CUnit>
     <CUnit id="AP_InfestationPit">
@@ -17148,6 +17177,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -17168,7 +17198,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="237"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="SwarmHostMP"/>
         <TechTreeUnlockedUnitArray value=""/>
     </CUnit>
@@ -17215,6 +17245,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -17239,7 +17270,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TechAliasArray value="Alias_AP_HydraliskDen"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_BanelingNest">
         <DeathRevealRadius value="3"/>
@@ -17282,6 +17313,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -17301,7 +17333,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="37"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_EvolutionChamber">
         <DeathRevealRadius value="3"/>
@@ -17344,6 +17376,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -17377,7 +17410,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="29"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value=""/>
     </CUnit>
     <CUnit id="AP_Gateway">
@@ -18083,6 +18116,7 @@
                 <Row value="2"/>
                 <Column value="1"/>
             </LayoutButtons>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
         </CardLayouts>
         <CardLayouts CardId="PBl1">
             <LayoutButtons Face="AP_Nexus" Type="AbilCmd" AbilCmd="AP_ProtossBuild,0" Row="0" Column="0"/>
@@ -18189,9 +18223,9 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
         <TechAliasArray value="Alias_Overlord"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="201"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_Hive">
         <DeathRevealRadius value="3"/>
@@ -18253,6 +18287,7 @@
         <BehaviorArray Link="AP_makeCreep8x6Enhanced"/>
         <BehaviorArray Link="AP_HatcheryDoubleQueue"/>
         <BehaviorArray Link="AP_SISCVBuildChargeUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Larva" Type="SelectLarva" Row="0" Column="0"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -18282,7 +18317,7 @@
         <TechAliasArray value="Alias_AP_Hatchery"/>
         <TechAliasArray value="Alias_AP_Lair"/>
         <GlossaryPriority value="18"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="Hatchery">
         <!-- Override -->
@@ -18372,6 +18407,7 @@
         <BehaviorArray Link="AP_makeCreep8x6Enhanced"/>
         <BehaviorArray Link="AP_HatcheryDoubleQueue"/>
         <BehaviorArray Link="AP_SISCVBuildChargeUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <EffectArray index="Create" value="HatcheryCreateSet"/>
         <EffectArray index="Birth" value="HatcheryBirthSet"/>
         <CardLayouts>
@@ -18403,7 +18439,7 @@
         <AIEvalFactor value="0"/>
         <TechAliasArray value="Alias_AP_Hatchery"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeProducedUnitArray value="Larva"/>
         <TechTreeProducedUnitArray value="Queen"/>
     </CUnit>
@@ -18469,6 +18505,7 @@
         <BehaviorArray Link="AP_makeCreep8x6Enhanced"/>
         <BehaviorArray Link="AP_HatcheryDoubleQueue"/>
         <BehaviorArray Link="AP_SISCVBuildChargeUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Larva" Type="SelectLarva" Row="0" Column="0"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -18499,7 +18536,7 @@
         <TechAliasArray value="Alias_AP_Hatchery"/>
         <TechAliasArray value="Alias_AP_Lair"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Overseer"/>
     </CUnit>
     <CUnit id="AP_Queen">
@@ -18554,7 +18591,7 @@
         <AbilArray Link="AP_QueenBurstHeal"/>
         <AbilArray Link="AP_QueenBioMechBurstHeal"/>
         <AbilArray Link="AP_SpawnLarva"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_AcidSpines"/>
         <WeaponArray Link="AP_Talons"/>
         <WeaponArray Link="AP_TalonsMissile"/>
@@ -18588,7 +18625,7 @@
         <TacticalAIThink value="AIThinkQueen"/>
         <AIEvalFactor value="0.55"/>
         <TechAliasArray value="Alias_Queen"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="217"/>
         <GlossaryStrongArray value="Hellion"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -18596,7 +18633,7 @@
         <GlossaryWeakArray value="Marine"/>
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -18647,7 +18684,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_BurrowQueenUp"/>
         <AbilArray Link="AP_QueenBuild"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowQueenUp,Execute" Row="2" Column="4"/>
@@ -18719,7 +18756,7 @@
         <ScoreKill value="50"/>
         <SubgroupPriority value="7"/>
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="450"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -18727,7 +18764,7 @@
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Baneling"/>
         <GlossaryWeakArray value="Colossus"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -18826,7 +18863,7 @@
         <ScoreMake value="100"/>
         <ScoreKill value="200"/>
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="470"/>
         <GlossaryStrongArray value="Banshee"/>
         <GlossaryStrongArray value="Mutalisk"/>
@@ -18834,7 +18871,7 @@
         <GlossaryWeakArray value="SiegeTankSieged"/>
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Colossus"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
     </CUnit>
     <CUnit id="AP_PrimalHydraliskBurrowed">
         <Name value="Unit/Name/AP_PrimalHydralisk"/>
@@ -18940,7 +18977,7 @@
         <ScoreResult value="BuildOrder"/>
         <SubgroupPriority value="7"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="465"/>
         <GlossaryStrongArray value="Hellion"/>
         <GlossaryStrongArray value="Zergling"/>
@@ -18948,7 +18985,7 @@
         <GlossaryWeakArray value="Marauder"/>
         <GlossaryWeakArray value="Ultralisk"/>
         <GlossaryWeakArray value="Immortal"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -19069,7 +19106,7 @@
         <InnerRadius value="0.75"/>
         <CargoSize value="8"/>
         <EditorCategories value="ObjectFamily:Campaign,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
         <GlossaryPriority value="580"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="Roach"/>
@@ -19077,7 +19114,7 @@
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="Mutalisk"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsPrimal"/>
     </CUnit>
     <CUnit id="AP_PrimalUltraliskBurrowed">
         <Name value="Unit/Name/AP_PrimalUltralisk"/>
@@ -19664,7 +19701,7 @@
         <BehaviorArray Link="AP_UseRoachCorpserWeapon"/>
         <BehaviorArray Link="AP_UseRoachVileWeapon"/>
         <BehaviorArray Link="AP_UseRoachVileCorpserWeapon"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_HotSRoachShieldIndicator"/>
         <WeaponArray Link="AP_RoachMelee"/>
         <WeaponArray Link="AP_AcidSaliva"/>
@@ -19700,7 +19737,7 @@
         <SubgroupPriority value="7"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Roach"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="100"/>
         <GlossaryStrongArray value="Hellion"/>
         <GlossaryStrongArray value="Zealot"/>
@@ -19708,7 +19745,7 @@
         <GlossaryWeakArray value="Marauder"/>
         <GlossaryWeakArray value="Immortal"/>
         <GlossaryWeakArray value="Ultralisk"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <LeaderAlias value="Roach"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
@@ -19755,7 +19792,7 @@
         <AbilArray Link="AP_burrowedStop"/>
         <AbilArray Link="move"/>
         <BehaviorArray Link="AP_RoachShield"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_HotSRoachShieldIndicator"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -19825,6 +19862,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_RoachlingNeedleClaws"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -19833,9 +19871,9 @@
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
         </CardLayouts>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="66"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_Ravager">
         <Description value="Button/Tooltip/Ravager"/>
@@ -19874,7 +19912,7 @@
         <AbilArray Link="AP_BurrowRavagerDown"/>
         <AbilArray Link="AP_RavagerCorrosiveBile"/>
         <AbilArray Link="AP_DeepTunnel"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_RavagerWeapon"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -19908,9 +19946,9 @@
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkRavager"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="66"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -19946,7 +19984,7 @@
         <AbilArray Link="AP_BurrowRavagerUp"/>
         <AbilArray Link="AP_DeepTunnel"/>
         <AbilArray Link="AP_RavagerCorrosiveBile"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AP_RavagerBileDamage" Type="Passive" Requirements="AP_HotSHaveRavagerPotentBile" Row="1" Column="0"/>
@@ -19966,7 +20004,7 @@
         <LeaderAlias value="AP_Ravager"/>
         <HotkeyAlias value="AP_Ravager"/>
         <SelectAlias value="AP_Ravager"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <AIEvaluateAlias value="Ravager"/>
@@ -20397,7 +20435,7 @@
         <AbilArray Link="AP_SwarmHostDeepBurrow"/>
         <AbilArray Link="AP_LocustGround"/>
         <BehaviorArray Link="AP_LocustLaunchDisabled"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_SwarmHostOrganicCarapaceIndicator"/>
         <WeaponArray Link="AP_LocustLaunch"/>
         <WeaponArray Link="AP_LocustFlyingLaunch"/>
@@ -20427,14 +20465,14 @@
         <SubgroupPriority value="17"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <Mass value="0.6"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="146"/>
         <GlossaryStrongArray value="Marine"/>
         <GlossaryStrongArray value="Stalker"/>
         <GlossaryStrongArray value="Roach"/>
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Archon"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -20479,7 +20517,7 @@
         <AbilArray Link="AP_LocustFlyingLaunch"/>
         <AbilArray Link="AP_LocustGround"/>
         <BehaviorArray Link="AP_MakeCreepSwarmHost"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_SwarmHostOrganicCarapaceIndicator"/>
         <WeaponArray Link="AP_LocustLaunch"/>
         <WeaponArray Link="AP_LocustFlyingLaunch"/>
@@ -20555,7 +20593,7 @@
         <AbilArray Link="AP_MorphSwarmHostRootedToBurrowed"/>
         <AbilArray Link="AP_LocustGround"/>
         <BehaviorArray Link="AP_MakeCreepSwarmHost"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_SwarmHostOrganicCarapaceIndicator"/>
         <WeaponArray Link="AP_LocustLaunch"/>
         <WeaponArray Link="AP_LocustFlyingLaunch"/>
@@ -21264,6 +21302,7 @@
             <LayoutButtons Face="AP_ScoutApialSensors" Type="Passive" Requirements="AP_HaveScoutSCBWSightUpgrade" Row="1" Column="2"/>
             <LayoutButtons Face="AP_ScoutGraviticThrusters" Type="Passive" Requirements="AP_HaveScoutSCBWSpeedUpgrade" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ScoutAdvancedPhotonBlasters" Type="Passive" Requirements="AP_HaveScoutAdvancedPhotonBlasters" Row="1" Column="4"/>
+            <LayoutButtons Face="AP_ScoutGammaPhotonBlasters" Type="Passive" Requirements="AP_HaveScoutGammaPhotonBlasters" Row="2" Column="4"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="ProgressRally,Rally1" Row="2" Column="4"/>
         </CardLayouts>
         <Radius value="0.75"/>
@@ -21459,6 +21498,11 @@
         <GlossaryWeakArray value="Corruptor"/>
         <GlossaryWeakArray value="VoidRay"/>
         <HotkeyCategory value="Unit/Category/AP_ProtossUnitsAir"/>
+    </CUnit>
+    <CUnit id="AP_SOAMothershipv4Placement" parent="AP_SOAMothershipv4">
+        <!-- Placement only into power fields -->
+        <AbilArray index="8" Link="AP_AutoMorphToSOAMothershipv4"/>
+        <BehaviorArray index="0" Link=""/>
     </CUnit>
     <CUnit id="AP_MothershipTaldarim" parent="AP_SOAMothershipv4">
         <AbilArray index="8" Link=""/>
@@ -21947,6 +21991,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="CancelMutateMorph" Type="AbilCmd" AbilCmd="AP_UpgradeToGreaterSpire,1" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5CancelToSelection,CancelLast" Row="2" Column="4"/>
@@ -21985,7 +22030,7 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TechAliasArray value="Alias_AP_Spire"/>
         <GlossaryPriority value="241"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Mutalisk"/>
     </CUnit>
     <CUnit id="AP_RoachWarren">
@@ -22028,6 +22073,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -22049,7 +22095,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="33"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Roach"/>
     </CUnit>
     <CUnit id="AP_SpineCrawlerRootableAnywhere">
@@ -22124,9 +22170,9 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkCrawler"/>
         <AIEvalFactor value="0.7"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="110"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -22282,9 +22328,9 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkCrawler"/>
         <AIEvalFactor value="0.65"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="120"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
     </CUnit>
@@ -22428,7 +22474,7 @@
         <MinimapRadius value="0.875"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionEvolved"/>
         <AIEvalFactor value="0.65"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="130"/>
     </CUnit>
     <CUnit id="AP_BileLauncherMissile" parent="MISSILE_INVULNERABLE">
@@ -22476,6 +22522,7 @@
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
         <BehaviorArray Link="AP_SpawningPoolBileLauncherAura"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -22498,7 +22545,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="26"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechTreeUnlockedUnitArray value="Zergling"/>
         <TechTreeUnlockedUnitArray value="Queen"/>
     </CUnit>
@@ -22779,11 +22826,11 @@
         <TacticalAIThink value="AIThinkQueenClassic"/>
         <AIEvalFactor value="0.55"/>
         <!--        <LeaderAlias value="QueenClassic"/>-->
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="217"/>
         <GlossaryStrongArray value="Zealot"/>
         <GlossaryWeakArray value="Stalker"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_SIQueenWeapon" parent="MISSILE">
         <Race value="Zerg"/>
@@ -22837,6 +22884,7 @@
         <BehaviorArray Link="AP_SIInfestedBunkerAutoSpawner"/>
         <BehaviorArray Link="AP_SIBunkerArmorUpgradeIndicator"/>
         <BehaviorArray Link="AP_SIInfestedBunkerImprovedCargoUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <EffectArray index="Create" value="AP_SIInfestedBunkerCreation"/>
         <CardLayouts>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="AP_SIInfestedBunkerTransport,0" Row="2" Column="0"/>
@@ -22862,8 +22910,8 @@
         <SubgroupPriority value="3"/>
         <MinimapRadius value="1.75"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="245"/>
     </CUnit>
     <CUnit id="AP_SIInfestedBunker" parent="AP_SIInfestedBunkerRootableAnywhere">
@@ -22914,6 +22962,7 @@
         <BehaviorArray Link="AP_DisableRedirect"/>
         <BehaviorArray Link="AP_SIBunkerArmorUpgradeIndicator"/>
         <BehaviorArray Link="AP_SIInfestedBunkerImprovedCargoUpgradeIndicator"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_InfestedBunkerHiddenRealUprootedWeapon"/>
         <EffectArray index="Create" value="AP_SIInfestedBunkerCreation"/>
         <CardLayouts>
@@ -22943,8 +22992,8 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
         <HotkeyAlias value="AP_SIInfestedBunker"/>
         <EquipmentArray Weapon="AP_InfestedBunkerFakeUprootedMelee"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
     </CUnit>
     <CUnit id="AP_SICocoon">
@@ -23043,6 +23092,7 @@
         <AbilArray Link="GatherSpecialObject"/>
         <AbilArray Link="CancelTerrazineHarvest"/>
         <BehaviorArray Link="AP_SCVCliffJump"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_FusionCutter"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -23086,9 +23136,9 @@
         <SubgroupPriority value="4"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -23140,6 +23190,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIUproot" Type="AbilCmd" AbilCmd="AP_SIBarracksLiftOff,0" Row="2" Column="3"/>
             <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
@@ -23161,8 +23212,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <LeaderAlias value="SIBarracks"/>
         <TechAliasArray value="Alias_SIBarracks"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="245"/>
     </CUnit>
     <CUnit id="AP_SIBarracksFlying">
@@ -23200,6 +23251,7 @@
         <AbilArray Link="AP_SIBarracksLand"/>
         <AbilArray Link="move"/>
         <AbilArray Link="stop"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!--        <AbilArray Link="SIBarracksAddOns3"/>-->
         <CardLayouts>
             <LayoutButtons Face="AP_SIRoot" Type="AbilCmd" AbilCmd="AP_SIBarracksLand,0" Row="2" Column="3"/>
@@ -23219,7 +23271,7 @@
         <HotkeyAlias value="AP_SIBarracks"/>
         <TechAliasArray value="Alias_SIBarracks"/>
         <GlossaryAlias value="AP_SIBarracks"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="TechLab">
         <!-- Override -->
@@ -23361,7 +23413,7 @@
         <BehaviorArray Link="AP_UltraliskOutOfCombat1"/>
         <BehaviorArray Link="AP_TorrasqueDontDie"/>
         <BehaviorArray Link="AP_NoxiousDamageAura"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_ImpalingStrike"/>
         <BehaviorArray Link="AP_UltraliskOrganicCarapaceIndicator"/>
         <BehaviorArray Link="AP_AnabolicSynthesisIndicator"/>
@@ -23418,7 +23470,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Ultralisk"/>
         <TacticalAIThink value="AIThinkUltralisk"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="180"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="AP_Roach"/>
@@ -23426,7 +23478,7 @@
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="Mutalisk"/>
         <GlossaryWeakArray value="VoidRay"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -23481,7 +23533,7 @@
         <BehaviorArray Link="AP_MassiveVoidRayVulnerability"/>
         <BehaviorArray Link="Frenzy"/>
         <BehaviorArray Link="AP_TorrasqueDontDie"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_HealingAdaption"/>
         <BehaviorArray Link="AP_UltraliskOrganicCarapaceIndicator"/>
         <BehaviorArray Link="AP_AnabolicSynthesisIndicator"/>
@@ -23683,7 +23735,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="AP_BurrowPygaliskDown"/>
         <BehaviorArray Link="OnCreep"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_Pygalisk"/>
         <WeaponArray Link="AP_PygaliskHeadAttack"/>
         <AbilArray Link="AP_StimpackPygalisk"/>
@@ -23738,7 +23790,7 @@
         <DamageTakenXP value="1"/>
         <KillXP value="150"/>
         <AbilArray Link="AP_BurrowPygaliskUp"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowPygaliskUp,Execute" Row="2" Column="4"/>
@@ -23786,7 +23838,8 @@
         <WeaponArray Link="AP_VoidRayChargeBeamBounce"/>
         <CardLayouts index="0">
             <LayoutButtons Face="AP_VoidVoidRayBeamBounce" Type="Passive" Row="2" Column="0"/>
-            <LayoutButtons Face="AP_DestroyerChargingBeam" Type="Passive" Requirements="AP_HaveDestroyerChargingBeam" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_BloodshardRealignment" Type="Passive" Requirements="AP_HaveDestroyerChargingBeam" Row="2" Column="1"/>
+            <LayoutButtons Face="AP_DestroyerReforgedBloodshardCore" Type="Passive" Requirements="AP_HaveDestroyerReforgedBloodshardCore" Row="2" Column="2"/>
         </CardLayouts>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Campaign"/>
     </CUnit>
@@ -23898,7 +23951,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkViper"/>
         <AIEvalFactor value="0"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="80"/>
         <GlossaryStrongArray value="SiegeTankSieged"/>
         <GlossaryStrongArray value="Colossus"/>
@@ -23906,7 +23959,7 @@
         <GlossaryWeakArray value="VikingFighter"/>
         <GlossaryWeakArray value="Mutalisk"/>
         <GlossaryWeakArray value="Phoenix"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_ViperAirWeapon" parent="MISSILE">
         <Race value="Zerg"/>
@@ -24356,6 +24409,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_UltraliskTorrasquePassive" Type="Passive" Requirements="AP_HaveHotSTorrasque" Row="1" Column="0"/>
             <LayoutButtons Face="AP_UltraliskNoxiousPassive" Type="Passive" Requirements="AP_HaveHotSNoxious" Row="1" Column="0"/>
@@ -24375,7 +24429,7 @@
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectType:Structure,ObjectFamily:Melee"/>
         <GlossaryPriority value="10"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_ZealotAiur">
         <DeathRevealRadius value="3"/>
@@ -24732,7 +24786,7 @@
         <AbilArray Link="AP_HotSRaptorCharge"/>
         <BehaviorArray Link="AP_ZerglingRespawnDeath"/>
         <BehaviorArray Link="AP_HotSRaptorJump"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_Claws"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -24760,7 +24814,7 @@
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAI value="Zergling"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="50"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="Hydralisk"/>
@@ -24768,7 +24822,7 @@
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Baneling"/>
         <GlossaryWeakArray value="Colossus"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <Fidget>
@@ -24811,7 +24865,7 @@
         <KillXP value="5"/>
         <AbilArray Link="AP_BurrowZerglingUp"/>
         <BehaviorArray Link="AP_ZerglingRespawnDeath"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowZerglingUp,Execute" Row="2" Column="4"/>
@@ -25154,8 +25208,8 @@
         <SeparationRadius value="0.875"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.75"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkDevourerSCBW"/>
         <GlossaryPriority value="190"/>
@@ -25255,8 +25309,8 @@
         <SeparationRadius value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="1"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <TacticalAIThink value="AIThinkGuardianSCBW"/>
         <GlossaryPriority value="140"/>
@@ -25440,7 +25494,7 @@
         <AbilArray Link="AP_DefilerSCBWDarkSwarm"/>
         <AbilArray Link="AP_DefilerSCBWPlague"/>
         <AbilArray Link="AP_DefilerSCBW@BurrowDown"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -25467,8 +25521,8 @@
         <SubgroupPriority value="46"/>
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TacticalAIThink value="AIThinkDefilerSCBW"/>
         <AIEvalFactor value="1.8"/>
         <GlossaryPriority value="90"/>
@@ -25515,6 +25569,7 @@
         <AbilArray Link="AP_DefilerSCBWPredatoryConsumption"/>
         <AbilArray Link="AP_DefilerSCBWDarkSwarm"/>
         <AbilArray Link="AP_DefilerSCBWPlague"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
@@ -25858,7 +25913,7 @@
         <AbilArray Link="AP_PrimalIgniterBurrowDown"/>
         <AbilArray Link="AP_PrimalIgniterMergeable"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_PrimalIgniterCone"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -25919,7 +25974,7 @@
         <CostResource index="Vespene" value="50"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="AP_PrimalIgniterBurrowUp"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -25985,6 +26040,7 @@
         <AbilArray Link="AP_BurrowSIInfestedMarineDown"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_SIInfestedMarine"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -25999,8 +26055,8 @@
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -26039,6 +26095,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <AbilArray Link="AP_BurrowSIInfestedMarineUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowSIInfestedMarineUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AP_SIMarineTrooperImprovedRange" Type="Passive" Requirements="AP_HaveSIMarineTrooperRange" Row="2" Column="0"/>
@@ -26054,7 +26111,7 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
         <LeaderAlias value="AP_SIInfestedMarine"/>
         <HotkeyAlias value="AP_SIInfestedMarine"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <SelectAlias value="AP_SIInfestedMarine"/>
         <AIEvaluateAlias value="AP_SIInfestedMarine"/>
         <Food value="-1"/>
@@ -26094,6 +26151,7 @@
         <AbilArray Link="AP_BurrowSIInfestedTrooperDown"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="move"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_SIInfestedTrooper"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -26113,8 +26171,8 @@
         <SubgroupPriority value="10"/>
         <MinimapRadius value="0.375"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -26152,6 +26210,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <AbilArray Link="AP_BurrowSIInfestedTrooperUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowSIInfestedTrooperUp,Execute" Row="2" Column="4"/>
             <LayoutButtons Face="AP_SIMarineTrooperImprovedRange" Type="Passive" Requirements="AP_HaveSIMarineTrooperRange" Row="2" Column="0"/>
@@ -26168,7 +26227,7 @@
         <LeaderAlias value="AP_SIInfestedTrooper"/>
         <HotkeyAlias value="AP_SIInfestedTrooper"/>
         <SelectAlias value="AP_SIInfestedTrooper"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="AP_SIInfestedTrooper"/>
     </CUnit>
     <CUnit id="AP_VoidRayPurifierBeam">
@@ -26257,7 +26316,7 @@
         <AbilArray Link="AP_TyrannozorMergeable"/>
         <AbilArray Link="AP_TyrannozorBarrageOfSpikes"/>
         <AbilArray Link="ProgressRally"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AllUnitBehaviorController"/>
         <BehaviorArray Link="AP_TyrannozorTyrantsProtectionCaster"/>
         <BehaviorArray Link="AP_ImpalingStrike"/>
@@ -26286,7 +26345,7 @@
         <SubgroupPriority value="9"/>
         <MinimapRadius value="1.5"/>
         <EditorCategories value="ObjectFamily:FactionPrimal,ObjectType:Unit"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="180"/>
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryStrongArray value="AP_Roach"/>
@@ -26294,7 +26353,7 @@
         <GlossaryWeakArray value="Siege Tank"/>
         <GlossaryWeakArray value="Immortal"/>
         <GlossaryWeakArray value="Tempest"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_TyrannozorBurrowed">
         <DeathRevealRadius value="3"/>
@@ -26329,6 +26388,7 @@
         <BehaviorArray Link="AP_TyrannozorTyrantsProtectionCaster"/>
         <BehaviorArray Link="AP_HealingAdaption"/>
         <BehaviorArray Link="Frenzy"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_TyrannozorBurrowUp,Execute" Row="2" Column="4"/>
@@ -26346,7 +26406,7 @@
         <EditorCategories value="ObjectFamily:FactionPrimal,ObjectType:Unit"/>
         <LeaderAlias value="AP_Tyrannozor"/>
         <HotkeyAlias value="AP_Tyrannozor"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="AP_Tyrannozor"/>
     </CUnit>
     <CUnit id="AP_TyrannozorAAWeapon" parent="MISSILE">
@@ -26391,6 +26451,7 @@
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
         <BehaviorArray Link="AP_ZergMercCompoundTabNotSelected"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <!-- Brood War -->
             <LayoutButtons Face="AP_MercZergling" Type="AbilCmd" AbilCmd="AP_SummonZergMercs,Train8" Row="0" Column="0"/>
@@ -26457,7 +26518,7 @@
         <Collide index="ForceField" value="1"/>
         <GlossaryPriority value="10"/>
         <EditorCategories value="ObjectType:Structure"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_MercZergling" parent="AP_Zergling">
         <Name value="Unit/Name/AP_MercZergling"/>
@@ -26716,7 +26777,7 @@
         <AbilArray Link="move"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="AP_LeapAttack"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_HunterlingJump"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -26947,6 +27008,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIDiamondBack" Type="AbilCmd" AbilCmd="AP_SIFactoryTrain,Train3" Row="0" Column="0"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
@@ -26971,8 +27033,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <TechAliasArray value="Alias_InfestedFactory"/>
         <GlossaryPriority value="245"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_SIFactoryFlying">
         <Name value="Unit/Name/AP_SIFactory"/>
@@ -27011,6 +27073,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_SIFactoryAddOns"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIRoot" Type="AbilCmd" AbilCmd="AP_SIFactoryLand,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -27028,8 +27091,8 @@
         <LeaderAlias value="Factory"/>
         <HotkeyAlias value="Factory"/>
         <TechAliasArray value="Alias_InfestedFactory"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryAlias value="AP_SIFactory"/>
         <HotkeyAlias value="AP_SIFactory"/>
         <InnerRadius value="1"/>
@@ -27081,6 +27144,7 @@
         <BehaviorArray Link="OnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingNotOnCreep"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SILiberator" Type="AbilCmd" AbilCmd="AP_SIStarportTrain,Train2" Row="0" Column="0"/>
             <LayoutButtons Face="AP_SIBanshee" Type="AbilCmd" AbilCmd="AP_SIStarportTrain,Train1" Row="0" Column="1"/>
@@ -27105,8 +27169,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <TechAliasArray value="Alias_InfestedStarport"/>
         <GlossaryPriority value="245"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_SIStarportFlying">
         <Name value="Unit/Name/AP_SIStarport"/>
@@ -27145,6 +27209,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="AP_SIStarportAddOns"/>
         <BehaviorArray Link="AP_ZergBuildingDies6"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_SIRoot" Type="AbilCmd" AbilCmd="AP_SIStarportLand,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -27161,8 +27226,8 @@
         <EditorCategories value="ObjectType:Structure,ObjectFamily:FactionInfested"/>
         <LeaderAlias value="AP_SIStarport"/>
         <HotkeyAlias value="AP_SIStarport"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <TechAliasArray value="Alias_InfestedStarport"/>
         <GlossaryAlias value="AP_SIStarport"/>
         <InnerRadius value="1"/>
@@ -27220,6 +27285,7 @@
         <AbilArray Link="que5Addon"/>
         <AbilArray Link="AP_SIFactoryTechLabMorph"/>
         <AbilArray Link="AP_SIStarportTechLabMorph"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5Addon,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
@@ -27227,7 +27293,7 @@
         <AddedOnArray UnitLink="AP_SIFactory" BehaviorLink="AP_SIFactoryTechLab"/>
         <AddedOnArray UnitLink="AP_SIStarport" BehaviorLink="AP_SIStarportTechLab"/>
         <GlossaryPriority value="245"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <HotkeyCategory value=""/>
     </CUnit>
     <CUnit id="AP_SIFactoryTechLab" parent="AP_SITechLab">
@@ -27298,7 +27364,7 @@
         <BehaviorArray Link="AP_StukovInfestedSiegeTankOnCreep"/>
         <BehaviorArray Link="AP_InfestedSiegeTankAmmoAuto"/>
         <BehaviorArray Link="AP_StukovInfestedSiegeTankAmmoRestockSearch"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_StukovInfestedSiegeTankImpalerTentacle" Turret="AP_InfestedSiegeTankTentacle"/>
         <CardLayouts>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -27331,8 +27397,8 @@
         <SelectAlias value="AP_StukovInfestedSiegeTank"/>
         <SubgroupAlias value="AP_StukovInfestedSiegeTank"/>
         <TechAliasArray value="Alias_SiegeTank"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
@@ -27379,7 +27445,7 @@
         <BehaviorArray Link="AP_SISiegeTankSiegedTentacle"/>
         <BehaviorArray Link="AP_InfestedSiegeTankAmmoAuto"/>
         <BehaviorArray Link="AP_StukovInfestedSiegeTankAmmoRestockSearch"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_StukovInfestedSiegeTank" Turret="SporeCrawler"/>
         <WeaponArray Link="AP_StukovInfestedSiegeTankImpalerTentacle" Turret="AP_InfestedSiegeTankTentacle"/>
         <CardLayouts>
@@ -27415,8 +27481,8 @@
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="LiberatorAG"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryAlias value="AP_StukovInfestedSiegeTank"/>
         <HotkeyAlias value="AP_StukovInfestedSiegeTank"/>
         <AIEvaluateAlias value="SiegeTankSieged"/>
@@ -27490,7 +27556,7 @@
         <!--AbilArray Link="StukovInfestedInfestedCivilianLeapAttack"/--> <!-- not added yet-->
         <AbilArray Link="AP_BurrowSIVolatileInfestedDown"/>
         <AbilArray Link="AP_ExplodeHeal"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_SIVolatileInfestedDeathPreExplode"/>
         <!--BehaviorArray Link="StukovInfestedCivilianSpawnBroodlingOnDeath"/-->  <!-- not added yet-->
         <WeaponArray Link="AP_SIVolatileInfested"/>
@@ -27533,7 +27599,7 @@
         <GlossaryWeakArray value="Hellion"/>
         <GlossaryWeakArray value="Banshee"/>
         <GlossaryWeakArray value="HERC"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
     </CUnit>
     <CUnit id="AP_SIVolatileInfestedBurrowed">
         <DeathRevealRadius value="3"/>
@@ -27560,6 +27626,7 @@
         <AbilArray Link="AP_BurrowSIVolatileInfestedUp"/>
         <AbilArray Link="AP_ExplodeHeal"/>
         <BehaviorArray Link="AP_SIVolatileInfestedDeathPreExplode"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!--BehaviorArray Link="StukovInfestedCivilianSpawnBroodlingOnDeath"/-->  <!-- not added yet-->
         <EffectArray index="Create" value="AP_VolatileBurstBuildingOn"/>
         <EquipmentArray Weapon="AP_SIVolatileInfestedDummy"/>
@@ -27620,7 +27687,7 @@
         <AbilArray Link="AP_StukovInfestedDiamondbackSnare"/>
         <BehaviorArray Link="AP_StukovInfestedDiamondSlimePuddleCreator"/>
         <BehaviorArray Link="AP_DiamondBackSnareAutoCastCheck"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <WeaponArray Link="AP_StukovInfestedDiamondBack" Turret="AP_StukovInfestedDiamondBack"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
@@ -27648,8 +27715,8 @@
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
         <GlossaryWeakArray value="Marauder"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
     <CUnit id="AP_StukovInfestedDiamondSlimePuddle">
@@ -27781,8 +27848,8 @@
         <GlossaryStrongArray value="Marauder"/>
         <GlossaryWeakArray value="Liberator"/>
         <GlossaryWeakArray value="Goliath"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <AIEvaluateAlias value="Banshee"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
@@ -27821,6 +27888,7 @@
         <DamageDealtXP value="1"/>
         <DamageTakenXP value="1"/>
         <AbilArray Link="AP_BurrowStukovInfestedBansheeUp"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="AP_AttackChampions" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowStukovInfestedBansheeUp,Execute" Row="2" Column="4"/>
@@ -27911,7 +27979,7 @@
         <MinimapRadius value="0.75"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:FactionInfested"/>
         <TacticalAIThink value="AIThinkSILiberator"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="160"/>
         <GlossaryStrongArray value="Mutalisk"/>
         <GlossaryStrongArray value="VoidRay"/>
@@ -27919,7 +27987,7 @@
         <GlossaryWeakArray value="SporeCrawler"/>
         <GlossaryWeakArray value="PhotonCannon"/>
         <GlossaryWeakArray value="MissileTurret"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <TurningRate value="1499.9414"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
@@ -29825,7 +29893,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="1" Column="3"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
             <LayoutButtons Face="Detector" Type="Passive" Requirements="NotUnderConstruction" Row="2" Column="2"/>
             <LayoutButtons Face="AP_ZergCreepStomach" Type="Passive" Requirements="AP_HaveZergCreepStomach" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ZergExcavatingClaws" Type="Passive" Requirements="AP_HaveZergExcavatingClaws" Row="1" Column="2"/>
@@ -29847,8 +29915,8 @@
         <GlossaryWeakArray value="Marine"/>
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="MissileTurret"/>
         <LifeRegenRate value="0.2734"/>
     </CUnit>
@@ -29893,6 +29961,7 @@
         <AbilArray Link="stop"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="AP_SalvageShared"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <!--WeaponArray Link="LongboltMissile" Turret="MissileTurret"/>
         <WeaponArray Link="HailstormMissilePods" Turret="MissileTurret"/-->
         <CardLayouts>
@@ -29901,7 +29970,7 @@
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
             <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
+            <LayoutButtons Face="AP_Salvage" Type="AbilCmd" AbilCmd="AP_SalvageShared,On" Row="2" Column="0"/>
             <LayoutButtons Face="AP_ZergCreepStomach" Type="Passive" Requirements="AP_HaveZergCreepStomach" Row="1" Column="3"/>
             <LayoutButtons Face="AP_ZergExcavatingClaws" Type="Passive" Requirements="AP_HaveZergExcavatingClaws" Row="1" Column="2"/>
             <LayoutButtons Face="AP_BioelectricPayload" Type="Passive" Requirements="AP_HaveBioelectricPayload" Row="1" Column="0"/>
@@ -29921,8 +29990,8 @@
         <GlossaryWeakArray value="Zergling"/>
         <GlossaryWeakArray value="Zealot"/>
         <GlossaryAlias value="AP_SIMissileTurret"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <AIEvaluateAlias value="MissileTurret"/>
     </CUnit>
     <CUnit id="AP_SILongboltMissileWeapon" parent="MISSILE_HALFLIFE">
@@ -30179,9 +30248,9 @@
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
         <AIEvalFactor value="0"/>
         <TechAliasArray value="Alias_Overlord"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsAir"/>
         <GlossaryPriority value="201"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsAir"/>
     </CUnit>
     <CUnit id="AP_BanelingLaunchAmmo">
         <FlagArray index="Uncommandable" value="1"/>
@@ -30268,7 +30337,7 @@
         <LifeRegenRate value="8"/>
         <AbilArray index="0" Link="AP_BurrowMercRoachUp"/>
         <BehaviorArray Link="AP_RoachShield"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <BehaviorArray Link="AP_HotSRoachShieldIndicator"/>
         <CardLayouts index="0">
             <LayoutButtons index="1" Face="BurrowUp" Type="AbilCmd" AbilCmd="AP_BurrowMercRoachUp,Execute" Row="2" Column="4"/>
@@ -30664,6 +30733,10 @@
         <LifeMax value="50"/>
         <ShieldsStart value="50"/>
         <ShieldsMax value="50"/>
+        <Food value="0"/>
+        <CostResource index="Minerals" value="0"/>
+        <AbilArray index="5" Link="AP_WarpableAnywhere"/>
+        <AbilArray Link="BuildInProgress"/>
         <SubgroupPriority value="5"/>
         <LeaderAlias value="AP_ElderProbe"/>
         <HotkeyAlias value="AP_ElderProbe"/>
@@ -30709,7 +30782,7 @@
         <AbilArray Link="AP_InfBullfrogTransport"/>
         <AbilArray Link="AP_InfBullfrogLeapUnload"/>
         <AbilArray Link="AP_InfBullfrogLeap"/>
-        <BehaviorArray Link="AP_MalignantCreepFix"/>
+        <BehaviorArray Link="AP_CreepFrenzy13Crawler"/>
         <CardLayouts>
             <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -30731,9 +30804,9 @@
         <CargoSize value="8"/>
         <SubgroupPriority value="17"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:Melee"/>
-        <GlossaryCategory value="Unit/Category/AP_ZergUnits"/>
+        <GlossaryCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <GlossaryPriority value="146"/>
-        <HotkeyCategory value="Unit/Category/AP_ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/AP_ZergUnitsGround"/>
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <PushPriority value="11"/>

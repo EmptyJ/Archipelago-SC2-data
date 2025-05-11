@@ -3322,6 +3322,7 @@ bool gt_XanthosDies_Func (bool testConds, bool runActions) {
     TriggerEnable(gt_XanthosFinalFightPlayerWipe, false);
     libNtve_gf_ChangeUnitDamage(gv_nova, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_No);
     TriggerExecute(gt_ObjectiveDestroyXanthosComplete, true, true);
+    TriggerExecute(gt_ObjectiveDestroyXanthosSubsystemsComplete, true, true);
     TriggerExecute(gt_ObjectiveProtectFleetComplete, true, true);
     TriggerExecute(gt_CleanUpSection01, true, true);
     UnitIssueOrder(gv_nova, Order(AbilityCommand("stop", 0)), c_orderQueueReplace);
@@ -6103,7 +6104,16 @@ void gt_ObjectiveDestroyXanthosSubsystemsUpdate_Init () {
 // Trigger: Objective Destroy Xanthos Subsystems Complete
 //--------------------------------------------------------------------------------------------------
 bool gt_ObjectiveDestroyXanthosSubsystemsComplete_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_index;
+    int lv_count;
+
     // Automatic Variable Declarations
+    const int auto04D9BCA5_ae = 3;
+    const int auto04D9BCA5_ai = 1;
+
+    // Variable Initialization
+
     // Conditions
     if (testConds) {
         if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
@@ -6121,6 +6131,11 @@ bool gt_ObjectiveDestroyXanthosSubsystemsComplete_Func (bool testConds, bool run
         Wait(1.0, c_timeGame);
     }
     TriggerExecute(gt_ObjectiveDestroyXanthosSubsystemsCreate, true, false);
+    lv_index = 0;
+    for ( ; ( (auto04D9BCA5_ai >= 0 && lv_index <= auto04D9BCA5_ae) || (auto04D9BCA5_ai < 0 && lv_index >= auto04D9BCA5_ae) ) ; lv_index += auto04D9BCA5_ai ) {
+        lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(gv_xanthosSubsystemLocations[lv_index]);
+    }
+    lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objectiveDestroyXanthosSubsystems, 4);
     lib5BD4895D_gf_AP_Core_setObjectiveCompleted(gv_objectiveDestroyXanthosSubsystems);
     return true;
 }
@@ -6168,7 +6183,12 @@ void gt_ObjectiveProtectHyperionCreate_Init () {
 // Trigger: Objective Protect Hyperion Attack Start
 //--------------------------------------------------------------------------------------------------
 bool gt_ObjectiveProtectHyperionAttackStart_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_index;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+
     // Conditions
     if (testConds) {
         if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
@@ -6191,6 +6211,11 @@ bool gt_ObjectiveProtectHyperionAttackStart_Func (bool testConds, bool runAction
 
     TriggerExecute(gt_ObjectiveProtectHyperionCreate, true, false);
     TimerStart(gv_hyperionTimer, 150.0, false, c_timeGame);
+    Wait(35.0, c_timeGame);
+    do {
+        TimerStart(gv_hyperionTimer, UnitBehaviorDuration(gv_hyperion, "NovaHyperionTimedLife"), false, c_timeGame);
+        Wait(5.0, c_timeGame);
+    }while ((UnitHasBehavior2(gv_hyperion, "NovaHyperionTimedLife") == true) && (libNtve_gf_UnitIsHidden(gv_hyperion) == false));
     return true;
 }
 
@@ -6226,6 +6251,7 @@ bool gt_ObjectiveProtectHyperionFailed_Func (bool testConds, bool runActions) {
 
     TriggerExecute(gt_ObjectiveProtectHyperionCreate, true, false);
     TimerPause(gv_hyperionTimer, true);
+    TriggerStop(gt_ObjectiveProtectHyperionAttackStart);
     ObjectiveSetName(gv_objectiveProtectHyperion, StringExternal("Param/Value/B7FD3FF2"));
     Wait(5.0, c_timeReal);
     ObjectiveSetName(gv_objectiveProtectHyperion, StringExternal("Param/Value/D6BBF9C3"));
@@ -6586,6 +6612,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     VisExploreArea(gv_pLAYER_01_USER, RegionFromId(11), true, false);
     RegionPlayableMapSet(RegionFromId(9));
     TriggerExecute(gt_StartAI, true, false);
+    libABFE498B_gf_AP_Triggers_resetBase(gv_pLAYER_01_USER);
     Wait(0.5, c_timeReal);
     TriggerEnable(gt_DefeatBaseDead, true);
     if ((gv_cinematicCompleted == true)) {
@@ -6943,6 +6970,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
         CinematicFade(true, lv_fadeDuration, c_fadeStyleNormal, ColorWithAlpha(0.00, 0.00, 0.00, 0.00), 0.0, false);
     }
     UISetFrameVisible(PlayerGroupAll(), c_syncFrameTypeResourcePanel, false);
+    libABFE498B_gf_AP_Triggers_pauseBuild(gv_pLAYER_01_USER, true);
     return true;
 }
 

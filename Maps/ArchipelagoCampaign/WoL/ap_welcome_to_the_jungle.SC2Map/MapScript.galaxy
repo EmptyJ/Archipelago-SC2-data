@@ -2290,7 +2290,7 @@ bool gt_Playerstartsharvestingterrazine_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
 
@@ -2522,7 +2522,7 @@ bool gt_SCViskilledwhileharvesting_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
     }
@@ -2705,7 +2705,7 @@ bool gt_SCVisheadinghomewithterrazine_Func (bool testConds, bool runActions) {
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
 
@@ -2835,7 +2835,7 @@ bool gt_SCVwithterrazinediesonreturntrip_Func (bool testConds, bool runActions) 
             return false;
         }
 
-        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe")))) {
+        if (!(((UnitGetType(EventUnit()) == "AP_SCV") || (UnitGetType(EventUnit()) == "AP_SISCV") || (UnitGetType(EventUnit()) == "AP_Drone") || (UnitGetType(EventUnit()) == "AP_Probe") || (UnitGetType(EventUnit()) == "AP_ElderProbe")))) {
             return false;
         }
     }
@@ -4977,23 +4977,47 @@ void gt_VictorySetup_Init () {
 // Trigger: Victory Cinematic
 //--------------------------------------------------------------------------------------------------
 bool gt_VictoryCinematic_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_cc;
+
     // Automatic Variable Declarations
+    string auto48BA6BDE_val;
+
+    // Variable Initialization
+
     // Actions
     if (!runActions) {
         return true;
     }
 
     libNtve_gf_CreateUnitsAtPoint2(1, "CommandCenterFlying", 0, 1, PointFromId(921));
-    UnitIssueOrder(UnitLastCreated(), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(922)), c_orderQueueReplace);
+    lv_cc = UnitLastCreated();
+    UnitIssueOrder(lv_cc, OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(922)), c_orderQueueReplace);
     CameraApplyInfo(gv_p1_USER, CameraInfoFromId(76), 0.0, -1, 10, true);
     CameraApplyInfo(gv_p1_USER, CameraInfoFromId(2021), ((SoundLengthSync(SoundLink("TTosh02Raynor00066", -1)) + 2.0) + 0.0), -1, 10, true);
     SoundtrackPlay(PlayerGroupAll(), c_soundtrackCategoryMusic, "TTosh02MusicOutro", c_soundtrackCueAny, c_soundtrackIndexAny, false);
     TriggerSkippableBegin(PlayerGroupSingle(gv_p1_USER), 0, null, true, true);
     gv_victoryCinematicCompleted = false;
     CinematicFade(true, 1.0, c_fadeStyleNormal, Color(0.00, 0.00, 0.00), 0.0, false);
-    Wait(1.0, c_timeReal);
-    // Transmission - SoundLink("TTosh02Raynor00066", -1)
-    libCamp_gf_SendTransmissionCampaign(null, SoundLink("TTosh02Raynor00066", -1), c_transmissionDurationAdd, 0.0, true);
+    auto48BA6BDE_val = libABFE498B_gv_aP_Triggers_Option_overridePlayerRace;
+    if (auto48BA6BDE_val == "Zerg") {
+        libNtve_gf_SendActorMessageToUnit(lv_cc, "ModelSwap Hatchery");
+        libNtve_gf_AttachModelToUnit(lv_cc, "OverlordGenerateCreepModel", "Ref_Center");
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("AP_KerriganVictory00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("KerriganPortrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink("AP_KerriganVictory00001", -1), 0.0, c_transmissionDurationAdd, true);
+    }
+    else if (auto48BA6BDE_val == "Prot") {
+        UnitBehaviorAdd(lv_cc, "AP_NexusFlying", lv_cc, 1);
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("AP_AscendantVictory00001", -1)
+        libNtve_gf_SendTransmissionSimple(TransmissionSourceFromModel("HighTemplar_Taldarim_Portrait"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_BottomLeft), SoundLink("AP_AscendantVictory00001", -1), 0.0, c_transmissionDurationAdd, true);
+    }
+    else {
+        Wait(1.0, c_timeReal);
+        // Transmission - SoundLink("TTosh02Raynor00066", -1)
+        libCamp_gf_SendTransmissionCampaign(null, SoundLink("TTosh02Raynor00066", -1), c_transmissionDurationAdd, 0.0, true);
+    }
     gv_victoryCinematicCompleted = true;
     return true;
 }

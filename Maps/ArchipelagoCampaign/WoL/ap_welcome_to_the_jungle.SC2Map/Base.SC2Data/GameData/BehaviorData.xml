@@ -7,4 +7,7 @@
             <AbilLinkEnableArray value="AP_ProbeHarvest"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="AP_NexusFlying">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
 </Catalog>

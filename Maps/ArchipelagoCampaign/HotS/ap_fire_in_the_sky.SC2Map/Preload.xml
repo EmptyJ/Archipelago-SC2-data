@@ -250,6 +250,8 @@
 <Unit id="Firebat"/>
 <Unit id="Goliath"/>
 <Unit id="ScienceVessel"/>
+<Unit id="InvisiblePylon"/>
+<Unit id="SuperWarpGate"/>
 <Unit id="PalletGas"/>
 <Unit id="PalletMinerals"/>
 <Unit id="Food1000"/>
@@ -272,6 +274,7 @@
 <Unit id="AP_CreepTumorBurrowed"/>
 <Unit id="AP_QueenBurrowed"/>
 <Unit id="AP_Predator"/>
+<Unit id="AP_ZealotAiur"/>
 <Unit id="AP_ZealotPurifier"/>
 <Unit id="AP_ZealotShakuras"/>
 <Unit id="AP_SentryPurifier"/>

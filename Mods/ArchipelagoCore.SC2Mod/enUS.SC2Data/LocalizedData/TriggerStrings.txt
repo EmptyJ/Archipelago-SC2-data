@@ -419,6 +419,7 @@ Variable/Name/lib_5BD4895D_ECA6224E=vespeneCost
 Variable/Name/lib_5BD4895D_ECEA655E=counter suffix
 Variable/Name/lib_5BD4895D_ED587702=counter suffix
 Variable/Name/lib_5BD4895D_EDE1A068=AP_Core_chatboxAnchor
+Variable/Name/lib_5BD4895D_EF1D3325=total supply
 Variable/Name/lib_5BD4895D_F0760C49=count label
 Variable/Name/lib_5BD4895D_F1352445=objective index
 Variable/Name/lib_5BD4895D_F1EC09D9=Timer Objectives

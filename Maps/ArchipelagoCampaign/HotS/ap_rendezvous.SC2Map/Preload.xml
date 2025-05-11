@@ -184,6 +184,7 @@
 <Sound id="zMission_Lab03_DMarineG_204"/>
 <Sound id="zMission_Lab03_BroodMother01_205"/>
 <Sound id="zMission_Lab03_BroodMother01_207"/>
+<Sound id="AP_ProtossTransmissionFenix"/>
 <Sound id="AP_ProtossTransmissionStart" Variations="0"/>
 <Sound id="AP_ProtossTransmissionStart2"/>
 <Sound id="AP_ProtossTransmissionReinforcements" Variations="0"/>
@@ -191,7 +192,6 @@
 <Sound id="AP_RaynorTransmissionArrived"/>
 <Sound id="AP_SwannTransmissionHellion" Variations="0"/>
 <Sound id="AP_RaynorTransmissionSiegeTanks"/>
-<Sound id="AP_ProtossTransmissionFenix"/>
 <Soundtrack id="Ambience_MarSara"/>
 <Soundtrack id="Ambience_Lab03_Night"/>
 <Soundtrack id="ZLab03MusicAlt1"/>
@@ -242,6 +242,7 @@
 <Unit id="BiodomeHalfBuilt" Variations="0,2"/>
 <Unit id="DestructibleSandbags" Variations="0,1,2"/>
 <Unit id="SpecialOpsDropship"/>
+<Unit id="InvisiblePylon"/>
 <Unit id="Colonist" Variations="0,1,2"/>
 <Unit id="PalletMinerals"/>
 <Unit id="Food1000"/>

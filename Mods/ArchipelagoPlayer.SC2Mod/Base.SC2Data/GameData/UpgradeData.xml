@@ -1492,6 +1492,7 @@
         <EffectArray Reference="Effect,AP_VoidRayChargeBeamBaseDamageCharge2,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_VoidRayChargeBeamBaseDamageCharge3,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_VoidRayChargeBeamBounceDamageUpgraded,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AP_VoidRayChargeBeamBounce3DamageUpgraded,Amount" Value="1"/>
         <EffectArray Reference="Weapon,AP_VoidRayChargeBeamBounce,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_VoidRayChargeBeamBounceDamageCharge1,Amount" Value="1"/>
         <EffectArray Reference="Effect,AP_VoidRayChargeBeamBounceDamageCharge2,Amount" Value="1"/>
@@ -1535,7 +1536,11 @@
         <!-- Scout -->
         <EffectArray Reference="Weapon,AP_ScoutMPGround,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_ScoutMPGround,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AP_ScoutMPGroundLight,Amount" Value="1"/>
+        <EffectArray Reference="Effect,AP_ScoutMPGroundLight,AttributeBonus[Light]" Value="1"/>
         <EffectArray Reference="Effect,AP_ScoutMPGroundUpgraded,Amount" Value="2"/>
+        <EffectArray Reference="Effect,AP_ScoutMPGroundUpgradedLight,Amount" Value="2"/>
+        <EffectArray Reference="Effect,AP_ScoutMPGroundUpgradedLight,AttributeBonus[Light]" Value="2"/>
         <EffectArray Reference="Weapon,AP_ScoutMPAir,Level" Value="1"/>
         <EffectArray Reference="Effect,AP_ScoutMPAirU,Amount" Value="1"/>
         <!-- Oppressor -->
@@ -1644,6 +1649,8 @@
         <EffectArray Reference="Unit,AP_SOAMothershipv4,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,LifeArmor" Value="1"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_Oracle,LifeArmorLevel" Value="1"/>
@@ -1653,6 +1660,8 @@
         <!-- Oppressor -->
         <EffectArray Reference="Unit,AP_ScoutTaldarim,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,LifeArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,LifeArmorLevel" Value="1"/>
         <!-- Caladrius -->
         <EffectArray Reference="Unit,AP_ScoutPurifier,LifeArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,LifeArmorLevel" Value="1"/>
@@ -1828,6 +1837,8 @@
         <EffectArray Reference="Unit,AP_SOAMothershipv4,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldArmor" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldArmor" Value="1"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,ShieldArmor" Value="1"/>
         <EffectArray Reference="Unit,AP_Oracle,ShieldArmorLevel" Value="1"/>
@@ -1839,6 +1850,8 @@
         <!-- Oppressor-->
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldArmor" Value="1.000000"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldArmorLevel" Value="1"/>
         <!-- Caladrius-->
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldArmor" Value="1.000000"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldArmorLevel" Value="1"/>
@@ -10240,6 +10253,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel1.dds"/>
@@ -10277,6 +10291,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel2.dds"/>
@@ -10314,6 +10329,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-airarmorlevel3.dds"/>
@@ -10350,6 +10366,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel4.dds"/>
@@ -10385,6 +10402,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_CarrierAiur,LifeArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-airarmorlevel5.dds"/>
@@ -11025,6 +11043,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
@@ -11122,6 +11141,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel2.dds"/>
@@ -11219,6 +11239,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-shieldslevel3.dds"/>
@@ -11315,6 +11336,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel4.dds"/>
@@ -11411,6 +11433,7 @@
         <EffectArray Operation="Set" Reference="Actor,AP_Oracle,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutMP,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,AP_ScoutTaldarimMorphed,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutPurifier,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_ScoutNerazim,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
         <EffectArray Operation="Set" Reference="Actor,AP_OracleStasisTrap,ShieldArmorIcon" Value="AP\Assets\Custom\Textures\btn-upgrade-protoss-shieldslevel5.dds"/>
@@ -11498,135 +11521,6 @@
         <EffectArray Reference="Unit,AP_CreepTumor,Sight" Value="8"/>
         <EffectArray Reference="Unit,AP_CreepTumorBurrowed,Sight" Value="8"/>
         <EffectArray Reference="Unit,AP_CreepTumorUsed,Sight" Value="8"/>
-        <EffectArray Reference="Unit,AP_Drone,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Zergling,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_MercZergling,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Roach,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_MercRoach,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Ravager,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_PrimalIgniter,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_KerriganInfestBroodling,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Roachling,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Broodling,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Hydralisk,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_HunterKiller,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Ultralisk,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_UltraliskResourceEfficiency,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_MercUltralisk,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_MercUltraliskResourceEfficiency,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Pygalisk,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Tyrannozor,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_InfestedAbomination,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Queen,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_K5Kerrigan,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_Hunterling,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_StukovInfestedSiegeTankUprooted,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_StukovInfestedSiegeTank,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <EffectArray Reference="Unit,AP_StukovInfestedDiamondBack,AttackSpeedMultiplierCreep" Value="0.3"/>
-        <!--        <EffectArray Reference="Unit,InfestedStukov,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,StukovInfestedTerran,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,InfestedTerranCampaign,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,InfestedCivilian,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,Dehaka,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,DehakaMirrorImage,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,SwarmQueen,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,LargeSwarmQueen,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,HugeSwarmQueen,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,Locust,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <!--        <EffectArray Reference="Unit,Brutalisk,AttackSpeedMultiplierCreep" Value="0.3"/>-->
-        <EffectArray Reference="Unit,AP_Hatchery,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Lair,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Hive,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_CreepTumorBurrowed,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_CreepTumorUsed,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_SpawningPool,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Extractor,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_ExtractorRich,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_AutomatedExtractor,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_AutomatedExtractorRich,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_EvolutionChamber,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_RoachWarren,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_HydraliskDen,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_LurkerDen,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_ImpalerDen,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_BanelingNest,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_InfestationPit,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Spire,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_GreaterSpire,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_UltraliskCavern,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_NydusNetwork,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_EchidnaWorm,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_NydusWorm,LifeRegenRate" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Drone,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_DroneBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Zergling,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_ZerglingBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_MercZergling,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_MercZerglingBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Baneling,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_BanelingBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_HotSSplitterlingMedium,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_HotSSplitterlingMediumBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Roach,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_RoachBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_MercRoach,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_MercRoachBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Ravager,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_RavagerBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_PrimalIgniter,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_PrimalIgniterBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_KerriganInfestBroodling,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Roachling,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Broodling,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Hydralisk,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_HydraliskBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_HunterKiller,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_HunterKillerBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Ultralisk,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_UltraliskResourceEfficiency,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_UltraliskBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_MercUltralisk,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_MercUltraliskBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Pygalisk,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_PygaliskBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Tyrannozor,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_TyrannozorBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Infestor,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_InfestorBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_InfestedAbomination,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_InfestedAbominationBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Queen,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_QueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_K5Kerrigan,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_K5KerriganBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <!--        <EffectArray Reference="Unit,InfestedStukov,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,StukovInfestedTerran,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,InfestedTerranCampaign,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,InfestedCivilian,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,Dehaka,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,DehakaBurrowed,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,DehakaMirrorImage,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,DehakaMirrorImageBurrowed,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,SwarmQueen,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,SwarmQueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,LargeSwarmQueen,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,LargeSwarmQueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,HugeSwarmQueen,LifeRegenRateCreep" Value="0.820200"/>-->
-        <!--        <EffectArray Reference="Unit,HugeSwarmQueenBurrowed,LifeRegenRateCreep" Value="0.820200"/>-->
-        <EffectArray Reference="Unit,AP_Locust,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_SwarmHost,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_SwarmHostBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_SwarmHostRooted,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_DefilerSCBW,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_DefilerSCBW@Burrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_Hunterling,LifeRegenRateCreep" Value="0.820200"/>
-        <!--        <EffectArray Reference="Unit,Brutalisk,LifeRegenRateCreep" Value="0.820200"/>-->
-        <EffectArray Reference="Unit,AP_StukovInfestedSiegeTankUprooted,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_StukovInfestedSiegeTank,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_SIVolatileInfested,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_SIVolatileInfestedBurrowed,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_StukovInfestedDiamondBack,LifeRegenRateCreep" Value="0.820200"/>
-        <EffectArray Reference="Unit,AP_StukovInfestedBansheeBurrowed,LifeRegenRateCreep" Value="0.820200"/>
         <EffectArray Reference="Abil,AP_CreepTumorBuild,Range" Value="3"/>
         <EditorCategories value="Race:Zerg,UpgradeType:Talents"/>
     </CUpgrade>
@@ -14643,6 +14537,11 @@
         <EditorCategories value="Race:Protoss,UpgradeType:SpellResearch"/>
         <AffectedUnitArray value="AP_Oracle"/>
     </CUpgrade>
+    <CUpgrade id="AP_OracleStasisWardUpgradeL2">
+        <EffectArray Operation="Subtract" Reference="Behavior,AP_OracleStasisTrapTarget,Duration" Value="25.000000"/>
+        <EffectArray Operation="Add" Reference="Behavior,AP_OracleStasisTrapStunTarget,Duration" Value="25.000000"/>
+        <EffectArray Operation="Set" Reference="Effect,AP_OracleStasisTrapTargetABSet,EffectArray[0]" Value=""/>
+    </CUpgrade>
     <CUpgrade id="AP_OracleStasisWardAir">
         <Icon value="Assets\Textures\btn-ability-protoss-arcshield.dds"/>
         <Alert value="ResearchComplete"/>
@@ -14754,6 +14653,16 @@
         <EffectArray Operation="Set" Reference="Effect,AP_VoidRayChargeBeamBounce2DamageSet,EffectArray[0]" Value="AP_VoidRayChargeBeamBounceDamageUpgraded"/>
         <EffectArray Operation="Set" Reference="Effect,AP_VoidRayChargeBeamBounce3DamageSet,EffectArray[0]" Value="AP_VoidRayChargeBeamBounceDamageUpgraded"/>
         <EffectArray Operation="Set" Reference="Weapon,AP_VoidRayChargeBeamBounce,Tip" Value="Weapon/Tip/AP_VoidRayChargeBeamBounceUpgraded"/>
+        <AffectedUnitArray value="AP_VoidRayTaldarim"/>
+    </CUpgrade>
+    <CUpgrade id="AP_DestroyerReforgedBloodshardCore">
+        <EffectArray Operation="Set" Reference="Effect,AP_VoidRayChargeBeamBounce3DamageSet,EffectArray[0]" Value="AP_VoidRayChargeBeamBounce3DamageUpgraded"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_VoidRayChargeBeamBounce,Tip" Value="Weapon/Tip/AP_VoidRayChargeBeamBounceReforged"/>
+        <AffectedUnitArray value="AP_VoidRayTaldarim"/>
+    </CUpgrade>
+    <CUpgrade id="AP_DestroyerReforgedBloodshardCoreUpgraded">
+        <EffectArray Operation="Set" Reference="Effect,AP_VoidRayChargeBeamBounce3DamageSet,EffectArray[0]" Value="AP_VoidRayChargeBeamBounce3DamageUpgraded"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_VoidRayChargeBeamBounce,Tip" Value="Weapon/Tip/AP_VoidRayChargeBeamBounceReforgedUpgraded"/>
         <AffectedUnitArray value="AP_VoidRayTaldarim"/>
     </CUpgrade>
     <CUpgrade id="AP_DestroyerResourceEfficiency">
@@ -14886,10 +14795,9 @@
         <EffectArray Reference="Behavior,AP_ImmortalOverload,DamageResponse.ModifyLimit" Value="100"/>
         <EditorCategories value="Race:Protoss"/>
     </CUpgrade>
-    <CUpgrade id="AP_AnnihilatorAerialTracking">
-        <EffectArray Operation="Set" Reference="Button,AP_ImmortalShakurasShadowCannon,Tooltip" Value="Button/Tooltip/AP_ImmortalShakurasShadowCannonAA"/>
-        <EffectArray Operation="Set" Reference="Button,AP_ImmortalShakuras,Tooltip" Value="Button/Tooltip/AP_ImmortalShakurasAA"/>
-        <EffectArray Operation="Set" Reference="Unit,AP_ImmortalShakuras,Description" Value="Button/Tooltip/AP_ImmortalShakurasAA"/>
+    <CUpgrade id="AP_AnnihilatorTwilightChassis">
+        <EffectArray Reference="Unit,AP_ImmortalShakuras,LifeMax" Value="100"/>
+        <EffectArray Reference="Unit,AP_ImmortalShakuras,LifeStart" Value="100"/>
         <EditorCategories value="Race:Protoss"/>
     </CUpgrade>
     <CUpgrade id="AP_DragoonEnhancedStriderServos">
@@ -17276,12 +17184,14 @@
         <!--  Mothership -->
         <EffectArray Reference="Unit,AP_SOAMothershipv4,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldRegenRate" Value="0.05"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldRegenRate" Value="0.05"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_OracleStasisTrap,ShieldRegenRate" Value="0.05"/>
         <!-- Scout-->
         <EffectArray Reference="Unit,AP_ScoutMP,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldRegenRate" Value="0.05"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldRegenRate" Value="0.05"/>
         <EffectArray Reference="Unit,AP_ScoutNerazim,ShieldRegenRate" Value="0.05"/>
         <!-- Arbiter -->
@@ -17411,12 +17321,14 @@
         <!--  Mothership -->
         <EffectArray Reference="Unit,AP_SOAMothershipv4,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_MothershipTaldarim,ShieldRegenRate" Value="5"/>
+        <EffectArray Reference="Unit,AP_SOAMothershipv4Placement,ShieldRegenRate" Value="5"/>
         <!-- Oracle -->
         <EffectArray Reference="Unit,AP_Oracle,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_OracleStasisTrap,ShieldRegenRate" Value="5"/>
         <!-- Scout-->
         <EffectArray Reference="Unit,AP_ScoutMP,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_ScoutTaldarim,ShieldRegenRate" Value="5"/>
+        <EffectArray Reference="Unit,AP_ScoutTaldarimMorphed,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_ScoutPurifier,ShieldRegenRate" Value="5"/>
         <EffectArray Reference="Unit,AP_ScoutNerazim,ShieldRegenRate" Value="5"/>
         <!-- Arbiter -->
@@ -18662,5 +18574,41 @@
     <CUpgrade id="AP_RemoveHighlanderBehavior">
         <EffectArray Operation="Set" Reference="Abil,AP_SummonMercenaries,InfoArray[Train8].Button.Requirements" Value="AP_MercCompoundStarships"/>
         <EffectArray Operation="Set" Reference="Abil,AP_SummonZergMercs,InfoArray[Train6].Button.Requirements" Value="AP_ZergMercCompoundBroodWar"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ResourceEfficiencyGhostL2">
+        <EffectArray Operation="Subtract" Reference="Unit,AP_Ghost,CostResource[Minerals]" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_Ghost,CostResource[Vespene]" Value="50"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_GhostResourceEfficiency,CostResource[Minerals]" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_GhostResourceEfficiency,CostResource[Vespene]" Value="50"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_GhostMengsk,CostResource[Minerals]" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_GhostMengsk,CostResource[Vespene]" Value="150"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_GhostMengskResourceEfficiency,CostResource[Minerals]" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_GhostMengskResourceEfficiency,CostResource[Vespene]" Value="150"/>
+        <AffectedUnitArray value="AP_Ghost"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ResourceEfficiencySpectreL2">
+        <EffectArray Operation="Subtract" Reference="Unit,AP_Spectre,CostResource[Minerals]" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_Spectre,CostResource[Vespene]" Value="50"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_SpectreResourceEfficiency,CostResource[Minerals]" Value="100"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_SpectreResourceEfficiency,CostResource[Vespene]" Value="50"/>
+        <AffectedUnitArray value="AP_Spectre"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ScoutResourceEfficiencyL2">
+        <Flags index="UpgradeCheat" value="0"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_ScoutMP,CostResource[Minerals]" Value="50"/>
+        <EffectArray Reference="Unit,AP_ScoutMP,Food" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ScoutGammaPhotonBlasters">
+        <EffectArray Operation="Set" Reference="Weapon,AP_ScoutMPGround,Effect" Value="AP_ScoutMPGroundLight"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ScoutMPGround,DisplayEffect" Value="AP_ScoutMPGroundLight"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ScoutGammaAdvancedPhotonBlasters">
+        <EffectArray Operation="Set" Reference="Weapon,AP_ScoutMPGround,Effect" Value="AP_ScoutMPGroundUpgradedLight"/>
+        <EffectArray Operation="Set" Reference="Weapon,AP_ScoutMPGround,DisplayEffect" Value="AP_ScoutMPGroundUpgradedLight"/>
+    </CUpgrade>
+    <CUpgrade id="AP_ResourceEfficiencyReaverL2">
+        <EffectArray Operation="Subtract" Reference="Unit,AP_Reaver,CostResource[Minerals]" Value="50"/>
+        <EffectArray Operation="Subtract" Reference="Unit,AP_Reaver,CostResource[Vespene]" Value="75"/>
+        <EffectArray Reference="Unit,AP_Reaver,Food" Value="1"/>
     </CUpgrade>
 </Catalog>

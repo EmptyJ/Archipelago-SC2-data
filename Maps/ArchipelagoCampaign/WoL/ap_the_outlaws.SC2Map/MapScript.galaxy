@@ -1723,7 +1723,7 @@ bool gt_DominionAttackerSquads_Func (bool testConds, bool runActions) {
     }
 
     while (true) {
-        if (((ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateCompleted) || (ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateFailed) || (UnitGetOwner(gv_medicBarracks) == gv_pLAYER_01_USER))) {
+        if (((ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateCompleted) || (ObjectiveGetState(gv_objectiveRebels) == c_objectiveStateFailed) || (UnitGetOwner(gv_medicBarracks) == gv_pLAYER_01_USER) || (UnitGetOwner(UnitFromId(1900535743)) == gv_pLAYER_01_USER) || (UnitGetOwner(UnitFromId(682191634)) == gv_pLAYER_01_USER))) {
             return true;
         }
 
@@ -2037,6 +2037,7 @@ bool gt_RebelsCompleteQ_Func (bool testConds, bool runActions) {
             UnitGroupAdd(gv_marinesRescued, autoCE1A535E_var);
         }
 
+        lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(autoCE1A535E_var);
     }
     UnitIssueOrder(UnitFromId(600), OrderTargetingPoint(AbilityCommand("move", 0), PointFromId(736)), c_orderQueueReplace);
     libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(UnitFromId(599)), c_animNameDefault, "Stand Victory", c_animFlagNonLooping, c_animTimeDefault);

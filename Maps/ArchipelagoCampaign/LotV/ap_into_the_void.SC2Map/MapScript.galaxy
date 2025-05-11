@@ -5322,7 +5322,12 @@ bool gt_StukovDies_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    libVCMI_gf_HandleHeroDeathVoid(gv_stukov, null, -1.0);
+    if ((UnitGetOwner(gv_stukov) == gv_pLAYER_01_USER)) {
+        libVCMI_gf_HandleHeroDeathVoid(gv_stukov, lib15EF4C78_gf_AP_Player_getPrimaryTownHall(gv_pLAYER_01_USER), -1.0);
+    }
+    else {
+        libVCMI_gf_HandleHeroDeathVoid(gv_stukov, null, -1.0);
+    }
     return true;
 }
 

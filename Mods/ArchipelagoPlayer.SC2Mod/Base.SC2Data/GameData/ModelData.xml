@@ -14217,6 +14217,12 @@
         <Flags index="Download" value="1"/>
         <Image value="Assets\Textures\fenixportrait_static.dds"/>
     </CModel>
+    <CModel id="AP_FenixEx2Portrait3DAddition" parent="FXAPortrait" Race="Protoss">
+        <Model value="Assets\StoryModeCharacters\Protoss\SMX2_Fenix\SMX2_Fenix.m3"/>
+        <RequiredAnims value="Assets\StoryModeCharacters\Protoss\SMX2_Fenix_RequiredAnims\SMX2_Fenix_RequiredAnims.m3a"/>
+        <FacialController value="LocalizedData\Facial\SMX2_Fenix.fxa"/>
+        <Flags index="ForcePortraitModel" value="1"/>
+    </CModel>
     <CModel id="AP_FenixWhirlwindImpact" parent="ImpactFX">
         <Model value="Assets\Effects\Protoss\Fenix_Whirlwind_Impact\Fenix_Whirlwind_Impact.m3"/>
         <EditorCategories value="Race:Protoss"/>

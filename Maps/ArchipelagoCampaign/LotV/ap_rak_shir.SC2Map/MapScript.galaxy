@@ -4738,7 +4738,20 @@ void gt_ObjectiveResourcePickupsCreate_Init () {
 // Trigger: Objective Resource Pickups Update
 //--------------------------------------------------------------------------------------------------
 bool gt_ObjectiveResourcePickupsUpdate_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_resource;
+
     // Automatic Variable Declarations
+    // Variable Initialization
+    lv_resource = EventUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((libNtve_gf_UnitInRegion(lv_resource, RegionFromId(15)) == true))) {
+            return false;
+        }
+    }
+
     // Actions
     if (!runActions) {
         return true;

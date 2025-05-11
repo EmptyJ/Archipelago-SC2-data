@@ -4716,6 +4716,7 @@
     <CRequirementSum id="AP_SumCountTaldarimMothershipTypesQueuedOrBetter">
         <OperandArray value="AP_CountUnitSOAMothershipv4QueuedOrBetter"/>
         <OperandArray value="AP_CountUnitMothershipTaldarimQueuedOrBetter"/>
+        <OperandArray value="AP_CountUnitSOAMothershipv4PlacementQueuedOrBetter"/>
     </CRequirementSum>
     <CRequirementCountUnit id="AP_CountUnitSOAMothershipv4QueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
@@ -4726,6 +4727,11 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Tooltip value=""/>
         <Count Link="AP_MothershipTaldarim" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="AP_CountUnitSOAMothershipv4PlacementQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value=""/>
+        <Count Link="AP_SOAMothershipv4Placement" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUpgrade id="AP_CountUpgradeSOADragoonReviveCompleteOnly">
         <Count Link="AP_SOADragoonRevive" State="CompleteOnly"/>
@@ -5457,13 +5463,10 @@
         <Count Link="AP_ImmortalImprovedBarrier" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementCountUpgrade id="AP_CountUpgradeAnnihilatorAerialTrackingCompleteOnly">
-        <Count Link="AP_AnnihilatorAerialTracking" State="CompleteOnly"/>
+    <CRequirementCountUpgrade id="AP_CountUpgradeAnnihilatorTwilightChassisCompleteOnly">
+        <Count Link="AP_AnnihilatorTwilightChassis" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
     </CRequirementCountUpgrade>
-    <CRequirementNot id="AP_NotCountUpgradeAnnihilatorAerialTrackingCompleteOnly">
-        <OperandArray index="0" value="AP_CountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
-    </CRequirementNot>
     <CRequirementCountUpgrade id="AP_CountUpgradeDragoonEnchancedStriderServosCompleteOnly">
         <Count Link="AP_DragoonEnhancedStriderServos" State="CompleteOnly"/>
         <Flags index="TechTreeCheat" value="0"/>
@@ -7492,5 +7495,21 @@
     <CRequirementCountUpgrade id="AP_CountUpgradeFastDelivery">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AP_FastDeliveryLevel1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeSporeCrawlerBioBonusCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_SporeCrawlerBioBonus" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeScoutGammaPhotonBlastersCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_ScoutGammaPhotonBlasters" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeDestroyerReforgedBloodshardCoreCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_DestroyerReforgedBloodshardCore" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="AP_CountUpgradeOracleStasisWardUpgradeL2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AP_OracleStasisWardUpgradeL2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
 </Catalog>

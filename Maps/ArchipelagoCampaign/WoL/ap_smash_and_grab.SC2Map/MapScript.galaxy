@@ -117,6 +117,7 @@ void InitGlobals () {
 //--------------------------------------------------------------------------------------------------
 // Global Function Declarations
 //--------------------------------------------------------------------------------------------------
+void gf_ArtifactGuardianDestroyedHandler (unit lp_guardian);
 bool gf_CreepExistsAroundPoint (point lp_point);
 void gf_ZergAttackProtossPrep ();
 void gf_ZergAttackProtossLateDelay ();
@@ -152,6 +153,7 @@ trigger gt_ArtifactShieldActivation;
 trigger gt_ArtifactGuardiansNorthAttacks;
 trigger gt_ArtifactGuardiansSouthAttacks;
 trigger gt_ArtifactGuardianDestroyed;
+trigger gt_ArtifactGuardianMindControlled;
 trigger gt_ZergArtifactAttacking;
 trigger gt_ZergAttackInitiation;
 trigger gt_ZergArtifactQ;
@@ -244,6 +246,72 @@ trigger gt_Init07Help;
 //--------------------------------------------------------------------------------------------------
 // Global Functions
 //--------------------------------------------------------------------------------------------------
+void gf_ArtifactGuardianDestroyedHandler (unit lp_guardian) {
+    // Variable Declarations
+    unit lv_victoryUnit;
+
+    // Automatic Variable Declarations
+    unitgroup auto2ABD4060_g;
+    int auto2ABD4060_u;
+    unit auto2ABD4060_var;
+
+    // Variable Initialization
+
+    // Implementation
+    if (((UnitGroupCount(gv_artifactGuardiansSouth, c_unitCountAlive) == 0) || ((UnitGroupCount(gv_artifactGuardiansNorth, c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup(null, gv_p1_USER, RegionFromId(63), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > UnitGroupCount(UnitGroup(null, gv_p2_ZERG, RegionFromId(63), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive))))) {
+        TriggerEnable(gt_ArtifactGuardianDestroyed, false);
+        TriggerEnable(gt_ArtifactGuardianMindControlled, false);
+        gv_gameOver = true;
+        TimerPause(gv_guardianTimer, true);
+        SoundPlayAtPoint(SoundLink("Doodad_ArtifactShrine_Deactivate", -1), PlayerGroupAll(), UnitGetPosition(gv_artifact), 0.0, 100.0, 0.0);
+        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand Work End A", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
+        Wait(2.0, c_timeGame);
+        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand A", c_animFlagPlayForever, c_animTimeDefault);
+        lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(lib5BD4895D_gv_aP_Core_locationVictory);
+        Wait(1.0, c_timeGame);
+        TriggerExecute(gt_ObjectiveGettotheArtifactComplete, true, false);
+        TriggerExecute(gt_ObjectiveDestroytheStatuesComplete, true, false);
+        Wait(libCamp_gv_campaignObjectiveDelay, c_timeReal);
+        TriggerExecute(gt_VictoryArtifactGained, true, false);
+        return ;
+    }
+
+    if ((UnitGroupCount(gv_artifactGuardiansNorth, c_unitCountAlive) == 0)) {
+        TriggerEnable(gt_ArtifactGuardianDestroyed, false);
+        TriggerEnable(gt_ArtifactGuardianMindControlled, false);
+        gv_gameOver = true;
+        TriggerEnable(gt_ArtifactGuardianActivationSouth, false);
+        TriggerEnable(gt_ObjectiveDestroytheStatuesDiscover, false);
+        UnitKill(UnitFromId(572));
+        TechTreeUpgradeAddLevel(gv_p2_ZERG, "overlordtransport", 1);
+        TechTreeUpgradeAddLevel(gv_p2_ZERG, "overlordspeed", 1);
+        libNtve_gf_CreateUnitsAtPoint2(1, "Overlord", 0, gv_p2_ZERG, PointFromId(741));
+        UnitSetState(UnitLastCreated(), c_unitStateTargetable, false);
+        UnitSetState(UnitLastCreated(), c_unitStateInvulnerable, true);
+        UnitSetState(UnitLastCreated(), c_unitStateStatusBar, false);
+        lv_victoryUnit = UnitLastCreated();
+        UnitIssueOrder(lv_victoryUnit, OrderTargetingPoint(AbilityCommand("move", 0), UnitGetPosition(gv_artifact)), c_orderQueueReplace);
+        auto2ABD4060_g = gv_artifactGuardiansSouth;
+        auto2ABD4060_u = UnitGroupCount(auto2ABD4060_g, c_unitCountAll);
+        for (;; auto2ABD4060_u -= 1) {
+            auto2ABD4060_var = UnitGroupUnitFromEnd(auto2ABD4060_g, auto2ABD4060_u);
+            if (auto2ABD4060_var == null) { break; }
+            libNtve_gf_ChangeUnitDamage(auto2ABD4060_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal);
+        }
+        SoundPlayAtPoint(SoundLink("Doodad_ArtifactShrine_Deactivate", -1), PlayerGroupAll(), UnitGetPosition(gv_artifact), 0.0, 100.0, 0.0);
+        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand Work End B", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
+        Wait(2.0, c_timeGame);
+        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand B", c_animFlagPlayForever, c_animTimeDefault);
+        while (!((libNtve_gf_UnitInRegion(lv_victoryUnit, RegionCircle(UnitGetPosition(gv_artifact), 2.0)) == true))) {
+            Wait(1.0, c_timeGame);
+        }
+        UnitRemove(gv_artifact);
+        SoundPlayAtPoint(SoundLink("Overlord_Load", -1), PlayerGroupAll(), UnitGetPosition(gv_artifact), 0.0, 100.0, 0.0);
+        TriggerExecute(gt_DefeatArtifactLost, true, false);
+    }
+
+}
+
 bool gf_CreepExistsAroundPoint (point lp_point) {
     // Variable Declarations
     int lv_i;
@@ -1765,16 +1833,7 @@ void gt_ArtifactGuardiansSouthAttacks_Init () {
 // Trigger: Artifact Guardian Destroyed
 //--------------------------------------------------------------------------------------------------
 bool gt_ArtifactGuardianDestroyed_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_victoryUnit;
-
     // Automatic Variable Declarations
-    unitgroup auto2ABD4060_g;
-    int auto2ABD4060_u;
-    unit auto2ABD4060_var;
-
-    // Variable Initialization
-
     // Conditions
     if (testConds) {
         if (!((UnitGetType(EventUnit()) == "StoneZealot"))) {
@@ -1797,56 +1856,7 @@ bool gt_ArtifactGuardianDestroyed_Func (bool testConds, bool runActions) {
         lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objective_DestroytheStatues, gv_statuesDestroyed);
     }
 
-    if (((UnitGroupCount(gv_artifactGuardiansSouth, c_unitCountAlive) == 0) || ((UnitGroupCount(gv_artifactGuardiansNorth, c_unitCountAlive) == 0) && (UnitGroupCount(UnitGroup(null, gv_p1_USER, RegionFromId(63), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive) > UnitGroupCount(UnitGroup(null, gv_p2_ZERG, RegionFromId(63), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), c_unitCountAlive))))) {
-        TriggerEnable(TriggerGetCurrent(), false);
-        gv_gameOver = true;
-        TimerPause(gv_guardianTimer, true);
-        SoundPlayAtPoint(SoundLink("Doodad_ArtifactShrine_Deactivate", -1), PlayerGroupAll(), UnitGetPosition(gv_artifact), 0.0, 100.0, 0.0);
-        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand Work End A", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
-        Wait(2.0, c_timeGame);
-        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand A", c_animFlagPlayForever, c_animTimeDefault);
-        lib5BD4895D_gf_AP_Core_collectLocationUpdateObjective(lib5BD4895D_gv_aP_Core_locationVictory);
-        Wait(1.0, c_timeGame);
-        TriggerExecute(gt_ObjectiveGettotheArtifactComplete, true, false);
-        TriggerExecute(gt_ObjectiveDestroytheStatuesComplete, true, false);
-        Wait(libCamp_gv_campaignObjectiveDelay, c_timeReal);
-        TriggerExecute(gt_VictoryArtifactGained, true, false);
-        return true;
-    }
-
-    if ((UnitGroupCount(gv_artifactGuardiansNorth, c_unitCountAlive) == 0)) {
-        TriggerEnable(TriggerGetCurrent(), false);
-        gv_gameOver = true;
-        TriggerEnable(gt_ArtifactGuardianActivationSouth, false);
-        TriggerEnable(gt_ObjectiveDestroytheStatuesDiscover, false);
-        UnitKill(UnitFromId(572));
-        TechTreeUpgradeAddLevel(gv_p2_ZERG, "overlordtransport", 1);
-        TechTreeUpgradeAddLevel(gv_p2_ZERG, "overlordspeed", 1);
-        libNtve_gf_CreateUnitsAtPoint2(1, "Overlord", 0, gv_p2_ZERG, PointFromId(741));
-        UnitSetState(UnitLastCreated(), c_unitStateTargetable, false);
-        UnitSetState(UnitLastCreated(), c_unitStateInvulnerable, true);
-        UnitSetState(UnitLastCreated(), c_unitStateStatusBar, false);
-        lv_victoryUnit = UnitLastCreated();
-        UnitIssueOrder(lv_victoryUnit, OrderTargetingPoint(AbilityCommand("move", 0), UnitGetPosition(gv_artifact)), c_orderQueueReplace);
-        auto2ABD4060_g = gv_artifactGuardiansSouth;
-        auto2ABD4060_u = UnitGroupCount(auto2ABD4060_g, c_unitCountAll);
-        for (;; auto2ABD4060_u -= 1) {
-            auto2ABD4060_var = UnitGroupUnitFromEnd(auto2ABD4060_g, auto2ABD4060_u);
-            if (auto2ABD4060_var == null) { break; }
-            libNtve_gf_ChangeUnitDamage(auto2ABD4060_var, libNtve_ge_UnitDamageTakenDealt_Damage_Take, libNtve_ge_UnitDamageChangeOption_Minimal);
-        }
-        SoundPlayAtPoint(SoundLink("Doodad_ArtifactShrine_Deactivate", -1), PlayerGroupAll(), UnitGetPosition(gv_artifact), 0.0, 100.0, 0.0);
-        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand Work End B", c_animFlagPlayForever | c_animFlagNonLooping, c_animTimeDefault);
-        Wait(2.0, c_timeGame);
-        libNtve_gf_PlayAnimationOnDoodadsInRegion(RegionFromId(66), "ArtifactShrine", c_animNameDefault, "Stand B", c_animFlagPlayForever, c_animTimeDefault);
-        while (!((libNtve_gf_UnitInRegion(lv_victoryUnit, RegionCircle(UnitGetPosition(gv_artifact), 2.0)) == true))) {
-            Wait(1.0, c_timeGame);
-        }
-        UnitRemove(gv_artifact);
-        SoundPlayAtPoint(SoundLink("Overlord_Load", -1), PlayerGroupAll(), UnitGetPosition(gv_artifact), 0.0, 100.0, 0.0);
-        TriggerExecute(gt_DefeatArtifactLost, true, false);
-    }
-
+    gf_ArtifactGuardianDestroyedHandler(EventUnit());
     return true;
 }
 
@@ -1854,6 +1864,51 @@ bool gt_ArtifactGuardianDestroyed_Func (bool testConds, bool runActions) {
 void gt_ArtifactGuardianDestroyed_Init () {
     gt_ArtifactGuardianDestroyed = TriggerCreate("gt_ArtifactGuardianDestroyed_Func");
     TriggerAddEventUnitDied(gt_ArtifactGuardianDestroyed, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Artifact Guardian MindControlled
+//--------------------------------------------------------------------------------------------------
+bool gt_ArtifactGuardianMindControlled_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_targetUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_targetUnit = lib15EF4C78_gf_AP_Player_UnitMindControlledEventTarget();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(lv_targetUnit) == "StoneZealot"))) {
+            return false;
+        }
+
+        if (!((TriggerIsEnabled(TriggerGetCurrent()) == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayAtPoint(SoundLink("Thor_Movement", -1), PlayerGroupAll(), UnitGetPosition(EventUnit()), 0.0, 100.0, 0.0);
+    if ((UnitGroupHasUnit(gv_artifactGuardiansSouth, lv_targetUnit) == true)) {
+        gv_statuesDestroyed += 1;
+        lib5BD4895D_gf_AP_Core_setObjectiveCounter(gv_objective_DestroytheStatues, gv_statuesDestroyed);
+    }
+
+    UnitGroupRemove(gv_artifactGuardiansSouth, lv_targetUnit);
+    UnitGroupRemove(gv_artifactGuardiansNorth, lv_targetUnit);
+    gf_ArtifactGuardianDestroyedHandler(EventUnit());
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void gt_ArtifactGuardianMindControlled_Init () {
+    gt_ArtifactGuardianMindControlled = TriggerCreate("gt_ArtifactGuardianMindControlled_Func");
+    TriggerAddEventGeneric(gt_ArtifactGuardianMindControlled, lib15EF4C78_gv_aP_Player_UNIT_MIND_CONTROLLED_EVENT);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5684,7 +5739,7 @@ bool gt_Init03Units_Func (bool testConds, bool runActions) {
         if (autoB5398E34_var == null) { break; }
         UnitSetPropertyFixed(autoB5398E34_var, c_unitPropEnergyPercent, 100.0);
     }
-    UnitSetPropertyFixed(UnitFromId(27), c_unitPropEnergy, 50.0);
+    libABFE498B_gf_AP_Triggers_resetBase(gv_p1_USER);
     libNtve_gf_MakeUnitInvulnerable(gv_artifact, true);
     VisRevealerCreate(gv_p1_USER, RegionCircle(UnitGetPosition(gv_artifact), 24.0));
     gv_artifactRevealer = VisRevealerLastCreated();
@@ -5953,6 +6008,7 @@ void InitTriggers () {
     gt_ArtifactGuardiansNorthAttacks_Init();
     gt_ArtifactGuardiansSouthAttacks_Init();
     gt_ArtifactGuardianDestroyed_Init();
+    gt_ArtifactGuardianMindControlled_Init();
     gt_ZergArtifactAttacking_Init();
     gt_ZergAttackInitiation_Init();
     gt_ZergArtifactQ_Init();

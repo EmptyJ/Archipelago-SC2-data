@@ -1052,11 +1052,24 @@ bool auto_gf_UnitstotheExitVent_TriggerFunc (bool testConds, bool runActions) {
     return true;
 }
 
+trigger auto_gf_HideKerrigan_Trigger = null;
+
 void gf_HideKerrigan () {
+    if (auto_gf_HideKerrigan_Trigger == null) {
+        auto_gf_HideKerrigan_Trigger = TriggerCreate("auto_gf_HideKerrigan_TriggerFunc");
+    }
+
+    TriggerExecute(auto_gf_HideKerrigan_Trigger, false, false);
+}
+
+bool auto_gf_HideKerrigan_TriggerFunc (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     unitgroup auto6A0EE54F_g;
     int auto6A0EE54F_u;
     unit auto6A0EE54F_var;
+    unitgroup auto3F151045_g;
+    int auto3F151045_u;
+    unit auto3F151045_var;
 
     // Implementation
     if (((libABFE498B_gv_aP_Triggers_Option_KerriganPresence == 0) || ((libABFE498B_gv_aP_Triggers_Option_KerriganPresence < 4) && (libABFE498B_gv_aP_Triggers_Option_overridePlayerRace != "Neut")))) {
@@ -1072,7 +1085,16 @@ void gf_HideKerrigan () {
             if (auto6A0EE54F_var == null) { break; }
             UnitRemove(auto6A0EE54F_var);
         }
+        Wait(0.0625, c_timeGame);
+        auto3F151045_g = UnitGroup("AP_HotSSplitterlingMedium", gv_pLAYER_01_USER, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto3F151045_u = UnitGroupCount(auto3F151045_g, c_unitCountAll);
+        for (;; auto3F151045_u -= 1) {
+            auto3F151045_var = UnitGroupUnitFromEnd(auto3F151045_g, auto3F151045_u);
+            if (auto3F151045_var == null) { break; }
+            UnitRemove(auto3F151045_var);
+        }
     }
+    return true;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -5861,6 +5883,7 @@ bool gt_IntroCleanup_Func (bool testConds, bool runActions) {
     PlayerSetState(gv_pLAYER_01_USER, c_playerStateXPGain, true);
     GameTimeOfDayPause(false);
     libSwaC_gf_EnableDisableZerglingRespawn(true);
+    libABFE498B_gf_AP_Triggers_startNoBuild(gv_pLAYER_01_USER);
     UnitSelect(gv_dEHAKA, gv_pLAYER_01_USER, true);
     TriggerEnable(gt_IntroMutaliskDeathSound, false);
     TriggerExecute(gt_DestroyerFieldSetup, true, false);
@@ -6314,6 +6337,7 @@ bool gt_MidCleanup_Func (bool testConds, bool runActions) {
         }
     }
 
+    libABFE498B_gf_AP_Triggers_resetBase(gv_pLAYER_01_USER);
     if ((gv_cinematicCompleted == true)) {
         lv_fadeDuration = 1.5;
     }

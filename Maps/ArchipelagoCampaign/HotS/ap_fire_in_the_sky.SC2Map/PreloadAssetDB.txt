@@ -1,3 +1,11 @@
+[Abil]
+id=SuperWarpGateTrain
+asset=Assets\Textures\WayPointLine.dds
+asset=Assets\UI\Cursors\WayPointConfirm_Void\WayPointConfirm_Void.m3
+Actor=AP_GimbalZTurret,AP_TrooperMengsk_ModelSwap_AS,CommandUIHarnessAttackProtoss,CommandUIHarnessAttackTerran,CommandUIHarnessAttackZerg,CommandUIHarnessConfirmProtoss,CommandUIHarnessConfirmTerran,CommandUIHarnessConfirmZerg,CommandUIHarnessMoveProtoss,CommandUIHarnessMoveTerran,CommandUIHarnessMoveZerg,CommandUIHarnessRallyProtoss,CommandUIHarnessRallyTerran,CommandUIHarnessRallyZerg,ProtossWarpIn,TerrainMgr,WarpTrainLoop,WarpTrainModel,WarpTrainStart,WarpTrainStop
+Alert=WarpTrainComplete
+Unit=AP_ZealotAiur,AP_ZealotShakuras,Archon,Carrier,Colossus,DarkTemplar,HighTemplar,Immortal,Phoenix,Scout,Selendis,Sentry,Stalker,VoidRay,WarpPrism,Zealot,Zeratul
+
 [Behavior]
 id=AP_TurretFired
 asset=Assets\Textures\tip_rakshir.dds

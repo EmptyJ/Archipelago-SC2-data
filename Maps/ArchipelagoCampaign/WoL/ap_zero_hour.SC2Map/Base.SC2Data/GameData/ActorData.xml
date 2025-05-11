@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CActorUnit id="AP_MercRoach">
-        <On Terms="UnitBirth.AP_MercRoachBurrowed" Send="Create"/>
-        <On Terms="UnitBirth.AP_MercRoachBurrowed" Send="AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever"/>
-    </CActorUnit>
     <!--                                                                                         -->
     <!-- Invisible Pylon ....................................................................... -->
     <!--                                                                                         -->

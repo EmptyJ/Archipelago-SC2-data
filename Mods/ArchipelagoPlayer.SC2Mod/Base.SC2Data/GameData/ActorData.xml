@@ -4283,12 +4283,20 @@
     <CActorTurret id="AP_SiegeTankTurret">
         <On Terms="TurretEnable.AP_SiegeTank" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTank" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankTransportable" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreakerTransportable" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreakerTransportable" Send="Destroy"/>
     </CActorTurret>
     <CActorTurret id="AP_SiegeTankSiegedTurret">
         <On Terms="TurretEnable.AP_SiegeTankSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankSieged; MorphTo AP_SiegeTank" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeTankSiegedTransportable; MorphTo AP_SiegeTank" Send="Destroy"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreakerSieged; MorphTo AP_SiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_SiegeBreakerSiegedTransportable; MorphTo AP_SiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreaker; MorphTo AP_InfestedSiegeBreaker" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreakerTransportable; MorphTo AP_InfestedSiegeBreaker" Send="Destroy"/>
     </CActorTurret>
     <CActorUnit id="AP_Medivac" parent="AP_MedivacBase" unitName="AP_Medivac">
         <On Terms="Behavior.AP_MedivacMengskSiegeTankAirlift.On" Send="Create AP_MedivacCustomFrame"/>
@@ -9944,10 +9952,18 @@
     </CActorMissile>
     <CActorUnit id="AP_ImpalerEgg" parent="GenericUnitMorph" unitName="AP_ImpalerEgg">
         <Aliases value="_UnitMedium"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEggMorphling" Send="Destroy"/>
+        <On Terms="UnitBirth.AP_ImpalerEggMorphling" Send="Create SoundEmitter AP_HydraliskLurkerEgg_Ambience"/>
+        <On Terms="UnitBirth.AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_ImpalerEggMorphling" Send="RefSet ::HostTurretBody _Selectable"/>
+        <On Terms="UnitConstruction.AP_ImpalerEggMorphling.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_ImpalerEggMorphling.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Hydralisk" Send="AnimBaselineStop"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Hydralisk" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
         <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
         <HostSiteOps Ops="SOpRotVariancerForward30"/>
         <DeathArray index="Normal" ModelLink="AP_HydraliskLurkerEggDeath" SoundLink="LurkerEgg_Explode"/>
@@ -9978,6 +9994,7 @@
     </CActorUnit>
     <CActorSound id="AP_ImpalerEggDeathSound" parent="SoundOneShot">
         <On Terms="UnitDeath.AP_ImpalerEgg; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.AP_ImpalerEggMorphling; PassChance 25.000000" Send="Create"/>
         <Sound value="LurkerEgg_Death"/>
     </CActorSound>
     <CActorModel id="AP_ImpalerMissileGroundCracks" parent="ModelAnimationStyleOneShot">
@@ -10004,10 +10021,18 @@
         <IconArcLength value="5.000000"/>
     </CActorRange>
     <CActorUnit id="AP_HydraliskLurkerEgg" parent="GenericUnitMorph" unitName="AP_HydraliskLurkerEgg">
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEggMorphling" Send="Destroy"/>
+        <On Terms="UnitBirth.AP_HydraliskLurkerEggMorphling" Send="Create SoundEmitter AP_HydraliskLurkerEgg_Ambience"/>
+        <On Terms="UnitBirth.AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="UnitRevive.AP_HydraliskLurkerEggMorphling" Send="RefSet ::HostTurretBody _Selectable"/>
+        <On Terms="UnitConstruction.AP_HydraliskLurkerEggMorphling.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_HydraliskLurkerEggMorphling.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Hydralisk" Send="AnimBaselineStop"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Hydralisk" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling; MorphFrom AP_Morphling" Send="AnimBaselineStop"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling; MorphFrom AP_Morphling" Send="$Birth 0 0.000000 -1.000000 0.000000"/>
         <On Terms="AnimDone; AnimName Birth" Send="AnimBaselineStart"/>
         <HostSiteOps Ops="SOpRotVariancerForward30"/>
         <DeathArray index="Normal" ModelLink="AP_HydraliskLurkerEggDeath" SoundLink="LurkerEgg_Explode"/>
@@ -10037,6 +10062,7 @@
     </CActorUnit>
     <CActorSound id="AP_HydraliskLurkerEgg_Death" parent="SoundOneShot">
         <On Terms="UnitDeath.AP_HydraliskLurkerEgg; PassChance 25.000000" Send="Create"/>
+        <On Terms="UnitDeath.AP_HydraliskLurkerEggMorphling; PassChance 25.000000" Send="Create"/>
         <Sound value="LurkerEgg_Death"/>
     </CActorSound>
     <CActorUnit id="AP_Lurker" parent="GenericBurrowerStandard" unitName="AP_Lurker">
@@ -11293,12 +11319,16 @@
     </CActorSound>
     <CActorSound id="AP_HydraliskLurkerEggBirth" parent="SoundOneShot">
         <On Terms="AbilMorph.*.Start; MorphTo AP_HydraliskLurkerEgg" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_HydraliskLurkerEggMorphling" Send="Create"/>
         <Sound value="LurkerEgg_Birth"/>
     </CActorSound>
     <CActorModel id="AP_HydraliskLurkerEggDeath">
         <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEgg" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEgg" Send="$Death"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEgg" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_HydraliskLurkerEggMorphling" Send="$Death"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_HydraliskLurkerEggMorphling" Send="Destroy"/>
         <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
         <On Terms="ActorCreation" Send="Create AP_CocoonCancelOrCocoonComplete"/>
         <Host Subject="_Selectable"/>
@@ -11306,12 +11336,16 @@
     </CActorModel>
     <CActorSound id="AP_ImpalerEggBirthSound" parent="SoundOneShot">
         <On Terms="AbilMorph.*.Start; MorphTo AP_ImpalerEgg" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo AP_ImpalerEggMorphling" Send="Create"/>
         <Sound value="LurkerEgg_Birth"/>
     </CActorSound>
     <CActorModel id="AP_ImpalerEggDeath">
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEgg" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEgg" Send="$Death"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEgg" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEggMorphling" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom AP_ImpalerEggMorphling" Send="$Death"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo AP_ImpalerEggMorphling" Send="Destroy"/>
         <On Terms="AnimDone; AnimName Death" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachOriginStationary"/>
@@ -17658,9 +17692,21 @@
         <Inherits index="Visibility" value="1"/>
         <On Terms="Behavior.AP_OracleStasisTrapTarget.On" Send="Create"/>
         <On Terms="Behavior.AP_OracleStasisTrapTarget.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorModel id="AP_OracleStasisTrapStunTarget" parent="ModelAnimationStyleContinuous">
+        <Model value="OracleStasisTrapTarget"/>
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <Inherits index="Visibility" value="1"/>
         <On Terms="Behavior.AP_OracleStasisTrapStunTarget.On" Send="Create"/>
-        <On Terms="Behavior.AP_OracleStasisTrapStunTarget.On" Send="SetTintColor {255,0,0 3.000000} 0.000000 OneShot AP_StasisTrap 151.000000"/>
-        <On Terms="Behavior.AP_OracleStasisTrapStunTarget.Off" Send="ClearTintColor 0.000000 AP_StasisTrap"/>
+        <On Terms="ActorCreation" Send="SetTintColor {255,0,0 3.000000} 0.000000 OneShot AP_StasisTrap 151.000000"/>
+        <On Terms="Behavior.AP_OracleStasisTrapStunTarget.Off; !ValidatePlayer AP_CasterHaveOracleStasisWardUpgradeL2" Send="Destroy"/>
+        <On Terms="Behavior.AP_OracleStasisTrapStunTarget.Off; ValidatePlayer AP_CasterHaveOracleStasisWardUpgradeL2" Send="AnimBracketStop BSD"/>
         <Host Subject="_Unit"/>
         <HostSiteOps Ops="SOpAttachCenter"/>
         <AutoScaleFactor value="1.000000"/>
@@ -18615,7 +18661,7 @@
         <Model value="Probe"/>
         <AnimBlendTime value="0.250000"/>
         <ModelFlags index="OutlineEmitter" value="1"/>
-        <BuildModel value="ProtossGenericWarpInOut"/>
+        <BuildModel value="AP_ProtossGenericWarpInOut"/>
         <DeathArray index="Normal" ModelLink="ProbeDeath" SoundLink="Probe_Explode"/>
         <DeathCustoms ModelLink="HallucinationDeath" SoundLink="Sentry_HallucinationDeathSmall" Name="Hallucination"/>
         <DeathCustoms ModelLink="DarkProbeDeath" Name="DarkProtoss"/>
@@ -20787,7 +20833,13 @@
         <HostSiteOps Ops="SOpShadow"/>
         <ModelFlags index="AllowHitTest" value="0"/>
     </CActorModel>
-    <CActorPortrait id="AP_FenixEx2Portrait" parent="CompositePortrait"/>
+    <CActorPortrait id="AP_FenixEx2Portrait" parent="CompositePortrait">
+        <Remove Terms="ActorCreation" Send="Create FenixEx2PortraitAddition"/>
+        <On Terms="ActorCreation" Send="Create AP_FenixEx2Portrait3DAddition"/>
+        <FaceFXTarget value="AP_FenixEx2Portrait3DAddition"/>
+        <AnimTargets value="AP_FenixEx2Portrait3DAddition"/>
+    </CActorPortrait>
+    <CActorModel id="AP_FenixEx2Portrait3DAddition" parent="CompositePortraitAddition"/>
     <CActorAction id="AP_FenixSOAAttack" parent="GenericAttack" effectAttack="AP_FenixSOAWeaponDamage">
         <LaunchAssets Sound="AP_Fenix_CleaveAttackLaunch"/>
         <ImpactMap index="None" Sound="AP_Fenix_CleaveAttackImpact"/>
@@ -23003,6 +23055,7 @@
         <On Terms="Abil.AP_StargateWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_RoboticsFacilityWarpTrainRedirect.TargetStart" Send="Create"/>
         <On Terms="Abil.AP_WarpGateTrainRedirect.TargetStart" Send="Create"/>
+        <On Terms="Abil.AP_ElderProbeBuild.BuiltStart" Send="Create"/>
         <On Terms="Behavior.AP_UnderConstructionOrDeadTracker.On" Send="Create"/>
         <On Terms="Behavior.AP_UnderConstructionOrDeadTracker.Off" Send="Destroy"/>
         <On Terms="ActorCreation; !ValidateUnit AP_UsesWarpInGlitch" Target="_Unit" Send="$Birth 0 0.000000 0.000000 5.000000 AsDuration"/>
@@ -23348,7 +23401,19 @@
         <ImpactMap index="None" Sound="AP_ScoutMP_GroundAttackImpact"/>
         <ImpactModel value="AP_ScoutMPGroundAttackModel"/>
     </CActorAction>
+    <CActorAction id="AP_ScoutMPGroundAttackLight" parent="GenericAttack" effectLaunch="AP_ScoutMPGroundLight">
+        <LaunchModel value="AP_ScoutMPGroundAttackModel"/>
+        <LaunchAssets Model="AP_ScoutMPGroundAttackLaunch" Sound="AP_ScoutMPGroundAttackLaunch"/>
+        <ImpactMap index="None" Model="AP_ScoutMPGroundAttackImpact" Sound="AP_ScoutMP_GroundAttackImpact"/>
+        <ImpactModel value="AP_ScoutMPGroundAttackModel"/>
+    </CActorAction>
     <CActorAction id="AP_ScoutMPGroundAttackUpgraded" parent="GenericAttack" effectLaunch="AP_ScoutMPGroundUpgraded">
+        <LaunchModel value="AP_ScoutMPGroundAttackModel"/>
+        <LaunchAssets Model="AP_ScoutMPGroundAttackLaunch" Sound="AP_ScoutMPGroundAttackLaunch"/>
+        <ImpactMap index="None" Model="AP_ScoutMPGroundAttackImpact" Sound="AP_ScoutMP_GroundAttackImpact"/>
+        <ImpactModel value="AP_ScoutMPGroundAttackModel"/>
+    </CActorAction>
+    <CActorAction id="AP_ScoutMPGroundAttackUpgradedLight" parent="GenericAttack" effectLaunch="AP_ScoutMPGroundUpgradedLight">
         <LaunchModel value="AP_ScoutMPGroundAttackModel"/>
         <LaunchAssets Model="AP_ScoutMPGroundAttackLaunch" Sound="AP_ScoutMPGroundAttackLaunch"/>
         <ImpactMap index="None" Model="AP_ScoutMPGroundAttackImpact" Sound="AP_ScoutMP_GroundAttackImpact"/>
@@ -23738,6 +23803,9 @@
         <Macros value="PhysicsDeathsSwarmAir"/>
         <Macros value="PhysicsDeathsVoidAir"/>
         <On Terms="UnitBirth.AP_MothershipTaldarim" Send="Create"/>
+        <On Terms="UnitBirth.AP_SOAMothershipv4Placement" Send="Create"/>
+        <On Terms="UnitConstruction.AP_SOAMothershipv4Placement.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_SOAMothershipv4Placement.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <!--        <On Terms="Abil.Vortex.SourceCastStart" Send="$Spell"/>-->
         <On Terms="Effect.AP_SOAMothershipBlinkCP.Start" Send="SetOpacity 0.050000 0.375000"/>
         <On Terms="Effect.AP_SOAMothershipBlinkTeleport.Stop" Send="SetOpacity 1.000000 0.625000"/>
@@ -28896,6 +28964,7 @@
     <CActorUnit id="AP_InfestedSiegeBreaker" parent="GenericUnitMorph" unitName="AP_InfestedSiegeBreaker">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="UnitBirth.AP_InfestedSiegeBreaker" Send="Create AP_InfestedSiegeBreakerInfestation"/>
         <On Terms="Behavior.AP_MercGroundDrop.Create" Send="Create AP_SiegeBreakerDropModel"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create AP_SiegeTank_Land"/>
@@ -28964,6 +29033,7 @@
     </CActorAction>
     <CActorUnit id="AP_InfestedSiegeBreakerSiegeModeMorphModel" parent="GenericUnitBaseMorphTransition" unitName="AP_InfestedSiegeBreakerSiegeModeMorphModel">
         <Aliases value="_UnitLarge"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreakerSieged" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreakerSiegedTransportable" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreakerSieged" Send="AnimPlay Start Morph,Start"/>
@@ -29008,6 +29078,7 @@
     <CActorUnit id="AP_InfestedSiegeBreakerSieged" parent="GenericUnitMorph" unitName="AP_InfestedSiegeBreakerSieged">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="UnitBirth.AP_InfestedSiegeBreakerSiegedTransportable" Send="Create"/>
         <On Terms="AbilMorph.*.Finish; MorphTo AP_InfestedSiegeBreakerSiegedTransportable" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphFrom AP_InfestedSiegeBreakerSiegedTransportable" Send="Destroy"/>
@@ -29113,6 +29184,7 @@
     </CActorRange>
     <CActorUnit id="AP_InfestedSiegeBreakerTankModeMorphModel" parent="GenericUnitBaseMorphTransition" unitName="AP_InfestedSiegeBreakerTankModeMorphModel">
         <Aliases value="_UnitLarge"/>
+        <CreepHeightClass value="Tiny"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreaker" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo AP_InfestedSiegeBreaker" Send="AnimPlay End Morph,End"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom AP_InfestedSiegeBreaker" Send="Destroy"/>
@@ -29155,6 +29227,7 @@
     </CActorUnit>
     <CActorModel id="AP_InfestedSiegeBreakerInfestation" parent="ModelAddition">
         <Model value="NeuralParasiteModel"/>
+        <CreepHeightClass value="Tiny"/>
         <HostSiteOps Ops="SOpAttachHead"/>
         <On Terms="UnitDeath" Send="Destroy"/>
     </CActorModel>
@@ -31914,6 +31987,8 @@
         <On Terms="Effect.AP_VoidRayChargeBeamBounce3Damage.Start; At Effect; FromEffectTreeDescendant" Send="ActionDamage"/>
         <On Terms="Effect.AP_VoidRayChargeBeamBounceDamageUpgraded.Start" Send="Create"/>
         <On Terms="Effect.AP_VoidRayChargeBeamBounceDamageUpgraded.Start; At Effect; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.AP_VoidRayChargeBeamBounce3DamageUpgraded.Start" Send="Create"/>
+        <On Terms="Effect.AP_VoidRayChargeBeamBounce3DamageUpgraded.Start; At Effect; FromEffectTreeDescendant" Send="ActionDamage"/>
         <On Terms="ActorCreation" Send="TimerSet 0.900000 DelayDeath"/>
         <On Terms="TimerExpired; TimerName DelayDeath" Send="Destroy"/>
         <LaunchRequest Subject="AP_VoidRayChargeBeamBounceAttackBeam1ImpactSite" Actor="Find"/>
@@ -43975,6 +44050,7 @@
         <On Terms="UnitRevive.AP_ElderProbe" Send="Create"/>
         <On Terms="UnitRevive.AP_ElderProbe" Send="RefSet ::HostTurretBody _Selectable"/>
         <On Terms="UnitConstruction.AP_ElderProbe.Start" Send="Create"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Start" Send="Create AP_ElderProbeWarpin"/>
         <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="AnimPlay ConstructionDeath Stand,Birth,Death FullMatch"/>
         <Model value="AP_ElderProbe"/>
         <BuildModel value="AP_ElderProbe"/>
@@ -44049,21 +44125,18 @@
         <On Terms="ActorCreation" Send="TimerSet 0.000000 Start"/>
         <On Terms="Signal.*.WarpIn" Target="_Unit" Send="SetOpacity"/>
         <On Terms="TimerExpired; TimerName Start" Send="Signal WarpIn"/>
-        <On Terms="Signal.*.WarpIn" Send="TimerSet 5.000000 WarpIn"/>
         <On Terms="Signal.*.WarpIn" Send="TimerSet 2.000000 Opacity"/>
         <On Terms="TimerExpired; TimerName Opacity" Target="_Unit" Send="SetOpacity 1.000000 3.000000"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="AnimSetCompletion BSD 40.000000"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="SetOpacity 0.000000 2.000000"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="TimerSet 2.000000 Destroy"/>
-        <On Terms="Signal.*.WarpIn" Target="_Unit" Send="AnimSetTimeScaleGlobal 0.001000 AP_WarpIn"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Target="_Unit" Send="AnimSetTimeScaleGlobal 1.000000 AP_WarpIn"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="AnimSetCompletion BSD 40.000000"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="SetOpacity 0.000000 2.000000"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="TimerSet 2.000000 Destroy"/>
         <On Terms="Behavior.AP_ElderProbeWarpin.On" Send="Create"/>
         <On Terms="Signal.*.WarpIn" Send="Create WarpTrainStart"/>
         <On Terms="Signal.*.WarpIn" Send="Create WarpTrainLoop"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Target="WarpTrainLoop" Send="Destroy"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="Create WarpTrainStop"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Target="WarpTrainLoop" Send="Destroy"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="Create WarpTrainStop"/>
         <On Terms="TimerExpired; TimerName Destroy" Send="Destroy"/>
-        <On Terms="TimerExpired; TimerName WarpIn" Send="Create AP_ElderProbeWarpinSound"/>
+        <On Terms="UnitConstruction.AP_ElderProbe.Finish" Send="Create AP_ElderProbeWarpinSound"/>
         <HostSiteOps Ops="SOpAttachHardPoint AP_ProbeWarpinOffset"/>
         <Model value="AP_ProbeWarpin"/>
         <Scale value="0.700000,0.600000,0.600000"/>

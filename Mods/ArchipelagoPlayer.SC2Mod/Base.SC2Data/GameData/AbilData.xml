@@ -5557,7 +5557,7 @@
         <Flags index="KillOnFinish" value="1"/>
         <Flags index="Select" value="1"/>
         <Flags index="WaitForFood" value="0"/>
-        <MorphUnit value="AP_ImpalerEgg"/>
+        <MorphUnit value="AP_ImpalerEggMorphling"/>
         <InfoArray index="Train1" Time="40" Alert="MorphComplete_Zerg">
             <Button DefaultButtonFace="AP_Impaler" Requirements="AP_HaveImpalerDen">
                 <Flags index="ShowInGlossary" value="1"/>
@@ -5603,7 +5603,7 @@
         <Flags index="KillOnFinish" value="1"/>
         <Flags index="Select" value="1"/>
         <Flags index="WaitForFood" value="0"/>
-        <MorphUnit value="AP_HydraliskLurkerEgg"/>
+        <MorphUnit value="AP_HydraliskLurkerEggMorphling"/>
         <InfoArray index="Train1" Time="40" Alert="MorphComplete_Zerg">
             <Button DefaultButtonFace="AP_Lurker" Requirements="AP_HaveLurkerDen">
                 <Flags index="ShowInGlossary" value="1"/>
@@ -6400,15 +6400,11 @@
         <Cost>
             <Cooldown Link="AP_ImmortalShakurasShadowCannon" Location="Unit" TimeUse="45"/>
         </Cost>
-        <TargetFilters value="Ground;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters value="-;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="13"/>
         <Arc value="360"/>
         <PrepTime value="0.0625"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ImmortalShakurasShadowCannon" Requirements="AP_NotShowAnnihilatorAerialTracking"/>
-    </CAbilEffectTarget>
-    <CAbilEffectTarget id="AP_ImmortalShakurasShadowCannonAA" parent="AP_ImmortalShakurasShadowCannon">
-        <TargetFilters index="0" value="-;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ImmortalShakurasShadowCannon" Requirements="AP_ShowAnnihilatorAerialTracking"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="AP_ImmortalShakurasShadowCannon"/>
     </CAbilEffectTarget>
     <CAbilEffectInstant id="AP_ImmortalBarrierBase">
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
@@ -6680,7 +6676,7 @@
             </Charge>
             <Button DefaultButtonFace="AP_Arbiter" State="Restricted"/>
         </InfoArray>
-        <InfoArray index="Train9" Time="5" Unit="AP_SOAMothershipv4">
+        <InfoArray index="Train9" Time="5" Unit="AP_SOAMothershipv4Placement">
             <Charge Location="Unit">
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -7346,6 +7342,17 @@
         <Flags index="IgnoreUnitCost" value="1"/>
         <Flags index="IgnoreFood" value="1"/>
         <InfoArray Unit="AP_MothershipTaldarim" CollideRange="0"/>
+    </CAbilMorph>
+    <CAbilMorph id="AP_AutoMorphToSOAMothershipv4">
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Structures"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Raise"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="Automatic" value="1"/>
+        <Flags index="IgnorePlacement" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="IgnoreUnitCost" value="1"/>
+        <Flags index="IgnoreFood" value="1"/>
+        <InfoArray Unit="AP_SOAMothershipv4" CollideRange="0"/>
     </CAbilMorph>
     <CAbilEffectTarget id="AP_InduceScopophobia">
         <EditorCategories value="AbilityorEffectType:Units,Race:Protoss"/>
@@ -9723,7 +9730,7 @@
         <Flags index="IgnoreFacing" value="1"/>
         <Flags index="IgnoreFood" value="1"/>
         <Flags index="IgnoreUnitCost" value="1"/>
-        <Flags index="Produce" value="1"/>
+        <Flags index="Produce" value="0"/>
         <Flags index="Rally" value="1"/>
         <Flags index="ShowProgress" value="1"/>
         <Flags index="SuppressMovement" value="1"/>
@@ -12670,7 +12677,7 @@
         <Flags index="IgnoreFacing" value="1"/>
         <Flags index="IgnoreFood" value="1"/>
         <Flags index="IgnoreUnitCost" value="1"/>
-        <Flags index="Produce" value="1"/>
+        <Flags index="Produce" value="0"/>
         <Flags index="Rally" value="1"/>
         <Flags index="ShowProgress" value="1"/>
         <Flags index="SuppressMovement" value="1"/>
@@ -14765,12 +14772,21 @@
                 <Location value="Player"/>
                 <TimeStart value="60"/>
             </Charge>
+            <Cooldown Location="Player" TimeStart="60" TimeUse="60"/>
         </Cost>
         <Range value="500"/>
         <Arc value="360"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="AP_ElderProbes" Requirements="AP_HaveElderProbes"/>
         <PlaceUnit value="AP_ElderProbe"/>
     </CAbilEffectTarget>
+    <CAbilBuild id="AP_ElderProbeBuild">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <FlagArray index="PeonMaintained" value="0"/>
+        <InfoArray index="Build1" Unit="AP_ElderProbe" Time="5">
+            <Button DefaultButtonFace="AP_ElderProbes"/>
+        </InfoArray>
+    </CAbilBuild>
     <CAbilWarpTrain id="AP_ProbeWarpin">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <InfoArray index="Train1" Time="5" Unit="AP_Probe">
@@ -14783,6 +14799,20 @@
             </Charge>
             <Cooldown Location="Unit"/>
             <Button DefaultButtonFace="AP_ProbeWarpin" Requirements="AP_HaveProbeWarpin">
+                <Flags index="AllowMinimap" value="1"/>
+                <Flags index="AllowSelfCast" value="1"/>
+            </Button>
+        </InfoArray>
+        <Flags index="WarpTrainersButton" value="0"/>
+    </CAbilWarpTrain>
+    <CAbilWarpTrain id="AP_ElderProbeWarpinBackground">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <InfoArray index="Train1" Time="5" Unit="AP_ElderProbe">
+            <Charge>
+                <Location value="Unit"/>
+            </Charge>
+            <Cooldown Location="Unit"/>
+            <Button DefaultButtonFace="AP_ElderProbes" Requirements="AP_HaveElderProbes">
                 <Flags index="AllowMinimap" value="1"/>
                 <Flags index="AllowSelfCast" value="1"/>
             </Button>

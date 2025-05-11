@@ -66,11 +66,19 @@
 <Sound id="zMission_MultiMissionCallouts_Kerrigan_026"/>
 <Sound id="zMission_MultiMissionCallouts_ZergAdjutant_031"/>
 <Sound id="zMission_MultiMissionCallouts_ZergAdjutant_032"/>
+<Sound id="zEvoMission_Baneling_ZExpedition03Stalker_028"/>
+<Sound id="zMission_Hybrid03_TrueFormNarud_038"/>
+<Sound id="zMission_Hybrid03_Kerrigan_049"/>
+<Sound id="zMission_Hybrid03_TaldarimZealot_100"/>
+<Sound id="zMission_Hybrid03_TrueFormNarud_114"/>
+<Sound id="zBriefing_Hybrid03_Stukov_014"/>
 <Sound id="zBriefing_Expedition01_Kerrigan_019"/>
 <Sound id="zBriefing_Expedition01_ZergAdjutant_023"/>
 <Sound id="zBriefing_Expedition01_Kerrigan_026"/>
 <Sound id="zBriefing_Expedition01_ZergAdjutant_027"/>
 <Sound id="zBriefing_Expedition01_ZergAdjutant_028"/>
+<Sound id="zMission_Lab02_Raynor_008"/>
+<Sound id="zMission_Space01_Valerian_075"/>
 <Sound id="zMission_Expedition01_Kerrigan_001"/>
 <Sound id="zMission_Expedition01_ExepeditionLeader_002"/>
 <Sound id="zMission_Expedition01_ZergAdjutant_007"/>
@@ -153,6 +161,9 @@
 <Sound id="zMission_Expedition01_ZergAdjutant_150"/>
 <Sound id="zMission_Expedition01_ZergAdjutant_151"/>
 <Sound id="zMission_Expedition01_ZergAdjutant_152"/>
+<Sound id="zMission_Expedition01_Swann_456"/>
+<Sound id="zMission_Expedition01_Raynor_457"/>
+<Sound id="zMission_Expedition01_Tychus_458"/>
 <Soundtrack id="ZExpedition01MusicCutscene07_MissionVictory"/>
 <Soundtrack id="ZExpedition01MusicEvent01_FeralRoach"/>
 <Soundtrack id="ZExpedition01MusicEvent02_FlashFreeze"/>
@@ -221,7 +232,6 @@
 <Unit id="AP_SpineCrawler"/>
 <Unit id="AP_ZealotAiur"/>
 <Unit id="AP_SentryAiur"/>
-<Unit id="AP_ZealotShakuras"/>
 <Unit id="AP_Slayer"/>
 <Unit id="AP_Gateway"/>
 <Unit id="AP_Pylon"/>

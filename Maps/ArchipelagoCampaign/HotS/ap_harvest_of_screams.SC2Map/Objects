@@ -3907,10 +3907,11 @@
         <AIRebuild Index="3" Value="0"/>
         <AIRebuild Index="4" Value="0"/>
     </ObjectUnit>
-    <ObjectUnit Id="1986504282" Position="131.2282,21.0998,0" Rotation="5.5766" Scale="1,1,1" UnitType="AP_Marine" Player="1">
+    <ObjectUnit Id="1986504282" Position="131.2282,21.0998,0" Rotation="3.228" Scale="1,1,1" UnitType="AP_Marine" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="93" Position="122.7773,53.106,0" Rotation="0.6152" Scale="1,1,1" UnitType="Yeti" Player="10"/>
+    <ObjectUnit Id="679641781" Position="132.5,22.5,0" Rotation="3.2448" Scale="1,1,1" UnitType="AP_ZealotAiur" Player="1"/>
     <ObjectUnit Id="5737193" Position="92,63,0" Scale="1,1,1" UnitType="AP_Pylon" Player="2">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
@@ -3921,7 +3922,7 @@
         <AIRebuild Index="3" Value="0"/>
         <AIRebuild Index="4" Value="0"/>
     </ObjectUnit>
-    <ObjectUnit Id="1083329252" Position="133.2734,20.9135,0" Rotation="3.6577" Scale="1,1,1" UnitType="AP_SentryAiur" Player="1">
+    <ObjectUnit Id="1083329252" Position="133.2734,20.9135,0" Rotation="3.2175" Scale="1,1,1" UnitType="AP_SentryAiur" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="523" Position="68.5,91.5,0" Scale="1,1,1" UnitType="IceProtossCrates"/>
@@ -3995,9 +3996,6 @@
     </ObjectUnit>
     <ObjectUnit Id="73" Position="109,108,0" Scale="1,1,1" UnitType="Pylon" Player="6"/>
     <ObjectUnit Id="621" Position="100.501,72.2805,0" Rotation="5.4687" Scale="1,1,1" UnitType="AP_Roach" Player="1"/>
-    <ObjectUnit Id="1408931144" Position="100.5305,71.9067,0" Rotation="4.512" Scale="1,1,1" UnitType="AP_Slayer" Player="1">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
     <ObjectUnit Id="1048" Position="35.6494,50.8686,0" Rotation="3.7314" Scale="1,1,1" UnitType="Zealot" Player="5">
         <Flag Index="ForcePlacement" Value="1"/>
         <AIRebuild Index="2" Value="0"/>
@@ -4296,7 +4294,7 @@
         <AIRebuild Index="3" Value="0"/>
         <AIRebuild Index="4" Value="0"/>
     </ObjectUnit>
-    <ObjectUnit Id="205827036" Position="135.171,21.0212,0" Rotation="5.2348" Scale="1,1,1" UnitType="AP_Marine" Player="1">
+    <ObjectUnit Id="205827036" Position="135.171,21.0212,0" Rotation="3.2478" Scale="1,1,1" UnitType="AP_Marine" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1359" Position="12.0183,77.017,0" Rotation="3.1958" Scale="1,1,1" UnitType="NaturalMinerals"/>
@@ -4320,7 +4318,7 @@
     <ObjectUnit Id="158638012" Position="132.938,19.602,0" Rotation="4.5761" Scale="1,1,1" UnitType="AP_Medic" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
-    <ObjectUnit Id="739874400" Position="134.3925,20.1755,0" Rotation="0.8864" Scale="1,1,1" UnitType="AP_Marine" Player="1">
+    <ObjectUnit Id="739874400" Position="134.3925,20.1755,0" Rotation="3.1613" Scale="1,1,1" UnitType="AP_Marine" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="130" Variation="6" Position="130,110.5,0" Scale="1,1,1" UnitType="MineralField" Resources="1400">
@@ -4609,7 +4607,7 @@
         <AIRebuild Index="4" Value="0"/>
     </ObjectUnit>
     <ObjectUnit Id="1356" Position="15.8483,73.7402,0" Rotation="2.759" Scale="1,1,1" UnitType="NaturalGas"/>
-    <ObjectUnit Id="1001618478" Position="131.5837,22.1733,0" Rotation="2.798" Scale="1,1,1" UnitType="AP_Marine" Player="1">
+    <ObjectUnit Id="1001618478" Position="131.5837,22.1733,0" Rotation="3.1691" Scale="1,1,1" UnitType="AP_Marine" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="1191" Position="15.9685,82.3308,0" Rotation="0.691" Scale="1,1,1" UnitType="Yeti" Player="10">
@@ -4707,9 +4705,6 @@
         <AIRebuild Index="2" Value="0"/>
         <AIRebuild Index="3" Value="0"/>
         <AIRebuild Index="4" Value="0"/>
-    </ObjectUnit>
-    <ObjectUnit Id="1282959517" Position="16.3422,94.8806,0" Rotation="5.109" Scale="1,1,1" UnitType="AP_Slayer" Player="1">
-        <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="251" Position="96.0361,23.15,0" Rotation="2.6862" Scale="1,1,1" UnitType="Yeti" Player="10"/>
     <ObjectUnit Id="692" Position="103,77,0" Rotation="4.5822" Scale="0.8498,0.8498,0.8498" UnitType="DestructibleIce6x6"/>
@@ -4812,7 +4807,7 @@
         <Resources Index="4" Value="1150"/>
     </ObjectUnit>
     <ObjectUnit Id="1317" Position="27.8383,106.3806,0" Rotation="5.1901" Scale="1,1,1" UnitType="Zealot" Player="4"/>
-    <ObjectUnit Id="174347269" Position="134.7124,21.7966,0" Rotation="1.832" Scale="1,1,1" UnitType="AP_ZealotAiur" Player="1">
+    <ObjectUnit Id="174347269" Position="134.5,22,0" Rotation="3.2663" Scale="1,1,1" UnitType="AP_ZealotAiur" Player="1">
         <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="55" Position="42,55,0" Rotation="3.9396" Scale="1,1,1" UnitType="PhotonCannon" Player="5">
@@ -4830,9 +4825,6 @@
         <AIRebuild Index="2" Value="0"/>
         <AIRebuild Index="3" Value="0"/>
         <AIRebuild Index="4" Value="0"/>
-    </ObjectUnit>
-    <ObjectUnit Id="2119392104" Position="121.9914,133.8737,0" Rotation="0.8041" Scale="1,1,1" UnitType="AP_Slayer" Player="1">
-        <Flag Index="ForcePlacement" Value="1"/>
     </ObjectUnit>
     <ObjectUnit Id="384" Position="120.3198,136.9824,0" Rotation="5.6562" Scale="1,1,1" UnitType="AP_Roach" Player="1"/>
     <ObjectUnit Id="1421" Position="32.5,81.5,0" Rotation="1.9101" Scale="1,1,1" UnitType="CreepBlocker1x1"/>
@@ -5053,9 +5045,6 @@
     </ObjectUnit>
     <ObjectUnit Id="401" Position="13.947,93.4626,0" Rotation="0.8554" Scale="1,1,1" UnitType="AP_Roach" Player="1"/>
     <ObjectUnit Id="63" Position="39.5,22.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="Stargate" Player="5"/>
-    <ObjectUnit Id="2117958303" Position="132.717,22.7568,0" Rotation="1.1137" Scale="1,1,1" UnitType="AP_ZealotShakuras" Player="1">
-        <Flag Index="ForcePlacement" Value="1"/>
-    </ObjectUnit>
     <ObjectUnit Id="624" Position="41.5,106.5,0" Rotation="5.4975" Scale="1,1,1" UnitType="CyberneticsCore" Player="4"/>
     <ObjectUnit Id="8" Position="34,75,0" Rotation="3.385" Scale="1,1,1" UnitType="PhotonCannon" Player="4">
         <AIRebuild Index="2" Value="0"/>
@@ -5249,112 +5238,106 @@
         <GroupObject Id="199267117"/>
         <GroupObject Id="1258085728"/>
         <GroupObject Id="660945145"/>
-        <GroupObject Id="1408931144"/>
         <GroupObject Id="1429485685"/>
         <GroupObject Id="1150140062"/>
         <GroupObject Id="1932936568"/>
         <GroupObject Id="1104582393"/>
         <GroupObject Id="111277778"/>
         <GroupObject Id="1669415182"/>
-        <GroupObject Id="1282959517"/>
         <GroupObject Id="1240498509"/>
-        <GroupObject Id="2119392104"/>
         <GroupObject Id="196042488"/>
     </Group>
     <Group Type="ObjectUnit" Name="RaceDependingUnits" Id="8">
-        <GroupObject Id="258394241"/>
-        <GroupObject Id="395"/>
-        <GroupObject Id="398"/>
-        <GroupObject Id="1953236800"/>
-        <GroupObject Id="199267117"/>
-        <GroupObject Id="508"/>
-        <GroupObject Id="1258085728"/>
-        <GroupObject Id="1528058695"/>
-        <GroupObject Id="1986504282"/>
-        <GroupObject Id="5737193"/>
-        <GroupObject Id="1083329252"/>
-        <GroupObject Id="385"/>
         <GroupObject Id="1"/>
-        <GroupObject Id="274817700"/>
-        <GroupObject Id="85"/>
-        <GroupObject Id="660945145"/>
-        <GroupObject Id="775234705"/>
-        <GroupObject Id="393"/>
-        <GroupObject Id="640323957"/>
-        <GroupObject Id="193303730"/>
-        <GroupObject Id="396"/>
-        <GroupObject Id="1408931144"/>
-        <GroupObject Id="621"/>
-        <GroupObject Id="80"/>
-        <GroupObject Id="96211633"/>
-        <GroupObject Id="1541252420"/>
-        <GroupObject Id="1605555453"/>
-        <GroupObject Id="113"/>
-        <GroupObject Id="1429485685"/>
-        <GroupObject Id="1150140062"/>
-        <GroupObject Id="724434927"/>
-        <GroupObject Id="189"/>
-        <GroupObject Id="690"/>
-        <GroupObject Id="289"/>
-        <GroupObject Id="1316110461"/>
-        <GroupObject Id="373"/>
-        <GroupObject Id="176"/>
-        <GroupObject Id="981629965"/>
-        <GroupObject Id="1063731805"/>
-        <GroupObject Id="194"/>
-        <GroupObject Id="205827036"/>
-        <GroupObject Id="739874400"/>
-        <GroupObject Id="1932936568"/>
-        <GroupObject Id="740509687"/>
-        <GroupObject Id="1323"/>
-        <GroupObject Id="191"/>
-        <GroupObject Id="1330"/>
-        <GroupObject Id="1104582393"/>
-        <GroupObject Id="255"/>
-        <GroupObject Id="111277778"/>
-        <GroupObject Id="2048050809"/>
-        <GroupObject Id="267"/>
-        <GroupObject Id="1669415182"/>
-        <GroupObject Id="1570551363"/>
-        <GroupObject Id="188"/>
-        <GroupObject Id="196"/>
-        <GroupObject Id="1630511814"/>
-        <GroupObject Id="1001618478"/>
-        <GroupObject Id="193"/>
-        <GroupObject Id="68992582"/>
-        <GroupObject Id="1322"/>
-        <GroupObject Id="190"/>
-        <GroupObject Id="1282959517"/>
-        <GroupObject Id="1331"/>
-        <GroupObject Id="1240498509"/>
-        <GroupObject Id="500683664"/>
-        <GroupObject Id="860243769"/>
-        <GroupObject Id="1498493750"/>
-        <GroupObject Id="575055594"/>
-        <GroupObject Id="174347269"/>
-        <GroupObject Id="2119392104"/>
-        <GroupObject Id="384"/>
-        <GroupObject Id="1259783169"/>
-        <GroupObject Id="473"/>
-        <GroupObject Id="196042488"/>
-        <GroupObject Id="1104784462"/>
-        <GroupObject Id="1602855577"/>
-        <GroupObject Id="619"/>
-        <GroupObject Id="394"/>
-        <GroupObject Id="1253742639"/>
-        <GroupObject Id="112"/>
         <GroupObject Id="2"/>
-        <GroupObject Id="1210990174"/>
-        <GroupObject Id="837786247"/>
-        <GroupObject Id="1212405304"/>
+        <GroupObject Id="80"/>
+        <GroupObject Id="85"/>
+        <GroupObject Id="112"/>
+        <GroupObject Id="113"/>
+        <GroupObject Id="176"/>
+        <GroupObject Id="188"/>
+        <GroupObject Id="189"/>
+        <GroupObject Id="190"/>
+        <GroupObject Id="191"/>
+        <GroupObject Id="193"/>
+        <GroupObject Id="194"/>
+        <GroupObject Id="196"/>
+        <GroupObject Id="255"/>
+        <GroupObject Id="267"/>
+        <GroupObject Id="289"/>
+        <GroupObject Id="373"/>
+        <GroupObject Id="384"/>
+        <GroupObject Id="385"/>
+        <GroupObject Id="393"/>
+        <GroupObject Id="394"/>
+        <GroupObject Id="395"/>
+        <GroupObject Id="396"/>
+        <GroupObject Id="398"/>
+        <GroupObject Id="401"/>
         <GroupObject Id="465"/>
         <GroupObject Id="468"/>
-        <GroupObject Id="401"/>
-        <GroupObject Id="2117958303"/>
-        <GroupObject Id="550836681"/>
-        <GroupObject Id="1734219373"/>
-        <GroupObject Id="425265124"/>
-        <GroupObject Id="1082562692"/>
+        <GroupObject Id="473"/>
+        <GroupObject Id="508"/>
+        <GroupObject Id="619"/>
+        <GroupObject Id="621"/>
+        <GroupObject Id="690"/>
+        <GroupObject Id="1322"/>
+        <GroupObject Id="1323"/>
+        <GroupObject Id="1330"/>
+        <GroupObject Id="1331"/>
+        <GroupObject Id="5737193"/>
+        <GroupObject Id="68992582"/>
+        <GroupObject Id="96211633"/>
+        <GroupObject Id="111277778"/>
         <GroupObject Id="158638012"/>
+        <GroupObject Id="174347269"/>
+        <GroupObject Id="193303730"/>
+        <GroupObject Id="196042488"/>
+        <GroupObject Id="199267117"/>
+        <GroupObject Id="205827036"/>
+        <GroupObject Id="258394241"/>
+        <GroupObject Id="274817700"/>
+        <GroupObject Id="425265124"/>
+        <GroupObject Id="500683664"/>
+        <GroupObject Id="550836681"/>
+        <GroupObject Id="575055594"/>
+        <GroupObject Id="640323957"/>
+        <GroupObject Id="660945145"/>
+        <GroupObject Id="679641781"/>
+        <GroupObject Id="724434927"/>
+        <GroupObject Id="739874400"/>
+        <GroupObject Id="740509687"/>
+        <GroupObject Id="775234705"/>
+        <GroupObject Id="837786247"/>
+        <GroupObject Id="860243769"/>
+        <GroupObject Id="981629965"/>
+        <GroupObject Id="1001618478"/>
+        <GroupObject Id="1063731805"/>
+        <GroupObject Id="1082562692"/>
+        <GroupObject Id="1083329252"/>
+        <GroupObject Id="1104582393"/>
+        <GroupObject Id="1104784462"/>
+        <GroupObject Id="1150140062"/>
+        <GroupObject Id="1210990174"/>
+        <GroupObject Id="1212405304"/>
+        <GroupObject Id="1240498509"/>
+        <GroupObject Id="1253742639"/>
+        <GroupObject Id="1258085728"/>
+        <GroupObject Id="1259783169"/>
+        <GroupObject Id="1316110461"/>
+        <GroupObject Id="1429485685"/>
+        <GroupObject Id="1498493750"/>
+        <GroupObject Id="1528058695"/>
+        <GroupObject Id="1541252420"/>
+        <GroupObject Id="1570551363"/>
+        <GroupObject Id="1602855577"/>
+        <GroupObject Id="1605555453"/>
+        <GroupObject Id="1630511814"/>
+        <GroupObject Id="1669415182"/>
+        <GroupObject Id="1734219373"/>
+        <GroupObject Id="1932936568"/>
+        <GroupObject Id="1953236800"/>
+        <GroupObject Id="1986504282"/>
+        <GroupObject Id="2048050809"/>
     </Group>
 </PlacedObjects>

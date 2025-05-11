@@ -3083,17 +3083,9 @@
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
         <NodeArray index="Use" Link="AP_CountUpgradeImmortalImprovedBarrierCompleteOnly"/>
     </CRequirement>
-    <CRequirement id="AP_HaveAnnihilatorAerialTracking">
+    <CRequirement id="AP_HaveAnnihilatorTwilightChassis">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Use" Link="AP_CountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
-    </CRequirement>
-    <CRequirement id="AP_ShowAnnihilatorAerialTracking">
-        <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_CountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
-    </CRequirement>
-    <CRequirement id="AP_NotShowAnnihilatorAerialTracking">
-        <EditorCategories value="Race:Protoss,TechType:Ability"/>
-        <NodeArray index="Show" Link="AP_NotCountUpgradeAnnihilatorAerialTrackingCompleteOnly"/>
+        <NodeArray index="Use" Link="AP_CountUpgradeAnnihilatorTwilightChassisCompleteOnly"/>
     </CRequirement>
     <CRequirement id="AP_HaveDragoonEnchancedStriderServos">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
@@ -4613,5 +4605,14 @@
     </CRequirement>
     <CRequirement id="AP_HaveFastDelivery">
         <NodeArray index="Show" Link="AP_CountUpgradeFastDelivery"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveScoutGammaPhotonBlasters">
+        <NodeArray index="Show" Link="AP_CountUpgradeScoutGammaPhotonBlastersCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveDestroyerReforgedBloodshardCore">
+        <NodeArray index="Show" Link="AP_CountUpgradeDestroyerReforgedBloodshardCoreCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="AP_HaveOracleStasisWardUpgradeL2">
+        <NodeArray index="Show" Link="AP_CountUpgradeOracleStasisWardUpgradeL2CompleteOnly"/>
     </CRequirement>
 </Catalog>

@@ -4,6 +4,7 @@ AI/Name/E0C99455=Dominion P03
 Light/Name/DesertWorldGreen=DesertWorldGreen
 Light/Name/DesertWorldNight=Desert World Night
 Light/Name/THorner05SSecurityCam_Low=THorner05SSecurityCam_Low
+Model/Name/FenixPortrait=Fenix Portrait
 Sound/Name/AP_ProtossTransmissionFenix=AP_ProtossTransmissionFenix
 Sound/Name/AP_ProtossTransmissionReinforcements=AP_ProtossTransmissionReinforcements
 Sound/Name/AP_ProtossTransmissionStart=AP_ProtossTransmissionStart

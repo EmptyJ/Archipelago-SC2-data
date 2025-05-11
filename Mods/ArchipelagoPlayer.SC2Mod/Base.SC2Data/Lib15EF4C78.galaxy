@@ -30,6 +30,9 @@ void lib15EF4C78_InitVariables () {
         lib15EF4C78_gv_nM_HeroReviveCDLink[init_i] = "";
     }
     lib15EF4C78_gv_kerriganPsiStrikeEnergyCost = libNtve_gf_CostOfAbility("AP_PsiStrikeBlink", "Energy");
+    for (init_i = 0; init_i <= lib15EF4C78_gv_aP_SOA_ABILITY_COUNT; init_i += 1) {
+        lib15EF4C78_gv_aP_SoAAbilityStrings[init_i] = "";
+    }
     lib15EF4C78_gv_pM_ScreenMode = c_uiModeConsole;
     for (init_i = 0; init_i <= 20; init_i += 1) {
         lib15EF4C78_gv_pM_SoACasterGroup[init_i] = UnitGroupEmpty();
@@ -672,6 +675,23 @@ void lib15EF4C78_gf_PauseUnpauseSpearofAdunCooldowns (int lp_player, bool lp_pau
     else {
         lib15EF4C78_gv_pM_SoAPaused[lp_player] = false;
         UnitBehaviorRemove(lib15EF4C78_gv_pM_SoAUnit[lp_player], "AP_SOAAbilityDisable", 1);
+        libNtve_gf_PauseUnit(lib15EF4C78_gv_pM_SoAUnit[lp_player], false);
+        libNtve_gf_PauseUnit(lib15EF4C78_gv_sOA_CasterUnit[lp_player], false);
+    }
+}
+
+void lib15EF4C78_gf_PauseUnpauseSpearofAdunAutocasts (int lp_player, bool lp_pauseUnpause) {
+    // Automatic Variable Declarations
+    // Implementation
+    if ((lp_pauseUnpause == true)) {
+        if ((UnitHasBehavior2(lib15EF4C78_gv_pM_SoAAutonomousCaster[lp_player], "SOAAbilityDisable") == false)) {
+            UnitBehaviorAdd(lib15EF4C78_gv_pM_SoAAutonomousCaster[lp_player], "AP_SOAAbilityDisable", lib15EF4C78_gv_pM_SoAUnit[lp_player], 1);
+        }
+
+    }
+    else {
+        UnitBehaviorRemove(lib15EF4C78_gv_pM_SoAAutonomousCaster[lp_player], "AP_SOAAbilityDisable", 1);
+        libNtve_gf_PauseUnit(lib15EF4C78_gv_pM_SoAAutonomousCaster[lp_player], false);
     }
 }
 
@@ -694,13 +714,25 @@ void lib15EF4C78_gf_PM_SoACreateUnit (int lp_player) {
 }
 
 void lib15EF4C78_gf_AP_Player_CreateSoAUnit (int lp_player) {
+    // Variable Declarations
+    int lv_index;
+
     // Automatic Variable Declarations
+    const int auto2FD94C3F_ae = lib15EF4C78_gv_aP_SOA_ABILITY_COUNT;
+    const int auto2FD94C3F_ai = 1;
+
+    // Variable Initialization
+
     // Implementation
     lib15EF4C78_gf_PM_SoACreateUnit(lp_player);
     lib15EF4C78_gv_pM_SoAEnabledForPlayer[lp_player] = true;
     lib15EF4C78_gf_ShowSpearofAdunUI(true, c_transitionDurationDefault);
     lib15EF4C78_gf_PU_GPVisibilityAutoUpdate(true, c_transitionDurationDefault);
     TriggerExecute(lib15EF4C78_gt_PM_SoAStatusWatch, true, false);
+    lv_index = 0;
+    for ( ; ( (auto2FD94C3F_ai >= 0 && lv_index <= auto2FD94C3F_ae) || (auto2FD94C3F_ai < 0 && lv_index >= auto2FD94C3F_ae) ) ; lv_index += auto2FD94C3F_ai ) {
+        lib15EF4C78_gv_aP_SoAAbilityStrings[lv_index] = StringWord(lib15EF4C78_gv_aP_SOA_ABILITIES, lv_index);
+    }
 }
 
 void lib15EF4C78_gf_AP_Player_CreateSoAAutonomousCasterUnit (int lp_player) {
@@ -717,6 +749,30 @@ bool lib15EF4C78_gf_AP_Player_isSoaEnabledForPlayer (int lp_player) {
     // Automatic Variable Declarations
     // Implementation
     return lib15EF4C78_gv_pM_SoAEnabledForPlayer[lp_player];
+}
+
+void lib15EF4C78_gf_AP_Player_ResetSoA (int lp_player) {
+    // Variable Declarations
+    int lv_index;
+    string lv_abil;
+    string lv_cooldown;
+
+    // Automatic Variable Declarations
+    const int auto1FDA9E1B_ae = lib15EF4C78_gv_aP_SOA_ABILITY_COUNT;
+    const int auto1FDA9E1B_ai = 1;
+
+    // Variable Initialization
+    lv_cooldown = "";
+
+    // Implementation
+    lib15EF4C78_gf_SetSpearofAdunEnergy(lp_player, 0.0, lib15EF4C78_ge_SpearofAdunEnergyType_Percent);
+    lv_index = 0;
+    for ( ; ( (auto1FDA9E1B_ai >= 0 && lv_index <= auto1FDA9E1B_ae) || (auto1FDA9E1B_ai < 0 && lv_index >= auto1FDA9E1B_ae) ) ; lv_index += auto1FDA9E1B_ai ) {
+        lv_abil = (lib15EF4C78_gv_aP_SoAAbilityStrings[lv_index]);
+        lv_cooldown = CatalogFieldValueGet(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.Link", lp_player);
+        libNtve_gf_UnitAbilityRemoveCooldown(lib15EF4C78_gv_pM_SoAUnit[lp_player], lv_abil, lv_cooldown);
+        UnitAbilityAddCooldown(lib15EF4C78_gv_pM_SoAUnit[lp_player], lv_abil, lv_cooldown, libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, lv_abil, "Cost[" + IntToString(0) + "].Cooldown.TimeUse", lp_player));
+    }
 }
 
 void lib15EF4C78_gf_SetScreenModeCampaign (int lp_mode, fixed lp_duration) {
@@ -1744,7 +1800,7 @@ void lib15EF4C78_gf_AP_Player_findPrimaryTownHall (int lp_player) {
         if (lv_currentBuilding == null) { break; }
         if ((UnitHasBehavior2(lv_currentBuilding, "AP_ZerglingRespawnPrimary") == true)) {
             lib15EF4C78_gv_aP_Player_PrimaryTownHall[lp_player] = lv_currentBuilding;
-            break;
+            return ;
         }
 
     }
@@ -1768,7 +1824,9 @@ void lib15EF4C78_gf_AP_Player_findPrimaryTownHall (int lp_player) {
         lv_currentBuilding = UnitGroupUnitFromEnd(auto49757CBE_g, auto49757CBE_u);
         if (lv_currentBuilding == null) { break; }
         lib15EF4C78_gv_aP_Player_PrimaryTownHall[lp_player] = lv_currentBuilding;
-        break;
+        UnitCreateEffectUnit(lv_currentBuilding, "AP_ZerglingRespawnPrimaryRemoveOthers", lv_currentBuilding);
+        UnitBehaviorAdd(lv_currentBuilding, "AP_ZerglingRespawnPrimary", lv_currentBuilding, 1);
+        return ;
     }
 }
 
@@ -3185,7 +3243,7 @@ void lib15EF4C78_gf_RemoveUnusedStartingUnits (unitgroup lp_startingUnits, strin
             continue;
         }
 
-        if (((UnitGetType(autoA0E4A284_var) == "AP_Hatchery") || (UnitGetType(autoA0E4A284_var) == "AP_Lair") || (UnitGetType(autoA0E4A284_var) == "AP_Hive") || (UnitGetType(autoA0E4A284_var) == "AP_Nexus") || (UnitGetType(autoA0E4A284_var) == "AP_CommandCenter"))) {
+        if (((UnitGetType(autoA0E4A284_var) == "AP_Hatchery") || (UnitGetType(autoA0E4A284_var) == "AP_Lair") || (UnitGetType(autoA0E4A284_var) == "AP_Hive") || (UnitGetType(autoA0E4A284_var) == "AP_Nexus") || (UnitGetType(autoA0E4A284_var) == "AP_CommandCenter") || (UnitGetType(autoA0E4A284_var) == "AP_PlanetaryFortress"))) {
             if ((lp_hiveUpgrade == true)) {
                 lib15EF4C78_gf_ReplaceTownHall(autoA0E4A284_var, lp_desiredFaction, true);
             }
@@ -3274,7 +3332,8 @@ void lib15EF4C78_gf_ReplaceGasStructure (unit lp_gasStructure, string lp_desired
             autoEA05D24C_var = UnitGroupUnitFromEnd(autoEA05D24C_g, autoEA05D24C_u);
             if (autoEA05D24C_var == null) { break; }
             if (((UnitGetType(autoEA05D24C_var) == "VespeneGeyser") || (UnitGetType(autoEA05D24C_var) == "SpacePlatformGeyser"))) {
-                UnitRemove(autoEA05D24C_var);
+                libNtve_gf_SendActorMessageToUnit(autoEA05D24C_var, "AnimPlay Cover Cover PlayForever 0.000000 0.300000");
+                libNtve_gf_SendActorMessageToUnit(autoEA05D24C_var, "Signal Covered");
             }
 
         }
@@ -3532,10 +3591,11 @@ void lib15EF4C78_gf_AP_Player_MercCompoundUpdateAvailableCount (int lp_player) {
 void lib15EF4C78_gf_AP_Player_ResetMercenaryCooldowns (int lp_player) {
     // Variable Declarations
     int lv_index;
+    bool lv_hasInstantUses;
 
     // Automatic Variable Declarations
-    const int autoDC54778B_ae = lib15EF4C78_gv_aP_Player_MERC_COOLDOWN_LINK_SIZE;
-    const int autoDC54778B_ai = 1;
+    const int auto26E52026_ae = lib15EF4C78_gv_aP_Player_MERC_COOLDOWN_LINK_SIZE;
+    const int auto26E52026_ai = 1;
 
     // Variable Initialization
 
@@ -3543,9 +3603,17 @@ void lib15EF4C78_gf_AP_Player_ResetMercenaryCooldowns (int lp_player) {
     libNtve_gf_PlayerRemoveCooldown(lp_player, CatalogFieldValueGet(c_gameCatalogAbil, "AP_MercCooldownDummy", "Cost[" + IntToString(0) + "].Cooldown.Link", lp_player));
     PlayerAddCooldown(lp_player, CatalogFieldValueGet(c_gameCatalogAbil, "AP_MercCooldownDummy", "Cost[" + IntToString(0) + "].Cooldown.Link", c_playerAny), libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, "AP_MercCooldownDummy", "Cost[" + IntToString(0) + "].Cooldown.TimeStart", lp_player));
     lib15EF4C78_gf_AP_Player_ClearMercenaryCooldowns(lp_player);
+    if ((lib15EF4C78_gf_AP_Player_MercCompoundGetInstantUses(lp_player) > 0)) {
+        lv_hasInstantUses = true;
+    }
+
     lv_index = 0;
-    for ( ; ( (autoDC54778B_ai >= 0 && lv_index <= autoDC54778B_ae) || (autoDC54778B_ai < 0 && lv_index >= autoDC54778B_ae) ) ; lv_index += autoDC54778B_ai ) {
-        PlayerAddCooldown(lp_player, lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_index], libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, AbilityCommandGetAbility(lib15EF4C78_gv_aP_Player_MercAbilityCommands[lv_index]), "InfoArray[" + IntToString(AbilityCommandGetCommand(lib15EF4C78_gv_aP_Player_MercAbilityCommands[0])) + "].Cooldown.TimeStart", lp_player));
+    for ( ; ( (auto26E52026_ai >= 0 && lv_index <= auto26E52026_ae) || (auto26E52026_ai < 0 && lv_index >= auto26E52026_ae) ) ; lv_index += auto26E52026_ai ) {
+        if ((lv_hasInstantUses == true) && ((lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_INFANTRY) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_VEHICLE) || (lib15EF4C78_gv_aP_Player_MercType[lv_index] == lib15EF4C78_ge_AP_Player_MercenaryType_STARSHIP))) {
+        }
+        else {
+            PlayerAddCooldown(lp_player, lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_index], libNtve_gf_CatalogFieldValueGetAsReal(c_gameCatalogAbil, AbilityCommandGetAbility(lib15EF4C78_gv_aP_Player_MercAbilityCommands[lv_index]), "InfoArray[" + IntToString(AbilityCommandGetCommand(lib15EF4C78_gv_aP_Player_MercAbilityCommands[lv_index])) + "].Cooldown.TimeStart", lp_player));
+        }
     }
 }
 
@@ -3646,6 +3714,44 @@ void lib15EF4C78_gf_AP_Player_ClearMercenaryCooldownsZerg (int lp_player) {
     }
 }
 
+void lib15EF4C78_gf_AP_Player_AddMercenaryCooldown (int lp_player, fixed lp_addedCooldown) {
+    // Variable Declarations
+    int lv_index;
+    string lv_cooldownLink;
+
+    // Automatic Variable Declarations
+    const int auto51DBA9DC_ae = lib15EF4C78_gv_aP_Player_MERC_COOLDOWN_LINK_SIZE;
+    const int auto51DBA9DC_ai = 1;
+
+    // Variable Initialization
+    lv_cooldownLink = "";
+
+    // Implementation
+    lv_index = 0;
+    for ( ; ( (auto51DBA9DC_ai >= 0 && lv_index <= auto51DBA9DC_ae) || (auto51DBA9DC_ai < 0 && lv_index >= auto51DBA9DC_ae) ) ; lv_index += auto51DBA9DC_ai ) {
+        lv_cooldownLink = lib15EF4C78_gv_aP_Player_MercCooldownLinks[lv_index];
+        PlayerAddCooldown(lp_player, lv_cooldownLink, lp_addedCooldown);
+    }
+}
+
+void lib15EF4C78_gf_AP_Player_PauseMercenaryCooldowns (int lp_player, bool lp_pauseunpause) {
+    // Variable Declarations
+    int lv_index;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    if ((lp_pauseunpause == true)) {
+        PlayerPauseAllCooldowns(lp_player, true);
+    }
+
+    if ((lp_pauseunpause == false)) {
+        PlayerPauseAllCooldowns(lp_player, false);
+    }
+
+}
+
 void lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit (unit lp_unit) {
     // Variable Declarations
     string lv_behavior;
@@ -3661,7 +3767,8 @@ void lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit (unit lp_unit) {
     lv_index = 0;
     for ( ; ( (auto01D20A2A_ai >= 0 && lv_index <= auto01D20A2A_ae) || (auto01D20A2A_ai < 0 && lv_index >= auto01D20A2A_ae) ) ; lv_index += auto01D20A2A_ai ) {
         lv_behavior = (CatalogFieldValueGet(c_gameCatalogUnit, UnitGetType(lp_unit), "BehaviorArray[" + IntToString(lv_index) + "].Link", UnitGetOwner(lp_unit)));
-        if ((lv_behavior != null) && (lv_behavior != "")) {
+        if ((lv_behavior != null) && (lv_behavior != "") && (lv_behavior != "PowerUserBaseDefenseSmall") && (lv_behavior != "PowerUserQueueSmall") && (lv_behavior != "PowerUserQueue")) {
+            UnitBehaviorRemove(lp_unit, lv_behavior, c_unitBehaviorCountAll);
             UnitBehaviorAdd(lp_unit, lv_behavior, lp_unit, 1);
         }
 
@@ -3796,17 +3903,46 @@ void lib15EF4C78_gf_AP_Player_UtilTownHallAutoRally (int lp_player) {
 void lib15EF4C78_gf_AP_Player_applyMalignantCreepFix (unit lp_unit) {
     // Automatic Variable Declarations
     // Implementation
-    if ((UnitHasBehavior2(lp_unit, "AP_MalignantCreepFix") == true) && (CreepIsPresent(UnitGetPosition(lp_unit)) == true)) {
-        UnitSetPropertyFixed(lp_unit, c_unitPropLifeRegen, (UnitGetPropertyFixed(lp_unit, c_unitPropLifeRegen, c_unitPropCurrent) + 0.8202));
-        UnitBehaviorAdd(lp_unit, "AP_MalignantCreepAttack", lp_unit, 1);
-    }
-
+    lib15EF4C78_gf_AP_Player_ReapplyDefaultBehaviorsToUnit(lp_unit);
 }
 
 void lib15EF4C78_gf_AP_Player_SpawnLarvaForHatchery (unit lp_hatchery, int lp_larvaCount) {
     // Automatic Variable Declarations
     // Implementation
     UnitBehaviorSpawn(lp_hatchery, "AP_SpawnLarva", lp_larvaCount);
+}
+
+bool lib15EF4C78_gf_AP_Player_IsMineralField (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((UnitGetType(lp_unit) == "MineralField") || (UnitGetType(lp_unit) == "RichMineralField") || (UnitGetType(lp_unit) == ("UmojanLabMineralField")) || (UnitGetType(lp_unit) == ("BattleStationMineralField")))) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool lib15EF4C78_gf_AP_Player_IsGasHarvestable (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((UnitGetType(lp_unit) == "Refinery") || (UnitGetType(lp_unit) == "Extractor") || (UnitGetType(lp_unit) == "Assimilator") || (UnitGetType(lp_unit) == "AP_Refinery") || (UnitGetType(lp_unit) == "AP_Extractor") || (UnitGetType(lp_unit) == "AP_Assimilator") || (UnitGetType(lp_unit) == "AP_AssimilatorProtossGeyser") || (UnitGetType(lp_unit) == "AP_AssimilatorPurifierGeyser") || (UnitGetType(lp_unit) == "AP_AssimilatorShakurasGeyser") || (UnitGetType(lp_unit) == "AP_RefineryRich") || (UnitGetType(lp_unit) == "AP_ExtractorRich") || (UnitGetType(lp_unit) == "AP_AssimilatorRich"))) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+bool lib15EF4C78_gf_AP_Player_IsGasAuto (unit lp_unit) {
+    // Automatic Variable Declarations
+    // Implementation
+    if (((UnitGetType(lp_unit) == "AP_AutomatedRefinery") || (UnitGetType(lp_unit) == "AP_AutomatedExtractor") || (UnitGetType(lp_unit) == "AP_AutomatedAssimilator") || (UnitGetType(lp_unit) == "AP_AutomatedRefineryRich") || (UnitGetType(lp_unit) == "AP_AutomatedExtractorRich") || (UnitGetType(lp_unit) == "AP_AutomatedAssimilatorRich"))) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 bool lib15EF4C78_gf_AP_Player_Util_CanAutoHarvest (int lp_player) {
@@ -3847,22 +3983,22 @@ bool auto_lib15EF4C78_gf_StartingWorkersAutoHarvest_TriggerFunc (bool testConds,
     bool lv_isAutoGasResearched;
 
     // Automatic Variable Declarations
-    unitgroup autoA467898B_g;
-    int autoA467898B_u;
-    unitgroup auto44FFF477_g;
-    int auto44FFF477_u;
-    unitgroup auto663AC6E7_g;
-    int auto663AC6E7_u;
-    unitgroup auto0B1E3758_g;
-    int auto0B1E3758_u;
-    unitgroup autoA08E901F_g;
-    int autoA08E901F_u;
-    unitgroup auto76736543_g;
-    int auto76736543_u;
-    unitgroup auto255FD378_g;
-    int auto255FD378_u;
-    unitgroup autoF5A4A365_g;
-    int autoF5A4A365_u;
+    unitgroup auto4EC1769A_g;
+    int auto4EC1769A_u;
+    unitgroup autoD5BCFAB5_g;
+    int autoD5BCFAB5_u;
+    unitgroup auto0A8744D6_g;
+    int auto0A8744D6_u;
+    unitgroup auto39A9F810_g;
+    int auto39A9F810_u;
+    unitgroup auto7B7B077D_g;
+    int auto7B7B077D_u;
+    unitgroup auto820CEEF2_g;
+    int auto820CEEF2_u;
+    unitgroup autoEB9D2520_g;
+    int autoEB9D2520_u;
+    unitgroup autoDBDC9A6A_g;
+    int autoDBDC9A6A_u;
 
     // Variable Initialization
     lv_mineralResourceGroup = UnitGroupEmpty();
@@ -3879,23 +4015,24 @@ bool auto_lib15EF4C78_gf_StartingWorkersAutoHarvest_TriggerFunc (bool testConds,
         lv_unitGroupHarvestMinerals = UnitGroup(null, lp_player, lp_regionMineralWorker, UnitFilter((1 << c_targetFilterWorker), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     }
 
-    if ((lp_regionMineralWorker != null)) {
+    if ((lp_regionGasWorker != null)) {
         lv_unitGroupHarvestGas = UnitGroup(null, lp_player, lp_regionGasWorker, UnitFilter((1 << c_targetFilterWorker), 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
     }
 
-    if ((lv_unitGroupHarvestGas != UnitGroupEmpty())) {
-        autoA467898B_g = lv_unitGroupHarvestGas;
-        autoA467898B_u = UnitGroupCount(autoA467898B_g, c_unitCountAll);
-        for (;; autoA467898B_u -= 1) {
-            lv_indexWorker = UnitGroupUnitFromEnd(autoA467898B_g, autoA467898B_u);
+    UnitGroupRemoveUnitGroup(lv_unitGroupHarvestMinerals, lv_unitGroupHarvestGas);
+    if ((UnitGroupCount(lv_unitGroupHarvestGas, c_unitCountAlive) > 0)) {
+        auto4EC1769A_g = lv_unitGroupHarvestGas;
+        auto4EC1769A_u = UnitGroupCount(auto4EC1769A_g, c_unitCountAll);
+        for (;; auto4EC1769A_u -= 1) {
+            lv_indexWorker = UnitGroupUnitFromEnd(auto4EC1769A_g, auto4EC1769A_u);
             if (lv_indexWorker == null) { break; }
             UnitGroupClear(lv_gasResourceGroup);
-            auto44FFF477_g = UnitGroup(null, lp_player, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-            auto44FFF477_u = UnitGroupCount(auto44FFF477_g, c_unitCountAll);
-            for (;; auto44FFF477_u -= 1) {
-                lv_indexResource = UnitGroupUnitFromEnd(auto44FFF477_g, auto44FFF477_u);
+            autoD5BCFAB5_g = UnitGroup(null, lp_player, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            autoD5BCFAB5_u = UnitGroupCount(autoD5BCFAB5_g, c_unitCountAll);
+            for (;; autoD5BCFAB5_u -= 1) {
+                lv_indexResource = UnitGroupUnitFromEnd(autoD5BCFAB5_g, autoD5BCFAB5_u);
                 if (lv_indexResource == null) { break; }
-                if (((UnitGetType(lv_indexResource) == "Refinery") || (UnitGetType(lv_indexResource) == "Extractor") || (UnitGetType(lv_indexResource) == "Assimilator") || (UnitGetType(lv_indexResource) == "AP_Refinery") || (UnitGetType(lv_indexResource) == "AP_Extractor") || (UnitGetType(lv_indexResource) == "AP_Assimilator") || (UnitGetType(lv_indexResource) == "AP_AssimilatorProtossGeyser") || (UnitGetType(lv_indexResource) == "AP_AssimilatorPurifierGeyser") || (UnitGetType(lv_indexResource) == "AP_AssimilatorShakurasGeyser") || (UnitGetType(lv_indexResource) == "AP_RefineryRich") || (UnitGetType(lv_indexResource) == "AP_ExtractorRich") || (UnitGetType(lv_indexResource) == "AP_AssimilatorRich"))) {
+                if ((lib15EF4C78_gf_AP_Player_IsGasHarvestable(lv_indexResource) == true)) {
                     UnitGroupAdd(lv_gasResourceGroup, lv_indexResource);
                 }
 
@@ -3909,19 +4046,19 @@ bool auto_lib15EF4C78_gf_StartingWorkersAutoHarvest_TriggerFunc (bool testConds,
         }
     }
 
-    if ((lv_unitGroupHarvestMinerals != UnitGroupEmpty())) {
-        auto663AC6E7_g = lv_unitGroupHarvestMinerals;
-        auto663AC6E7_u = UnitGroupCount(auto663AC6E7_g, c_unitCountAll);
-        for (;; auto663AC6E7_u -= 1) {
-            lv_indexWorker = UnitGroupUnitFromEnd(auto663AC6E7_g, auto663AC6E7_u);
+    if ((UnitGroupCount(lv_unitGroupHarvestMinerals, c_unitCountAlive) > 0)) {
+        auto0A8744D6_g = lv_unitGroupHarvestMinerals;
+        auto0A8744D6_u = UnitGroupCount(auto0A8744D6_g, c_unitCountAll);
+        for (;; auto0A8744D6_u -= 1) {
+            lv_indexWorker = UnitGroupUnitFromEnd(auto0A8744D6_g, auto0A8744D6_u);
             if (lv_indexWorker == null) { break; }
             UnitGroupClear(lv_mineralResourceGroup);
-            auto0B1E3758_g = UnitGroup(null, 0, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-            auto0B1E3758_u = UnitGroupCount(auto0B1E3758_g, c_unitCountAll);
-            for (;; auto0B1E3758_u -= 1) {
-                lv_indexResource = UnitGroupUnitFromEnd(auto0B1E3758_g, auto0B1E3758_u);
+            auto39A9F810_g = UnitGroup(null, 0, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            auto39A9F810_u = UnitGroupCount(auto39A9F810_g, c_unitCountAll);
+            for (;; auto39A9F810_u -= 1) {
+                lv_indexResource = UnitGroupUnitFromEnd(auto39A9F810_g, auto39A9F810_u);
                 if (lv_indexResource == null) { break; }
-                if (((UnitGetType(lv_indexResource) == "MineralField") || (UnitGetType(lv_indexResource) == "RichMineralField"))) {
+                if ((lib15EF4C78_gf_AP_Player_IsMineralField(lv_indexResource) == true)) {
                     UnitGroupAdd(lv_mineralResourceGroup, lv_indexResource);
                 }
 
@@ -3933,20 +4070,20 @@ bool auto_lib15EF4C78_gf_StartingWorkersAutoHarvest_TriggerFunc (bool testConds,
         }
     }
 
-    if ((lv_unitGroupHarvestGas != UnitGroupEmpty())) {
+    if ((UnitGroupCount(lv_unitGroupHarvestGas, c_unitCountAlive) > 0)) {
         Wait(1.0, c_timeGame);
-        autoA08E901F_g = lv_unitGroupHarvestGas;
-        autoA08E901F_u = UnitGroupCount(autoA08E901F_g, c_unitCountAll);
-        for (;; autoA08E901F_u -= 1) {
-            lv_indexWorker = UnitGroupUnitFromEnd(autoA08E901F_g, autoA08E901F_u);
+        auto7B7B077D_g = lv_unitGroupHarvestGas;
+        auto7B7B077D_u = UnitGroupCount(auto7B7B077D_g, c_unitCountAll);
+        for (;; auto7B7B077D_u -= 1) {
+            lv_indexWorker = UnitGroupUnitFromEnd(auto7B7B077D_g, auto7B7B077D_u);
             if (lv_indexWorker == null) { break; }
             UnitGroupClear(lv_gasResourceGroup);
-            auto76736543_g = UnitGroup(null, lp_player, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-            auto76736543_u = UnitGroupCount(auto76736543_g, c_unitCountAll);
-            for (;; auto76736543_u -= 1) {
-                lv_indexResource = UnitGroupUnitFromEnd(auto76736543_g, auto76736543_u);
+            auto820CEEF2_g = UnitGroup(null, lp_player, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+            auto820CEEF2_u = UnitGroupCount(auto820CEEF2_g, c_unitCountAll);
+            for (;; auto820CEEF2_u -= 1) {
+                lv_indexResource = UnitGroupUnitFromEnd(auto820CEEF2_g, auto820CEEF2_u);
                 if (lv_indexResource == null) { break; }
-                if (((UnitGetType(lv_indexResource) == "AP_AutomatedRefinery") || (UnitGetType(lv_indexResource) == "AP_AutomatedExtractor") || (UnitGetType(lv_indexResource) == "AP_AutomatedAssimilator") || (UnitGetType(lv_indexResource) == "AP_AutomatedRefineryRich") || (UnitGetType(lv_indexResource) == "AP_AutomatedExtractorRich") || (UnitGetType(lv_indexResource) == "AP_AutomatedAssimilatorRich"))) {
+                if ((lib15EF4C78_gf_AP_Player_IsGasAuto(lv_indexResource) == true)) {
                     UnitGroupAdd(lv_gasResourceGroup, lv_indexResource);
                 }
 
@@ -3958,18 +4095,18 @@ bool auto_lib15EF4C78_gf_StartingWorkersAutoHarvest_TriggerFunc (bool testConds,
 
         }
         if ((lv_isAutoGasResearched == true)) {
-            auto255FD378_g = lv_unitGroupHarvestGas;
-            auto255FD378_u = UnitGroupCount(auto255FD378_g, c_unitCountAll);
-            for (;; auto255FD378_u -= 1) {
-                lv_indexWorker = UnitGroupUnitFromEnd(auto255FD378_g, auto255FD378_u);
+            autoEB9D2520_g = lv_unitGroupHarvestGas;
+            autoEB9D2520_u = UnitGroupCount(autoEB9D2520_g, c_unitCountAll);
+            for (;; autoEB9D2520_u -= 1) {
+                lv_indexWorker = UnitGroupUnitFromEnd(autoEB9D2520_g, autoEB9D2520_u);
                 if (lv_indexWorker == null) { break; }
                 UnitGroupClear(lv_mineralResourceGroup);
-                autoF5A4A365_g = UnitGroup(null, 0, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
-                autoF5A4A365_u = UnitGroupCount(autoF5A4A365_g, c_unitCountAll);
-                for (;; autoF5A4A365_u -= 1) {
-                    lv_indexResource = UnitGroupUnitFromEnd(autoF5A4A365_g, autoF5A4A365_u);
+                autoDBDC9A6A_g = UnitGroup(null, 0, RegionCircle(UnitGetPosition(lv_indexWorker), 6.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+                autoDBDC9A6A_u = UnitGroupCount(autoDBDC9A6A_g, c_unitCountAll);
+                for (;; autoDBDC9A6A_u -= 1) {
+                    lv_indexResource = UnitGroupUnitFromEnd(autoDBDC9A6A_g, autoDBDC9A6A_u);
                     if (lv_indexResource == null) { break; }
-                    if (((UnitGetType(lv_indexResource) == "MineralField") || (UnitGetType(lv_indexResource) == "RichMineralField"))) {
+                    if ((lib15EF4C78_gf_AP_Player_IsMineralField(lv_indexResource) == true)) {
                         UnitGroupAdd(lv_mineralResourceGroup, lv_indexResource);
                     }
 
@@ -4368,7 +4505,7 @@ void lib15EF4C78_gt_ArchipelagoPlayerHandlersConstructor_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Untitled Trigger 004
+// Trigger: AP_Player_GatewayStickyKeys
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
@@ -4389,7 +4526,7 @@ void lib15EF4C78_gt_AP_Player_GatewayStickyKeys_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Untitled Trigger 005
+// Trigger: AP_Player_RoboStickyKeys
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_RoboStickyKeys_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
@@ -4410,7 +4547,7 @@ void lib15EF4C78_gt_AP_Player_RoboStickyKeys_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Untitled Trigger 006
+// Trigger: AP_Player_StargateStickyKeys
 //--------------------------------------------------------------------------------------------------
 bool lib15EF4C78_gt_AP_Player_StargateStickyKeys_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
@@ -5499,6 +5636,38 @@ bool lib15EF4C78_gt_KerriganEconDrop_Func (bool testConds, bool runActions) {
 void lib15EF4C78_gt_KerriganEconDrop_Init () {
     lib15EF4C78_gt_KerriganEconDrop = TriggerCreate("lib15EF4C78_gt_KerriganEconDrop_Func");
     TriggerAddEventUnitDied(lib15EF4C78_gt_KerriganEconDrop, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_ElderProbeWarpInHandler
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_caster;
+    unit lv_unit;
+    point lv_targetPoint;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_caster = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitCreate(1, "AP_ElderProbe", c_unitCreateConstruct, EventPlayerEffectUsedUnitOwner(c_effectPlayerCaster), EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), libNtve_gf_RandomAngle());
+    lv_unit = UnitLastCreated();
+    lv_targetPoint = UnitGetPosition(lv_unit);
+    UnitRemove(lv_unit);
+    UnitIssueOrder(lv_caster, OrderTargetingPoint(AbilityCommand("AP_ElderProbeWarpinBackground", 0), lv_targetPoint), c_orderQueueAddToFront);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Init () {
+    lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler = TriggerCreate("lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Func");
+    TriggerAddEventPlayerEffectUsed(lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler, c_playerAny, "AP_ElderProbeWarpinDummy");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -6842,6 +7011,186 @@ bool lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery_Func (bool testCond
 void lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery_Init () {
     lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery = TriggerCreate("lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery_Func");
     TriggerAddEventUnitAbility(lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery, null, AbilityCommand("AP_BlinkMultiple", 0), c_abilEffectStageCast, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_ScoutOnAdvancedPhotonBlasterResearch
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_ScoutOnAdvancedPhotonBlasterResearch_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    string lv_upgrade;
+    int lv_delta;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = EventPlayer();
+    lv_upgrade = EventUpgradeName();
+    lv_delta = EventUpgradeLevelDelta();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_upgrade == "AP_ScoutAdvancedPhotonBlasters"))) {
+            return false;
+        }
+
+        if (!((lv_delta > 0))) {
+            return false;
+        }
+
+        if (!((TechTreeUpgradeCount(lv_player, "AP_ScoutGammaPhotonBlasters", c_techCountCompleteOnly) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SetUpgradeLevelForPlayer(lv_player, "AP_ScoutGammaAdvancedPhotonBlasters", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_ScoutOnAdvancedPhotonBlasterResearch_Init () {
+    lib15EF4C78_gt_AP_Player_ScoutOnAdvancedPhotonBlasterResearch = TriggerCreate("lib15EF4C78_gt_AP_Player_ScoutOnAdvancedPhotonBlasterResearch_Func");
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_AP_Player_ScoutOnAdvancedPhotonBlasterResearch, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_ScoutOnGammaPhotonBlasterResearch
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_ScoutOnGammaPhotonBlasterResearch_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    string lv_upgrade;
+    int lv_delta;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = EventPlayer();
+    lv_upgrade = EventUpgradeName();
+    lv_delta = EventUpgradeLevelDelta();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_upgrade == "AP_ScoutGammaPhotonBlasters"))) {
+            return false;
+        }
+
+        if (!((lv_delta > 0))) {
+            return false;
+        }
+
+        if (!((TechTreeUpgradeCount(lv_player, "AP_ScoutAdvancedPhotonBlasters", c_techCountCompleteOnly) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SetUpgradeLevelForPlayer(lv_player, "AP_ScoutGammaAdvancedPhotonBlasters", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_ScoutOnGammaPhotonBlasterResearch_Init () {
+    lib15EF4C78_gt_AP_Player_ScoutOnGammaPhotonBlasterResearch = TriggerCreate("lib15EF4C78_gt_AP_Player_ScoutOnGammaPhotonBlasterResearch_Func");
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_AP_Player_ScoutOnGammaPhotonBlasterResearch, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_DestroyerOnReforgedBloodshardCoreResearch
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_DestroyerOnReforgedBloodshardCoreResearch_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    string lv_upgrade;
+    int lv_delta;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = EventPlayer();
+    lv_upgrade = EventUpgradeName();
+    lv_delta = EventUpgradeLevelDelta();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_upgrade == "AP_DestroyerReforgedBloodshardCore"))) {
+            return false;
+        }
+
+        if (!((lv_delta > 0))) {
+            return false;
+        }
+
+        if (!((TechTreeUpgradeCount(lv_player, "AP_DestroyerChargingBeam", c_techCountCompleteOnly) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SetUpgradeLevelForPlayer(lv_player, "AP_DestroyerReforgedBloodshardCoreUpgraded", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_DestroyerOnReforgedBloodshardCoreResearch_Init () {
+    lib15EF4C78_gt_AP_Player_DestroyerOnReforgedBloodshardCoreResearch = TriggerCreate("lib15EF4C78_gt_AP_Player_DestroyerOnReforgedBloodshardCoreResearch_Func");
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_AP_Player_DestroyerOnReforgedBloodshardCoreResearch, c_playerAny);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: AP_Player_DestroyerOnBloodshardRealignmentResearch
+//--------------------------------------------------------------------------------------------------
+bool lib15EF4C78_gt_AP_Player_DestroyerOnBloodshardRealignmentResearch_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_player;
+    string lv_upgrade;
+    int lv_delta;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_player = EventPlayer();
+    lv_upgrade = EventUpgradeName();
+    lv_delta = EventUpgradeLevelDelta();
+
+    // Conditions
+    if (testConds) {
+        if (!((lv_upgrade == "AP_DestroyerChargingBeam"))) {
+            return false;
+        }
+
+        if (!((lv_delta > 0))) {
+            return false;
+        }
+
+        if (!((TechTreeUpgradeCount(lv_player, "AP_DestroyerReforgedBloodshardCore", c_techCountCompleteOnly) >= 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_SetUpgradeLevelForPlayer(lv_player, "AP_DestroyerReforgedBloodshardCoreUpgraded", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void lib15EF4C78_gt_AP_Player_DestroyerOnBloodshardRealignmentResearch_Init () {
+    lib15EF4C78_gt_AP_Player_DestroyerOnBloodshardRealignmentResearch = TriggerCreate("lib15EF4C78_gt_AP_Player_DestroyerOnBloodshardRealignmentResearch_Func");
+    TriggerAddEventUpgradeLevelChanged(lib15EF4C78_gt_AP_Player_DestroyerOnBloodshardRealignmentResearch, c_playerAny);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -9432,6 +9781,7 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_ZerglingRespawnFindPrimaryWhenTimeElapsed_Init();
     lib15EF4C78_gt_KerriganPsiStrike_Init();
     lib15EF4C78_gt_KerriganEconDrop_Init();
+    lib15EF4C78_gt_AP_Player_ElderProbeWarpInHandler_Init();
     lib15EF4C78_gt_PM_SoAStatusWatch_Init();
     lib15EF4C78_gt_PM_SoAAutonomousStatusWatch_Init();
     lib15EF4C78_gt_PM_CinematicModeOn_Init();
@@ -9465,6 +9815,10 @@ void lib15EF4C78_InitTriggers () {
     lib15EF4C78_gt_SupplicantWarpFinish_Init();
     lib15EF4C78_gt_SupplicantWarpCancel_Init();
     lib15EF4C78_gt_InstigatorReconstructionCooldownRecovery_Init();
+    lib15EF4C78_gt_AP_Player_ScoutOnAdvancedPhotonBlasterResearch_Init();
+    lib15EF4C78_gt_AP_Player_ScoutOnGammaPhotonBlasterResearch_Init();
+    lib15EF4C78_gt_AP_Player_DestroyerOnReforgedBloodshardCoreResearch_Init();
+    lib15EF4C78_gt_AP_Player_DestroyerOnBloodshardRealignmentResearch_Init();
     lib15EF4C78_gt_SlayerInit_Init();
     lib15EF4C78_gt_CreepTumorBuild_Init();
     lib15EF4C78_gt_AP_Player_FindPrimaryTownHallForAllPlayers_Init();

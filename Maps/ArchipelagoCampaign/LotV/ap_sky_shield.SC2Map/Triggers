@@ -5920,18 +5920,19 @@
     <Element Type="Trigger" Id="EE937EE1">
         <Variable Type="Variable" Id="C9E00119"/>
         <Action Type="Comment" Id="76298C4D"/>
+        <Action Type="FunctionCall" Id="FE573F55"/>
         <Action Type="FunctionCall" Id="6313AC44"/>
         <Action Type="FunctionCall" Id="92337955"/>
         <Action Type="FunctionCall" Id="BE21B7F1"/>
         <Action Type="FunctionCall" Id="44825385"/>
         <Action Type="FunctionCall" Id="47B95403"/>
-        <Action Type="FunctionCall" Id="FE573F55"/>
         <Action Type="FunctionCall" Id="06F81FF4"/>
         <Action Type="Comment" Id="AE32F256"/>
         <Action Type="FunctionCall" Id="3CE8FDBD"/>
         <Action Type="Comment" Id="FB82583A"/>
         <Action Type="FunctionCall" Id="81856660"/>
         <Action Type="FunctionCall" Id="65E03213"/>
+        <Action Type="Comment" Id="767773E5"/>
         <Action Type="FunctionCall" Id="57323D0D"/>
         <Action Type="FunctionCall" Id="D54C4549"/>
         <Action Type="FunctionCall" Id="1FC77192"/>
@@ -5951,6 +5952,14 @@
         <Comment>
             Initial setup
         </Comment>
+    </Element>
+    <Element Type="FunctionCall" Id="FE573F55">
+        <FunctionDef Type="FunctionDef" Library="ABFE498B" Id="9FF320A7"/>
+        <Parameter Type="Param" Id="081BED99"/>
+    </Element>
+    <Element Type="Param" Id="081BED99">
+        <ParameterDef Type="ParamDef" Library="ABFE498B" Id="533B7D95"/>
+        <Variable Type="Variable" Id="C1691D64"/>
     </Element>
     <Element Type="FunctionCall" Id="6313AC44">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000116"/>
@@ -6104,22 +6113,6 @@
         <ParameterDef Type="ParamDef" Library="Ntve" Id="63542FDE"/>
         <ValueType Type="point"/>
         <ValueId Id="45"/>
-    </Element>
-    <Element Type="FunctionCall" Id="FE573F55">
-        <FunctionDef Type="FunctionDef" Library="Lbty" Id="05E197DE"/>
-        <Parameter Type="Param" Id="863C45E9"/>
-        <Parameter Type="Param" Id="ECBF0493"/>
-    </Element>
-    <Element Type="Param" Id="863C45E9">
-        <ParameterDef Type="ParamDef" Library="Lbty" Id="97BDB33A"/>
-        <FunctionCall Type="FunctionCall" Id="A25110EC"/>
-    </Element>
-    <Element Type="FunctionCall" Id="A25110EC">
-        <FunctionDef Type="FunctionDef" Library="Ntve" Id="46F2D5B8"/>
-    </Element>
-    <Element Type="Param" Id="ECBF0493">
-        <ParameterDef Type="ParamDef" Library="Lbty" Id="3F42FBCD"/>
-        <Variable Type="Variable" Id="C1691D64"/>
     </Element>
     <Element Type="FunctionCall" Id="06F81FF4">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000242"/>
@@ -6437,6 +6430,11 @@
     <Element Type="Param" Id="1A251866">
         <ParameterDef Type="ParamDef" Library="Ntve" Id="00000420"/>
         <Preset Type="PresetValue" Library="Ntve" Id="00000012"/>
+    </Element>
+    <Element Type="Comment" Id="767773E5">
+        <Comment>
+            needs a delay apparently
+        </Comment>
     </Element>
     <Element Type="FunctionCall" Id="57323D0D">
         <FunctionDef Type="FunctionDef" Library="Ntve" Id="74DFFAD8"/>

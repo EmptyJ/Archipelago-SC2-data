@@ -3302,6 +3302,11 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="AP_LockOnDummyWeapon"/>
     </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="AP_LockOnDummyWeaponRB">
+        <EditorCategories value="Race:Terran"/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="AP_LockOnDummyWeapon"/>
+    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="AP_LockOnEndDisableAttack">
         <EditorCategories value="Race:Terran"/>
         <WhichUnit Value="Caster"/>
@@ -7916,6 +7921,14 @@
         <Kind value="Ranged"/>
         <Amount value="3"/>
     </CEffectDamage>
+    <CEffectDamage id="AP_VoidRayChargeBeamBounce3DamageUpgraded" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <DamageModifierSource Value="Caster"/>
+        <AttributeBonus index="Armored" value="4"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="6"/>
+    </CEffectDamage>
     <CEffectSet id="AP_VoidRayChargeBeamBounce3DamageSet">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_VoidRayChargeBeamBounce3Damage"/>
@@ -11203,11 +11216,25 @@
         <Kind value="Ranged"/>
         <Amount value="8"/>
     </CEffectDamage>
+    <CEffectDamage id="AP_ScoutMPGroundLight" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="8"/>
+        <AttributeBonus index="Light" value="8"/>
+    </CEffectDamage>
     <CEffectDamage id="AP_ScoutMPGroundUpgraded" parent="DU_WEAP">
         <EditorCategories value="Race:Protoss"/>
         <Visibility value="Visible"/>
         <Kind value="Ranged"/>
         <Amount value="16"/>
+    </CEffectDamage>
+    <CEffectDamage id="AP_ScoutMPGroundUpgradedLight" parent="DU_WEAP">
+        <EditorCategories value="Race:Protoss"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <Amount value="16"/>
+        <AttributeBonus index="Light" value="16"/>
     </CEffectDamage>
     <CEffectApplyBehavior id="AP_LightningBombAB">
         <EditorCategories value="Race:Protoss"/>
@@ -11749,7 +11776,7 @@
         <Behavior value="AP_SOAMothershipTimedLife"/>
     </CEffectApplyBehavior>
     <CEffectDamage id="AP_SOAMothershipv4BeamDamage" parent="DU_WEAP_MISSILE">
-        <ValidatorArray value="MothershipRangeCheck"/>
+        <ValidatorArray value="AP_MothershipRangeCheck"/>
         <ValidatorArray value="NotHidden"/>
         <EditorCategories value="Race:Protoss"/>
         <Visibility value="Visible"/>
@@ -11757,7 +11784,7 @@
         <Death value="Fire"/>
     </CEffectDamage>
     <CEffectModifyUnit id="AP_SOAMothershipv4BeamDummy">
-        <ValidatorArray value="MothershipRangeCheck"/>
+        <ValidatorArray value="AP_MothershipRangeCheck"/>
         <EditorCategories value="Race:Protoss"/>
     </CEffectModifyUnit>
     <CEffectCreatePersistent id="AP_SOAMothershipv4BeamPersistent">
@@ -11784,7 +11811,7 @@
         <InitialDelay value="0.25"/>
         <InitialEffect value="AP_SOAMothershipv4BeamDummy"/>
         <PeriodCount value="3"/>
-        <PeriodicValidator value="MothershipRangeCheckCombine"/>
+        <PeriodicValidator value="AP_MothershipRangeCheckCombine"/>
         <PeriodicEffectArray value="AP_SOAMothershipv4BeamDamage"/>
         <PeriodicPeriodArray value="0.375"/>
     </CEffectCreatePersistent>
@@ -18748,6 +18775,7 @@
         <EditorCategories value=""/>
         <SearchFilters value="-;Self,Neutral,Enemy,Missile,Destructible,Dead,Hidden"/>
         <AreaArray Radius="10" Effect="AP_FusionCoreFusionReactorBuffAB"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="AP_FusionCoreFusionReactorBuffAB">
         <EditorCategories value=""/>
@@ -23616,6 +23644,7 @@
         <ImpactEffect value="AP_ScoutNerazimPhantomDashImpact"/>
         <Flags index="Placement" value="1"/>
         <Flags index="PlacementIgnoreBlockers" value="1"/>
+        <Flags index="2D" value="1"/>
     </CEffectLaunchMissile>
     <CEffectIssueOrder id="AP_ScoutNerazimPhantomDashOrder">
         <EditorCategories value="Race:Protoss"/>
@@ -24042,10 +24071,11 @@
     </CEffectModifyUnit>
     <CEffectCreatePersistent id="AP_ElderProbeWarpin">
         <EditorCategories value="Race:Protoss"/>
+        <ValidatorArray value="AP_HasAtLeastNormalPower"/>
         <OffsetVectorStartLocation Value="SourcePoint"/>
         <OffsetVectorEndLocation Value="SourcePoint"/>
         <PeriodCount value="5"/>
-        <PeriodicEffectArray value="AP_ElderProbeWarpinCreateUnit"/>
+        <PeriodicEffectArray value="AP_ElderProbeWarpinDummy"/>
         <PeriodicOffsetArray value="0,0,0"/>
         <PeriodicOffsetArray value="-1.4,0,0"/>
         <PeriodicOffsetArray value="0,1.4,0"/>
@@ -24061,6 +24091,9 @@
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="AP_ElderProbeWarpin"/>
     </CEffectApplyBehavior>
+    <CEffectDamage id="AP_ElderProbeWarpinDummy">
+        <!-- Dummy effect that allows the trigger to make a unit that's under construction -->
+    </CEffectDamage>
     <CEffectCreateUnit id="AP_ElderProbeWarpinCreateUnit">
         <EditorCategories value="Race:Protoss"/>
         <WhichLocation Value="TargetPoint"/>
@@ -24184,6 +24217,9 @@
     <CEffectApplyBehavior id="AP_OracleStasisTrapTargetAB">
         <Behavior value="AP_OracleStasisTrapTarget"/>
     </CEffectApplyBehavior>
+    <CEffectSet id="AP_OracleStasisTrapTargetABSet">
+        <EffectArray value="AP_OracleStasisTrapTargetAB"/>
+    </CEffectSet>
     <CEffectSet id="AP_SupplicantSacrifice">
         <EditorCategories value="Race:Protoss"/>
         <EffectArray value="AP_SourceSetHP1"/>
